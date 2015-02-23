@@ -1,6 +1,7 @@
 ﻿
 init:
     $ mods["scenario_uvao"] = u"ЮВАО рут - demo"
+    $ config.developer = True
     $ herc = False
     $ loki = False
 
