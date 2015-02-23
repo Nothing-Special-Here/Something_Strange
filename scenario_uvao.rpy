@@ -30,7 +30,7 @@ label scenario_uvao_root_D4:
             call uvao_D4_meet_Yulia_after_lunch
         "Отладка: Сразу Д4-встреча с Юлей после ужина":
             call uvao_D4_meet_Yulia_at_evening
-        "Отладка: Утро от пробуждения по завтрак"
+        "Отладка: Утро от пробуждения по завтрак":
             jump alt_day4_start_uvao
 #        "Прохождение Д4 по порядку":
 #            $ alt_chapter(4, u"Обед")
