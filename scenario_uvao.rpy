@@ -1,6 +1,6 @@
 ﻿
 init:
-    $ mods["scenario_uvao"] = u"ЮВАО рут - demo"
+    $ mods["scenario_uvao"] = u"ЮВАО рут - отладка"
     $ config.developer = True
     $ herc = False
     $ loki = False
@@ -28,7 +28,9 @@ label scenario_uvao_root_D4:
             call uvao_uvao_D4_lunch
         "Отладка: Сразу Д4-встреча с Юлей после обеда без концерта":
             call uvao_D4_meet_Yulia_after_lunch
-        "Прохождение по порядку":
+        "Отладка: Сразу Д4-встреча с Юлей после ужина":
+            call uvao_D4_meet_Yulia_at_evening
+        "Прохождение Д4 по порядку":
             $ alt_chapter(4, u"Обед")
             call uvao_uvao_D4_lunch
 #

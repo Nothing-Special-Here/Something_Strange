@@ -254,7 +254,7 @@ label uvao_uvao_D4_lunch:
             "Очень хотелось поскорее добраться до домика и наконец-то заняться «<книгой_что-то_там_про_Генду>»."
             $ uvao_D4_concert = False
 
-    stop music fadeout 5
+    stop ambience fadeout 5
     window hide
 
     return
