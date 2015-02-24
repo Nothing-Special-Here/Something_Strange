@@ -34,6 +34,8 @@ label scenario_uvao_root_D4:
             call uvao_D4_meet_Yulia_at_evening
         "Отладка: Утро от пробуждения по завтрак":
             jump alt_day4_start_uvao
+        "Отладка: Уборка гирлянд":
+            call uvao_D4_garlands_removal
 #        "Прохождение Д4 по порядку":
 #            $ alt_chapter(4, u"Обед")
 #            call uvao_uvao_D4_lunch
