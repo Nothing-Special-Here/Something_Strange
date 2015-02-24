@@ -26,6 +26,8 @@ label scenario_uvao:
 label scenario_uvao_root_D4:
 #
     menu:
+        "Отладка: Встреча Юли в д3":
+            call alt_day3_meet_uvao
         "Отладка: Сразу Д4-Обед":
             call uvao_uvao_D4_lunch
         "Отладка: Сразу Д4-встреча с Юлей после обеда без концерта":
