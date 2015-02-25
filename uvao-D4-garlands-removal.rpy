@@ -38,7 +38,7 @@ label uvao_D4_garlands_removal:
     mt "В общем, задание получил, вперед выполнять."
     show mt smile panama pioneer with dspr
     "Она улыбнулась и твердой походкой направилась в сторону домика."
-    hide mt with easeoutleft
+    hide mt with dissolve
     dreamgirl "Ну что, работай, нигер! Солнце еще высоко!"
     "Что же, уборку без стремянки не начать. Я направился в сторону кружка кибернетиков."
     window hide
@@ -48,13 +48,13 @@ label uvao_D4_garlands_removal:
     window show
     "Я постучал и дернул было ручку, но дверь оказалась заперта."
     "Электроник, видимо, навещает Шурика.{w} Ладно, подожду его тут."
-    show us grin sport far with easeinright:
+    show us grin sport far with dissolve:
         xalign 0.99 yalign 0.99 zoom 0.7
     "Объявился тот спустя двадцать минут, я же за это время успел заметить в кустах рыжую шевелюру местной «охотницы на жуков»."
     "Сейчас мне было ужасно жаль того, кому Ульяна захочет похвастаться своей коллекцией."
-    hide us with easeoutright
+    hide us with dissolve
     me "Явился - не запылился."
-    show el surprise pioneer with easeinright
+    show el surprise pioneer with dissolve
     el "Привет Семён, а я это…"
     "Электроник что-то спрятал за спину."
     "Я ловко выхватил небольшую стопку журналов.{w}\n«Юный техник». А я уж подумал - «Playboy»…"
@@ -82,7 +82,7 @@ label uvao_D4_garlands_removal:
     show el normal pioneer with dspr
     "Мы направились к площади."
     scene bg ext_houses_day with dissolve
-    show el normal pioneer at left with easeinleft
+    show el normal pioneer at left with dissolve
     "Эл, кряхтя, нес стремянку, а я осматривал лагерь.{w} В голову приходили разные мысли о путешествиях во времени, параллельных мирах, экспериментах ученых…"
     show el sad pioneer with dspr
     el "Давай передохнем?"
@@ -90,7 +90,7 @@ label uvao_D4_garlands_removal:
     "Я схватил стремянку и понес ее к площади."
     scene bg ext_square_day with dissolve
     play ambience ambience_camp_center_day fadein 1
-    show el sad pioneer at left with easeinleft
+    show el sad pioneer at left with dissolve
     "Вскоре показалась площадь, с ее лавочками, украшенными гирляндами деревьями и с ее основным атрибутом – одиноким загадочным Гендой."
     "Тот как всегда надменно взирал на происходящее вокруг.{w} На воркующую парочку, сидящую на скамейке в тени деревьев, на Славю, машущую метлой, на меня, медленно несущего стремянку."
     "Я с той же надменностью взглянул в его очки."
@@ -103,7 +103,8 @@ label uvao_D4_garlands_removal:
     el "Э нет, только не я."
     me "Мне тоже как-то не очень хочется."
     "Никто из нас не хотел повторять подвиг Шурика, посему было принято решение решить вопрос «по-мужски»."
-    #***Если Автор-кун докопает-таки код «Камня-ножниц-бумаги», то здесь можно сделать мини-развилку (Лезет Сёма/Лезет Эл)***
+    "…"
+#***Если Автор-кун докопает-таки код «Камня-ножниц-бумаги», то здесь можно сделать мини-развилку (Лезет Сёма/Лезет Эл)***
     show el smile pioneer with dspr
     el "Ножницы режут бумагу. Я победил."
     th "Ничего не остаётся…"
@@ -122,7 +123,7 @@ label uvao_D4_garlands_removal:
     show el smile pioneer with dspr
     "Эл, как и ожидалось, смотрел туда же."
     "Женя, что-то сказала, покосилась в нашу сторону и, развернувшись, пошла в сторону библиотеки.{w} Отлично, значит, она будет там."
-    hide mz with easeoutright
+    hide mz with dissolve
     "Стремянка громко скрипнула, я от испуга выронил моток гирлянды и схватился за ветку дерева."
     me "Эл!!!"
     show el upset pioneer with dspr
@@ -140,26 +141,28 @@ label uvao_D4_garlands_removal:
     show sl smile pioneer with dspr
     "Я схватил большой моток проводов и понес его в сторону склада."
     "Эл, помедлив, схватил стремянку и пошел за мной. Славя взяла остатки гирлянд."
-    hide el with easeoutright
-    hide sl with easeoutright
+    hide el with dissolve
+    hide sl with dissolve
     $ renpy.pause(1)
     scene bg ext_houses_day with dissolve
-    show el sad pioneer at right with easeinleft
-    show sl normal pioneer at left with easeinleft
+    show el sad pioneer at right with dissolve
+    show sl normal pioneer at left with dissolve
     el "Аккуратнее, Семён. Не упади."
     $ renpy.pause(1)
     "Нести моток было неудобно, и провода то и дело попадались под ноги. С горем пополам мы дошли-таки до склада."
     scene bg ext_shed_day with dissolve
-    show el sad pioneer at right with easeinleft
-    show sl normal pioneer at left with easeinleft
+    show el sad pioneer at right with dissolve
+    show sl normal pioneer at left with dissolve
     sl "Одну минутку, мальчики."
     show sl normal pioneer far at left with dissolve
     show el normal pioneer with dspr
     "Она подбежала к дверям, звякнула ключами и ловко открыла навесной замок."
-    show sl normal pioneer far with dspr
+    hide sl with dissolve
     sl "Загружай!"
     "Донесся голос из помещения."
     "Я поволок гирлянды внутрь."
+    scene int_shed_day with dissolve
+    show sl normal pioneer far at left with dissolve
     me "Куда?"
     sl "В коробку, вот сюда."
     "В помещении было темно и Славю было едва видно."
@@ -167,7 +170,7 @@ label uvao_D4_garlands_removal:
     me "Ох! Как будто вагон разгрузил!"
     show sl happy pioneer far with dspr
     "Славя хихикнула."
-    show el normal pioneer far at center with dissolve
+    show el normal pioneer far at right with dissolve
     show sl smile pioneer far with dspr
     "Рядом раздался скрип стремянки. Электроник поставил железяку в другой угол и теперь отдыхал, прислонившись к стене."
     me "Что ж, мавр сделал свое дело, мавр может уходить. Спасибо за помощь."
@@ -175,10 +178,11 @@ label uvao_D4_garlands_removal:
     show sl smile pioneer far with dspr
     "Эл кивнул, а Славя улыбнулась."
     sl "Обращайтесь."
+    scene bg ext_shed_day with dissolve
     "После темноты склада солнце было необычайно ярким."
-    hide el with easeoutright
+    show el normal pioneer far at right with dissolve
     "Пока я привыкал к свету, мимо меня проскользнул Эл и с деловым видом направился в сторону сцены."
-    hide sl with easeoutleft
+    hide el with easeoutright
     "Я же решил не терять времени даром и таки заглянуть в библиотеку, к хранителю местных архивов, в надежде откопать побольше информации о мире, куда меня занесло."
 #
     return
