@@ -34,6 +34,17 @@ label scenario_uvao_root_D4:
         "Отладка: Сразу Д4-Обед":
             call uvao_uvao_D4_lunch
         "Отладка: Сразу Д4-встреча с Юлей после обеда без концерта":
+            $ uvao_D4_concert = False
+            call uvao_D4_meet_Yulia_after_lunch
+        "Отладка: Сразу Д4-встреча с Юлей после концерта (обедали со Славей)":
+            $ uvao_D4_concert = True
+            $ uvao_D4_lunch_un = False
+            $ uvao_D4_lunch_sl = True
+            call uvao_D4_meet_Yulia_after_lunch
+        "Отладка: Сразу Д4-встреча с Юлей после концерта (обедали с Леной)":
+            $ uvao_D4_concert = True
+            $ uvao_D4_lunch_un = True
+            $ uvao_D4_lunch_sl = False
             call uvao_D4_meet_Yulia_after_lunch
         "Отладка: Сразу Д4-встреча с Юлей после ужина":
             call uvao_D4_meet_Yulia_at_evening
