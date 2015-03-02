@@ -41,6 +41,8 @@ label scenario_uvao_root_D4:
             jump alt_day4_start_uvao
         "Отладка: Уборка гирлянд":
             call uvao_D4_garlands_removal
+        "Отладка: Посещение библиотеки":
+            call uvao_D4_library
 #        "Прохождение Д4 по порядку":
 #            $ alt_chapter(4, u"Обед")
 #            call uvao_uvao_D4_lunch

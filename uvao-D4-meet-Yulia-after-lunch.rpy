@@ -6,6 +6,7 @@ label uvao_D4_meet_Yulia_after_lunch:
 # используется флаг рассказа Слави про Генду за обедом uvao_D4_lunch_sl
 #
     $ persistent.sprite_time = "day"
+    play sound sfx_open_door_2
     play ambience ambience_int_cabin_day fadein 1
     scene bg int_house_of_mt_noitem_day
 #Придя, Семён приоткрывает окно, потому что домик прогрелся на солнце и читать умные книжки жарко
