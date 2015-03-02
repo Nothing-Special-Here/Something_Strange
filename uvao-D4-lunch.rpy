@@ -4,11 +4,13 @@ label uvao_uvao_D4_lunch:
 # Д4-обед
 #
 # используется флаг посещения медпункта alt_day4_uv_viola_morning
-# устанавливает флаг ухода на концерт uvao_D4_concert
-# устанавливает флаг рассказа Слави про Генду uvao_D4_sl_genda_tale
+# устанавливает флаг ухода на концерт uvao_D4_concert #(временный для отладки)
+# устанавливает флаг обеда с  Леной  uvao_D4_lunch_un
+# устанавливает флаг обеда со Славей uvao_D4_lunch_sl
 #
     $ uvao_D4_concert = False
-    $ uvao_D4_sl_genda_tale = False
+    $ uvao_D4_lunch_un = False
+    $ uvao_D4_lunch_sl = False
 #
     $ persistent.sprite_time = "day"
     play ambience ambience_dining_hall_full fadein 3
@@ -129,6 +131,8 @@ label uvao_uvao_D4_lunch:
             "Посмотрев ещё раз на Славю я понял, что у меня на выбор только два варианта - либо я иду добровольно, либо меня действительно силком отведут за руку, как маленького."
             "Обречённо вздохнув, я поплёлся за Славей."
             hide sl with easeoutright
+#
+            $ uvao_D4_lunch_un = True
             $ uvao_D4_concert = True
 #
         "Сесть со Славей":
@@ -245,6 +249,8 @@ label uvao_uvao_D4_lunch:
             th "Кажется, отказаться в такой ситуации будет не только рискованно, но и попросту невежливо…"
             hide sl with easeoutright
             "Стараясь не слишком показывать своё разочарование, я встал и поплёлся следом за Славей."
+#
+            $ uvao_D4_lunch_sl = True
             $ uvao_D4_concert = True
 #
         "Сесть одному":

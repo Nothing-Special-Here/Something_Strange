@@ -18,8 +18,11 @@ label scenario_uvao:
     $ uvao_D4_aidpost_visit = False
 # Флаг попадания с обеда на концерт
     $ uvao_D4_concert = False
-# Флаг рассказа Слави про Генду за обедом
-    $ uvao_D4_sl_genda_tale = False
+# Флаг обеда с Леной 
+    $ uvao_D4_lunch_un = False
+# Флаг обеда со Славей
+    $ uvao_D4_lunch_sl = False
+#
     jump scenario_uvao_root_D4
    
    
