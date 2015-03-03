@@ -1,6 +1,6 @@
 ﻿#День4 Утро - Уборка гирлянд
 #
-label uvao_D4_garlands_removal:
+label uvao_D4_garlands_removal_debug:
 # Д4-Утро-Уборка гирлянд
 #
 # <убрать следующий блок при склейке с предшествующей сценой
@@ -8,6 +8,7 @@ label uvao_D4_garlands_removal:
     window show
     show mt surprise panama pioneer close at center
 #>
+label uvao_D4_garlands_removal:
     me "Извините…"
     show mt normal panama pioneer with dissolve
     mt "О, Семён! Ты-то мне и нужен."
@@ -195,5 +196,6 @@ label uvao_D4_garlands_removal:
     "Пока я привыкал к свету, мимо меня проскользнул Эл и с деловым видом направился в сторону сцены."
     hide el with easeoutright
     "Я же решил не терять времени даром и таки заглянуть в библиотеку, к хранителю местных архивов, в надежде откопать побольше информации о мире, куда меня занесло."
+    jump uvao_D4_library
 #
-    return
+#    return

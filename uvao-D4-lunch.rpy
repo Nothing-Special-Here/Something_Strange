@@ -12,6 +12,7 @@ label uvao_uvao_D4_lunch:
     $ uvao_D4_lunch_un = False
     $ uvao_D4_lunch_sl = False
 #
+    $ alt_chapter(4, u"Юля. Обед")
     $ persistent.sprite_time = "day"
     play ambience ambience_dining_hall_full fadein 3
     scene bg int_dining_hall_people_day with fade
@@ -265,4 +266,6 @@ label uvao_uvao_D4_lunch:
     stop ambience fadeout 5
     window hide
 
-    return
+    jump uvao_D4_meet_Yulia_after_lunch
+
+#    return

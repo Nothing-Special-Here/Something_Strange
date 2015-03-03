@@ -154,7 +154,9 @@ label uvao_D4_library:
     play sound sfx_stomach_growl
     "Спрятав книгу под подушку и стряхнув пыль знаний со штанов, я направился в столовую. "
 
+    scene black with dissolve
     stop music fadeout 3
     window hide
-
-    return
+    
+    jump uvao_uvao_D4_lunch
+#    return

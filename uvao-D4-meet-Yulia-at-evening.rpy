@@ -72,4 +72,4 @@ label uvao_D4_meet_Yulia_at_evening:
     stop ambience fadeout 5
     window hide
 
-    return
+#    return

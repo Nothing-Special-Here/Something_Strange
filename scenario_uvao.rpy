@@ -31,41 +31,32 @@ label scenario_uvao_root_D4:
     menu:
         "Отладка: Встреча Юли в д3":
             call alt_day3_meet_uvao
+        "Прохождение Д4 по порядку":
+            jump alt_day4_start_uvao
+#        "Отладка: Утро от пробуждения по завтрак":
+#            jump alt_day4_start_uvao
+        "Отладка: Уборка гирлянд":
+            jump uvao_D4_garlands_removal_debug
+        "Отладка: Посещение библиотеки":
+            jump uvao_D4_library
         "Отладка: Сразу Д4-Обед":
-            call uvao_uvao_D4_lunch
+            jump uvao_uvao_D4_lunch
         "Отладка: Сразу Д4-встреча с Юлей после обеда без концерта":
             $ uvao_D4_concert = False
-            call uvao_D4_meet_Yulia_after_lunch
+            jump uvao_D4_meet_Yulia_after_lunch
         "Отладка: Сразу Д4-встреча с Юлей после концерта (обедали со Славей)":
             $ uvao_D4_concert = True
             $ uvao_D4_lunch_un = False
             $ uvao_D4_lunch_sl = True
-            call uvao_D4_meet_Yulia_after_lunch
+            jump uvao_D4_meet_Yulia_after_lunch
         "Отладка: Сразу Д4-встреча с Юлей после концерта (обедали с Леной)":
             $ uvao_D4_concert = True
             $ uvao_D4_lunch_un = True
             $ uvao_D4_lunch_sl = False
-            call uvao_D4_meet_Yulia_after_lunch
+            jump uvao_D4_meet_Yulia_after_lunch
         "Отладка: Сразу Д4-встреча с Юлей после ужина":
-            call uvao_D4_meet_Yulia_at_evening
-        "Отладка: Утро от пробуждения по завтрак":
-            jump alt_day4_start_uvao
-        "Отладка: Уборка гирлянд":
-            call uvao_D4_garlands_removal
-        "Отладка: Посещение библиотеки":
-            call uvao_D4_library
-#        "Прохождение Д4 по порядку":
-#            $ alt_chapter(4, u"Обед")
-#            call uvao_uvao_D4_lunch
-#
-#            if uvao_D4_concert:
-#                $ alt_chapter(4, u"Концерт после обеда")
-#                th "Ой, концерт забыли!"
-#                th "И Юлю я не встретил...!"
-#            else:
-#                $ alt_chapter(4, u"После обеда без концерта")
-#                call uvao_D4_meet_Yulia_after_lunch
-#
+            jump uvao_D4_meet_Yulia_at_evening
     $ renpy.pause (1)
-    scene black with fade2
-    return
+    jump scenario_uvao_root_D4
+#    scene black with fade2
+#    return

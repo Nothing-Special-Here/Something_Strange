@@ -212,5 +212,6 @@ label uvao_D4_meet_Yulia_after_lunch:
     "Недовольно буркнула Шиза, но всё-таки заткнулась."
     stop music fadeout 3
     window hide
+    jump uvao_uvao_D4_supper
 
-    return
+#    return
