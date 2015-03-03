@@ -25,6 +25,11 @@ label scenario_uvao:
 # Флаг ужина с Виолой uvao_D4_supper_cs
     $ uvao_D4_supper_cs = False
 #
+# приходит из Д1
+    $keys_keep = True
+    $keys_take = 1
+    $dv_help = True
+#
     jump scenario_uvao_root_D4
    
    
@@ -64,7 +69,11 @@ label scenario_uvao_root_D4:
             jump uvao_uvao_D4_supper
         "Отладка: Сразу Д4-встреча с Юлей после ужина":
             jump uvao_D4_meet_Yulia_at_evening
-        "Отладка: Сразу Д4-хождения перед сном":
+        "Отладка: Сразу Д4-хождения перед сном после ужина с Виолой":
+            $ uvao_D4_supper_cs = True
+            jump uvao_D4_evening_business
+        "Отладка: Сразу Д4-хождения перед сном после ужина без Виолы":
+            $ uvao_D4_supper_cs = False
             jump uvao_D4_evening_business
     $ renpy.pause (1)
     jump scenario_uvao_root_D4
