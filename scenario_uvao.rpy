@@ -54,6 +54,8 @@ label scenario_uvao_root_D4:
             $ uvao_D4_lunch_un = True
             $ uvao_D4_lunch_sl = False
             jump uvao_D4_meet_Yulia_after_lunch
+        "Отладка: Сразу Д4-ужин с Виолой":
+            jump uvao_uvao_D4_supper
         "Отладка: Сразу Д4-встреча с Юлей после ужина":
             jump uvao_D4_meet_Yulia_at_evening
     $ renpy.pause (1)
