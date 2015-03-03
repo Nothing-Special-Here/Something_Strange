@@ -2,11 +2,13 @@
 #
 label uvao_D4_meet_Yulia_at_evening:
     $ persistent.sprite_time = "sunset"
-    scene bg ext_square_sunset
+    scene bg ext_dining_hall_away_sunset with fade
     play ambience ambience_camp_center_evening fadein 1
     window show
-
     "К воротам лагеря я шёл целеустремлённой походкой, не глядя по сторонам и постаравшись изобразить на лице чувство ответственности за выполнение очень важного дела, которое мне, несомненно, поручили."
+    window hide
+    scene bg ext_square_sunset with fade
+    window show
     "В итоге, до ворот я добрался без помех - то ли проявились дремавшие раньше способности к лицедейству, то ли до меня попросту не было никому дела."
     stop ambience fadeout 1
     window hide
