@@ -26,22 +26,19 @@ label scenario_uvao:
     $ uvao_D4_supper_cs = False
 #
 # приходит из Д1
-    $keys_keep = True
-    $keys_take = 1
-    $dv_help = True
+    $ keys_keep = True
+    $ keys_take = 1
+    $ dv_help = 1
 #
     jump scenario_uvao_root_D4
    
-   
 label scenario_uvao_root_D4:
-#
+
     menu:
         "Отладка: Встреча Юли в д3":
             call alt_day3_meet_uvao
         "Прохождение Д4 по порядку":
             jump alt_day4_start_uvao
-#        "Отладка: Утро от пробуждения по завтрак":
-#            jump alt_day4_start_uvao
         "Отладка: Уборка гирлянд":
             jump uvao_D4_garlands_removal_debug
         "Отладка: Посещение библиотеки":
@@ -64,15 +61,15 @@ label scenario_uvao_root_D4:
         "Отладка: Сразу Д4-ужин с Виолой (на выбор)":
             $ alt_day4_uv_viola_morning = True
             jump uvao_uvao_D4_supper
-        "Отладка: Сразу Д4-ужин 100% без Виолы":
+        "Отладка: Сразу Д4-ужин без Виолы":
             $ alt_day4_uv_viola_morning = False
             jump uvao_uvao_D4_supper
         "Отладка: Сразу Д4-встреча с Юлей после ужина":
             jump uvao_D4_meet_Yulia_at_evening
-        "Отладка: Сразу Д4-хождения перед сном после ужина с Виолой":
+        "Отладка: Сразу Д4-после ужина с Виолой":
             $ uvao_D4_supper_cs = True
             jump uvao_D4_evening_business
-        "Отладка: Сразу Д4-хождения перед сном после ужина без Виолы":
+        "Отладка: Сразу Д4-после ужина без Виолы":
             $ uvao_D4_supper_cs = False
             jump uvao_D4_evening_business
     $ renpy.pause (1)
