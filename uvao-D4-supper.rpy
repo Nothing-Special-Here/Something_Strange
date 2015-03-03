@@ -77,7 +77,7 @@ label uvao_uvao_D4_supper:
     cs "Только хочу сразу предупредить насчёт {i}чересчур{/i} близких контактов — тут тебе изделие №2 не поможет."
     "Я снова покраснел."
     me "Да я и не думал даже!"
-    show cs shy close with dspr
+    show cs grin close with dspr
     cs "Ну-ну. Смотри, тут ты не котятами обзавестись рискуешь. Понимаешь меня, {i}пионер{/i}?"
     me "Угу."
     show cs normal close with dspr
