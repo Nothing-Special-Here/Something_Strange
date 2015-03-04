@@ -178,7 +178,7 @@ label uvao_D4_sleep_time:
     if not uvao_D4_supper_cs:
         "Сгрузив припасы в рюкзак, я разделся и занырнул под одеяло."
     else:
-        pass
+        "Я быстро разделся и занырнул под одеяло."
     th "Завтра рано вставать. Лучше даже до завтрака."
 #    if not uvao_D4_supper_cs:
     if not alt_day4_uv_viola_evening:
