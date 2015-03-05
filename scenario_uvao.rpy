@@ -13,18 +13,7 @@ init:
 label scenario_uvao_demo:
     $ make_names_known()
     $ set_mode_adv()
-#
-# Флаг посещения медпункта
-    $ alt_day4_uv_viola_morning = False
-# Флаг попадания с обеда на концерт
-    $ uvao_D4_concert = False
-# Флаг обеда с Леной 
-    $ uvao_D4_lunch_un = False
-# Флаг обеда со Славей
-    $ uvao_D4_lunch_sl = False
-# Флаг ужина с Виолой uvao_D4_supper_cs
-    $ uvao_D4_supper_cs = False
-#
+
 # приходит из Д1
     $ keys_keep = True
     $ keys_take = 1
@@ -33,14 +22,42 @@ label scenario_uvao_demo:
 # приходит из Пролога ("пойду за тобой")
     $ alt_prologue = True
 #
-    jump scenario_uvao_root_D4_demo
    
 label scenario_uvao_root_D4_demo:
+    scene anim prolog_1 
+    with fade3
+    window show
+    show uvao_d1 at left 
+    dreamgirl "Ты пойдёшь со мной?"
+    menu:
+        "Пойду, милая.":
+            $ alt_prologue = True
+        "Нет, я останусь здесь":
+            $ alt_prologue = False
+
+    dreamgirl "А ключи брать будем?"
+    menu:
+        "Возьму":
+            $ keys_keep = True
+            $ keys_take = 1     
+            dreamgirl "Может, еще Алисе поможем?"
+            menu:
+                "Поможем":
+                    $ dv_help = 1
+                "Не-а":
+                    $ dv_help = 0
+        "Обойдусь без ключей":
+            $ keys_keep = False
+            $ keys_take = 0  
+            
+    hide uvao_d1
 
     menu:
         "Прохождение Д4 по порядку":
             jump alt_day4_start_uvao
     $ renpy.pause (1)
+    
+    dreamgirl "А теперь еще раз!"
     jump scenario_uvao_root_D4_demo
 #    scene black with fade2
 #    return
