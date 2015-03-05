@@ -29,19 +29,7 @@
  
          "Бежать на спортплощадку!":
              window show
-@@ -2119,11 +2126,11 @@
-             me "Дело сделано."
-             "Помогать ей я не хочу, но и подставлять не желаю. Пусть будет так."
-     window hide
-     with fade
- 
--    window show
-+    window show
-     "И отступил назад — со стороны тропинки уже слышались шаги, там шла Славя. "
-     "Она выглядела взволнованной."
-     show sl normal pioneer at center   with dissolve
- 
-     stop ambience fadeout 2
+
 @@ -2531,10 +2538,28 @@
                      show un normal pioneer at center   with dspr
                      "Лена пожала плечами, вопросительно глядя на меня."
