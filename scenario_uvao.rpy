@@ -30,6 +30,9 @@ label scenario_uvao_demo:
     $ keys_take = 1
     $ dv_help = 1
 #
+# приходит из Пролога ("пойду за тобой")
+    $ alt_prologue = True
+#
     jump scenario_uvao_root_D4_demo
    
 label scenario_uvao_root_D4_demo:

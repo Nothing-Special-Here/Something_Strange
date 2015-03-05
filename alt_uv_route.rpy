@@ -278,7 +278,7 @@ label uvao_D4_garlands_removal:
     "Я постучал и дернул было ручку, но дверь оказалась заперта."
     th "Где это Электроника носит? Шурика, что ли, навещает?{w} Ладно, подожду его тут."
     show us grin sport far with dissolve:
-        xalign 0.99 yalign 0.99 zoom 0.7
+        xalign 0.999 yalign 0.999 zoom 0.7
     "Объявился тот спустя двадцать минут, я же за это время успел заметить в кустах рыжую шевелюру местной «охотницы на жуков»."
     "Сейчас мне было ужасно жаль того, кому Ульяна захочет похвастаться своей коллекцией."
     hide us with dissolve
@@ -886,7 +886,7 @@ label uvao_D4_meet_Yulia_after_lunch:
 #
     $ persistent.sprite_time = "day"
     scene black with dissolve
-    $ renpy.pause(1)
+    $ renpy.pause(2)
     play sound sfx_open_door_2
     play ambience ambience_int_cabin_day fadein 1
     scene bg int_house_of_mt_noitem_day with dissolve
@@ -982,7 +982,7 @@ label uvao_D4_meet_Yulia_after_lunch:
         "Я встал с кровати… "
         stop music fadeout 1
         play sound2 sfx_bodyfall_1
-        extend "и забытый учебник плюхнулся на досчатый пол!"
+        extend "и забытый учебник плюхнулся на дощатый пол!"
         dreamgirl "Самое главное - все делать тихо, ага. Ты б еще в барабан ударил."
         "Торопясь, чтобы рыжая бестия не успела смыться, я высунулся в окно."
     else:
@@ -1314,7 +1314,7 @@ label uvao_D4_meet_Yulia_at_evening:
     uv "У тебя с собой больше ничего нет?"
     "Я улыбнулся."
     if uvao_D4_supper_cs:
-        me "А вот есть!."
+        me "А вот есть!"
         "Острые зубки вонзились во вторую булочку."
         me "А кстати, ты конфеты любишь?"
     else:
