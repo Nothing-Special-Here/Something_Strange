@@ -75,6 +75,35 @@ label scenario_uvao_root_D4_debug:
         "Отладка: Сразу Д4-после ужина без Виолы":
             $ uvao_D4_supper_cs = False
             jump uvao_D4_evening_business
+        "Картинки при смене глав":
+            label scenario_uvao_chapters:
+                menu:
+                    "До первой встречи":
+                        $ routetag = "uv_unknown"
+                        $ alt_chapter(0, "До первой встречи")
+                        jump scenario_uvao_chapters
+                    "После знакомства":
+                        $ routetag = "uv"
+                        $ alt_chapter(0, "После знакомства")
+                        jump scenario_uvao_chapters
+                    "Выход на бэд":
+                        $ routetag = "uv_bad"
+                        $ alt_chapter(0, "Выход на бэд")
+                        jump scenario_uvao_chapters                    
+                    "Выход на фальш":
+                        $ routetag = "uv_false"
+                        $ alt_chapter(0, "Выход на фальш")
+                        jump scenario_uvao_chapters                    
+                    "Выход на тру":
+                        $ routetag = "uv_true"
+                        $ alt_chapter(0, "Выход на тру")
+                        jump scenario_uvao_chapters    
+                    "Для сравнения - Лена-бэд":
+                        $ routetag = "un7dlbad"
+                        $ alt_chapter(0, "Леночка плачет")
+                        jump scenario_uvao_chapters
+                    "Выход":
+                        pass
     $ renpy.pause (1)
     jump scenario_uvao_root_D4_debug
 #    scene black with fade2
