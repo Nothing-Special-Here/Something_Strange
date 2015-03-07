@@ -80,28 +80,28 @@ label scenario_uvao_root_D4_debug:
                 menu:
                     "До первой встречи":
                         $ routetag = "uv_unknown"
-                        $ alt_chapter(0, "До первой встречи")
+                        $ alt_chapter_uv(0, "До первой встречи")
                         jump scenario_uvao_chapters
                     "После знакомства":
                         $ routetag = "uv"
-                        $ alt_chapter(0, "После знакомства")
+                        $ alt_chapter_uv(0, "После знакомства")
                         jump scenario_uvao_chapters
                     "Выход на бэд":
                         $ routetag = "uv_bad"
-                        $ alt_chapter(0, "Выход на бэд")
+                        $ alt_chapter_uv(0, "Выход на бэд")
                         jump scenario_uvao_chapters                    
                     "Выход на фальш":
                         $ routetag = "uv_false"
-                        $ alt_chapter(0, "Выход на фальш")
+                        $ alt_chapter_uv(0, "Выход на фальш")
                         jump scenario_uvao_chapters                    
                     "Выход на тру":
                         $ routetag = "uv_true"
-                        $ alt_chapter(0, "Выход на тру")
+                        $ alt_chapter_uv(0, "Выход на тру")
                         jump scenario_uvao_chapters    
                     "Для сравнения - Лена-бэд":
                         $ routetag = "un7dlbad"
                         $ alt_chapter(0, "Леночка плачет")
-                        jump scenario_uvao_chapters
+                        jump scenario_uvao_chapters    
                     "Выход":
                         pass
     $ renpy.pause (1)

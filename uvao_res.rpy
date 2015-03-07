@@ -11,7 +11,14 @@
     
 init python:
     # Кусок кода для заставок по мере продвижения. надо вставить в alt_chapter автора
-    def alt_chapter_uv () :
+    def alt_chapter_uv (day_number, chapter_name) :
+        renpy.block_rollback()
+        renpy.scene()
+        renpy.show('bg ext_stand_2')
+        renpy.pause(1.0)
+        renpy.transition(dissolve)    
+    
+    
         if routetag == "uv_unknown": #Кошочку еще не знаем
             renpy.show("uv black silhouette", at_list=[left])
             renpy.transition(moveinleft)
@@ -32,3 +39,16 @@ init python:
             renpy.show("uv guilty", at_list=[left])
             renpy.transition(moveinleft)
             renpy.pause(2.0)
+            
+        dn = (u"7ДЛ:День %d") % (day_number)
+        sdn = (u"7ДЛ:День %d") % (day_number)
+        save_name = ((sdn) + (u" - ")) + (chapter_name)
+
+        renpy.show('day_num', what=Text(dn, style=style.alt_days,xcenter=0.5215,ycenter=0.35))
+        renpy.show('day_text', what=Text(chapter_name, style=style.alt_chapters,xcenter=0.5215,ycenter=0.45))
+
+        renpy.pause(3)
+        renpy.scene()
+        renpy.show('bg black')
+        renpy.transition(dissolve)
+        set_mode_adv()
