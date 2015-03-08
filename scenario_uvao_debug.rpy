@@ -75,6 +75,12 @@ label scenario_uvao_root_D4_debug:
         "Отладка: Сразу Д4-после ужина без Виолы":
             $ uvao_D4_supper_cs = False
             jump uvao_D4_evening_business
+        "Отладка: Сразу Д5-Подъём без доклада Виоле в Д4":
+            $ alt_day4_uv_viola_evening = False
+            jump alt_day5_getting_up
+        "Отладка: Сразу Д5-Подъём с докладом Виоле в Д4":
+            $ alt_day4_uv_viola_evening = True
+            jump alt_day5_getting_up
         "Картинки при смене глав":
             label scenario_uvao_chapters:
                 menu:
@@ -104,6 +110,12 @@ label scenario_uvao_root_D4_debug:
                         jump scenario_uvao_chapters    
                     "Выход":
                         pass
+
+
+
+
+
+
     $ renpy.pause (1)
     jump scenario_uvao_root_D4_debug
 #    scene black with fade2
