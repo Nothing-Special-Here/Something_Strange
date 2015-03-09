@@ -81,6 +81,8 @@ label scenario_uvao_root_D4_debug:
         "Отладка: Сразу Д5-Подъём с докладом Виоле в Д4":
             $ alt_day4_uv_viola_evening = True
             jump alt_day5_getting_up
+        "Отладка: В бункере":
+            jump alt_day5_uv_bunker
         "Картинки при смене глав":
             label scenario_uvao_chapters:
                 menu:
