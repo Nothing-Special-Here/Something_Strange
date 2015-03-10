@@ -1,10 +1,9 @@
 # Д5-Дорога в старый лагерь
 #
 #
-#label alt_day5_road_to_old_camp_debug:
 #    $ routetag = "uv"
 #    $ alt_chapter(5, u"Юля. Дорога в старый лагерь")
-label alt_day5_road_to_old_camp:
+label alt_day5_uvao_road_to_old_camp:
     window hide
     $ persistent.sprite_time = "sunset"
     $ sunset_time()

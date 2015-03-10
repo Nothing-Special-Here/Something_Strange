@@ -54,7 +54,7 @@ label scenario_uvao_root_D4_demo:
 
     menu:
         "Прохождение Д4 по порядку":
-            call alt_day4_start_uvao
+            call alt_day4_uvao_start
     $ renpy.pause (1)
     
     dreamgirl "А теперь еще раз!"

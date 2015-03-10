@@ -2,7 +2,7 @@
 #
 # используется флаг выхода на тру-энд alt_uvao_true
 #
-label alt_uvao_D5_lunch:
+label alt_day5_uvao_lunch:
     $ routetag = "uv"
     $ alt_chapter(5, u"Юля. Обед")
     $ persistent.sprite_time = "day"

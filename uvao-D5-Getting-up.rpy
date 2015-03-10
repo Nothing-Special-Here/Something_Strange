@@ -2,7 +2,7 @@
 #
 # используется флаг выхода на тру-энд alt_uvao_true
 #
-label alt_uvao_D5_getting_up:
+label alt_day5_uvao_getting_up:
     $ routetag = "uv"
     $ alt_chapter(5, u"Юля. Утро")
     $ persistent.sprite_time = "sunset"
@@ -112,4 +112,4 @@ label alt_uvao_D5_getting_up:
 #    play ambience ambience_forest_day fadein 3
 #    window show
 #    "Выйдя наружу и хозяйственно прикрыв за собой калитку, я решительно двинулся в сторону деревьев, подступавших здесь к самому забору."
-    jump alt_day5_road_to_old_camp
+    jump alt_day5_uvao_road_to_old_camp

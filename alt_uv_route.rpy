@@ -1,7 +1,7 @@
 init:
     $ alt_uvao_D4_viola_morning = False
     
-label alt_day4_start_uvao:
+label alt_day4_uvao_start:
     $ routetag = "uv_unknown"
     $ alt_chapter_uv(4, u"Утро")
     $ persistent.sprite_time = "sunset"
@@ -245,13 +245,13 @@ label alt_day4_uvao_breakfast:
     show mt surprise panama pioneer close at center with hpunch
     "Разговаривая с Шизой, я перестал следить за дорогой и буквально врезался в Ольгу Дмитриевну."
 #
-    jump uvao_D4_garlands_removal
+    jump alt_day4_uvao_garlands_removal
 
-label uvao_D4_garlands_removal_debug:
+label alt_day4_uvao_garlands_removal_debug:
 # Д4-Утро-Уборка гирлянд
 #
 
-label uvao_D4_garlands_removal:
+label alt_day4_uvao_garlands_removal:
     me "Извините…"
     show mt normal panama pioneer with dissolve
     mt "О, Семён! Ты-то мне и нужен."
@@ -483,10 +483,10 @@ label uvao_D4_garlands_removal:
     "Кряхтя, я поднялся и направился к хранителю местных архивов, в надежде откопать побольше информации о мире, куда меня занесло."
     stop ambience fadeout 1
     window hide
-    jump uvao_D4_library
+    jump alt_day4_uvao_library
 #
 
-label uvao_D4_library:
+label alt_day4_uvao_library:
 #Д4 посещение библиотеки
 #
 #
@@ -665,19 +665,19 @@ label uvao_D4_library:
     stop music fadeout 3
     window hide
     
-    jump uvao_uvao_D4_lunch
+    jump alt_day4_uvao_lunch
 #
-label uvao_uvao_D4_lunch:
+label alt_day4_uvao_lunch:
 # Д4-обед
 #
 # используется флаг посещения медпункта alt_uvao_D4_viola_morning
-# устанавливает флаг ухода на концерт uvao_D4_concert #(временный для отладки)
-# устанавливает флаг обеда с  Леной  uvao_D4_lunch_un
-# устанавливает флаг обеда со Славей uvao_D4_lunch_sl
+# устанавливает флаг ухода на концерт alt_uvao_D4_concert #(временный для отладки)
+# устанавливает флаг обеда с  Леной  alt_uvao_D4_lunch_un
+# устанавливает флаг обеда со Славей alt_uvao_D4_lunch_sl
 #
-    $ uvao_D4_concert = False
-    $ uvao_D4_lunch_un = False
-    $ uvao_D4_lunch_sl = False
+    $ alt_uvao_D4_concert = False
+    $ alt_uvao_D4_lunch_un = False
+    $ alt_uvao_D4_lunch_sl = False
 #
     $ alt_chapter_uv(4, u"Обед")
     $ persistent.sprite_time = "day"
@@ -804,8 +804,8 @@ label uvao_uvao_D4_lunch:
             "Обречённо вздохнув, я поплёлся за Славей."
             hide sl with easeoutright
 #
-            $ uvao_D4_lunch_un = True
-            $ uvao_D4_concert = True
+            $ alt_uvao_D4_lunch_un = True
+            $ alt_uvao_D4_concert = True
 #
         "Сесть со Славей":
             show sl normal pioneer far at center with dissolve
@@ -917,8 +917,8 @@ label uvao_uvao_D4_lunch:
             hide sl with easeoutright
             "Стараясь не слишком показывать своё разочарование, я встал и поплёлся следом за Славей."
 #
-            $ uvao_D4_lunch_sl = True
-            $ uvao_D4_concert = True
+            $ alt_uvao_D4_lunch_sl = True
+            $ alt_uvao_D4_concert = True
 #
         "Сесть одному":
             "Идея болтать с пионерами об истории страны нравилась мне всё меньше и меньше. Только время зря терять!{w} Совсем не обязательно, что я смогу узнать хоть что-то полезное, а вот за сумасшедшего очень даже могут принять. Мало мне разговора с Леной насчёт Генды!"
@@ -929,14 +929,14 @@ label uvao_uvao_D4_lunch:
             "Очень хотелось поскорее добраться до домика и наконец-то заняться учебником истории."
             stop ambience fadeout 2
             window hide            
-            jump uvao_D4_meet_Yulia_after_lunch
+            jump alt_day4_uvao_meet_Yulia_after_lunch
     stop ambience fadeout 2
     window hide
 #
-label uvao_D4_meet_Yulia_after_lunch:
+label alt_day4_uvao_meet_Yulia_after_lunch:
 #Д4 встречаем Юлю после обеда
 #
-# используется флаг рассказа Слави про Генду за обедом uvao_D4_lunch_sl
+# используется флаг рассказа Слави про Генду за обедом alt_uvao_D4_lunch_sl
 #
     $ alt_chapter_uv(4, u"Идентификация")
     $ persistent.sprite_time = "day"
@@ -948,7 +948,7 @@ label uvao_D4_meet_Yulia_after_lunch:
     window show
 #Придя, Семён приоткрывает окно, потому что домик прогрелся на солнце и читать умные книжки жарко
     "Домик успел здорово прогреться на солнце, поэтому первым делом я открыл окно нараспашку."
-    if uvao_D4_concert:
+    if alt_uvao_D4_concert:
 # Ходили на концерт
         "В ушах до сих пор звенело от адской какофонии, которую мне приходилось терпеть последние полтора часа."
         th "И дался Славе этот концерт. Точнее я на нем."
@@ -991,7 +991,7 @@ label uvao_D4_meet_Yulia_after_lunch:
 #    "Наверное, прошло часа два, прежде чем я отложил учебник в сторону и тупо уставился в стену."
     "Не знаю, сколько прошло времени, прежде чем я отложил учебник в сторону и тупо уставился в стену."
     "Голова была готова взорваться."
-    if uvao_D4_lunch_sl:
+    if alt_uvao_D4_lunch_sl:
         "По всему выходило, что Славя за обедом мне всё очень точно изложила про этого самого Генду."
         "Из книги я не узнал почти ничего принципиально нового. Так, подробности."
     else:
@@ -1032,7 +1032,7 @@ label uvao_D4_meet_Yulia_after_lunch:
     window hide
     $ renpy.pause(1)
     window show
-    if uvao_D4_concert:
+    if alt_uvao_D4_concert:
 # Ходили на концерт
         dreamgirl "У нас завелись гости."
         th "Ага, и я даже догадываюсь, какие именно."
@@ -1098,7 +1098,7 @@ label uvao_D4_meet_Yulia_after_lunch:
     show uv normal with dspr
     "Она наконец моргнула и, похоже, немного расслабилась."
     dreamgirl "Ты смотри, она ещё и разговаривать умеет. Надо же!"
-    if uvao_D4_concert:
+    if alt_uvao_D4_concert:
         #не падали
         "Стараясь не делать резких движений, я облокотился на подоконник, попытавшись принять непринуждённую позу."
         me "Понимаешь, я услышал, что под окном кто-то ходит, и хотел посмотреть кто, но уронил книжку на пол."
@@ -1183,16 +1183,16 @@ label uvao_D4_meet_Yulia_after_lunch:
     "Недовольно буркнула Шиза, но всё-таки заткнулась."
     stop music fadeout 3
     window hide
-    jump uvao_uvao_D4_supper
+    jump alt_day4_uvao_supper
 #
-label uvao_uvao_D4_supper:
+label alt_day4_uvao_supper:
 # Д4-Ужин
 #
 # используется флаг посещения медпункта alt_uvao_D4_viola_morning
-# устанавливает флаг ужина с Виолой alt_uvao_D4_supper_cs
+# устанавливает флаг ужина с Виолой alt_alt_uvao_D4_supper_cs
 #
 
-    $ uvao_D4_supper_cs = False
+    $ alt_uvao_D4_supper_cs = False
     $ alt_chapter(4, u"Юля. Ужин")
     $ persistent.sprite_time = "sunset"
     $ sunset_time()
@@ -1305,7 +1305,7 @@ label uvao_uvao_D4_supper:
                 th "Всё равно, ещё немного разговоров в том же духе - и стены столовой придётся отмывать от моих мозгов."
                 th "Проколы между реальностями, понимаешь, аномалии… Визуализации…"
                 "Мне явно следовало взять паузу и привести содержимое головы в порядок."
-                $ uvao_D4_supper_cs = True
+                $ alt_uvao_D4_supper_cs = True
                 jump uvao_D4_supper_end
             "Сесть одному":
 #                "Очень СТРАШНО!"
@@ -1332,11 +1332,11 @@ label uvao_D4_supper_end:
     stop ambience fadeout 3
     window hide
 
-    jump uvao_D4_meet_Yulia_at_evening
+    jump alt_day4_uvao_meet_Yulia_at_evening
 #
 #День4 встречаем Юлю после ужина за воротами
 #
-label uvao_D4_meet_Yulia_at_evening:
+label alt_day4_uvao_meet_Yulia_at_evening:
     $ alt_chapter(4, u"Юля. Вечерние встречи")
     $ persistent.sprite_time = "sunset"
     scene bg ext_dining_hall_away_sunset with fade
@@ -1380,7 +1380,7 @@ label uvao_D4_meet_Yulia_at_evening:
     uv "Вкусно. Жалко только, что мало."
     uv "У тебя с собой больше ничего нет?"
     "Я улыбнулся."
-    if uvao_D4_supper_cs:
+    if alt_uvao_D4_supper_cs:
         me "А вот есть!"
         "Острые зубки вонзились во вторую булочку."
         me "А кстати, ты конфеты любишь?"
@@ -1403,7 +1403,7 @@ label uvao_D4_meet_Yulia_at_evening:
     "Вероятно, на моём лице отражалась некоторая заторможенность мыслительных процессов, потому что она снисходительно улыбнулась и добавила:"
     show uv smile close at center with dspr
     uv "Там большой старый дом, за лесом."
-    if uvao_D4_supper_cs:
+    if alt_uvao_D4_supper_cs:
         extend " По тропинке идти надо, тогда придешь."
         uv "Здесь в заборе калитка есть, она незаперта всегда. Вот от неё и иди по тропинке."
     me "А ког…"
@@ -1421,9 +1421,9 @@ label uvao_D4_meet_Yulia_at_evening:
     "Я с досадой махнул рукой и поплёлся обратно в лагерь."
     stop ambience fadeout 3
     window hide
-    jump uvao_D4_evening_business
+    jump alt_day4_uvao_evening_business
 #
-label uvao_D4_evening_business:
+label alt_day4_uvao_evening_business:
 #День4 Ходим по лагерю перед сном после второй встречи с Юлей
 #
 # устанавливает флаг вечернего визита к Виоле в медпункт и выхода на тру-энд alt_uvao_true
@@ -1439,7 +1439,7 @@ label uvao_D4_evening_business:
     th "Завтра с самого утра отправляюсь в старый лагерь, к Юле в гости."
     th "Надеюсь, не зря придётся ходить."
 
-    if (uvao_D4_supper_cs):
+    if (alt_uvao_D4_supper_cs):
         dreamgirl "Вообще-то тебя просили доложить о результатах переговоров."
         th "И то верно."
         menu:
@@ -1534,7 +1534,7 @@ label uvao_D4_evening_business:
                 "Я гордо расправил плечи и пошёл восвояси."
                 hide dv with dissolve
                 #плюшки не тырим
-                jump uvao_D4_sleep_time
+                jump alt_day4_uvao_sleep_time
             "Не пойду я к ней!":
                 th "…Но это не значит, что я собираюсь делать всё, что она мне скажет!"
                 th "Раскомандовалась! Видали мы таких!"
@@ -1626,7 +1626,7 @@ label uvao_D4_evening_business:
     "Я пожал плечами и пошёл к себе домой."
     
 # приходит в домик
-label uvao_D4_sleep_time:
+label alt_day4_uvao_sleep_time:
     window hide
     play sound sfx_open_dooor_campus_1
     stop ambience fadeout 1
