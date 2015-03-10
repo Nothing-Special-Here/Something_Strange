@@ -1,4 +1,4 @@
-label alt_uvao_D5_bunker:
+label alt_day5_uvao_bunker:
     $ routetag = "uv"
     $ alt_chapter(5, u"Юля. Бункер")
     $ persistent.sprite_time = "day"
@@ -90,16 +90,16 @@ label alt_uvao_D5_bunker:
     me "На что непохоже?"
     uv "На других зверей. Не как белки. Или мыши. Их тогда легко ловить."
     if alt_uvao_true:
-        jump alt_uvao_D5_evade_hentai_scene
+        jump alt_day5_uvao_evade_hentai_scene
     else:
         menu:
             "Сменить тему":
-                jump alt_uvao_D5_evade_hentai_scene
+                jump alt_day5_uvao_evade_hentai_scene
             "Узнать по подробней":
                 $ alt_uvao_D5_hentai = True
-                jump alt_uvao_D5_hentai_scene
+                jump alt_day5_uvao_hentai_scene
                 
-label alt_uvao_D5_evade_hentai_scene:
+label alt_day5_uvao_evade_hentai_scene:
     "Почему-то я решил не выдаваться в сравнительный анализ коитуса грызунов и людей."
     dreamgirl "Я же говорил, она тебе столько способов ловли мышей расскажет! Способ первый - дождись, пока папа-мышь с мамой-мышью захотят сделать мышат…"
     "Одно дело, когда у тебя в голове появляется посторонний голос - обычная шизофрения, ничего необычного. Но когда этот посторонний голос сам начинает сходить с ума…  Остаётся только вздохнуть."
@@ -177,13 +177,13 @@ label alt_uvao_D5_evade_hentai_scene:
         "Продолжить расспросы":
             $ alt_uvao_D5_sleep = True
             "Ему интересно, идём дальше. Ложный гуд. Флаг сна."
-            jump alt_uvao_D5_mines_begin
+            jump alt_day5_uvao_mines_begin
         "Задуматься":
             "Ему не интересно, забил. Идёт в шахты, никого не видит - обед. Нейтрал."
-            jump alt_uvao_D5_mines_begin
+            jump alt_day5_uvao_mines_begin
 
 #Хентай. После-хентайная развилка спать \ не спать тоже тут.
-label alt_uvao_D5_hentai_scene:
+label alt_day5_uvao_hentai_scene:
     me "Как же они это делали?"
     uv "Ну вот так. Сначала просто сидели."
     
@@ -431,10 +431,10 @@ label alt_uvao_D5_hentai_scene:
     "Плюнув на бессмысленное занятие, я отряхнул ладони от ржавчины и поправил так и не повязанный галстук."
     "Нога уже немного отошла, хоть и ныла периодически. Тем не менее, я был в состоянии продолжать путь на своих двоих."
     
-    jump alt_uvao_D5_mines_begin
+    jump alt_day5_uvao_mines_begin
 
 #Сама шахта, начиная от похода к ней.
-label alt_uvao_D5_mines_begin:
+label alt_day5_uvao_mines_begin:
     scene bg int_catacombs_entrance
     show uv smile at center with dspr
     
@@ -483,16 +483,16 @@ label alt_uvao_D5_mines_begin:
 
         "Я кого-то вижу в темноте, это Шурик."
         "Нужен хелп по тексту"
-        jump alt_uvao_D5_mines_sh
+        jump alt_day5_uvao_mines_sh
     else:
         uv "Направо."
         "Я покорно следовал за моим всевидящим спутником. Да и что мне оставалось, в темноте я всё-равно ничего не вижу."
         "Кроме своих указаний, в какую сторону идти, она ничего не говорила. Да и мне не очень то и хотелось начинать разговор, так что я просто плёлся, держась за её руку."
 
-        jump alt_uvao_D5_mines_dinner
+        jump alt_day5_uvao_mines_dinner
     
 
-label alt_uvao_D5_mines_sh:
+label alt_day5_uvao_mines_sh:
     scene bg int_mine_coalface with dspr
     show uv normal at center with dspr
 
@@ -500,7 +500,7 @@ label alt_uvao_D5_mines_sh:
     return
     
     
-label alt_uvao_D5_mines_dinner:
+label alt_day5_uvao_mines_dinner:
     scene bg int_mine_door
     show uv normal at center with dspr
     
