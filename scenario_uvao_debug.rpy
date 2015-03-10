@@ -88,7 +88,7 @@ label scenario_uvao_root_D4_debug:
                     $ alt_uvao_true = True
                     jump alt_day5_uvao_getting_up
                 "Отладка: Сразу Д5-В бункере":
-                    jump alt_uvao_D5_bunker
+                    jump alt_day5_uvao_bunker
                 "Отладка: Сразу Д5-Обед без доклада Виоле в Д4":
                     $ alt_uvao_true = False
                     jump alt_day5_uvao_lunch
