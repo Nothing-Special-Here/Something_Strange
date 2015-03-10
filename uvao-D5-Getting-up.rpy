@@ -1,8 +1,8 @@
 # Д5-подъём
 #
-# используется флаг вечернего доклада Виоле в Д4 alt_day4_uv_viola_evening
+# используется флаг выхода на тру-энд alt_uvao_true
 #
-label alt_day5_getting_up:
+label alt_uvao_D5_getting_up:
     $ routetag = "uv"
     $ alt_chapter(5, u"Юля. Утро")
     $ persistent.sprite_time = "sunset"
@@ -10,7 +10,7 @@ label alt_day5_getting_up:
     scene bg int_house_of_mt_sunset
     play ambience ambience_int_cabin_day fadein 4
     window show
-    if alt_day4_uv_viola_evening:
+    if alt_uvao_true:
         #Будит ОД
         mt "Семён! Семён!" with hpunch
         th "М-м-м…"

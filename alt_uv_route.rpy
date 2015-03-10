@@ -1,5 +1,5 @@
 init:
-    $ alt_day4_uv_viola_morning = False
+    $ alt_uvao_D4_viola_morning = False
     
 label alt_day4_start_uvao:
     $ routetag = "uv_unknown"
@@ -184,7 +184,7 @@ label alt_day4_uvao_aidpost: #беседуем с Виолой
     me "Не, там фигура… Не Алиса, короче."
     "В глазах Виолы блеснул интерес."
     cs "Знаешь, пионер… Ты смотри, если её еще где-нибудь заметишь – заходи, рассказывай, я буду {i}очень благодарна.{/i}"
-    $ alt_day4_uv_viola_morning = True
+    $ alt_uvao_D4_viola_morning = True
     "Последние слова в исполнении Виолы чисто автоматически трактовались весьма интересным, но несбыточным образом. В горле снова пересохло, но в этот раз я сумел перебороть себя."
     me "Надеюсь, благодарность будет выражена… {i}интересным образом.{/i}"
     dreamgirl "Так держать! Еще бы на полтона ниже – и звучало бы уже совсем намеком!"
@@ -670,7 +670,7 @@ label uvao_D4_library:
 label uvao_uvao_D4_lunch:
 # Д4-обед
 #
-# используется флаг посещения медпункта alt_day4_uv_viola_morning
+# используется флаг посещения медпункта alt_uvao_D4_viola_morning
 # устанавливает флаг ухода на концерт uvao_D4_concert #(временный для отладки)
 # устанавливает флаг обеда с  Леной  uvao_D4_lunch_un
 # устанавливает флаг обеда со Славей uvao_D4_lunch_sl
@@ -1188,8 +1188,8 @@ label uvao_D4_meet_Yulia_after_lunch:
 label uvao_uvao_D4_supper:
 # Д4-Ужин
 #
-# используется флаг посещения медпункта alt_day4_uv_viola_morning
-# устанавливает флаг ужина с Виолой uvao_D4_supper_cs
+# используется флаг посещения медпункта alt_uvao_D4_viola_morning
+# устанавливает флаг ужина с Виолой alt_uvao_D4_supper_cs
 #
 
     $ uvao_D4_supper_cs = False
@@ -1202,7 +1202,7 @@ label uvao_uvao_D4_supper:
     play ambience ambience_dining_hall_full fadein 3
     window show
     "Войдя в столовую я огляделся."
-    if alt_day4_uv_viola_morning and alt_prologue:
+    if alt_uvao_D4_viola_morning and alt_prologue:
 # Утром были у Виолыи в прологе выбрали "Я пойду с тобой", можем поужинать вместе
         "Свободных мест практически не было. Впрочем, за одним из столиков их было сразу три."
         "Четвёртое занимала Виолетта."
@@ -1426,9 +1426,9 @@ label uvao_D4_meet_Yulia_at_evening:
 label uvao_D4_evening_business:
 #День4 Ходим по лагерю перед сном после второй встречи с Юлей
 #
-# устанавливает флаг вечернего визита к Виоле в медпункт alt_day4_uv_viola_evening
+# устанавливает флаг вечернего визита к Виоле в медпункт и выхода на тру-энд alt_uvao_true
 #
-    $ alt_day4_uv_viola_evening = False
+    $ alt_uvao_true = False
     $ persistent.sprite_time = "sunset"
     scene bg ext_square_sunset with fade
     play ambience ambience_camp_center_evening fadein 1
@@ -1507,7 +1507,7 @@ label uvao_D4_evening_business:
                 "Она практически выставила меня за дверь."
                 hide cs with dissolve
                 $ renpy.music.set_volume(1, delay=0, channel='music')
-                $ alt_day4_uv_viola_evening = True
+                $ alt_uvao_true = True
                 window hide
                 play sound sfx_close_door_1
                 $ night_time()
@@ -1634,13 +1634,12 @@ label uvao_D4_sleep_time:
     play ambience ambience_int_cabin_night fadein 1
     window show
     "Ольги Дмитриевны в домике не было.{w} И хорошо."
-    if not uvao_D4_supper_cs:
+    if not alt_uvao_true:
         "Сгрузив припасы в рюкзак, я разделся и занырнул под одеяло."
     else:
         "Я быстро разделся и занырнул под одеяло."
     th "Завтра рано вставать. Лучше даже до завтрака."
-#    if not uvao_D4_supper_cs:
-    if not alt_day4_uv_viola_evening:
+    if not alt_uvao_true:
         "Я выставил будильник на телефоне на 6:45."
         "Подумав немного, отключил звук, поставив на вибро - чтобы не спалиться, если вдруг вожатая к этому времени не уйдёт."
         "Сунул телефон под тощую подушку и закрыл глаза."

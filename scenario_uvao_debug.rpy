@@ -15,15 +15,15 @@ label scenario_uvao_debug:
     $ set_mode_adv()
 #
 # Флаг посещения медпункта
-    $ alt_day4_uv_viola_morning = False
+    $ alt_uvao_D4_viola_morning = False
 # Флаг попадания с обеда на концерт
     $ uvao_D4_concert = False
 # Флаг обеда с Леной 
     $ uvao_D4_lunch_un = False
 # Флаг обеда со Славей
     $ uvao_D4_lunch_sl = False
-# Флаг ужина с Виолой uvao_D4_supper_cs
-    $ uvao_D4_supper_cs = False
+# Флаг выхода на тру-энд alt_uvao_true
+    $ alt_uvao_true = False
 #
 # приходит из Д1
     $ keys_keep = True
@@ -41,7 +41,7 @@ label scenario_uvao_root_D4_debug:
         "Отладка: Встреча Юли в д3":
             call alt_day3_meet_uvao
         "Прохождение Д4 по порядку":
-            jump alt_day4_start_uvao
+            jump alt_uvao_D4_start
         "Отладка Д4":
             menu:
                 "Отладка: Уборка гирлянд":
@@ -64,10 +64,10 @@ label scenario_uvao_root_D4_debug:
                     $ uvao_D4_lunch_sl = False
                     jump uvao_D4_meet_Yulia_after_lunch
                 "Отладка: Сразу Д4-ужин с Виолой (на выбор)":
-                    $ alt_day4_uv_viola_morning = True
+                    $ alt_uvao_D4_viola_morning = True
                     jump uvao_uvao_D4_supper
                 "Отладка: Сразу Д4-ужин без Виолы":
-                    $ alt_day4_uv_viola_morning = False
+                    $ alt_uvao_D4_viola_morning = False
                     jump uvao_uvao_D4_supper
                 "Отладка: Сразу Д4-встреча с Юлей после ужина":
                     jump uvao_D4_meet_Yulia_at_evening
@@ -82,18 +82,18 @@ label scenario_uvao_root_D4_debug:
         "Отладка Д5":
             menu:
                 "Отладка: Сразу Д5-Подъём без доклада Виоле в Д4":
-                    $ alt_day4_uv_viola_evening = False
+                    $ alt_uvao_true = False
                     jump alt_day5_getting_up
                 "Отладка: Сразу Д5-Подъём с докладом Виоле в Д4":
-                    $ alt_day4_uv_viola_evening = True
+                    $ alt_uvao_true = True
                     jump alt_day5_getting_up
                 "Отладка: Сразу Д5-В бункере":
                     jump alt_uvao_D5_bunker
                 "Отладка: Сразу Д5-Обед без доклада Виоле в Д4":
-                    $ alt_day4_uv_viola_evening = False
+                    $ alt_uvao_true = False
                     jump alt_day5_lunch
                 "Отладка: Сразу Д5-Обед с докладом Виоле в Д4":
-                    $ alt_day4_uv_viola_evening = True
+                    $ alt_uvao_true = True
                     jump alt_day5_lunch
                 "Назад":
                     jump scenario_uvao_root_D4_debug
