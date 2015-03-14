@@ -10,6 +10,9 @@
 #sprites
     image uv black silhouette = "scenario_uvao/images/uv_black.png"
     
+#sounds
+    $ phone_vibro = "scenario_uvao/images/sounds/vibration-smartphone.ogg"
+    
 init python:
     # Кусок кода для заставок по мере продвижения. надо вставить в alt_chapter автора
     def alt_chapter_uv (day_number, chapter_name) :
