@@ -6,6 +6,7 @@
 
 #cg
 #    image pioner_lib_hiding = "scenario_uvao/images/pioner_lib_hiding.jpg"
+    image uv_photo_city = "scenario_uvao/images/uv_photo_city.jpg"
 
 #sprites
     image uv black silhouette = "scenario_uvao/images/uv_black.png"
