@@ -1,6 +1,14 @@
 label alt_day5_uvao_bunker:
 # Д5 - Бункер. Начало.
 #
+# Используется флаг alt_uvao_true
+# Устанавливает флаг alt_uvao_D5_sleep, если мы спим в бункере (после хентая???)
+# Устанавливает флаг alt_uvao_D5_hentai, если крыли кошочку
+#
+#
+    alt_uvao_D5_sleep = False
+    alt_uvao_D5_hentai = False
+
     $ routetag = "uv"
     $ alt_chapter(5, u"Юля. Бункер")
     $ persistent.sprite_time = "night"
