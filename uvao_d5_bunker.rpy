@@ -1,4 +1,6 @@
 label alt_day5_uvao_bunker:
+# Д5 - Бункер. Начало.
+#
     $ routetag = "uv"
     $ alt_chapter(5, u"Юля. Бункер")
     $ persistent.sprite_time = "night"
@@ -165,6 +167,11 @@ label alt_day5_uvao_bunker:
                 jump alt_day5_uvao_hentai_scene
                 
 label alt_day5_uvao_evade_hentai_scene:
+# Д5 - Сваливаем от хентая.
+#
+# Используется флаг alt_uvao_true для фотографии
+# Устанавливает флаг alt_uvao_D5_sleep, если мы спим
+#
 #    "Почему-то я решил не выдаваться в сравнительный анализ коитуса грызунов и людей."
     "Почему-то я не был уверен, что хочу вдаваться в дальнейший сравнительный анализ коитуса грызунов и людей."
     dreamgirl "Кажется, тебе недвусмысленно предлагают перейти от болтовни к делу."
@@ -254,8 +261,9 @@ label alt_day5_uvao_evade_hentai_scene:
             "Задуматься":
                 jump alt_day5_uvao_thinking
     
-#Расспросы
 label alt_day5_uvao_asking:
+#Д5 - Расспросы Юли
+#
     # TODO: ТЕКСТ
     "Расспрашиваем. Ложный гуд."
     "Думаю, пора жрать."
@@ -263,8 +271,9 @@ label alt_day5_uvao_asking:
     "Идём на обед по низу!!!"
     jump alt_day5_uvao_mines_begin
 
-#Задумался
 label alt_day5_uvao_thinking:
+#Д5 - Задумался, разговор с Шизой.
+#
     # TODO: ТЕКСТ
     # Как вариант - это тот-же разговор с шизой, что и в хентае.
     "Задумался. Нейтрал-рут"
@@ -272,8 +281,11 @@ label alt_day5_uvao_thinking:
     "Идём на обед по низу!!!"
     jump alt_day5_uvao_mines_begin
 
-#Хентай. После-хентайная развилка спать \ не спать тоже тут.
 label alt_day5_uvao_hentai_scene:
+# Д5 - Сцена Хентая.
+#
+# Устанавливает флаг alt_uvao_D5_sleep, если мы спим.
+#
     me "Да-а-а? А потом?"
     uv "А потом уже вот так!"
     "Она вскочила и ловким, по-кошачьи гибким движением избавилась от платья, под которым не было больше ничего лишнего."
@@ -511,8 +523,11 @@ label alt_day5_uvao_hentai_scene:
     "Нога уже немного отошла, хоть и ныла периодически. Тем не менее, я был в состоянии продолжать путь на своих двоих."
     jump alt_day5_uvao_mines_begin
 
-#Сама шахта, начиная от похода к ней.
 label alt_day5_uvao_mines_begin:
+# Д5 - Шахты.
+#
+# Используется флаг alt_uvao_D5_sleep. Если спали - видим Шурика в шахтах.
+#
     window hide
     scene bg int_catacombs_entrance
     show uv smile at center 
@@ -614,8 +629,9 @@ label alt_day5_uvao_mines_begin:
         "Кроме своих указаний, в какую сторону идти, она ничего не говорила. Да и мне не очень то и хотелось начинать разговор, так что я просто плёлся, держась за её руку."
         jump alt_day5_uvao_from_mines_to_dinner
 
-#Находим в шахтах Шурика
 label alt_day5_uvao_mines_sh:
+# Д5 - Шахты. Развилка с Шуриком.
+#
     "Она шла быстрее, чем обычно, словно предчувствуя какую-то беду."
     window hide
     scene bg int_mine_coalface
@@ -644,15 +660,16 @@ label alt_day5_uvao_mines_sh:
     return
     #jump событие_с_отрядом
 
-#Идём на обед.    
 label alt_day5_uvao_from_mines_to_dinner:
+# Д5 - Идём на обед после шахт.
+#
     window hide
     scene bg int_mine_door
     show uv normal at center
     with dissolve
     window show
     uv "Пришли."
-    hive uv with dissolve
+    hide uv with dissolve
     "Она отпустила мою руку."
     "Пока мы ходили в полной темноте - я уже начал чувствовать себя слепым."
     "Как вдруг я вспомнил."
@@ -727,8 +744,9 @@ label alt_day5_uvao_from_mines_to_dinner:
     "Я старался придать голосу небрежность, но как мне показалось, получилось не особо удачно. Оставив недоумевающую Лену на площади, я побежал в столовую, попутно отряхивая пыльные шорты и рубашку."
     jump alt_day5_uvao_lunch
 
-#Идём на обед через верх
 label alt_day5_uvao_true_back:
+# Д5 - Поход наверх. Тру рут.
+#
     "Начать на выходе из бункера."
     "Возвращаемся по верху!!!"
     return
