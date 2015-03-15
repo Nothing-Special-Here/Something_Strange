@@ -1432,7 +1432,7 @@ label alt_day4_uvao_evening_business:
     th "Надеюсь, не зря придётся ходить."
 #
     if (alt_uvao_D4_supper_cs):
-		# ужинали Виолу
+        # ужинали Виолу
         dreamgirl "Вообще-то тебя просили доложить о результатах переговоров."
         th "И то верно."
         "Я поднялся, пересек площадь и свернул на дорожку к медпункту. Алиса, сидевшая с гитарой на отдаленной скамейке, проводила меня странным взглядом. "
@@ -1526,13 +1526,13 @@ label alt_day4_uvao_evening_business:
         hide dv with dissolve
         #плюшки не тырим
     else:
-		# НЕ ужинали Виолу
+        # НЕ ужинали Виолу
         "Вечерняя площадь была безлюдной - видимо, после родительского дня большинство пионеров собиралось лечь спать пораньше."
         "Мне спать пока не хотелось, я сидел и наслаждался тихим вечером."
         "Незаметно стемнело."
         window hide
         $ persistent.sprite_time = "night"
-        scene bg ext_square_night with dissolve
+        scene bg ext_square_night with dissolve2
         play ambience ambience_camp_center_night fadein 2
         window show
         "Я решил пройтись туда-сюда перед сном, и в итоге вырулил к столовой."
