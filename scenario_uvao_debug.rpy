@@ -102,6 +102,12 @@ label scenario_uvao_root_D4_debug:
                 "Отладка: Сразу Д5-Обед с докладом Виоле в Д4":
                     $ alt_uvao_true = True
                     jump alt_day5_uvao_lunch
+                "Отладка: Сразу Д5-Совместная охота на дикого Шурика not-uvao_true":
+                    $ alt_uvao_true = False
+                    jump alt_day5_capture_sh_together_debug
+                "Отладка: Сразу Д5-Совместная охота на дикого Шурика uvao_true":
+                    $ alt_uvao_true = True
+                    jump alt_day5_capture_sh_together_debug
                 "Назад":
                     jump scenario_uvao_root_D4_debug
         "Картинки при смене глав":
@@ -141,5 +147,15 @@ label scenario_uvao_root_D4_debug:
 
     $ renpy.pause (1)
     jump scenario_uvao_root_D4_debug
+
+label alt_day5_capture_sh_together_debug:
+    menu:
+        "Обедали в Д4 с Леной":
+            $ alt_uvao_D4_lunch_un = True
+            jump alt_day5_capture_sh_together
+        "Не обедали в Д4 с Леной":
+            $ alt_uvao_D4_lunch_un = False
+            jump alt_day5_capture_sh_together
+
 #    scene black with fade2
 #    return
