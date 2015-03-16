@@ -137,9 +137,47 @@ label scenario_uvao_root_D4_debug:
                         $ routetag = "un7dlbad"
                         $ alt_chapter(0, "Леночка плачет")
                         jump scenario_uvao_chapters    
-                    "Выход":
-                        pass
-
+                    "Назад":
+                        jump scenario_uvao_root_D4_debug
+        "Отладка спрайтов":
+            label scenario_uvao_sprites:
+                menu:
+                    "Электроник с плюхой":
+                        label scenario_uvao_sprites_el_slap:
+                        menu:
+                            "far":
+                                show el pioneer slap far
+                                "..."
+                                jump scenario_uvao_sprites_el_slap
+                            "normal":
+                                show el pioneer slap
+                                "..."
+                                jump scenario_uvao_sprites_el_slap
+                            "close":
+                                show el pioneer slap close
+                                "..."
+                                jump scenario_uvao_sprites_el_slap
+                            "Назад":
+                                hide el
+                                jump scenario_uvao_sprites
+                    "Шурик с дубиной":
+                        label scenario_uvao_sprites_sh_bar:
+                        menu:
+                            "far":
+                                show sh angry bar far
+                                "..."
+                                jump scenario_uvao_sprites_sh_bar
+                            "normal":
+                                show sh angry bar
+                                "..."
+                                jump scenario_uvao_sprites_sh_bar
+                            "close":
+                                show sh angry bar close
+                                #"..."
+                                jump scenario_uvao_sprites_sh_bar
+                            "Назад":
+                                hide sh
+                                jump scenario_uvao_sprites
 
 
 
