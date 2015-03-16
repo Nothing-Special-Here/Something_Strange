@@ -2,7 +2,7 @@ label alt_day5_uvao_bunker:
 # Д5 - Бункер. Начало.
 #
 # Используется флаг alt_uvao_true
-# Устанавливает флаг alt_uvao_D5_sleep, если мы спим в бункере (после хентая???)
+# Устанавливает флаг alt_uvao_D5_sh_mines. Видим Шурика в шахтах.
 # Устанавливает флаг alt_uvao_D5_hentai, если крыли кошочку
 #
 #   Все флаги стоят в дебаге, так что тут не нужны.
@@ -177,7 +177,7 @@ label alt_day5_uvao_evade_hentai_scene:
 # Д5 - Сваливаем от хентая.
 #
 # Используется флаг alt_uvao_true для фотографии
-# Устанавливает флаг alt_uvao_D5_sleep, если мы спим
+# Устанавливает флаг alt_uvao_D5_sh_mines, если мы спим
 #
 #    "Почему-то я решил не выдаваться в сравнительный анализ коитуса грызунов и людей."
     "Почему-то я не был уверен, что хочу вдаваться в дальнейший сравнительный анализ коитуса грызунов и людей."
@@ -227,9 +227,9 @@ label alt_day5_uvao_evade_hentai_scene:
         window show
         "Вспышка, Юля подскочила от неожиданности, а я скорее полез в телефон посмотреть снимок."
         window hide
-        scene cg uv_photo_city with dissolve
+        scene uv_photo_city with dissolve
         $ renpy.pause(2, hard=True)
-        scene bg int_catacombs_living
+        scene bg int_catacombs_living with dissolve
         show uv surprise2 at center with dissolve
         window show
         "…"
@@ -268,7 +268,7 @@ label alt_day5_uvao_evade_hentai_scene:
         #"О, фонарик! Пригодится, если придётся ещё блуждать по подземельям."
         menu:
             "Продолжить расспросы":
-                $ alt_uvao_D5_sleep = True
+                $ alt_uvao_D5_sh_mines = True
                 jump alt_day5_uvao_asking
             "Задуматься":
                 jump alt_day5_uvao_thinking
@@ -296,7 +296,7 @@ label alt_day5_uvao_thinking:
 label alt_day5_uvao_hentai_scene:
 # Д5 - Сцена Хентая.
 #
-# Устанавливает флаг alt_uvao_D5_sleep, если мы спим.
+# Устанавливает флаг alt_uvao_D5_sh_mines, если мы спим.
 #
     me "Да-а-а? А потом?"
     uv "А потом уже вот так!"
@@ -356,7 +356,7 @@ label alt_day5_uvao_hentai_scene:
     dreamgirl "Видел бы ты себя со стороны, кошачий угодник."
     menu:
         "Проигнорировать":
-            $ alt_uvao_D5_sleep = True
+            $ alt_uvao_D5_sh_mines = True
             "Сил не было даже на мысленную пикировку с внутренним голосом, так что я просто проигнорировал его выпад."
             "Продолжая почёсывать Юлю за ухом, я незаметно провалился в сон."
             "…"
@@ -542,7 +542,7 @@ label alt_day5_uvao_hentai_scene:
 label alt_day5_uvao_mines_begin:
 # Д5 - Шахты.
 #
-# Используется флаг alt_uvao_D5_sleep. Если спали - видим Шурика в шахтах.
+# Используется флаг alt_uvao_D5_sh_mines. Если спали - видим Шурика в шахтах.
 #
     window hide
     scene bg int_catacombs_entrance
@@ -621,7 +621,7 @@ label alt_day5_uvao_mines_begin:
     show uv normal at center
     with dissolve
     window show
-    if alt_uvao_D5_sleep:
+    if alt_uvao_D5_sh_mines:
         uv "Стой!"
         "Вдруг резко сказала Юля."
         "Я застыл столбом в ожидании следующих приказаний."

@@ -24,8 +24,8 @@ label scenario_uvao_debug:
     $ alt_uvao_D4_lunch_sl = False
 # Флаг хентая в бункере
     $ alt_uvao_D5_hentai = False
-# Флаг сна в бункере. Если "True" то видим шурика в шахтах.
-    $ alt_uvao_D5_sleep = False
+# Флаг "нахождения" Шурика в шахтах
+    $ alt_uvao_D5_sh_mines = False
 # Флаг выхода на тру-энд alt_uvao_true
     $ alt_uvao_true = False
 #
