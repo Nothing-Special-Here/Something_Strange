@@ -88,7 +88,7 @@ label alt_day5_uvao_road_to_old_camp:
     me "А что ты высматриваешь? Там кто-то есть?"
     uv "Показалось. Никого нету."
     "Она повернулась ко мне и потянула носом."
-    show uv smile at center with dissolve.
+    show uv smile at center with dissolve
     uv "Булочки! Вкусно пахнут."
     me "А… да. Будешь?"
     uv "Давай одну."
