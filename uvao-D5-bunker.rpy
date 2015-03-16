@@ -14,7 +14,7 @@ label alt_day5_uvao_bunker:
     $ day_time()
    
     window hide
-    scene bg int_catacombs_entrance
+    scene bg int_catacombs_entrance with fade
     play ambience ambience_catacombs fadein 3
     with dissolve
     window show
