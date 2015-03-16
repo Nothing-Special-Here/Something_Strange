@@ -42,7 +42,7 @@ label alt_day5_capture_sh_together:
     me "Э-э-э… Ну да, ясно…"
     "Я наконец-то вышел из ступора и поспешно подвинулся, освобождая на скамейке место:"
     me "Садись, подождём вместе.{w} Если ты не против, конечно…"
-    show un normal pioneer close at right with dissolve
+    show un normal pioneer close at fleft with dissolve2
     "Я не удивился бы, окажись Лена очень даже против, но она неожиданно спокойно кивнула и присела на краешек скамейки."
     th "Ну конечно, кого ещё припахать в поисковую партию?{w} Правильно - того, кто не сумеет отвертеться!"
     if alt_uvao_D4_lunch_un:
@@ -65,13 +65,14 @@ label alt_day5_capture_sh_together:
     stop music fadeout 7
     show mt normal panama pioneer far with dissolve
     mt "Ага, вы уже здесь, это хорошо!"
-    show mt rage panama pioneer with dissolve
+    show mt angry panama pioneer
+    show un normal pioneer close
+    with dissolve
     extend " А где Сыроежкин? Его почему нет?!"
-    show un normal pioneer close with dspr
     "Не могу сказать, что я так уж рад был видеть Ольгу Дмитриевну, а слышать - и того меньше."
+    show mt normal panama pioneer with dissolve
     "С другой стороны, наедине с Леной сидеть было ещё хуже.{w} Трудно находиться рядом с человеком, чьи действия не можешь предугадать."
     "Немного жаль только было видеть, как с появлением вожатой девочка снова спряталась, словно улитка в раковину, за свою обычную маску и теперь любовалась уже не небом, а плитами под ногами."
-    show mt normal panama pioneer with dissolve
     th "Это не девочка, а какая-то шкатулка фокусника! Каждый раз что-то новое, и каждый раз - неожиданное."
     th "Похоже, она и вправду расслабилась в моём присутствии. С чего бы это?"
     dreamgirl "А тебе бы только клювом щёлкать!"
@@ -81,11 +82,11 @@ label alt_day5_capture_sh_together:
         th "Помнится, кто-то мне впаривал вчера про «загрузит проблемами» и про «оно тебе надо?». Не ты ли?"
         dreamgirl "Да мало ли что я тебе наговорю, а ты и рад слушать, развесил уши!"
     "Начинающуюся пикировку с невидимым собеседником весьма кстати прервал вбежавший на площадь запыхавшийся Электроник."
-    show el slap pioneer at left with dissolve
+    show el slap pioneer at fright with dissolve
     "В глаза бросалась некоторая ассиметрия его раскрасневшегося лица - одна щека была заметно румянее другой."
     dreamgirl "Вот кто у нас времени не теряет, так это Эл!"
     dreamgirl "Хотя непохоже, что ему от этого много радости - Жужелица явно перешла от слов к методам физического воздействия."
-    show mt rage panama pioneer with dissolve
+    show mt angry panama pioneer with dissolve
     el "Извините!{w=0.8} Что заставил!{w=0.8} Ждать!"
     "Выдохнул Электроник."
     "Вожатая одарила его кислым взглядом, но выговаривать ему не стала."
@@ -93,10 +94,11 @@ label alt_day5_capture_sh_together:
     "Оглядев наше грозное войско (два дрища-интеллектуала и девочка-стесняша), она спросила командирским голосом:"
     show mt normal panama pioneer with dissolve
     mt "Ну что, все готовы?"
+    show un normal pioneer with dissolve
     "Не знаю, как остальные, но лично я себя чувствовал готовым разве что к послеобеденному сну."
     "Впрочем, Ольга не стала дожидаться ответа, скомандовав:"
     mt "Тогда пошли!"
-    "Развернувшись, она уверенно пошла в сторону дорожки мимо домиков, в конце которой пряталась калитка в заборе"
+    "Развернувшись, она уверенно пошла в сторону дорожки мимо домиков, в конце которой пряталась калитка в заборе."
     hide mt with dissolve
     th "Минуточку! Предполагалось, что единственный, кто знает дорогу к старому корпусу - это Эл!{w} Ну и фрукт же эта вожатая!"
     "Переглянувшись, мы поплелись следом за ней."
@@ -109,8 +111,8 @@ label alt_day5_capture_sh_together:
     window show
 #
     show mt normal panama pioneer at center
-    show el sad pioneer at left
-    show un sad pioneer at right
+    show el sad pioneer at right
+    show un normal pioneer at left
     with dissolve
     "Довольно скоро я понял, что по утреннему холодку ходить по лесу намного приятнее."
     "День давно уже перевалил за середину, под деревьями было душно. Слабый ветерок, едва слышно шевеливший листья наверху, до тропинки не доставал."
@@ -126,18 +128,22 @@ label alt_day5_capture_sh_together:
     scene bg ext_path2_day with dissolve
     window show
     show mt normal panama pioneer at center
-    show el sad pioneer at left
-    show un sad pioneer at right
+    show el sad pioneer at right
+    show un normal pioneer at left
     with dissolve
     "По мере того, как тропинка становилась уже, а за ноги всё чаще цеплялись корни деревьев, моя решимость кого-то спасать стремительно убывала."
 # по Автору весь путь - метров шестьсот
     "В какой-то момент я решился было плюнуть на самолюбие и запросить пощады, но тут мы вышли наконец к опушке возле старого корпуса."
     "Тут мне пришло в голову, что если мы и дальше попрёмся всей толпой, то вполне можем нарваться на Юлю, а это не нужно ни ей, ни нам."
     me "Ольга Дмитриевна, как Вы думаете, может быть нам не стоит идти сразу всем вместе? Мало ли, вдруг Шурик испугается…"
-    show mt surprise panama pioneer with dspr
+    show el surprise pioneer
+    show mt surprise panama pioneer
+    with dspr
     mt "Семён, что ты несёшь?! Почему это он должен нас пугаться?"
-    show mt normal panama pioneer with dspr
     "На это возразить мне было нечего, тем более, что Электроник с Леной тоже посмотрели на меня с недоумением."
+    show el sad pioneer
+    show mt normal panama pioneer
+    with dspr
     "Остановившись, Ольга несколько раз крикнула:"
     mt "Шурик!!! Шурик!!!"
     "Ей никто не ответил, и мы пошли дальше."
@@ -148,8 +154,8 @@ label alt_day5_capture_sh_together:
     window hide
     scene bg ext_old_building_day with dissolve
     window show
-    show el sad pioneer at right
-    show un sad pioneer at fright
+    show el sad pioneer at left
+    show un normal pioneer at fleft
     show mt normal panama pioneer at center
     with dissolve
     "Здесь Ольга Дмитриевна остановилась."
@@ -159,23 +165,31 @@ label alt_day5_capture_sh_together:
     mt "Думаю, если мы разделимся…"
     stop music fadeout 2
     play sound sfx_tree_branches
-    show sh rage pioneer far at left with dissolve
-    "Её прервал треск веток позади нас, и из кустов выбрался наш драгоценный Шурик."
-    show el scared pioneer at right
-    show un scared pioneer at fright
-    show mt scared panama pioneer at center
+    show sh rage pioneer far at fright with dissolve
+    show el surprise pioneer at left
+    show un surprise pioneer at fleft
+    show mt surprise panama pioneer at center
     with dissolve
+    "Её прервал треск веток позади нас, и из кустов выбрался наш драгоценный Шурик."
 # возможно, потребуется уточнить подробности внешнего вида нашего Рэмбо
     "Видок у него был тот ещё. Его словно таскали волоком по земле - весь в какой-то грязи, одежда местами порвана, на руках и ногах свежие ссадины, волосы растрёпаны."
-    play music music_list["doomed_to_be_defeated"] fadein 0
+    play music music_list["pile"] fadein 1
+    show el scared pioneer at left
+    show un scared pioneer at fleft
+    show mt scared panama pioneer at center
+    with dissolve
     "Тут стоящая рядом Лена испуганно пискнула и спряталась мне за спину."
-    hide un with easeoutright
+    hide un with easeoutleft
     "Через секунду и до меня дошло, чего она так испугалась - в руке Шурик сжимал увесистый на вид кусок араматуры.{w} В сочетании с перекошенным от гнева лицом и криво сидящими очками зрелище и в само деле было устрашающее."
+    show el scared pioneer at fleft
+    show mt scared panama pioneer at cleft
+    with ease
     "Мельком глянув на Ольгу с Элом я убедился, что они тоже не больно-то рвутся обнимать от радости вновь обретённого товарища."
     "В другой ситуации я бы и сам с удовольствием попраздновал труса, но наличие за спиной дрожащей от страха девочки странным образом в корне всё изменило."
     hide mt
     hide el
-    with dissolve
+    show sh rage pioneer far at right
+    with dissolve2
     "Я расправил плечи и медленно двинулся навстречу Шурику, стараясь улыбаться пошире."
     show sh rage pioneer at center with dissolve
     sh "Не подходи!"
@@ -191,15 +205,11 @@ label alt_day5_capture_sh_together:
     window hide
     scene cg d4_sh_stay
     with dissolve
-    play music music_list["pile"] fadein 1
+    stop music fadeout 1
+    play music music_list["doomed_to_be_defeated"] fadein 0
     window show
     "Вместо ответа он ринулся на меня с бессвязным воплем, замахиваясь куском арматуры."
-    play sound mpbt
-    with flash
-    window show
-#    window hide
-#    scene bg ext_old_building_day with dissolve
-#    window show
+#    play sound mpbt
     "От хилого на вид очкарика я никак не ожидал такой прыти…"
     dreamgirl "Не зевай!"
     "В последний момент я сумел каким-то чудом увернуться от удара, но потерял равновесие и чуть не упал на спину."
@@ -228,7 +238,7 @@ label alt_day5_capture_sh_together:
 # нет, я не уверен, что намёк про полотенца так уж необходим - Бегун
     with vpunch
     "От неожиданности я ослабил было хватку, так что Шурик чуть не вырвался."
-    show mt angry panama pioneer at right with dissolve
+    show mt angry panama pioneer at fright with dissolve
     mt "Ну-ка, переверните его!"
     "Раздался откуда-то сверху неожиданно спокойный голос вожатой."
     "Пыхтя от натуги, мы с Элом кое-как выполнили её распоряжение."
@@ -253,9 +263,10 @@ label alt_day5_capture_sh_together:
     "Ольга вгляделась в его лицо и удовлетворённо кивнула."
     mt "Александр, как ты себя чувствуешь?"
     "Спросила она как ни в чём ни бывало."
-    show sh normal pioneer close with dspr
+    show sh normal pioneer close with dissolve
     sh "Н-нормально… А… А где это мы?"
     "Он ошарашенно завертел головой, оглядываясь. Увидев здание неподалёку, он явно удивился."
+    show sh surprise pioneer close with dspr
     sh "Что вообще здесь происходит?"
     me "Что происходит?!"
     "Не выдержав, я перешёл на крик:"
@@ -272,25 +283,29 @@ label alt_day5_capture_sh_together:
     sh "Я вышел из лагеря, пошёл по тропинке сюда и потом…"
     sh "Я… Я не помню… Голова кружится…"
     "Лицо Шурика побледнело, он болезненно скривился:"
-    show sh cry pioneer close with dspr
+    show sh scared pioneer close with dspr
     sh "Да отпустите вы меня, ведь больно же!"
     mt "Действительно, ребята, отпустите его.{w} Думаю, он никуда теперь не убежит и вообще будет себя хорошо вести.{w} Правда, Шурик?"
     "Тот слабо кивнул.{w} Поняв, что всё ещё продолжаю выкручивать ему руки, я разжал захват."
-    show sh serious pioneer close with dspr
+    show sh upset pioneer close with dspr
     "Отчаянно заныло колено, пораненное утром при попытке открыть дверь в бункер.{w} Похоже, я снова здорово им приложился, когда прыгал на Шурика."
     th "Надеюсь, этому психу я тоже что-нибудь отшиб!"
     "Уложив совместными с вожатой усилиями Шурика на траву, Электроник принялся шарить вокруг в поисках очков, слетевших с того при падении."
+    hide el
+    hide sh
+    with dissolve2
     mt "Семён, ты как?"
     "Негромко спросила Ольга Дмитриевна."
     me "Всё в порядке."
     "Кивнул я. Меня порядком трясло, но показывать этого не хотелось."
     "Подождав, пока дрожь немного утихнет, я, кое-как встав сначала на четвереньки, а потом и на ноги, огляделся по сторонам."
+    window hide
     hide mt
-    hide el
-    hide sh
     with dissolve
 # далее спрайты un подлежат подгонке по положению на сцене и по transitions
-    show un normal pioneer far with dissolve
+    $ renpy.pause(1)
+    show un normal pioneer far with dissolve2
+    window show
     "Лена тихонько стояла в нескольких шагах от нас, не вмешиваясь в допрос."
     "Поймав мой взгляд, она явно смутилась."
     dreamgirl "Знаешь, есть у меня одна идея…"
@@ -311,15 +326,15 @@ label alt_day5_capture_sh_together:
     else:
         "Она вдруг посмотрела мне прямо в глаза."
     un "Сама не знаю, что на меня нашло, но я так за тебя испугалась, когда…"
-    show un shy pioneer with dissolve
     "Тут она окончательно смутилась и отвернулась в сторону."
+    show un shy pioneer with dissolve
     "Чувствуя, что и сам краснею, я сделал несколько глубоких вдохов и выдохов."
     "Потом сказал, стараясь, чтобы голос звучал твёрдо:"
     me "Если бы не ты, я сейчас лежал бы с проломленным черепом."
     "Лена вздрогнула, но промолчала."
     me "Спасибо тебе большое. Кажется, я теперь твой должник."
     me "И да, если вдруг когда-нибудь снова захочешь спасти меня от неминуемой смерти - прошу, не отказывай себе в этом маленьком удовольствии."
-    show un smile pioneer with dspr
+    show un smile pioneer with dissolve
     "Лена в ответ смущённо хихикнула и, кажется, немного расслабилась."
     dreamgirl "А теперь самое время обменяться кольцами и поцеловать друг друга!"
     dreamgirl "Или нет, пусть лучше она объявит себя твоим рыцарем и поклянётся оберегать и защищать тебя до самой смерти!"
@@ -328,7 +343,7 @@ label alt_day5_capture_sh_together:
     "Голос вожатой весьма вовремя отвлёк меня от мысли подобрать ту арматурину и довести до конца затеянную Шуриком трепанацию моей черепной коробки, дабы успокоить одного навязчивого внутреннего придурка."
     show un sad pioneer far at fleft
     show el sad pioneer at right
-    show sh sad pioneer at center
+    show sh cry pioneer at center
     show mt sad panama pioneer at left
     with dissolve
     "Мы подошли к остальным.{w} Шурик теперь уже не лежал, а сидел на траве, но выглядел всё так же неважно."
@@ -342,8 +357,9 @@ label alt_day5_capture_sh_together:
     "Ухватив Шурика под руки, мы с Элом кое-как подняли его и даже сумели сделать несколько шагов, после чего ноги у болящего подогнулись и вся наша троица полетела на землю."
     play sound sfx_bodyfall_1
     with vpunch
-    "И разумеется, меня в третий раз угораздило приложился больной ногой!{w} С трудом сдерживая рвущиеся с языка ругательства я поднялся."
+    "И разумеется, меня в третий раз угораздило приложиться больной ногой!{w} С трудом сдерживая рвущиеся с языка ругательства я поднялся."
     mt "Кажется, придётся кому-то бежать в лагерь за помощью. Без носилок не обойтись."
+    show sh upset pioneer with dissolve
     "Тут я сообразил, что за всей этой вознёй я совсем забыл про Юлю."
     th "Оставаться здесь сейчас совсем не с руки."
     if alt_uvao_true:
@@ -378,8 +394,8 @@ label alt_day5_capture_sh_together:
     th "Вожатую мы бы далеко не унесли…{w} Хотя и Шурик мог бы быть немного полегче. Раскормили, блин! Все руки мне оттянул!"
     "Впереди уже показалась ограда лагеря, когда Электроник пропыхтел:"
     show el sad pioneer close at right
-    show sh sad pioneer close at center
-    with dissolve
+    show sh upset pioneer close at center
+    with dissolve2
     el "Может…{w=0.8} Устроим…{w=0.8} Привал?"
     me "Если мы сейчас остановимся{w=0.8}, то ещё раз его уже не поднимем.{w} Давай уже просто донесём поскорее{w=0.8}, немного осталось!"
     sh "Ребята, мне так неловко…"
@@ -413,13 +429,14 @@ label alt_day5_capture_sh_together:
     show un sad pioneer far at fleft
     show mt sad panama pioneer far at left
     show el sad pioneer at fright
-    show sh sad pioneer at cright
+    show sh upset pioneer at cright
     show cs normal far at cleft
     with dissolve
     window show
     "Не обращая внимания на изумлённую Виолетту, я скомандовал:"
     me "На кушетку!"
     "Последние несколько шагов, и мы с Электроником свалили свою ношу на кровать и без сил опустились на пол рядом."
+    hide sh with dissolve
     "Кажется, Ольга Дмитриевна что-то объясняла медсестре, та тоже что-то говорила, но мне было всё равно."
 # все спрайты исчезают
     stop sound_loop fadeout 5
@@ -429,16 +446,20 @@ label alt_day5_capture_sh_together:
     hide sh
     hide cs
     with dissolve2
+    scene bg black with dissolve2
     "Весь мир сейчас для меня сжался до надёжного прочного пола, на котором можно было сидеть, и края кушетки, на которую можно было опереться спиной."
     "Единственное неудобство доставляли только руки, вытянувшиеся, судя по ощущениям, до пятиметровой длины как минимум."
     th "Странно, что они вообще помещаются в медпункте, а не высовываются на крыльцо."
     dreamgirl "А ты расскажи о своих ощущениях Виоле. Пусть сразу и тебе что-нибудь от галлюцинаций вколет заодно с Шуриком, зачем ей два раза возиться?"
     "Наконец, в голове перестали грохотать кузнечными молотами, а пальцы рук начали ощущаться как часть тела, а не как отдельно лежащая на полу субстанция."
 # спрайты Виолы, Эла (normal) и ОД (far)
+    window hide
+    scene bg int_aidpost_day with dissolve2
     show mt normal panama pioneer far at left
     show el sad pioneer at right
-    show cs normal at center
-    with dissolve
+    show cs normal glasses at center
+    with dissolve2
+    window show
     "Сидевший рядом Эл тоже завозился, пытаясь подняться."
     cs "Я смотрю, пионеры, вы уже пришли в себя."
     "Покопавшись в холодильнике, Виолетта извлекла оттуда бутылку «Боржоми».{w} Достав из шкафа пару стаканов, она нацедила в них минералки и всучила один Электронику, а другой мне:"
@@ -448,26 +469,28 @@ label alt_day5_capture_sh_together:
     "Вздохнула Виола, отбирая стакан."
     cs "А теперь поднимайтесь и оба марш отсюда.{w} Мне ещё этому пионеру ссадины обработать надо и ввести противостолбнячную сыворотку."
     "Она кивнула на Шурика который уже вовсю спал, вытянувшись на кушетке.{w} Похоже, что-то она ему уже успела вколоть для расслабления духа."
-    show cs smile with dspr
+    show cs smile glasses with dspr
     cs "Конечно, если вы тоже хотите стать моими {i}пациентами{/i}, то можете задержаться."
     cs "В конце концов, надо бы провести тщательный {i}осмотр{/i}, мало ли какие травмы вы могли получить…"
     show el scared pioneer with dspr
     "Голос медсестры, ставший медовым, произвёл на Электроника прямо-таки волшебное действие - вскочив, словно и не сидел только что на полу без сил, он залепетал что-то и устремился к двери."
-    show mt smile panama pioneer far with dspr
+    hide el with easeoutright
+    show mt laugh panama pioneer far with dspr
     "Ольга Дмитриевна тихонько хихикнула по-девчоночьи, но ничего не сказала."
     "Кое-как подобрав свои руки-ноги, я поднялся и тоже направился на выход."
-    show cs smile
+    show cs smile glasses
     show mt normal panama pioneer far
     with dspr
     if alt_uvao_true:
         cs "Семён, на ужине мне не забудь рассказать, как твоя неврастения себя ведёт."
         "Кивнув Виолетте, я вышел на крыльцо вслед за Сыроежкиным."
-# медпункт снаружи, вечер
     window hide
     play ambience ambience_camp_center_evening fadein 3
+    $ persistent.sprite_time = "sunset"
+    $ sunset_time()
     scene bg ext_aidpost_sunset with dissolve
     play sound sfx_close_door_1
-    show un sad pioneer at left
+    show un normal pioneer at left
     show el sad pioneer at right
     with dissolve
     window show
@@ -481,6 +504,7 @@ label alt_day5_capture_sh_together:
     show mt normal panama pioneer with dspr
     mt "Я рада, что все вы показали себя сегодня надёжными товарищами и не посрамили высокое звание пионера!"
     mt "Вы, ребята, продемонстрировали настоящее мужество и достойную подражания выдержку, оказывая помощь пострадавшему."
+    show el normal pioneer with dissolve
     "Она посмотрела на на нас с Электроником с гордостью, словно лично занималась нашим воспитанием на протяжении последних лет, и продолжила:"
     mt "Особенно я хочу отметить участие Лены."
     mt "Мало того, что она сегодня не растерялась в критической ситуации и э-э… пришла на помощь оказавшемуся в опасности Семёну."
@@ -499,6 +523,7 @@ label alt_day5_capture_sh_together:
     hide un with easeoutleft
     "Мы с Электроником переглянулись и поплелись к умывальникам."
     hide el with dissolve
+    play music music_list["my_daily_life"] fadein 5
     dreamgirl "А ведь ты, похоже, так ничего и не заметил?"
     th "А что именно я должен был заметить? Что Ольга умеет токнуть речь к месту и не к месту?"
     dreamgirl "Что стесняша потащилась в эту вашу нелепую вылазку добровольно, идиот!"
