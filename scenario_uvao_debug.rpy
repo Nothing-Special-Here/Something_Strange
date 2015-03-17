@@ -163,24 +163,63 @@ label scenario_uvao_root_D4_debug:
                     "Шурик с дубиной":
                         label scenario_uvao_sprites_sh_bar:
                         menu:
-                            "far":
+                            "far 1":
                                 show sh angry bar far
                                 "..."
                                 jump scenario_uvao_sprites_sh_bar
-                            "normal":
-                                show sh angry bar
+                            "normal 2":
+                                show sh angry bar2
                                 "..."
                                 jump scenario_uvao_sprites_sh_bar
-                            "close":
-                                show sh angry bar close
+                            "close 3":
+                                show sh angry bar3 close
                                 #"..."
                                 jump scenario_uvao_sprites_sh_bar
                             "Назад":
                                 hide sh
                                 jump scenario_uvao_sprites
-
-
-
+                    "Виола в шоке":
+                        label scenario_uvao_sprites_cs_fear:
+                        menu:
+                            "fear":
+                                show cs fear close
+                                "..."
+                                jump scenario_uvao_sprites_cs_fear
+                            "fear2":
+                                show cs fear2
+                                "..."
+                                jump scenario_uvao_sprites_cs_fear
+                            "Назад":
+                                hide cs
+                                jump scenario_uvao_sprites
+                    "ОД в замешательстве":
+                        label scenario_uvao_sprites_mt_doubt:
+                        menu:
+                            "в панамке":
+                                show mt pioneer doubt panama close
+                                "..."
+                                jump scenario_uvao_sprites_mt_doubt
+                            "прост":
+                                show mt pioneer doubt close
+                                "..."
+                                jump scenario_uvao_sprites_mt_doubt
+                            "Назад":
+                                hide mt
+                                jump scenario_uvao_sprites                            
+                    "ОД испугалася":
+                        label scenario_uvao_sprites_mt_scared:
+                        menu:
+                            "в панамке":
+                                show mt pioneer shock panama close
+                                "..."
+                                jump scenario_uvao_sprites_mt_scared
+                            "прост":
+                                show mt pioneer shock close
+                                "..."
+                                jump scenario_uvao_sprites_mt_scared
+                            "Назад":
+                                hide mt
+                                jump scenario_uvao_sprites 
 
 
     $ renpy.pause (1)
