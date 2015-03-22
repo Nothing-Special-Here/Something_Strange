@@ -13,6 +13,7 @@
     
 #sounds
     $ phone_vibro = "scenario_uvao/images/sounds/vibration-smartphone.ogg"
+    $ match_lights ="scenario_uvao/images/sounds/lighting-a-match.ogg"
     
 init python:
     # Кусок кода для заставок по мере продвижения. надо вставить в alt_chapter автора
