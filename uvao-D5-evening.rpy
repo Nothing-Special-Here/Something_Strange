@@ -93,15 +93,61 @@ label alt_day5_uvao_evening
             "Поднявшись из-за стола, она томно подмигнула мне, взяла свой поднос и, слегка качнув бёдрами, уплыла к окошку посудомойки."
             dreamgirl "Да-а… Был неправ. Вспылил. Но теперь считаю свою критику безобразной ошибкой.{w} Кстати, слюни подбери."
             "Я вернулся к реальности. Кажется, половина столовой перестала есть, замерев на месте."
-            "Впрочем, самое большее через минуту всё вернулось на круги своя - ужинающие занялись едой и обычными разговорами, а я наконец смог подняться из-за стола, не шокируя окружающих."
+            "Впрочем, самое большее через минуту всё вернулось на круги своя - ужинающие занялись едой и обычными разговорами, а я наконец смог подняться из-за стола, не шокируя окружающих внешним видом."
             th "И ей это с рук сходит? Похоже, она действительно не последний человек в лагере."
             "Тут я встретился глазами с Алисой. Та смотрела на меня с неприкрытым ужасом."
             th "Да в самом деле, какого чёрта!"
-            "Наверное, лучше всего было бы сейчас развернуть плечи, выставить грудь колесом и прошествовать мимо с ухмылкой прожжёного донжуана…"
-            "…Вздохнув, я виновато пожал плечами и, ссутулившись, поплёлся относить грязную посуду."
+#            "Наверное, лучше всего было бы сейчас развернуть плечи, выставить грудь колесом и прошествовать мимо с ухмылкой прожжёного донжуана…"
+            dreamgirl "А вот теперь самое время позаботиться и о собственном реноме. Плечи расправить, грудь колесом, на лицо ухмылку прожжёного донжуана, и неспеша иди мимо…"
+            "…Вздохнув, я смущённо пожал плечами и, ссутулившись, поплёлся относить грязную посуду."
     stop ambience fadeout 3
     window hide
-#Выходим на улицу. Лениво плетёмся к домику и усаживаемся в шезлонг. Тупо сидим, наблюдая за тем, как опускается вечер
+	play sound sfx_close_door_1
+    play ambience ambience_camp_center_evening fadein 3
+    scene bg ext_dining_hall_away_sunset with fade
+    play sound_loop ambience_medium_crowd_outdoors fadein 2
+#
+	"До отбоя оставалась ещё уйма времени, следовало решить, куда идти дальше."
+#
+# Безнадёжная карта
+#
+    $ disable_all_zones()
+    $ disable_all_chibi()
+    $ set_zone('music_club', 'alt_day5_uvao_evening_map_strange')
+    $ set_zone('clubs', 'alt_day5_uvao_evening_map_strange')
+    $ set_zone('camp_entrance', 'alt_day5_uvao_evening_map_strange')
+    $ set_zone('sport_area', 'alt_day5_uvao_evening_map_strange')
+    $ set_zone('library', 'alt_day5_uvao_evening_map_strange')
+    $ set_zone('medic_house', 'alt_day5_uvao_evening_map_strange')
+    $ set_zone('square', 'alt_day5_uvao_evening_map_strange')
+    $ set_zone('beach', 'alt_day5_uvao_evening_map_peaceful')
+    $ set_zone('boat_station', 'alt_day5_uvao_evening_map_peaceful')
+    $ set_zone('me_mt_house', 'alt_day5_uvao_evening_go_house')
+    play sound sfx_paper_bag
+    $ show_map()
+    window show
+	
+label alt_day5_uvao_evening_map_strange
+	$ alt_uvao_D5_evening_map = 1
+	"Мягко говоря, идея странная, но почему бы и нет? Тоже способ убить время…"
+	jump alt_day5_uvao_evening_miss
+label alt_day5_uvao_evening_map_peaceful
+	$ alt_uvao_D5_evening_map = 2
+	th "Что же, неплохая идея. Посижу там спокойно - глядишь, и вечер пройдёт."
+label alt_day5_uvao_evening_miss
+# Ошибаемся и внезапно приходим к димику. Обалдеваем и остаёмся.
+	jump alt_day5_uvao_evening_headlong
+label alt_day5_uvao_evening_go_house
+	th "Действительно, что тут думать? Как будто я за день недостаточно набегался.{w} Пойду-ка я домой, посижу там спокойно до отбоя."
+    window hide
+    $ renpy.pause(1)
+    scene bg ext_house_of_mt_sunset with dissolve2
+    window show
+label alt_day5_uvao_evening_headlong
+#усаживаемся в шезлонг.
+#
+#Тупо сидим, наблюдая за тем, как опускается вечер
+#    scene bg ext_house_of_mt_night
 #Подваливает ОД (если alt_uvao_D5_sh_mines, то злая), намекает, что спать можно и внутри.
 #Пока мы тормозим, ОД заходит в домик и тут же появляется обратно с учебником. "И кстати, в библиотеку записан? Не записан? Нет у тебя читательского билета - нету и книжек!"
 #машем на всё рукой, идём внутрь и замертво валимся на кровать
