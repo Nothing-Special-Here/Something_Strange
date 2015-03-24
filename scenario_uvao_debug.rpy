@@ -105,6 +105,12 @@ label scenario_uvao_root_D4_debug:
                 "Отладка: Сразу Д5-Совместная охота на дикого Шурика uvao_true":
                     $ alt_uvao_true = True
                     jump alt_day5_capture_sh_together_debug
+                "Отладка: Сразу Д5-Вечер not-uvao_true":
+                    $ alt_uvao_true = False
+                    jump alt_day5_uvao_evening_debug
+                "Отладка: Сразу Д5-Вечер uvao_true":
+                    $ alt_uvao_true = True
+                    jump alt_day5_uvao_evening_debug
                 "Назад":
                     jump scenario_uvao_root_D4_debug
         "Картинки при смене глав":
@@ -230,6 +236,29 @@ label alt_day5_capture_sh_together_debug:
         "Не обедали в Д4 с Леной":
             $ alt_uvao_D4_lunch_un = False
             jump alt_day5_capture_sh_together
+    jump scenario_uvao_root_D4_debug
+#
+label alt_day5_uvao_evening_debug:
+    menu:
+        "В Д4 обедали в одиночестве":
+            $ alt_uvao_D4_concert = False
+        "В Д4 обедали с девочкой":
+            $ alt_uvao_D4_concert = True
+    if alt_uvao_true:
+        $ alt_uvao_D5_sh_mines = False
+        $ alt_uvao_D5_hentai = False
+    else:
+        menu:
+            "Хентай был":
+                $ alt_uvao_D5_hentai = True
+            "Хентая не было":
+                $ alt_uvao_D5_hentai = False
+        menu:
+            "Гоняли Шурика по шахтам":
+                $ alt_uvao_D5_sh_mines = True
+            "Охотились на Шурика с отрядом":
+                $ alt_uvao_D5_sh_mines = False
+    jump alt_day5_uvao_evening
 
 #    scene black with fade2
 #    return
