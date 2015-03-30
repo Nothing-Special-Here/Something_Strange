@@ -56,7 +56,7 @@ label alt_day6_uvao_getting_up:
 				th "Что именно я сделал напрасно? Чихнул?"
 				dreamgirl "Проснулся ты напрасно, бестолочь! Подождал бы ещё немного - уже пора было бы снова спать ложиться."
 				"Я вглянул за часы и охнул, кубарем скатившись с кровати."
-				th "Мама дорогая, вот это я вздремнул! Ещё пару часов, и если не ужинать, то уж обедать-то точно пора будет!"
+				th "Мама дорогая, вот это я вздремнул! Ещё пару часов, и если не ужинать, то уж обедать-то точно пора будет!{w} Неудивительно, что голова тяжёлая."
 				"Наскоро одевшись, я решил, что немного холодной воды на мою бедовую головушку сейчас не помешает, и поскакал к умывальникам."
 				# встаём, идём умываться и бредём в поисках пожрать
 				# //Пересечься со Славей во имя жратвы
@@ -68,21 +68,4 @@ label alt_day6_uvao_getting_up:
 	else:
 		# Самостоятельное расследование, о Юле никто не знает.
 		pass
-    
-	
-# Заготовки
-	play music music_list["everyday_theme"] fadein 5
-
-    stop ambience fadeout 3
-    play sound sfx_open_dooor_campus_1
-    window hide
-    $ renpy.pause(2)
-    scene bg ext_house_of_mt_sunset with dissolve
-    play ambience ambience_camp_center_day fadein 6
-    window show
-# на улице
-    window hide
-    scene bg ext_square_sunset with dissolve
-    window show
 #
-    stop music fadeout 5
