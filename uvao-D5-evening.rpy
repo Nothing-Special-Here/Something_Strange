@@ -102,12 +102,12 @@ label alt_day5_uvao_evening:
             cs "И знаешь, заходи-ка ты завтра с утра ко мне в медпункт."
             "Голос её словно стал ниже на целую октаву, а от появившейся в нём бархатистой хрипотцы у меня мурашки побежали по спине."
             "Она заговощически наклонилась ко мне и продолжила жарким шёпотом:"
-            show cs shy2 close with dissolve:
+            show cs badgirl2 close with dissolve:
 #                xalign 0.5 yalign 0.4 zoom 1.3
                 xalign 0.5 yalign 0.5 zoom 1.0
                 linear 2.0 xalign 0.5 yalign 0.4 zoom 1.3
             cs "В столовой толком не поговоришь - только и ждёшь, что подслушает кто-нибудь.{w} Да и реноме надо поддерживать."
-            show cs shy2 close with dissolve:
+            show cs badgirl2 close with dissolve:
 #                xalign 0.5 yalign 0.4 zoom 1.3
                 linear 1.5 xalign 0.5 yalign 0.5 zoom 1.0
             "Отстранившись, она неспеша оправила воротник своего белого халата. Пальцы коснулись верхней пуговицы, на мгновенье задержавшись…"

@@ -96,3 +96,7 @@ init:
     image cs shy2 close    = _cs_shy2['close']
     image cs shy2          = _cs_shy2['normal']
     image cs shy2 far      = _cs_shy2['far']
+    $ _cs_badgirl2 = ComposeSprite('scenario_uvao/images/cs_2_body.png', 'scenario_uvao/images/cs_2_badgirl.png')
+    image cs badgirl2 close    = _cs_badgirl2['close']
+    image cs badgirl2          = _cs_badgirl2['normal']
+    image cs badgirl2 far      = _cs_badgirl2['far']
