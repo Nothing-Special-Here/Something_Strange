@@ -13,8 +13,8 @@
     image uv black silhouette = "scenario_uvao/images/uv_black.png"
     
 #sounds
-    $ phone_vibro = "scenario_uvao/images/sounds/vibration-smartphone.ogg"
-    $ match_lights ="scenario_uvao/images/sounds/lighting-a-match.ogg"
+    $ phone_vibro = "scenario_uvao/sounds/vibration-smartphone.ogg"
+    $ match_lights ="scenario_uvao/sounds/lighting-a-match.ogg"
     
 init python:
     # Кусок кода для заставок по мере продвижения. надо вставить в alt_chapter автора
