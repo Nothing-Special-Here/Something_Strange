@@ -72,7 +72,7 @@ init:
     image mt pioneer doubt panama far     =_mt_pioneer_doubt_panama['far'] 
                                                       
     # cs 
-    # $ _cs_fear = ComposeSprite('images/3500/sprites/full/cs/cs_1_body.png', 'scenario_uvao/images/cs_2_fear.png')
+    $ _cs_fear = ComposeSprite('images/3500/sprites/full/cs/cs_1_body.png', 'scenario_uvao/images/cs_2_fear.png')
     image cs fear close    = _cs_fear['close']
     image cs fear          = _cs_fear['normal']
     image cs fear far      = _cs_fear['far']
