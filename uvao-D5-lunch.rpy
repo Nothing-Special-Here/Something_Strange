@@ -12,7 +12,7 @@ label alt_day5_uvao_lunch:
     window show
     "В столовой как всегда было не протолкнуться. Я осмотрелся."
     show mi normal pioneer far at fright with dissolve
-    "Мику сидела и одиноко ковыряла вилкой перловую кашу."
+    "Мику сидела и одиноко ковыряла ложкой перловую кашу."
     show dv smile pioneer far at right
     show us laugh pioneer far at cright
     with dissolve
