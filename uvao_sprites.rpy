@@ -80,4 +80,19 @@ init:
     image cs fear2 close    = _cs_fear2['close']
     image cs fear2          = _cs_fear2['normal']
     image cs fear2 far      = _cs_fear2['far']
- 
+    $ _cs_normal1 = ComposeSprite('images/3500/sprites/full/cs/cs_1_body.png', 'images/3500/sprites/full/cs/cs_1_normal.png')
+    image cs normal1 close    = _cs_normal1['close']
+    image cs normal1          = _cs_normal1['normal']
+    image cs normal1 far      = _cs_normal1['far']
+    $ _cs_normal2 = ComposeSprite('scenario_uvao/images/cs_2_body.png', 'images/3500/sprites/full/cs/cs_1_normal.png')
+    image cs normal2 close    = _cs_normal2['close']
+    image cs normal2          = _cs_normal2['normal']
+    image cs normal2 far      = _cs_normal2['far']
+    $ _cs_smile2 = ComposeSprite('scenario_uvao/images/cs_2_body.png', 'images/3500/sprites/full/cs/cs_1_smile.png')
+    image cs smile2 close    = _cs_smile2['close']
+    image cs smile2          = _cs_smile2['normal']
+    image cs smile2 far      = _cs_smile2['far']
+    $ _cs_shy2 = ComposeSprite('scenario_uvao/images/cs_2_body.png', 'images/3500/sprites/full/cs/cs_1_shy.png')
+    image cs shy2 close    = _cs_shy2['close']
+    image cs shy2          = _cs_shy2['normal']
+    image cs shy2 far      = _cs_shy2['far']
