@@ -2,10 +2,15 @@
 #bg:
 #    image ext_dining_hall_away_night_uvao1 = "scenario_uvao/images/ext_dining_hall_away_night_uvao1.jpg"
 #    image ext_dining_hall_away_night_uvao2 = "scenario_uvao/images/ext_dining_hall_away_night_uvao2.jpg"
+    #ext's
+    image ext_old_building_day = "scenario_uvao/images/ext_old_building_day.jpg"
+    
+    #int's
     image int_old_building_day_uvao = "scenario_uvao/images/int_old_building_day_uvao.jpg"
     image int_mines_halt_spotlight = "scenario_uvao/images/int_mines_halt_spotlight.jpg"
     image int_catacombs_entrance_light = "scenario_uvao/images/int_catacombs_entrance_light.jpg"
-    image ext_old_building_day = "scenario_uvao/images/ext_old_building_day.jpg"
+    image int_old_building_day_uvao = "scenario_uvao/images/int_old_building_day_uvao.jpg"
+    
 #cg
 #    image pioner_lib_hiding = "scenario_uvao/images/pioner_lib_hiding.jpg"
     image uv_photo_city = "scenario_uvao/images/uv_photo_city.png"
