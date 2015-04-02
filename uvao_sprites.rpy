@@ -28,12 +28,12 @@
                 'close': ConditionSwitch("persistent.sprite_time=='sunset'", im.MatrixColor(sprite_close, tint_sunset), "persistent.sprite_time=='night'", im.MatrixColor(sprite_close, tint_night), True, sprite_close) }  
    
     # Функция, собирающая спрайты из запчастей
-	# types - набор калибров спрайтов. ('far', 'close', 'normal',...)
+    # types - набор калибров спрайтов. ('far', 'close', 'normal',...)
     # argv - файлы-запчасти под 3500
     # на выходе - 3 спрайта: far, close, normal,...
     def ComposeSpriteEx(types, *argv):
-		# Множитель для разных размеров
-		factors = {'far':0.45, 'normal':0.6, 'close':0.75, 'veryfar':0.3}
+        # Множитель для разных размеров
+        factors = {'far':0.45, 'normal':0.6, 'close':0.75, 'veryfar':0.3}
         # тонировка:
         tint_night = im.matrix.tint(0.63, 0.78, 0.82)
         tint_sunset = im.matrix.tint(0.94, 0.82, 1.0)
@@ -44,13 +44,13 @@
            subargs.append( arg )
         # собраный спрайт 1500х3500
         large_sprite =  im.Composite(None, *subargs)
-		
-		# формируем возвращаемый набор:
-		ret = dict()
-		for key in types
-			sprite = im.Crop(im.FactorScale(large_sprite, factors[key]),  0, 0, factors[key]*1500, 1080)
-			dict[key] = ConditionSwitch("persistent.sprite_time=='sunset'", im.MatrixColor(sprite, tint_sunset), "persistent.sprite_time=='night'", im.MatrixColor(sprite, tint_night), True, sprite)
-		return ret
+        
+        # формируем возвращаемый набор:
+        ret = dict()
+        for key in types:
+            sprite = im.Crop(im.FactorScale(large_sprite, factors[key]),  0, 0, factors[key]*1500, 1080)
+            dict[key] = ConditionSwitch("persistent.sprite_time=='sunset'", im.MatrixColor(sprite, tint_sunset), "persistent.sprite_time=='night'", im.MatrixColor(sprite, tint_night), True, sprite)
+        return ret
 init:
 
 #####################################################    
@@ -77,6 +77,8 @@ init:
     image sh angry bar3 far      = _sh_angry_bar3['far']
                                                     
     # mt
+    $ _mt_pioneer_normal = ComposeSpriteEx(('veryfar'), 'images/3500/sprites/full/mt/mt_1_body.png', 'images/3500/sprites/full/mt/mt_1_pioneer.png', 'images/3500/sprites/full/mt/mt_1_normal.png')
+    image mt pioneer normal veryfar  =_mt_pioneer_normal['veryfar']
     $ _mt_pioneer_shock = ComposeSprite('images/3500/sprites/full/mt/mt_3_body.png', 'images/3500/sprites/full/mt/mt_3_pioneer.png', 'scenario_uvao/images/mt_shock.png')
     image mt pioneer shock close    =_mt_pioneer_shock['close']
     image mt pioneer shock          =_mt_pioneer_shock['normal']     
