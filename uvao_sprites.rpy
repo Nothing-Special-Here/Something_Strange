@@ -48,11 +48,11 @@
         # формируем возвращаемый набор:
         ret = dict()
         if isinstance(types, str): #если types содержит только один параметр.
-            sprite = im.Crop(im.FactorScale(large_sprite, factors[types]),  0, 0, factors[types]*1500, 1080)
+            sprite = im.Crop(im.FactorScale(large_sprite, factors[types]), (0, 0, factors[types]*1500, 1080))
             ret[types] = ConditionSwitch("persistent.sprite_time=='sunset'", im.MatrixColor(sprite, tint_sunset), "persistent.sprite_time=='night'", im.MatrixColor(sprite, tint_night), True, sprite)
         else: # если в types несколько параметров
             for key in types:
-                sprite = im.Crop(im.FactorScale(large_sprite, factors[key]),  0, 0, factors[key]*1500, 1080)
+                sprite = im.Crop(im.FactorScale(large_sprite, factors[key]), (0, 0, factors[key]*1500, 1080))
                 ret[key] = ConditionSwitch("persistent.sprite_time=='sunset'", im.MatrixColor(sprite, tint_sunset), "persistent.sprite_time=='night'", im.MatrixColor(sprite, tint_night), True, sprite)
         return ret
 init:
