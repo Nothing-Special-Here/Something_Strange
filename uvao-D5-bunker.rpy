@@ -982,25 +982,31 @@ label alt_day5_uvao_mines_sh:
     el "Эге-ге-е-ей, Шу-у-ури-и-ик!"
     th "Что-то я сомневаюсь, что он сам добровольно выйдет…"
     show sh angry bar3 veryfar behind mt with dissolve:
-        xalign 0.95 yalign 0.99999999999999999999999999999999999999
+        xalign 0.95 yalign 0.999
     "И в этот момент из зарослей появился сам виновник торжества. Чумазый, ободранный, и все с той же приснопамятной железякой в руке."
     "Не тратя времени на разговоры, он размахнулся своим рубилом и бросился на замерших в испуге спасателей."
     th "Он сейчас точно кому-нибудь голову проломит!"
     "Я уже собрался было выскочить на подмогу, но… Непонятно как спасатели повалили нашего Рэмбо и старательно закрутили ему руки."
-    show sh pioneer rage veryfar behind mt with dspr:
+    show sh pioneer rage veryfar behind mt:
         xalign 0.9 yalign 0.85
+    show un pioneer serious veryfar behind mt:
+        xalign 0.8 yalign 0.9
+    with dspr
     "Лена в это время вырвала арматурину из его рук и выкинула куда подальше."
     mt "Ну-ка, переверните его!"
-    show mt pioneer angry veryfar at right with dspr:
+    show mt pioneer angry veryfar:
         xalign 0.8 yalign 0.85
+    show un pioneer serious veryfar:
+        xalign 0.7 yalign 0.9
+    with dspr
     "Вожатая наклонилась над ним{w} и отвесила несколько смачных оплеух! А Славя с Электроником в это время взяли его под руки, чтобы не убежал."
-    show mt angry pioneer veryfar:
-        xalign 0.6 yalign 0.85
-    show un normal pioneer veryfar:
-        xalign 0.7 yalign 0.85
-    show sl normal pioneer veryfar behind sh:
+    show mt pioneer angry veryfar:
+        xalign 0.5 yalign 0.85
+    show un pioneer normal veryfar:
+        xalign 0.65 yalign 0.85
+    show sl pioneer normal veryfar behind sh:
         xalign 0.8 yalign 0.85
-    show el normal pioneer veryfar behind sh:
+    show el pioneer normal veryfar behind sh:
         xalign 0.999 yalign 0.85
     with dspr
     "Внезапно, это подействовало - Шурик перестал вырываться из рук Слави и Электроника, и в целом вроде как подуспокоился."
@@ -1011,7 +1017,7 @@ label alt_day5_uvao_mines_sh:
     hide sl
     hide sh
     hide el
-    show mt normal pioneer veryfar:
+    show mt pioneer normal veryfar:
         yalign 0.85
     with dspr
     "Ольга Дмитриевна зачем-то обернулась и озабоченно обвела взглядом поляну. По-видимому, не найдя ничего подозрительного, она повернулась и скрылась за деревьями, вслед за остальными."

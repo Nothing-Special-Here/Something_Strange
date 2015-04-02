@@ -66,10 +66,14 @@ init:
 # спрайты, с тонировкой под закат или ночь
 #####################################################
     #sl
+    $ _sl_pioneer_normal = ComposeSpriteEx('veryfar', 'images/3500/sprites/full/sl/sl_1_body.png', 'images/3500/sprites/full/sl/sl_1_pioneer.png', 'images/3500/sprites/full/sl/sl_1_normal.png')
+    image sl pioneer normal veryfar = _sl_pioneer_normal['veryfar']
     $ _sl_pioneer_serious = ComposeSpriteEx('veryfar', 'images/3500/sprites/full/sl/sl_1_body.png', 'images/3500/sprites/full/sl/sl_1_pioneer.png', 'images/3500/sprites/full/sl/sl_1_serious.png')
     image sl pioneer serious veryfar = _sl_pioneer_serious['veryfar']
     
     #un
+    $ _un_pioneer_normal = ComposeSpriteEx('veryfar', 'images/3500/sprites/full/un/un_1_body.png', 'images/3500/sprites/full/un/un_1_pioneer.png', 'images/3500/sprites/full/un/un_1_normal.png')
+    image un pioneer normal veryfar = _un_pioneer_normal['veryfar']
     $ _un_pioneer_serious = ComposeSpriteEx('veryfar', 'images/3500/sprites/full/un/un_3_body.png', 'images/3500/sprites/full/un/un_3_pioneer.png', 'images/3500/sprites/full/un/un_3_serious.png')
     image un pioneer serious veryfar = _un_pioneer_serious['veryfar']
 
