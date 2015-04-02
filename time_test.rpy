@@ -4,8 +4,7 @@
 
 init python:
     from time import localtime, strftime
-    t = strftime("%H:%M:%S", localtime())
-    hour = t.split(":")[0]
+    hour = strftime("%H", localtime())
 
 label time_test:
     if hour in [23, 24, 0, 1, 2, 3, 4]:
