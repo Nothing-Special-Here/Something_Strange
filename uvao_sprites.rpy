@@ -7,6 +7,7 @@
         factor_close = 0.75
         factor_normal = 0.6
         factor_far = 0.45
+        factor_veryfar = 0.3
         # тонировка:
         tint_night = im.matrix.tint(0.63, 0.78, 0.82)
         tint_sunset = im.matrix.tint(0.94, 0.82, 1.0)
@@ -22,10 +23,12 @@
         sprite_close =  im.Crop(im.FactorScale(large_sprite, factor_close),  0, 0, 1125, 1080)
         sprite_norm =   im.Crop(im.FactorScale(large_sprite, factor_normal), 0, 0, 900, 1080)
         sprite_far =    im.Crop(im.FactorScale(large_sprite, factor_far),    0, 0, 675, 1080)
+        sprite_veryfar =im.Crop(im.FactorScale(large_sprite, factor_veryfar),    0, 0, 450, 1080)
         # добавляем тонировку через ConditionSwitch
         return {'far': ConditionSwitch("persistent.sprite_time=='sunset'", im.MatrixColor(sprite_far, tint_sunset), "persistent.sprite_time=='night'", im.MatrixColor(sprite_far, tint_night), True, sprite_far),
                 'normal': ConditionSwitch("persistent.sprite_time=='sunset'", im.MatrixColor(sprite_norm, tint_sunset), "persistent.sprite_time=='night'", im.MatrixColor(sprite_norm, tint_night), True, sprite_norm), 
-                'close': ConditionSwitch("persistent.sprite_time=='sunset'", im.MatrixColor(sprite_close, tint_sunset), "persistent.sprite_time=='night'", im.MatrixColor(sprite_close, tint_night), True, sprite_close) }  
+                'close': ConditionSwitch("persistent.sprite_time=='sunset'", im.MatrixColor(sprite_close, tint_sunset), "persistent.sprite_time=='night'", im.MatrixColor(sprite_close, tint_night), True, sprite_close),
+                'veryfar': ConditionSwitch("persistent.sprite_time=='sunset'", im.MatrixColor(sprite_veryfar, tint_sunset), "persistent.sprite_time=='night'", im.MatrixColor(sprite_veryfar, tint_night), True, sprite_veryfar)}  
    
     # Функция, собирающая спрайты из запчастей
     # types - набор калибров спрайтов. ('far', 'close', 'normal',...)
