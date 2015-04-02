@@ -47,7 +47,7 @@
 		
 		# формируем возвращаемый набор:
 		ret = dict()
-		for key in types.viewkeys()
+		for key in types
 			sprite = im.Crop(im.FactorScale(large_sprite, factors[key]),  0, 0, factors[key]*1500, 1080)
 			dict[key] = ConditionSwitch("persistent.sprite_time=='sunset'", im.MatrixColor(sprite, tint_sunset), "persistent.sprite_time=='night'", im.MatrixColor(sprite, tint_night), True, sprite)
 		return ret
