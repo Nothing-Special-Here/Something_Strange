@@ -47,9 +47,13 @@
         
         # формируем возвращаемый набор:
         ret = dict()
-        for key in types:
-            sprite = im.Crop(im.FactorScale(large_sprite, factors[key]),  0, 0, factors[key]*1500, 1080)
-            dict[key] = ConditionSwitch("persistent.sprite_time=='sunset'", im.MatrixColor(sprite, tint_sunset), "persistent.sprite_time=='night'", im.MatrixColor(sprite, tint_night), True, sprite)
+        if isinstance(types, str): #если types содержит только один параметр.
+            sprite = im.Crop(im.FactorScale(large_sprite, factors[types]),  0, 0, factors[types]*1500, 1080)
+            ret[types] = ConditionSwitch("persistent.sprite_time=='sunset'", im.MatrixColor(sprite, tint_sunset), "persistent.sprite_time=='night'", im.MatrixColor(sprite, tint_night), True, sprite)
+        else: # если в types несколько параметров
+            for key in types:
+                sprite = im.Crop(im.FactorScale(large_sprite, factors[key]),  0, 0, factors[key]*1500, 1080)
+                ret[key] = ConditionSwitch("persistent.sprite_time=='sunset'", im.MatrixColor(sprite, tint_sunset), "persistent.sprite_time=='night'", im.MatrixColor(sprite, tint_night), True, sprite)
         return ret
 init:
 
@@ -77,7 +81,7 @@ init:
     image sh angry bar3 far      = _sh_angry_bar3['far']
                                                     
     # mt
-    $ _mt_pioneer_normal = ComposeSpriteEx(('veryfar'), 'images/3500/sprites/full/mt/mt_1_body.png', 'images/3500/sprites/full/mt/mt_1_pioneer.png', 'images/3500/sprites/full/mt/mt_1_normal.png')
+    $ _mt_pioneer_normal = ComposeSpriteEx( ('veryfar') , 'images/3500/sprites/full/mt/mt_1_body.png', 'images/3500/sprites/full/mt/mt_1_pioneer.png', 'images/3500/sprites/full/mt/mt_1_normal.png')
     image mt pioneer normal veryfar  =_mt_pioneer_normal['veryfar']
     $ _mt_pioneer_shock = ComposeSprite('images/3500/sprites/full/mt/mt_3_body.png', 'images/3500/sprites/full/mt/mt_3_pioneer.png', 'scenario_uvao/images/mt_shock.png')
     image mt pioneer shock close    =_mt_pioneer_shock['close']
