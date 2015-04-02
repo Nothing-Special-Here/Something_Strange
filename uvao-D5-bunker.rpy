@@ -960,13 +960,15 @@ label alt_day5_uvao_mines_sh:
     "Мы с Юлей подобрались к окну и одновременно заглянули в щель."
     window hide
     $ meet('mt','Ольга Дмитриевна')
-    scene bg ext_path2_day
-    #Хз какие эмоции у них должны быть, так что пусть пока normal
-    #P.S. В игре кажется, что они стоят на normal расстоянии, но это из-за кучности скорее всего.
-    show mt normal pioneer far at left
-    show sl normal pioneer far at fleft
-    show un normal pioneer far at cleft
-    show el normal pioneer far at center
+    scene bg ext_old_building_day
+    show mt pioneer normal veryfar:
+        xalign 0.001 yalign 0.9
+    show sl pioneer serious veryfar:
+        xalign 0.1 yalign 0.9
+    show un pioneer serious veryfar:
+        xalign 0.2 yalign 0.9
+    show el pioneer normal veryfar:
+        xalign 0.3 yalign 0.9
     with dissolve
     window show
     "Спасательная команда в составе Ольги Дмитриевны, Слави, Лены и Электроника стояла посреди двора и озиралась." # Состав спасательной команды вроде бы такой?
@@ -979,21 +981,27 @@ label alt_day5_uvao_mines_sh:
     sl "Ау-у-у-у, Шу-у-ури-и-и-ик!"
     el "Эге-ге-е-ей, Шу-у-ури-и-ик!"
     th "Что-то я сомневаюсь, что он сам добровольно выйдет…"
-    show sh angry bar3 far behind mt at fright
+    show sh angry bar3 veryfar behind mt with dissolve:
+        xalign 0.95 yalign 0.99999999999999999999999999999999999999
     "И в этот момент из зарослей появился сам виновник торжества. Чумазый, ободранный, и все с той же приснопамятной железякой в руке."
     "Не тратя времени на разговоры, он размахнулся своим рубилом и бросился на замерших в испуге спасателей."
     th "Он сейчас точно кому-нибудь голову проломит!"
     "Я уже собрался было выскочить на подмогу, но… Непонятно как спасатели повалили нашего Рэмбо и старательно закрутили ему руки."
-    show sh rage pioneer far at fright behind mt with dspr
+    show sh pioneer rage veryfar behind mt with dspr:
+        xalign 0.9 yalign 0.85
     "Лена в это время вырвала арматурину из его рук и выкинула куда подальше."
     mt "Ну-ка, переверните его!"
-    show mt angry pioneer far at right with dspr
+    show mt pioneer angry veryfar at right with dspr:
+        xalign 0.8 yalign 0.85
     "Вожатая наклонилась над ним{w} и отвесила несколько смачных оплеух! А Славя с Электроником в это время взяли его под руки, чтобы не убежал."
-    show mt angry pioneer far at cleft
-    show un normal pioneer far at center
-    show sl normal pioneer far behind sh at cright
-    show sh rage pioneer far at right
-    show el normal pioneer far behind sh at fright
+    show mt angry pioneer veryfar:
+        xalign 0.6 yalign 0.85
+    show un normal pioneer veryfar:
+        xalign 0.7 yalign 0.85
+    show sl normal pioneer veryfar behind sh:
+        xalign 0.8 yalign 0.85
+    show el normal pioneer veryfar behind sh:
+        xalign 0.999 yalign 0.85
     with dspr
     "Внезапно, это подействовало - Шурик перестал вырываться из рук Слави и Электроника, и в целом вроде как подуспокоился."
     dreamgirl "Вот что значит советская педагогика! А если б ногами - вообще был бы как шёлковый!"
@@ -1003,7 +1011,8 @@ label alt_day5_uvao_mines_sh:
     hide sl
     hide sh
     hide el
-    show mt normal pioneer far
+    show mt normal pioneer veryfar:
+        yalign 0.85
     with dspr
     "Ольга Дмитриевна зачем-то обернулась и озабоченно обвела взглядом поляну. По-видимому, не найдя ничего подозрительного, она повернулась и скрылась за деревьями, вслед за остальными."
     hide mt with dspr
