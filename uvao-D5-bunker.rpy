@@ -785,7 +785,7 @@ label alt_day5_uvao_mines_sh:
     scene int_mines_halt_spotlight:
         zoom 1.0 xalign 0.5 yalign 0.4
         linear 2.5 zoom 1.7 xalign 0.8 yalign 0.4
-    #show uv normal at cleft
+    show uv normal at cleft
     with dissolve
     window show
     th "Это Шурик там? Больше некому, вроде. Но какого черта ему здесь надо?"
