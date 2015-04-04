@@ -11,6 +11,14 @@
     image int_catacombs_entrance_light = "scenario_uvao/images/int_catacombs_entrance_light.jpg"
     image int_old_building_day_uvao = "scenario_uvao/images/int_old_building_day_uvao.jpg"
     
+    image int_mine_crossroad_matches:
+        "bg black" with fade2
+        block:
+            "bg int_mine_crossroad" with fade
+            4.0
+            "bg black" with fade2
+            4.0
+            repeat
 #cg
 #    image pioner_lib_hiding = "scenario_uvao/images/pioner_lib_hiding.jpg"
     image uv_photo_city = "scenario_uvao/images/uv_photo_city.jpg"
@@ -22,6 +30,7 @@
 #sounds
     $ phone_vibro = "scenario_uvao/sounds/vibration-smartphone.ogg"
     $ match_lights ="scenario_uvao/sounds/lighting-a-match.ogg"
+    $ silence = "scenario_uvao/sounds/silence_4sec.ogg"
     
 init python:
     # Кусок кода для заставок по мере продвижения. надо вставить в alt_chapter автора

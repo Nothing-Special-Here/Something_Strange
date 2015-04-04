@@ -143,87 +143,9 @@ label scenario_uvao_root_D4_debug:
                     "Назад":
                         jump scenario_uvao_root_D4_debug
         "Отладка спрайтов":
-            label scenario_uvao_sprites:
-                menu:
-                    "Электроник с плюхой":
-                        label scenario_uvao_sprites_el_slap:
-                        menu:
-                            "far":
-                                show el pioneer slap far
-                                "..."
-                                jump scenario_uvao_sprites_el_slap
-                            "normal":
-                                show el pioneer slap
-                                "..."
-                                jump scenario_uvao_sprites_el_slap
-                            "close":
-                                show el pioneer slap close
-                                "..."
-                                jump scenario_uvao_sprites_el_slap
-                            "Назад":
-                                hide el
-                                jump scenario_uvao_sprites
-                    "Шурик с дубиной":
-                        label scenario_uvao_sprites_sh_bar:
-                        menu:
-                            "far 1":
-                                show sh angry bar far
-                                "..."
-                                jump scenario_uvao_sprites_sh_bar
-                            "normal 2":
-                                show sh angry bar2
-                                "..."
-                                jump scenario_uvao_sprites_sh_bar
-                            "close 3":
-                                show sh angry bar3 close
-                                #"..."
-                                jump scenario_uvao_sprites_sh_bar
-                            "Назад":
-                                hide sh
-                                jump scenario_uvao_sprites
-                    "Виола в шоке":
-                        label scenario_uvao_sprites_cs_fear:
-                        menu:
-                            "fear":
-                                show cs fear close
-                                "..."
-                                jump scenario_uvao_sprites_cs_fear
-                            "fear2":
-                                show cs fear2
-                                "..."
-                                jump scenario_uvao_sprites_cs_fear
-                            "Назад":
-                                hide cs
-                                jump scenario_uvao_sprites
-                    "ОД в замешательстве":
-                        label scenario_uvao_sprites_mt_doubt:
-                        menu:
-                            "в панамке":
-                                show mt pioneer doubt panama close
-                                "..."
-                                jump scenario_uvao_sprites_mt_doubt
-                            "прост":
-                                show mt pioneer doubt close
-                                "..."
-                                jump scenario_uvao_sprites_mt_doubt
-                            "Назад":
-                                hide mt
-                                jump scenario_uvao_sprites                            
-                    "ОД испугалася":
-                        label scenario_uvao_sprites_mt_scared:
-                        menu:
-                            "в панамке":
-                                show mt pioneer shock panama close
-                                "..."
-                                jump scenario_uvao_sprites_mt_scared
-                            "прост":
-                                show mt pioneer shock close
-                                "..."
-                                jump scenario_uvao_sprites_mt_scared
-                            "Назад":
-                                hide mt
-                                jump scenario_uvao_sprites 
-
+            jump scenario_uvao_sprites
+        "Отладка фонов":
+            jump scenario_uvao_bg
 
     $ renpy.pause (1)
     jump scenario_uvao_root_D4_debug
@@ -260,5 +182,109 @@ label alt_day5_uvao_evening_debug:
                 $ alt_uvao_D5_sh_mines = False
     jump alt_day5_uvao_evening
 
+label scenario_uvao_sprites:
+    menu:
+        "Электроник с плюхой":
+            label scenario_uvao_sprites_el_slap:
+            menu:
+                "far":
+                    show el pioneer slap far
+                    "..."
+                    jump scenario_uvao_sprites_el_slap
+                "normal":
+                    show el pioneer slap
+                    "..."
+                    jump scenario_uvao_sprites_el_slap
+                "close":
+                    show el pioneer slap close
+                    "..."
+                    jump scenario_uvao_sprites_el_slap
+                "Назад":
+                    hide el
+                    jump scenario_uvao_sprites
+        "Шурик с дубиной":
+            label scenario_uvao_sprites_sh_bar:
+            menu:
+                "far 1":
+                    show sh angry bar far
+                    "..."
+                    jump scenario_uvao_sprites_sh_bar
+                "normal 2":
+                    show sh angry bar2
+                    "..."
+                    jump scenario_uvao_sprites_sh_bar
+                "close 3":
+                    show sh angry bar3 close
+                    #"..."
+                    jump scenario_uvao_sprites_sh_bar
+                "Назад":
+                    hide sh
+                    jump scenario_uvao_sprites
+        "Виола в шоке":
+            label scenario_uvao_sprites_cs_fear:
+            menu:
+                "fear":
+                    show cs fear close
+                    "..."
+                    jump scenario_uvao_sprites_cs_fear
+                "fear2":
+                    show cs fear2
+                    "..."
+                    jump scenario_uvao_sprites_cs_fear
+                "Назад":
+                    hide cs
+                    jump scenario_uvao_sprites
+        "ОД в замешательстве":
+            label scenario_uvao_sprites_mt_doubt:
+            menu:
+                "в панамке":
+                    show mt pioneer doubt panama close
+                    "..."
+                    jump scenario_uvao_sprites_mt_doubt
+                "прост":
+                    show mt pioneer doubt close
+                    "..."
+                    jump scenario_uvao_sprites_mt_doubt
+                "Назад":
+                    hide mt
+                    jump scenario_uvao_sprites                            
+        "ОД испугалася":
+            label scenario_uvao_sprites_mt_scared:
+            menu:
+                "в панамке":
+                    show mt pioneer shock panama close
+                    "..."
+                    jump scenario_uvao_sprites_mt_scared
+                "прост":
+                    show mt pioneer shock close
+                    "..."
+                    jump scenario_uvao_sprites_mt_scared
+                "Назад":
+                    hide mt
+                    jump scenario_uvao_sprites
+        "Назад":
+            jump scenario_uvao_root_D4_debug
+
+label scenario_uvao_bg:
+    menu:
+        "Жжем спички в шахтах":
+            scene int_mine_crossroad_matches
+            $ renpy.music.play( (match_lights, silence), 'sound', True)
+            "Идем себе, гуляем по шахтам…"
+            "Спички жжем…"
+            "Смеемся…"
+            "А попадаются одни перекрестки!"
+            "Кажется, я заблудился…"
+            "Или я вообще с места не двигаюсь?"
+            "Да ну нафиг!"
+            "Блин…"
+            "Хорошо, что списки в коробке не заканчиваются…"
+            "Я уже и Шурику был бы рад!"
+            "Да ну вас всех в жопу."
+            scene black
+            stop sound
+            jump scenario_uvao_bg
+        "Назад":
+            jump scenario_uvao_root_D4_debug            
 #    scene black with fade2
 #    return
