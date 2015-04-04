@@ -13,8 +13,8 @@
     
 #cg
 #    image pioner_lib_hiding = "scenario_uvao/images/pioner_lib_hiding.jpg"
-    image uv_photo_city = "scenario_uvao/images/uv_photo_city.png"
-    image uv_bunker_hentai = "scenario_uvao/images/uv_bunker_hentai.png"
+    image uv_photo_city = "scenario_uvao/images/uv_photo_city.jpg"
+    image uv_bunker_hentai = "scenario_uvao/images/uv_bunker_hentai.jpg"
 
 #sprites
     image uv black silhouette = "scenario_uvao/images/uv_black.png"
