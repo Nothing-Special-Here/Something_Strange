@@ -1,7 +1,7 @@
 init:
     $ alt_uvao_D4_viola_morning = False
     
-label alt_day4_uvao_start:
+label alt_day4_start_uvao:
     $ routetag = "uv_unknown"
     $ alt_chapter_uv(4, u"Утро")
     $ persistent.sprite_time = "sunset"
