@@ -1,6 +1,5 @@
 ﻿init:
     $ mods["time_test"] = u"Time Test"
-    $ config.developer = True
 
 init python:
     from time import localtime, strftime
@@ -16,5 +15,6 @@ label time_test:
     else:
         scene bg ext_road_day with dissolve
         "День."
+    "Чтобы выйти - ESC > Главное меню."
      
     jump time_test

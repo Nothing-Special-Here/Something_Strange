@@ -963,14 +963,19 @@ label alt_day5_uvao_mines_sh:
     scene bg ext_old_building_day
     show mt pioneer normal veryfar:
         xalign 0.001 yalign 0.9
-    show sl pioneer serious veryfar:
-        xalign 0.1 yalign 0.9
-    show un pioneer serious veryfar:
-        xalign 0.2 yalign 0.9
-    show el pioneer normal veryfar:
-        xalign 0.3 yalign 0.9
     with dissolve
     window show
+    th "Ольга Дмитриевна? Что она тут…"
+    show sl pioneer serious veryfar:
+        xalign 0.1 yalign 0.9
+    "Вслед за ней показалась и Славя."
+    dreamgirl "Похоже, нашего поехавшего уже во всю разыскивают."
+    "Что-нибудь ещё"
+    show un pioneer serious veryfar:
+        xalign 0.2 yalign 0.9
+    "И ещё"
+    show el pioneer normal veryfar:
+        xalign 0.3 yalign 0.9
     "Спасательная команда в составе Ольги Дмитриевны, Слави, Лены и Электроника стояла посреди двора и озиралась." # Состав спасательной команды вроде бы такой?
     th "И как они теперь будут его искать? Наверное, придётся нам прятаться обратно в тоннелях, или в убежище…"
     if alt_uvao_D5_hentai:
@@ -982,7 +987,7 @@ label alt_day5_uvao_mines_sh:
     el "Эге-ге-е-ей, Шу-у-ури-и-ик!"
     th "Что-то я сомневаюсь, что он сам добровольно выйдет…"
     show sh angry bar3 veryfar behind mt with dissolve:
-        xalign 0.95 yalign 0.999
+        xalign 0.9 yalign 0.85
     "И в этот момент из зарослей появился сам виновник торжества. Чумазый, ободранный, и все с той же приснопамятной железякой в руке."
     "Не тратя времени на разговоры, он размахнулся своим рубилом и бросился на замерших в испуге спасателей."
     th "Он сейчас точно кому-нибудь голову проломит!"
@@ -990,14 +995,14 @@ label alt_day5_uvao_mines_sh:
     show sh pioneer rage veryfar behind mt:
         xalign 0.9 yalign 0.85
     show un pioneer serious veryfar behind mt:
-        xalign 0.8 yalign 0.9
+        xalign 0.8 yalign 0.85
     with dspr
     "Лена в это время вырвала арматурину из его рук и выкинула куда подальше."
+    show un pioneer serious veryfar:
+        xalign 0.2 yalign 0.9
     mt "Ну-ка, переверните его!"
     show mt pioneer angry veryfar:
         xalign 0.8 yalign 0.85
-    show un pioneer serious veryfar:
-        xalign 0.7 yalign 0.9
     with dspr
     "Вожатая наклонилась над ним{w} и отвесила несколько смачных оплеух! А Славя с Электроником в это время взяли его под руки, чтобы не убежал."
     show mt pioneer angry veryfar:
