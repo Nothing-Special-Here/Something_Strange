@@ -180,7 +180,7 @@ label alt_day5_capture_sh_together:
     play music music_list["pile"] fadein 1
     show el scared pioneer at left
     show un scared pioneer at fleft
-    show mt scared panama pioneer at center
+    show mt pioneer shock3 panama at center
     with dissolve
     "Тут стоящая рядом Лена испуганно пискнула и спряталась мне за спину."
     hide un with easeoutleft
