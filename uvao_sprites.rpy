@@ -165,8 +165,8 @@ init:
     # image mt pioneer shock panama close   =_mt_pioneer_shock_panama['close']
     # image mt pioneer shock panama         =_mt_pioneer_shock_panama['normal']     
     # image mt pioneer shock panama far     =_mt_pioneer_shock_panama['far'] 
-    $ _mt_pioneer_shock3_panama = ComposeSpriteSet('normal', 'mt/mt_3_body.png',  'mt/mt_3_pioneer.png', 'mt/mt_3_shock.png', 'mt/mt_3_panama.png')
-    image mt pioneer shock3 panama  =_mt_pioneer_shock3_panama['normal']
+    $ _mt_scared3_panama_pioneer = ComposeSpriteSet('normal', 'mt/mt_3_body.png',  'mt/mt_3_pioneer.png', 'mt/mt_3_scared3.png', 'mt/mt_3_panama.png')
+    image mt scared3 panama pioneer  =_mt_scared3_panama_pioneer['normal']
     # $ _mt_pioneer_doubt = ComposeSprite('images/3500/sprites/full/mt/mt_3_body.png', 'images/3500/sprites/full/mt/mt_3_pioneer.png', 'scenario_uvao/images/mt_doubt.png')
     # image mt pioneer doubt close    =_mt_pioneer_doubt['close']
     # image mt pioneer doubt          =_mt_pioneer_doubt['normal']     
