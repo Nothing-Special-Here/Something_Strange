@@ -42,7 +42,7 @@ label scenario_uvao_root_D4_debug:
         "Отладка: Встреча Юли в д3":
             call alt_day3_meet_uvao
         "Прохождение Д4 по порядку":
-            jump alt_day4_start_uvao
+            jump alt_day4_uvao_start
         "Отладка Д4":
             menu:
                 "Отладка: Уборка гирлянд":
@@ -267,7 +267,67 @@ label scenario_uvao_sprites:
 
 label scenario_uvao_bg:
     menu:
-        "Жжем спички в шахтах":
+        "Смотрим мерцание огонька спички":
+            # scene int_mine_crossroad_burning
+            scene bg int_mine_crossroad: # Имя должно совпадать с указанным ниже
+                contains: # это - фон, который надо показать
+                    'bg int_mine_crossroad' with fade 
+                contains: # это - оранжевенькая тонировка
+                    'scenario_uvao/images/matches_tone.png' 
+                    additive 1.0
+                contains: # это - дрожание пламени
+                    'scenario_uvao/images/matches_lightmask.png'
+                    xalign 0.5 yalign 1.0 
+                    function random_zoom
+                    repeat
+            
+            "Спичка горит."
+            scene black with fade2
+            "Потухла"
+            scene bg int_mine:
+                contains: 
+                    'bg int_mine' with fade 
+                contains: 
+                    'scenario_uvao/images/matches_tone.png' 
+                    additive 1.0
+                contains: 
+                    'scenario_uvao/images/matches_lightmask.png'
+                    xalign 0.5 yalign 1.0 
+                    function random_zoom
+                    repeat   
+            "Как я сюда попал?"
+            scene black with fade2
+            "Ну-ка, еще одну спичку…"
+            scene bg int_mine_halt:
+                contains: 
+                    'bg int_mine_halt' with fade 
+                contains: 
+                    'scenario_uvao/images/matches_tone.png' 
+                    additive 1.0
+                contains: 
+                    'scenario_uvao/images/matches_lightmask.png'
+                    xalign 0.5 yalign 1.0 
+                    function random_zoom
+                    repeat
+            "Да что за фигня-то?!"
+            scene black with fade2
+            "И еще разок…"
+            scene bg int_mine_door:
+                contains: 
+                    'bg int_mine_door' with fade 
+                contains: 
+                    'scenario_uvao/images/matches_tone.png' 
+                    additive 1.0
+                contains: 
+                    'scenario_uvao/images/matches_lightmask.png'
+                    xalign 0.5 yalign 1.0 
+                    function random_zoom
+                    repeat
+            "Бред какой-то…"
+            scene black with fade2
+            "…"
+            jump scenario_uvao_bg
+        "Жжем спички в шахтах и ходим":
             scene int_mine_crossroad_matches
             $ renpy.music.play( (match_lights, silence), 'sound', True)
             "Идем себе, гуляем по шахтам…"
@@ -278,7 +338,7 @@ label scenario_uvao_bg:
             "Или я вообще с места не двигаюсь?"
             "Да ну нафиг!"
             "Блин…"
-            "Хорошо, что списки в коробке не заканчиваются…"
+            "Хорошо, что спички в коробке не заканчиваются…"
             "Я уже и Шурику был бы рад!"
             "Да ну вас всех в жопу."
             scene black
