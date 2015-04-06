@@ -88,6 +88,11 @@ label scenario_uvao_root_D4_debug:
                 "Отладка: Сразу Д5-Подъём с докладом Виоле в Д4":
                     $ alt_uvao_true = True
                     jump alt_day5_uvao_getting_up
+                "Отладка: Сразу Д5-Спуск в бункер с докладом Виоле в Д4":
+                    $ alt_uvao_true = True
+                    jump alt_day5_uvao_tunnel                
+                "Отладка: Сразу Д5-Спуск в бункер без доклада Виоле в Д4":
+                    jump alt_day5_uvao_tunnel
                 "Отладка: Сразу Д5-В бункере с докладом Виоле в Д4":
                     $ alt_uvao_true = True
                     jump alt_day5_uvao_bunker                
