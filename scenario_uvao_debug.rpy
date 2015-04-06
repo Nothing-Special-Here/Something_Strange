@@ -82,40 +82,42 @@ label scenario_uvao_root_D4_debug:
                     jump scenario_uvao_root_D4_debug
         "Отладка Д5":
             menu:
-                "Отладка: Сразу Д5-Подъём без доклада Виоле в Д4":
+                "Отладка: Подъём без доклада Виоле в Д4":
                     $ alt_uvao_true = False
                     jump alt_day5_uvao_getting_up
-                "Отладка: Сразу Д5-Подъём с докладом Виоле в Д4":
+                "Отладка: Подъём с докладом Виоле в Д4":
                     $ alt_uvao_true = True
                     jump alt_day5_uvao_getting_up
-                "Отладка: Сразу Д5-Спуск в бункер с докладом Виоле в Д4":
+                "Отладка: Спуск в бункер с докладом Виоле в Д4":
                     $ alt_uvao_true = True
                     jump alt_day5_uvao_tunnel                
-                "Отладка: Сразу Д5-Спуск в бункер без доклада Виоле в Д4":
+                "Отладка: Спуск в бункер без доклада Виоле в Д4":
                     jump alt_day5_uvao_tunnel
-                "Отладка: Сразу Д5-В бункере с докладом Виоле в Д4":
+                "Отладка: В бункере с докладом Виоле в Д4":
                     $ alt_uvao_true = True
                     jump alt_day5_uvao_bunker                
-                "Отладка: Сразу Д5-В бункере без доклада Виоле в Д4":
+                "Отладка: В бункере без доклада Виоле в Д4":
                     jump alt_day5_uvao_bunker
-                "Отладка: Сразу Д5-Поход наверх. Тру рут":
+                "Отладка: Поход наверх. Тру рут":
                     jump alt_day5_uvao_true_back
-                "Отладка: Сразу Д5-Обед без доклада Виоле в Д4":
+                "Отладка: Охота на Шурика в шахтах":
+                    jump alt_day5_uvao_mines_sh
+                "Отладка: Обед без доклада Виоле в Д4":
                     $ alt_uvao_true = False
                     jump alt_day5_uvao_lunch
-                "Отладка: Сразу Д5-Обед с докладом Виоле в Д4":
+                "Отладка: Обед с докладом Виоле в Д4":
                     $ alt_uvao_true = True
                     jump alt_day5_uvao_lunch
-                "Отладка: Сразу Д5-Совместная охота на дикого Шурика not-uvao_true":
+                "Отладка: Совместная охота на дикого Шурика not-uvao_true":
                     $ alt_uvao_true = False
                     jump alt_day5_capture_sh_together_debug
-                "Отладка: Сразу Д5-Совместная охота на дикого Шурика uvao_true":
+                "Отладка: Совместная охота на дикого Шурика uvao_true":
                     $ alt_uvao_true = True
                     jump alt_day5_capture_sh_together_debug
-                "Отладка: Сразу Д5-Вечер not-uvao_true":
+                "Отладка: Вечер not-uvao_true":
                     $ alt_uvao_true = False
                     jump alt_day5_uvao_evening_debug
-                "Отладка: Сразу Д5-Вечер uvao_true":
+                "Отладка: Вечер uvao_true":
                     $ alt_uvao_true = True
                     jump alt_day5_uvao_evening_debug
                 "Назад":
