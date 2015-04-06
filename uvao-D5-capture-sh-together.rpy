@@ -142,11 +142,13 @@ label alt_day5_capture_sh_together:
     me "Ольга Дмитриевна, как Вы думаете, может быть нам не стоит идти сразу всем вместе? Мало ли, вдруг Шурик испугается…"
     show el surprise pioneer
     show mt surprise panama pioneer
+    show un surprise pioneer
     with dspr
     mt "Семён, что ты несёшь?! Почему это он должен нас пугаться?"
     "На это возразить мне было нечего, тем более, что Электроник с Леной тоже посмотрели на меня с недоумением."
     show el sad pioneer
     show mt normal panama pioneer
+    show un normal pioneer
     with dspr
     "Остановившись, Ольга несколько раз крикнула:"
     mt "Шурик!!! Шурик!!!"
@@ -180,13 +182,13 @@ label alt_day5_capture_sh_together:
     play music music_list["pile"] fadein 1
     show el scared pioneer at left
     show un scared pioneer at fleft
-    show mt scared3 panama pioneer at center
+    show mt scared3 panama pioneer at center #| Бегун, предполагалось, что указательный палец вожатой чуть-чуть закрывает рот. Видишь, он чуть-чуть снизу не дорисован? - Ленофаг
     with dissolve
     "Тут стоящая рядом Лена испуганно пискнула и спряталась мне за спину."
     hide un with easeoutleft
     "Через секунду и до меня дошло, чего она так испугалась - в руке Шурик сжимал увесистый на вид кусок арматуры.{w} В сочетании с перекошенным от гнева лицом и криво сидящими очками зрелище и в самом деле было устрашающее."
     show el scared pioneer at fleft
-    show mt scared panama pioneer at cleft
+    show mt scared3 panama pioneer at cleft
     with ease
     "Мельком глянув на Ольгу с Элом я убедился, что они тоже не больно-то рвутся обнимать от радости вновь обретённого товарища."
     "В другой ситуации я бы и сам с удовольствием попраздновал труса, но наличие за спиной дрожащей от страха девочки странным образом в корне всё изменило."
@@ -208,31 +210,31 @@ label alt_day5_capture_sh_together:
     window hide
     scene cg d4_sh_stay
     with dissolve
-    stop music fadeout 1
+    stop music fadeout 1 #| может не стоит музыку включать? Она там итак неплохо играет - Ленофаг
     play music music_list["doomed_to_be_defeated"] fadein 0
     window show
     "Вместо ответа он ринулся на меня с бессвязным воплем, замахиваясь куском арматуры."
-#    play sound mpbt
+    #play sound mpbt
     "От хилого на вид очкарика я никак не ожидал такой прыти…"
     dreamgirl "Не зевай!"
     with hpunch
     "В последний момент я сумел каким-то чудом увернуться от удара, но потерял равновесие и чуть не упал на спину."
     window hide
     scene bg ext_old_building_day
-    show sh angry bar far at left
+    show sh angry bar3 far at left
     with dissolve
     window show
     "Прежде чем я успел опомниться, Шурик уже снова пёр на меня, замахиваясь своим импровизированным мачете."
     show sh angry bar at center with dspr
     "Непроизвольно я вскинул руку, уже сознавая, что это бесполезная жертва и следующим ударом он всё равно раскроит мне череп…"
-    show sh angry bar close at center with dspr
-    "…Как вдруг увидел краем глаза какое-то движение сбоку. Шурика крутануло в сторону, и он, пролетев мимо меня, мешком рухнул на землю лицом вниз."
+    show sh angry bar2 close at center with dspr
+    "…Как вдруг увидел краем глаза какое-то движение сбоку. Шурика крутануло в сторону, и он, пролетев мимо меня, мешком рухнул на землю лицом вниз." #Показать спрайт испуганного Шурика, типа неждан?
     hide sh with easeoutleft
     "На этот раз я не терял время даром и, растянувшись в прыжке словно вратарь, пытающийся взять идущий низом мяч, со всего маху приземлился на спину Шурику."
     with vpunch
     show sh rage pioneer close at center with easeinbottom
     "Тот сдавленно крякнул, а я вцепился что было сил в его правое запястье, выкручивая руку с несостоявшимся орудием убийства."
-    show el upset pioneer close at left with dissolve
+    show el upset pioneer close at left with dissolve #| Я попробую что-нибудь сделать с этим спрайтом. Он тут не в тему. А вариант вроде  - *показать дефолтный спрайт злого Эла* - Он замахнулся и лихим ударам, словно каратист, вырубил Шурика - мне кажется явно тут не прокатит - Леноваг
     "Тут ко мне на помощь подоспел Сыроежкин."
     with hpunch
     "Вдвоём мы сумели заломать Шурику руки за спину.{w} Тот хрипел что-то неразборчиво в землю, отчаянно пытаясь освободиться."
