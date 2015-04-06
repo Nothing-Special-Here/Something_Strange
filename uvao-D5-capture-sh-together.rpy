@@ -210,8 +210,6 @@ label alt_day5_capture_sh_together:
     window hide
     scene cg d4_sh_stay
     with dissolve
-    stop music fadeout 1 #| может не стоит музыку включать? Она там итак неплохо играет - Ленофаг
-    play music music_list["doomed_to_be_defeated"] fadein 0
     window show
     "Вместо ответа он ринулся на меня с бессвязным воплем, замахиваясь куском арматуры."
     #play sound mpbt
