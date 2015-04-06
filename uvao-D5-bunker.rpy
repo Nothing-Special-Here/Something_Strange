@@ -1,4 +1,3 @@
-label alt_day5_uvao_bunker:
 # Д5 - Бункер. От предхентая.
 #
 # Используется флаг alt_uvao_true
@@ -8,19 +7,21 @@ label alt_day5_uvao_bunker:
 #   Все флаги стоят в дебаге, так что тут не нужны.
 #
 
-    $ night_time()
-    $ persistent.sprite_time = "night"
 # <---строки ниже удалить при сборке!>
+label alt_day5_uvao_bunker_debug:
+    $ sunset_time()
+    $ persistent.sprite_time = "sunset"
+    show blink
     scene bg int_catacombs_living with fade
     play music music_list["waltz_of_doubts"] fadein 5
-    show uv normal at center with dissolve
 # <---строки выше удалить при сборке!>
+label alt_day5_uvao_bunker:
     window show
     "Проснулся я от ощущения какой-то тяжести на груди."
     "\"Завалило!\" - была первая паническая мысль."
+    show uv smile close at center
     hide blink
     show unblink
-    show uv smile close at center with dissolve
     "Но нет, это была всего лишь Юля."
     "Она лежала, опираясь локтями мне на грудь, и пристально изучала меня. Какое-то время мы молча смотрели друг на друга."
     uv "Я вчера двоих ваших видела, старших. У речки. Большой, тяжёлый такой, и та, с которой ты живёшь."

@@ -95,9 +95,9 @@ label scenario_uvao_root_D4_debug:
                     jump alt_day5_uvao_tunnel
                 "Отладка: В бункере с докладом Виоле в Д4":
                     $ alt_uvao_true = True
-                    jump alt_day5_uvao_bunker                
+                    jump alt_day5_uvao_bunker_debug                
                 "Отладка: В бункере без доклада Виоле в Д4":
-                    jump alt_day5_uvao_bunker
+                    jump alt_day5_uvao_bunker_debug
                 "Отладка: Поход наверх. Тру рут":
                     jump alt_day5_uvao_true_back
                 "Отладка: Охота на Шурика в шахтах":
