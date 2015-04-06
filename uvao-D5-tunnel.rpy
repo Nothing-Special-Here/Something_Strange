@@ -102,8 +102,8 @@ label alt_day5_uvao_tunnel:
     stop music fadeout 3
     "Находясь под впечатлением от уже увиденного, я рассчитывал оказаться в тамбуре со второй гермодверью."
     window hide
-    $ sunset_time()
-    $ persistent.sprite_time = "sunset"
+    $ day_time()
+    $ persistent.sprite_time = "day"
     scene bg int_catacombs_living with fade
     play music music_list["waltz_of_doubts"] fadein 5
     show uv normal at left with dissolve

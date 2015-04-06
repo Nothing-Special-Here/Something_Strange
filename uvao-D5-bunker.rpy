@@ -9,8 +9,8 @@
 
 # <---строки ниже удалить при сборке!>
 label alt_day5_uvao_bunker_debug:
-    $ sunset_time()
-    $ persistent.sprite_time = "sunset"
+    $ day_time()
+    $ persistent.sprite_time = "day"
     show blink
     scene bg int_catacombs_living with fade
     play music music_list["waltz_of_doubts"] fadein 5
