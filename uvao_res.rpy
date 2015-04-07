@@ -66,30 +66,31 @@ init:
     # анимация перекрестка с зажиганием спичек
     image int_mine_crossroad_matches: 
         "bg black" with fade2
+        0.5
         block:
-            "bg int_mine_crossroad" with fade
+            block:
+                contains: 
+                    'bg int_mine_crossroad' with fade2 
+                contains: 
+                    'scenario_uvao/images/matches_tone.png' 
+                    additive 1.0
+                contains: 
+                    'scenario_uvao/images/matches_lightmask.png'
+                    xalign 0.5 yalign 1.0 
+                    function random_zoom
+                    repeat            
             4.0
             "bg black" with fade2
             4.0
             repeat
-            
-    image int_mine_crossroad_burning:
-        contains: 
-            'bg int_mine_crossroad' with fade
-        contains:
-            'scenario_uvao/images/matches_tone.png'
-            additive 1.0
-        contains:
-            'scenario_uvao/images/matches_lightmask.png'
-            xalign 0.5 yalign 1.0 
-            function random_zoom
-            repeat
-
-        
+                   
 #cg
 #    image pioner_lib_hiding = "scenario_uvao/images/pioner_lib_hiding.jpg"
     image uv_photo_city = "scenario_uvao/images/uv_photo_city.jpg"
     image uv_bunker_hentai = "scenario_uvao/images/uv_bunker_hentai.jpg"
+    # Кошочка авторства Орики
+    image uv_new_hentai1 = "images/1080/cg/epilogue_uv_hentai_1.jpg"
+    image uv_new_hentai2 = "images/1080/cg/epilogue_uv_hentai_2.jpg"
 
 #sprite alt_chapter
     image uv black silhouette = "scenario_uvao/images/uv_black.png"

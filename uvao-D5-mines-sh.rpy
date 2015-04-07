@@ -4,7 +4,7 @@ label alt_day5_uvao_mines_sh:
 # <---строки ниже удалить при сборке!>
     $ night_time()
     $ persistent.sprite_time = "night"
-    scene bg int_mine_crossroad with fade2
+    scene bg black with fade2    
 # <---строки выше удалить при сборке!>
     #"Она шла быстрее, чем обычно, словно предчувствуя какую-то беду."
     play music music_list["doomed_to_be_defeated"] fadein 3
@@ -19,7 +19,17 @@ label alt_day5_uvao_mines_sh:
     "Первым делом я решил осмотреться, куда же этот Шурик притащил нас."
     window hide
     play sound match_lights
-    scene bg int_mine_halt with fade2 #поворот с поваленой вагонеткой
+    scene bg int_mine_halt: # поворот с поваленой вагонеткой
+        contains: 
+            'bg int_mine_halt' with fade 
+        contains: 
+            'scenario_uvao/images/matches_tone.png' 
+            additive 1.0
+        contains: 
+            'scenario_uvao/images/matches_lightmask.png'
+            xalign 0.5 yalign 1.0 
+            function random_zoom
+            repeat    
     show uv dontlike at center
     with dissolve
     window show
@@ -28,7 +38,7 @@ label alt_day5_uvao_mines_sh:
     "Я бросил спичку, чтобы не обжечь пальцы, и все погрузилось во тьму…"
     window hide
     scene int_mines_halt_spotlight with fade2 # тот же поворот, только темный и с подсвеченой стеной за углом
-    show uv normal at cleft
+    show uv black silhouette at cleft
     with dissolve
     window show
     "…но не полностью! Я заметил какой-то тусклый свет из-за поворота."
@@ -148,7 +158,12 @@ label alt_day5_uvao_mines_sh:
     th "Интересно, это она на слух определяет, куда идти, или следы замечает?"
     stop sound_loop fadeout 2
     window hide
-    scene bg int_mine
+    scene bg int_mine with fade2:
+        linear 0.1 pos (5,3)
+        linear 0.1 pos (5,0)
+        linear 0.1 pos (-5,5)
+        linear 0.1 pos (-5,0)
+        repeat        
     show uv normal at cright
     with dissolve
     window show
@@ -168,7 +183,7 @@ label alt_day5_uvao_mines_sh:
     window show
     "Юля забралась первая, и это сыграло с ней злую шутку. Ей пришлось помогать мне забраться обратно наверх. Такая перспектива, похоже, её не очень радовала, но деваться ей было некуда."
     "Наверху оказался тоннель - похоже тот самый, в который вёл люк из старого корпуса."
-    show uv dontlike close at cright with dissolve
+    # show uv dontlike close at cright with dissolve
     me "Это тот, первый тоннель?"
     uv "Да. Лестница там, а он побежал туда. Там тоже выход есть."
     "Она махнула вперёд, где брезжил какой-то свет."
@@ -199,10 +214,9 @@ label alt_day5_uvao_mines_sh:
     $ persistent.sprite_time = "day"
     scene int_old_building_day_uvao with flash
     window show
-    "Яркий свет ударил мне в глаза."
     show uv shocked with dissolve
-    "Суда по всему, не мне одному."
-    "Мы понемногу привыкли к солнечному свету, как вдруг с улицы раздался чей-то крик."
+    "Судя по всему, не меня одного. Хоть тут с ней никаких сюрпризов."
+    "Мы понемногу привыкали к солнечному свету, как вдруг с улицы раздался чей-то крик."
     show uv surprise with dspr
     mt "ШУ-У-У-УРИ-И-И-ИК!"
     th "Голос знакомый. Ольга Дмитриевна?"
@@ -233,6 +247,7 @@ label alt_day5_uvao_mines_sh:
     th "Что-то я сомневаюсь, что он сам добровольно выйдет…"
     show sh angry bar3 veryfar behind mt with dissolve:
         xalign 0.9 yalign 0.85
+    # TODO: Испуганных маленьких пионеров сюда.
     "И в этот момент из зарослей появился сам виновник торжества. Чумазый, ободранный, и все с той же приснопамятной железякой в руке."
     "Не тратя времени на разговоры, он размахнулся своим рубилом и бросился на замерших в испуге спасателей."
     th "Он сейчас точно кому-нибудь голову проломит!"
@@ -243,13 +258,12 @@ label alt_day5_uvao_mines_sh:
         xalign 0.8 yalign 0.85
     with dspr
     "Лена в это время вырвала арматурину из его рук и выкинула куда подальше."
-    mt "Ну-ка, переверните его!"
     show mt pioneer angry veryfar:
         xalign 0.8 yalign 0.85
     show un pioneer serious veryfar:
         xalign 0.7 yalign 0.85
     with dspr
-    "Вожатая наклонилась над ним{w} и отвесила несколько смачных оплеух!"
+    mt "Ну-ка, переверните его!"
     show mt pioneer angry veryfar:
         xalign 0.5 yalign 0.85
     show un pioneer normal veryfar:
@@ -259,6 +273,8 @@ label alt_day5_uvao_mines_sh:
     show el pioneer normal veryfar behind sh:
         xalign 0.999 yalign 0.85
     with dspr
+    "Вожатая наклонилась над ним{w} и отвесила несколько смачных оплеух!"
+    # TODO: звуки лещей
     "Внезапно, это подействовало - Шурик перестал вырываться из рук Слави и Электроника, и в целом вроде как подуспокоился."
     dreamgirl "Вот что значит советская педагогика! А если б ногами - вообще был бы как шёлковый!"
     "Вожатая о чем-то спрашивала у Шурика, но тот явно не мог ничего объяснить, только растерянно озирался по сторонам."

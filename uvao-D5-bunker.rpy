@@ -67,6 +67,7 @@ label alt_day5_uvao_hentai_scene:
     me "Да-а-а? А потом?"
     uv "А потом уже вот так!"
     "Она вскочила и ловким, по-кошачьи гибким движением избавилась от платья, под которым не было больше ничего лишнего."
+    scene uv_bunker_hentai with dissolve    
     "Потом встала на четвереньки и повернулась ко мне, при этом хитро поглядывая через плечо, на манер избушки, так сказать. К стене передом, к Семёну задом."
     dreamgirl "Ну, убедился?"
     "Юлин хвост изогнулся эдаким приглашающим знаком вопроса. Не дождавшись от меня какой-нибудь реакции, она потопталась коленями и вопросительно наклонила голову."
@@ -82,7 +83,7 @@ label alt_day5_uvao_hentai_scene:
     "Руки сами собой легли на её талию, притянули к себе."
     uv "Мрррррра-а-у-у-у!"
     "Одобрительно протянула она и соблазнительно прогнулась."
-    scene uv_bunker_hentai with dissolve
+    scene uv_new_hentai1 with dissolve
     th "Будь я котом, я бы просто взял её зубами за шкирку и хардкорно отымел…"
     dreamgirl "Как будто что-то плохое. Да и она вряд ли будет против."
     th "Цыц. Я пытаюсь не посрамить гордое звание Гомо Сапиенса в первом контакте с иной расой!"
@@ -93,6 +94,7 @@ label alt_day5_uvao_hentai_scene:
     dreamgirl "Это означает: Ну не тяни уже! Ваш К.О. всегда рад помочь."
     "Желание девочки - закон. А уж кошкодевочки… Я в единый миг освободился от всего, что мешало мне ниже пояса, и, прицелившись…"
     dreamgirl "На ладонь ниже хвоста. Не промахнись, Ястребиный Глаз."
+    scene uv_new_hentai2 with dissolve
     uv "Мааааауууу…"
     "…единым махом скользнул внутрь."
     "Она со вздохом качнулась сначала от меня, потом обратно… И снова… И снова, вовлекая меня в движения."
@@ -354,6 +356,7 @@ label alt_day5_uvao_hentai_sleep:
     scene bg int_catacombs_living
     show unblink
     window show
+    # TODO: music
     "…"
     "Открыв глаза, я уже не увидел никакого офиса, ни Юрия Куклачёва, который, казалось, секунду назад грозил мне пальцем из фоторамки. Что за… это сон?"
     dreamgirl "Коллега. Что за херню мы только что посмотрели?!"
@@ -619,7 +622,7 @@ label alt_day5_uvao_mines_begin:
     window hide
     play sound sfx_jump_into_hole_2
     play music music_list["door_to_nightmare"] fadein 3
-    scene bg int_mine
+    scene bg int_mine # TODO: затемнить, а то очень светло. 
     show uv normal at center
     with dissolve
     window show
@@ -643,7 +646,17 @@ label alt_day5_uvao_mines_begin:
         "Взяв из кармана заветный коробок, я достал из него спичку и зажёг её." 
     window hide
     play sound match_lights
-    scene bg int_mine_crossroad with fade2
+    scene bg int_mine_crossroad: # Имя должно совпадать с указанным ниже
+        contains: # это - фон, который надо показать
+            'bg int_mine_crossroad' with fade 
+        contains: # это - оранжевенькая тонировка
+            'scenario_uvao/images/matches_tone.png' 
+            additive 1.0
+        contains: # это - дрожание пламени
+            'scenario_uvao/images/matches_lightmask.png'
+            xalign 0.5 yalign 1.0 
+            function random_zoom
+            repeat
     show uv normal at center
     with dissolve
     window show
@@ -658,7 +671,7 @@ label alt_day5_uvao_mines_begin:
     if alt_uvao_D5_hentai:
         dreamgirl "Если уже не научил."
         "Я невольно вспомнил то, что мы вытворяли в бункере. Эх… как же она хороша."
-        "Наверное, будь моя воля, я бы повторил то же самое с прямо здесь."
+        # "Наверное, будь моя воля, я бы повторил то же самое с прямо здесь." - хватит гусарить уже
     else:
         dreamgirl "А ведь мог, если бы ты не был таким тормозом. У тебя был просто идеальный шанс, но и тут ты умудрился всё запороть."
         th "Отвали. Не хватало ещё что бы мой первый раз в лагере был с кошкодевочкой, которая в реальности может и не существует."
@@ -669,7 +682,17 @@ label alt_day5_uvao_mines_begin:
     "Я зажёг ещё одну спичку."
     window hide
     play sound match_lights
-    scene bg int_mine_crossroad with fade2
+    scene bg int_mine_crossroad: 
+        contains:
+            'bg int_mine_crossroad' with fade 
+        contains:
+            'scenario_uvao/images/matches_tone.png' 
+            additive 1.0
+        contains:
+            'scenario_uvao/images/matches_lightmask.png'
+            xalign 0.5 yalign 1.0 
+            function random_zoom
+            repeat
     show uv normal at center
     with dissolve
     window show
@@ -677,22 +700,32 @@ label alt_day5_uvao_mines_begin:
     "К сожалению, эта спичка была точно такая же, что и предыдущая, и уже готова была погаснуть."
     scene bg black with fade2
     "Выкинув её, чтобы не обжечься, я нащупал в темноте тёплую руку своей проводницы и мы пошли дальше."
-    # можно было бы зациклить этот кусок, чтобы он игрался параллельно тексту - зажечь спичку, посмотреть на перекрёсток, потушить. Кажись что-то такое видел в документации
-    # Да вроде всё норм. - Ravsii
-    # сделал спецэффект, надо навставлять здесь и везде, где жжем спички
+    scene int_mine_crossroad_matches # зацикленный анимированый фон
+    $ renpy.music.play( (match_lights, silence), 'sound', True)
     "Так мы и ходили. То направо, то налево. Я иногда зажигал спички, но все перекрёстки были похожи как близнецы."
     "Поэтому я целиком и полностью положился на своего странного провожатого -  она каждый раз зачем-то озвучивала, в какую сторону мы поворачиваем."
     "Может быть, она хотела поговорить о чём-то, пока я молча плёлся за ней?"
     dreamgirl "Не льсти себе."
     "Очередной подкол Шизы я решил проигнорировать."
     if alt_uvao_D5_sh_mines:
+        scene bg black with fade2
         uv "Стой!"
         "Вдруг резко сказала Юля."
         "Я застыл столбом в ожидании следующих приказаний."
         uv "Там опять кто-то есть."
         play sound match_lights
         window hide
-        scene bg int_mine_crossroad with fade2
+        scene bg int_mine_crossroad: 
+            contains:
+                'bg int_mine_crossroad' with fade 
+            contains:
+                'scenario_uvao/images/matches_tone.png' 
+                additive 1.0
+            contains:
+                'scenario_uvao/images/matches_lightmask.png'
+                xalign 0.5 yalign 1.0 
+                function random_zoom
+                repeat
         show uv normal at center
         with dissolve
         window show
