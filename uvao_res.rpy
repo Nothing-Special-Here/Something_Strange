@@ -63,6 +63,16 @@ init:
     image int_mines_halt_spotlight = "scenario_uvao/images/int_mines_halt_spotlight.jpg"
     image int_catacombs_entrance_light = "scenario_uvao/images/int_catacombs_entrance_light.jpg"
     image int_old_building_day_uvao = "scenario_uvao/images/int_old_building_day_uvao.jpg"
+    # Затемнялка
+    image int_mine_black:
+        contains: 
+            'bg int_mine'
+        # contains: 
+            # 'bg black'
+            # alpha 0.9
+        # contains: 
+            # 'scenario_uvao/images/matches_lightmask.png'
+            # alpha 0.8 rotate 180 xalign 0.5 yalign 0.5
     # анимация перекрестка с зажиганием спичек
     image int_mine_crossroad_matches: 
         "bg black" with fade2

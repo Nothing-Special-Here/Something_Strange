@@ -488,7 +488,7 @@ label alt_day5_uvao_thinking:
     if alt_uvao_D5_hentai:
         "Перед глазами вновь пронеслось наше действо, как раз в этот момент Юля замычала и сморщила носик. От удовольствия или от боли я не знаю, но хотелось верить что от первого."
     else:
-        extend "Что-нибудь по интереснее, если бы кое-кто не сдал назад в нужный момент?"
+        dreamgirl "Что-нибудь по интереснее, если бы кое-кто не сдал назад в нужный момент?"
         th "Ты неисправим."
     "Она заворочалась и я, изловчившись, вытащил руку из под её головы."
     if alt_uvao_D5_hentai:
@@ -523,16 +523,15 @@ label alt_day5_uvao_thinking:
     "Мне даже показалось, будто она смотрит на меня как на добычу."
     me "Позволь…"
     show uv smile close with dspr
-    "Юля хмыкнула и села"
+    "Юля хмыкнула и села."
     if alt_uvao_D5_hentai:
-        extend ", прижав руки к обнажённой груди…"
+        "Она прижала руки к обнажённой груди…"
         dreamgirl "Хэй, гусар-зоофил, поаккуратнее…"
         "Я только сейчас понял, что я пытаюсь почти вслепую завязать себе галстук, ибо мой взгляд не отходил от её груди ни на секунду."
         "Выдав себе мысленного леща, я всё-же отвернулся и попытался завязать, наконец, этот грёбаный пионерский галстук."
         show uv laugh close with dspr
         "Юля хихикнула, наблюдая, как я в третий раз повязываю галстук и снова неудачно."
     else:
-        extend "."
         "C неким недовольством она всё-таки поднялась с кровати и уставилась на меня… снова."
         #TODO: Текст. Слишком оборванно как-то
     uv "Не понимаю, зачем вам эта красная повязка? Ужасно неудобно."
@@ -578,6 +577,8 @@ label alt_day5_uvao_mines_begin:
 # Используется флаг alt_uvao_D5_sh_mines. Если спали - видим Шурика в шахтах.
 #
     window hide
+    $ night_time()
+    $ persistent.sprite_time = "night"
     scene bg int_catacombs_entrance
     show uv smile at center 
     with dissolve
@@ -622,7 +623,7 @@ label alt_day5_uvao_mines_begin:
     window hide
     play sound sfx_jump_into_hole_2
     play music music_list["door_to_nightmare"] fadein 3
-    scene bg int_mine # TODO: затемнить, а то очень светло. 
+    scene int_mine_black
     show uv normal at center
     with dissolve
     window show
