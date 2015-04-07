@@ -171,13 +171,12 @@ label alt_day5_capture_sh_together:
     mt "Думаю, если мы разделимся…"
     stop music fadeout 2
     play sound sfx_tree_branches
-    show sh angry bar far at fright with dissolve
+    show sh angry bar3 far at fright with dissolve
     show el surprise pioneer at left
     show un surprise pioneer at fleft
     show mt surprise panama pioneer at center
     with dissolve
     "Её прервал треск веток позади нас, и из кустов выбрался наш драгоценный Шурик."
-# возможно, потребуется уточнить подробности внешнего вида нашего Рэмбо
     play music music_list["doomed_to_be_defeated"] fadein 3
     "Видок у него был тот ещё. Его словно таскали волоком по земле - весь в какой-то грязи, одежда местами порвана, на руках и ногах свежие ссадины, волосы растрёпаны."
     show el scared pioneer at left
@@ -194,7 +193,7 @@ label alt_day5_capture_sh_together:
     "В другой ситуации я бы и сам с удовольствием попраздновал труса, но наличие за спиной дрожащей от страха девочки странным образом в корне всё изменило."
     hide mt
     hide el
-    show sh angry bar far at right
+    show sh angry bar3 far at right
     with dissolve2
     "Я расправил плечи и медленно двинулся навстречу Шурику, стараясь улыбаться пошире."
     show sh angry bar at center with dissolve
