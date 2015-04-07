@@ -129,9 +129,7 @@ init:
 
     # el
     $ _el_pioneer_slap = ComposeSpriteSet('normal', 'el/el_2_body.png', 'el/el_2_pioneer.png',  'el/el_slap.png')
-    # image el pioneer slap close = _el_pioneer_slap['close']
     image el pioneer slap       = _el_pioneer_slap['normal']
-    # image el pioneer slap far   = _el_pioneer_slap['far']
     $ _el_pioneer_normal = ComposeSpriteSet('veryfar', 'el/el_1_body.png', 'el/el_1_pioneer.png',  'el/el_1_normal.png')
     image el pioneer normal veryfar = _el_pioneer_normal['veryfar']
     

@@ -193,84 +193,78 @@ label alt_day5_uvao_evening_debug:
 
 label scenario_uvao_sprites:
     menu:
+        # "Спрайты veryfar":
+            # label scenario_uvao_sprites_veryfar:
+            
+            # jump scenario_uvao_sprites
         "Электроник с плюхой":
             label scenario_uvao_sprites_el_slap:
+            show el scared pioneer
+            "!!!"
+            show el pioneer slap
+            "..."
+            hide el
+            jump scenario_uvao_sprites
+        "Коллайдер-сама":
+            label scenario_uvao_sprites_cs:
             menu:
-                "far":
-                    show el pioneer slap far
-                    "..."
-                    jump scenario_uvao_sprites_el_slap
                 "normal":
-                    show el pioneer slap
-                    "..."
-                    jump scenario_uvao_sprites_el_slap
+                    show cs smile #ванильный спрайт
+                    "cs smile"
+                    show cs smile2
+                    "cs smile2"
+                    jump scenario_uvao_sprites_cs
                 "close":
-                    show el pioneer slap close
-                    "..."
-                    jump scenario_uvao_sprites_el_slap
+                    show cs normal close #ванильный спрайт. Почему-то упрыгивает влево
+                    "cs normal close"
+                    show cs normal2 close
+                    "cs normal2 close"
+                    show cs smile2 close
+                    "cs smile2 close"
+                    show cs badgirl2 close
+                    "cs badgirl2 close"
+                    jump scenario_uvao_sprites_cs
                 "Назад":
-                    hide el
-                    jump scenario_uvao_sprites
-        "Шурик с дубиной":
+                    hide cs
+            jump scenario_uvao_sprites
+        "Шурик":
             label scenario_uvao_sprites_sh_bar:
             menu:
-                "far 1":
+                "close":
+                    show sh rage pioneer close # ванильный спрайт
+                    "sh rage pioneer close"
+                    show sh angry bar close
+                    "sh angry bar close"
+                    show sh angry bar2 close
+                    "sh angry bar2 close"
+                    jump scenario_uvao_sprites_sh_bar
+                "normal":
+                    show sh rage pioneer # ванильный спрайт
+                    "sh rage pioneer"
+                    show sh angry bar
+                    "sh angry bar"
+                    show sh angry bar3
+                    "sh angry bar3"
+                    jump scenario_uvao_sprites_sh_bar
+                "far":
+                    show sh rage pioneer far# ванильный спрайт
+                    "sh rage pioneer far"
                     show sh angry bar far
-                    "..."
-                    jump scenario_uvao_sprites_sh_bar
-                "normal 2":
-                    show sh angry bar2
-                    "..."
-                    jump scenario_uvao_sprites_sh_bar
-                "close 3":
-                    show sh angry bar3 close
-                    #"..."
+                    "sh angry bar far"
+                    show sh angry bar3 far
+                    "sh angry bar3 far"
                     jump scenario_uvao_sprites_sh_bar
                 "Назад":
                     hide sh
-                    jump scenario_uvao_sprites
-        "Виола в шоке":
-            label scenario_uvao_sprites_cs_fear:
-            menu:
-                "fear":
-                    show cs fear close
-                    "..."
-                    jump scenario_uvao_sprites_cs_fear
-                "fear2":
-                    show cs fear2
-                    "..."
-                    jump scenario_uvao_sprites_cs_fear
-                "Назад":
-                    hide cs
-                    jump scenario_uvao_sprites
-        "ОД в замешательстве":
-            label scenario_uvao_sprites_mt_doubt:
-            menu:
-                "в панамке":
-                    show mt pioneer doubt panama close
-                    "..."
-                    jump scenario_uvao_sprites_mt_doubt
-                "прост":
-                    show mt pioneer doubt close
-                    "..."
-                    jump scenario_uvao_sprites_mt_doubt
-                "Назад":
-                    hide mt
-                    jump scenario_uvao_sprites                            
-        "ОД испугалася":
-            label scenario_uvao_sprites_mt_scared:
-            menu:
-                "в панамке":
-                    show mt pioneer shock panama close
-                    "..."
-                    jump scenario_uvao_sprites_mt_scared
-                "прост":
-                    show mt pioneer shock close
-                    "..."
-                    jump scenario_uvao_sprites_mt_scared
-                "Назад":
-                    hide mt
-                    jump scenario_uvao_sprites
+            jump scenario_uvao_sprites
+        "Мод-тян":
+            label scenario_uvao_sprites_sh:
+            show mt scared panama pioneer #ванильный спрайт
+            "mt scared panama pioneer"
+            show mt scared3 panama pioneer
+            "mt scared3 panama pioneer"
+            hide mt
+            jump scenario_uvao_sprites
         "Назад":
             jump scenario_uvao_root_D4_debug
 
