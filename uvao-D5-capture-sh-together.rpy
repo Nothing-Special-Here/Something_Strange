@@ -178,8 +178,8 @@ label alt_day5_capture_sh_together:
     with dissolve
     "Её прервал треск веток позади нас, и из кустов выбрался наш драгоценный Шурик."
 # возможно, потребуется уточнить подробности внешнего вида нашего Рэмбо
+    play music music_list["doomed_to_be_defeated"] fadein 3
     "Видок у него был тот ещё. Его словно таскали волоком по земле - весь в какой-то грязи, одежда местами порвана, на руках и ногах свежие ссадины, волосы растрёпаны."
-    play music music_list["pile"] fadein 1
     show el scared pioneer at left
     show un scared pioneer at fleft
     show mt scared3 panama pioneer at center #| Бегун, предполагалось, что указательный палец вожатой чуть-чуть закрывает рот. Видишь, он чуть-чуть снизу не дорисован? - Ленофаг
@@ -203,13 +203,18 @@ label alt_day5_capture_sh_together:
     me "Шурик, ты же пионер, успокойся!"
     me "Брось арматурину, это не наш метод.{w} Где гуманизм? Где человек человеку?"
     sh "Гуманизм? Да вы же вообще не люди! Вы - голоса в моей голове.{w} Хватит меня за нос водить! Вас нет.{w=.8} ВАС НЕТ!{w=.8} ВЫ - ГОЛОСА!{w=.8} УХОДИТЕ!"
+    $ renpy.music.set_volume(0.5, delay=5, channel='music')
     "Мне очень не понравился нездоровый блеск в его глазах, а ещё меньше понравилось то, что в такт последним словам Шурик принялся размахивать железякой перед собой."
     th "Да что он, под кайфом?!"
+    $ renpy.music.set_volume(0.3, delay=1.5, channel='music')
     me "Шурик? Может, не надо?"
 # CG Шурик атакуэ!
     window hide
+    stop music fadeout 0
+    $ renpy.music.set_volume(1.0, delay=0, channel='music')
     scene cg d4_sh_stay
     with dissolve
+    play music music_list["pile"] fadein 0
     window show
     "Вместо ответа он ринулся на меня с бессвязным воплем, замахиваясь куском арматуры."
     #play sound mpbt
@@ -243,7 +248,8 @@ label alt_day5_capture_sh_together:
 # нет, я не уверен, что намёк про полотенца так уж необходим - Бегун
     with vpunch
     "От неожиданности я ослабил было хватку, так что Шурик чуть не вырвался."
-    show mt angry panama pioneer at fright with dissolve
+# раз уш Эл переехал вправо, то ОД едет влево
+    show mt angry panama pioneer at fleft with dissolve
     mt "Ну-ка, переверните его!"
     "Раздался откуда-то сверху неожиданно спокойный голос вожатой."
     "Пыхтя от натуги, мы с Элом кое-как выполнили её распоряжение."
