@@ -62,6 +62,7 @@ init:
     image int_old_building_day_uvao = "scenario_uvao/images/int_old_building_day_uvao.jpg"
     image int_mines_halt_spotlight = "scenario_uvao/images/int_mines_halt_spotlight.jpg"
     image int_catacombs_entrance_light = "scenario_uvao/images/int_catacombs_entrance_light.jpg"
+    image int_mine_exit_day = "scenario_uvao/images/int_mine_exit_day.jpg"
     image int_old_building_day_uvao = "scenario_uvao/images/int_old_building_day_uvao.jpg"
     image int_sleep_hentai_office = "scenario_uvao/images/int_sleep_hentai_office.jpg"
     image int_sleep_hentai_office2 = "scenario_uvao/images/int_sleep_hentai_office2.jpg"

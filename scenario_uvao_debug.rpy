@@ -45,79 +45,81 @@ label scenario_uvao_root_D4_debug:
             jump alt_day4_uvao_start
         "Отладка Д4":
             menu:
-                "Отладка: Уборка гирлянд":
+                "Уборка гирлянд":
                     jump alt_day4_uvao_garlands_removal_debug
-                "Отладка: Посещение библиотеки":
+                "Посещение библиотеки":
                     jump alt_day4_uvao_library
-                "Отладка: Сразу Д4-Обед":
+                "Сразу Д4-Обед":
                     jump alt_day4_uvao_lunch
-                "Отладка: Сразу Д4-встреча с Юлей после обеда без концерта":
+                "Сразу Д4-встреча с Юлей после обеда без концерта":
                     $ alt_uvao_D4_concert = False
                     jump alt_day4_uvao_meet_Yulia_after_lunch
-                "Отладка: Сразу Д4-встреча с Юлей после концерта (обедали со Славей)":
+                "Сразу Д4-встреча с Юлей после концерта (обедали со Славей)":
                     $ alt_uvao_D4_concert = True
                     $ alt_uvao_D4_lunch_un = False
                     $ alt_uvao_D4_lunch_sl = True
                     jump alt_day4_uvao_meet_Yulia_after_lunch
-                "Отладка: Сразу Д4-встреча с Юлей после концерта (обедали с Леной)":
+                "Сразу Д4-встреча с Юлей после концерта (обедали с Леной)":
                     $ alt_uvao_D4_concert = True
                     $ alt_uvao_D4_lunch_un = True
                     $ alt_uvao_D4_lunch_sl = False
                     jump alt_day4_uvao_meet_Yulia_after_lunch
-                "Отладка: Сразу Д4-ужин с Виолой (на выбор)":
+                "Сразу Д4-ужин с Виолой (на выбор)":
                     $ alt_uvao_D4_viola_morning = True
                     jump alt_day4_uvao_supper
-                "Отладка: Сразу Д4-ужин без Виолы":
+                "Сразу Д4-ужин без Виолы":
                     $ alt_uvao_D4_viola_morning = False
                     jump alt_day4_uvao_supper
-                "Отладка: Сразу Д4-встреча с Юлей после ужина":
+                "Сразу Д4-встреча с Юлей после ужина":
                     jump alt_day4_uvao_meet_Yulia_at_evening
-                "Отладка: Сразу Д4-после ужина с Виолой":
+                "Сразу Д4-после ужина с Виолой":
                     $ alt_uvao_D4_supper_cs = True
                     jump alt_day4_uvao_evening_business
-                "Отладка: Сразу Д4-после ужина без Виолы":
+                "Сразу Д4-после ужина без Виолы":
                     $ alt_uvao_D4_supper_cs = False
                     jump alt_day4_uvao_evening_business
                 "Назад":
                     jump scenario_uvao_root_D4_debug
         "Отладка Д5":
             menu:
-                "Отладка: Подъём без доклада Виоле в Д4":
+                "Подъём без доклада Виоле в Д4":
                     $ alt_uvao_true = False
                     jump alt_day5_uvao_getting_up
-                "Отладка: Подъём с докладом Виоле в Д4":
+                "Подъём с докладом Виоле в Д4":
                     $ alt_uvao_true = True
                     jump alt_day5_uvao_getting_up
-                "Отладка: Спуск в бункер с докладом Виоле в Д4":
+                "Спуск в бункер с докладом Виоле в Д4":
                     $ alt_uvao_true = True
                     jump alt_day5_uvao_tunnel                
-                "Отладка: Спуск в бункер без доклада Виоле в Д4":
+                "Спуск в бункер без доклада Виоле в Д4":
                     jump alt_day5_uvao_tunnel
-                "Отладка: В бункере с докладом Виоле в Д4":
+                "В бункере с докладом Виоле в Д4":
                     $ alt_uvao_true = True
                     jump alt_day5_uvao_bunker_debug                
-                "Отладка: В бункере без доклада Виоле в Д4":
+                "В бункере без доклада Виоле в Д4":
                     jump alt_day5_uvao_bunker_debug
-                "Отладка: Поход наверх. Тру рут":
+                "Поход наверх. Тру рут":
                     jump alt_day5_uvao_true_back
-                "Отладка: Охота на Шурика в шахтах":
+                "Охота на Шурика в шахтах":
                     jump alt_day5_uvao_mines_sh
-                "Отладка: Обед без доклада Виоле в Д4":
+                "Поход назад через стоянку.":
+                    jump alt_day5_parking_back_debug
+                "Обед без доклада Виоле в Д4":
                     $ alt_uvao_true = False
                     jump alt_day5_uvao_lunch
-                "Отладка: Обед с докладом Виоле в Д4":
+                "Обед с докладом Виоле в Д4":
                     $ alt_uvao_true = True
                     jump alt_day5_uvao_lunch
-                "Отладка: Совместная охота на дикого Шурика not-uvao_true":
+                "Совместная охота на дикого Шурика not-uvao_true":
                     $ alt_uvao_true = False
                     jump alt_day5_capture_sh_together_debug
-                "Отладка: Совместная охота на дикого Шурика uvao_true":
+                "Совместная охота на дикого Шурика uvao_true":
                     $ alt_uvao_true = True
                     jump alt_day5_capture_sh_together_debug
-                "Отладка: Вечер not-uvao_true":
+                "Вечер not-uvao_true":
                     $ alt_uvao_true = False
                     jump alt_day5_uvao_evening_debug
-                "Отладка: Вечер uvao_true":
+                "Вечер uvao_true":
                     $ alt_uvao_true = True
                     jump alt_day5_uvao_evening_debug
                 "Назад":
@@ -190,6 +192,19 @@ label alt_day5_uvao_evening_debug:
             "Охотились на Шурика с отрядом":
                 $ alt_uvao_D5_sh_mines = False
     jump alt_day5_uvao_evening
+#
+label alt_day5_parking_back_debug:
+    menu:
+        "Ходили к Виоле утром Д4":
+            $ alt_uvao_D4_viola_morning = True
+        "Бесславно обруганы ОД утром Д4":
+            $ alt_uvao_D4_viola_morning = False
+    menu:
+        "Хентай был":
+            $ alt_uvao_D5_hentai = True
+        "Хентая не было":
+            $ alt_uvao_D5_hentai = False
+    jump alt_day5_parking_back
 
 label scenario_uvao_sprites:
     menu:
