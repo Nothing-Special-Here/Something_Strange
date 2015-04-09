@@ -109,33 +109,30 @@ init:
 # спрайты, с тонировкой под закат или ночь
 #####################################################
     $ _uvao_spr = 'scenario_uvao/images/sprites'
+    #neko
+    image sl neko veryfar = ComposeSpriteSet('veryfar', 'sl/sl_neko.png')['veryfar']
+    image dv neko veryfar = ComposeSpriteSet('veryfar', 'dv/dv_neko.png')['veryfar']
+    image un neko veryfar = ComposeSpriteSet('veryfar', 'un/un_neko.png')['veryfar']
+    image mi neko veryfar = ComposeSpriteSet('veryfar', 'mi/mi_neko.png')['veryfar']
+    
     #sl
-    $ _sl_pioneer_normal = ComposeSpriteSet('veryfar', 'sl/sl_1_body.png', 'sl/sl_1_pioneer.png', 'sl/sl_1_normal.png')
-    image sl pioneer normal veryfar = _sl_pioneer_normal['veryfar']
-    $ _sl_pioneer_serious = ComposeSpriteSet('veryfar', 'sl/sl_1_body.png', 'sl/sl_1_pioneer.png', 'sl/sl_1_serious.png')
-    image sl pioneer serious veryfar = _sl_pioneer_serious['veryfar']
-    $ _sl_pioneer_scared = ComposeSpriteSet('veryfar', 'sl/sl_4_body.png', 'sl/sl_4_pioneer.png', 'sl/sl_4_scared.png')
-    image sl pioneer serious veryfar = _sl_pioneer_serious['veryfar']   
+    image sl pioneer normal veryfar = ComposeSpriteSet('veryfar', 'sl/sl_1_body.png', 'sl/sl_1_pioneer.png', 'sl/sl_1_normal.png')['veryfar']
+    image sl pioneer serious veryfar = ComposeSpriteSet('veryfar', 'sl/sl_1_body.png', 'sl/sl_1_pioneer.png', 'sl/sl_1_serious.png')['veryfar']
+    image sl pioneer serious veryfar = ComposeSpriteSet('veryfar', 'sl/sl_4_body.png', 'sl/sl_4_pioneer.png', 'sl/sl_4_scared.png')['veryfar']   
     
     #un
-    $ _un_pioneer_normal = ComposeSpriteSet('veryfar', 'un/un_1_body.png', 'un/un_1_pioneer.png', 'un/un_1_normal.png')
-    image un pioneer normal veryfar = _un_pioneer_normal['veryfar']
-    $ _un_pioneer_scared = ComposeSpriteSet('veryfar', 'un/un_2_body.png', 'un/un_2_pioneer.png', 'un/un_2_scared.png')
-    image un pioneer scared veryfar = _un_pioneer_scared['veryfar']
-    $ _un_pioneer_shocked = ComposeSpriteSet('veryfar', 'un/un_2_body.png', 'un/un_2_pioneer.png', 'un/un_2_shocked.png')
-    image un pioneer shocked veryfar = _un_pioneer_shocked['veryfar']    
-    $ _un_pioneer_serious = ComposeSpriteSet('veryfar', 'un/un_3_body.png', 'un/un_3_pioneer.png', 'un/un_3_serious.png')
-    image un pioneer serious veryfar = _un_pioneer_serious['veryfar']
+    image un pioneer normal veryfar = ComposeSpriteSet('veryfar', 'un/un_1_body.png', 'un/un_1_pioneer.png', 'un/un_1_normal.png')['veryfar']
+    image un pioneer scared veryfar = ComposeSpriteSet('veryfar', 'un/un_2_body.png', 'un/un_2_pioneer.png', 'un/un_2_scared.png')['veryfar']
+    image un pioneer shocked veryfar = ComposeSpriteSet('veryfar', 'un/un_2_body.png', 'un/un_2_pioneer.png', 'un/un_2_shocked.png')['veryfar']    
+    image un pioneer serious veryfar = ComposeSpriteSet('veryfar', 'un/un_3_body.png', 'un/un_3_pioneer.png', 'un/un_3_serious.png')['veryfar']
 
     # el
-    $ _el_pioneer_slap = ComposeSpriteSet('normal', 'el/el_2_body.png', 'el/el_2_pioneer.png',  'el/el_slap.png')
-    image el pioneer slap       = _el_pioneer_slap['normal']
-    $ _el_pioneer_normal = ComposeSpriteSet('veryfar', 'el/el_1_body.png', 'el/el_1_pioneer.png',  'el/el_1_normal.png')
-    image el pioneer normal veryfar = _el_pioneer_normal['veryfar']
+    image el pioneer slap = ComposeSpriteSet('normal', 'el/el_2_body.png', 'el/el_2_pioneer.png',  'el/el_slap.png')['normal']
+    image el pioneer normal veryfar = ComposeSpriteSet('veryfar', 'el/el_1_body.png', 'el/el_1_pioneer.png',  'el/el_1_normal.png')['veryfar']
     
     #sh
-    $ _sh_pioneer_rage = ComposeSpriteSet('veryfar', 'sh/sh_2_body.png', 'sh/sh_2_rage.png')
-    image sh pioneer rage veryfar = _sh_pioneer_rage['veryfar']
+    image sh pioneer rage veryfar = ComposeSpriteSet('veryfar', 'sh/sh_2_body.png', 'sh/sh_2_rage.png')['veryfar']
+    
     $ _sh_angry_bar = ComposeSpriteSet(('far','normal','close'), 'sh/sh_angry_bar.png')
     image sh angry bar close        = _sh_angry_bar['close']
     image sh angry bar              = _sh_angry_bar['normal']
@@ -151,10 +148,8 @@ init:
     image sh angry bar3 veryfar = _sh_angry_bar3['veryfar']
 
     # mt
-    $ _mt_pioneer_angry = ComposeSpriteSet('veryfar',  'mt/mt_2_body.png', 'mt/mt_2_pioneer.png',  'mt/mt_2_angry.png')
-    image mt pioneer angry veryfar  =_mt_pioneer_angry['veryfar']
-    $ _mt_pioneer_normal = ComposeSpriteSet('veryfar', 'mt/mt_1_body.png',  'mt/mt_1_pioneer.png', 'mt/mt_1_normal.png')
-    image mt pioneer normal veryfar  =_mt_pioneer_normal['veryfar']
+    image mt pioneer angry veryfar = ComposeSpriteSet('veryfar',  'mt/mt_2_body.png', 'mt/mt_2_pioneer.png',  'mt/mt_2_angry.png')['veryfar']
+    image mt pioneer normal veryfar = ComposeSpriteSet('veryfar', 'mt/mt_1_body.png',  'mt/mt_1_pioneer.png', 'mt/mt_1_normal.png')['veryfar']
     # $ _mt_pioneer_shock = ComposeSprite('images/3500/sprites/full/mt/mt_3_body.png', 'images/3500/sprites/full/mt/mt_3_pioneer.png', 'scenario_uvao/images/mt_shock.png')
     # image mt pioneer shock close    =_mt_pioneer_shock['close']
     # image mt pioneer shock          =_mt_pioneer_shock['normal']     
