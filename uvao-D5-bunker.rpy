@@ -342,13 +342,13 @@ label alt_day5_uvao_hentai_sleep:
     me "Представляете себе атакующую рысь или пантеру? Вот примерно в таком смысле."    
     me "Лучше действовать лаской, уговорами и подкупом - отлично работают всякие пирожные."
     "В дверь постучали."
-    show sl neko veryfar with dissolve
+    show sl neko veryfar behind prologue_dream with dissolve
     sl "Можно, Семён Семёнович?"
     me "Да, проходите, девочки."
-    show sl neko veryfar at fleft with dissolve
-    show un neko veryfar at cleft with dissolve
-    show dv neko veryfar at cright with dissolve
-    show mi neko veryfar at fright with dissolve
+    show sl neko veryfar behind prologue_dream at fleft with dissolve
+    show un neko veryfar behind prologue_dream at cleft with dissolve
+    show dv neko veryfar behind prologue_dream at cright with dissolve
+    show mi neko veryfar behind prologue_dream at fright with dissolve
     me "Знакомьтесь, господа, это - Славя, Лена, Алиса и Мику - помесь русской голубой и ориентальной породы. Девочки, эти господа приглашают вас потанцевать и поразвлекаться, вы не возражаете?"
     voice "Позвольте глупый вопрос, а почему они в пионерской форме?"
     me "Называйте это корпоративным стилем, или рекламным ходом. Это запоминается, создаёт имидж..."
