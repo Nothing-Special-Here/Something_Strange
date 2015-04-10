@@ -184,7 +184,7 @@ label alt_day5_uvao_evade_hentai_scene:
         window show
         "Вспышка, Юля подскочила от неожиданности, а я скорее полез в телефон посмотреть снимок."
         window hide
-        # play sound sfx_scary_sting //Дофига резкий ВНЕЗАПНЫЙ страшный звук, я только не уверен, в верное ли место я его вставил, поэтому пока в комменты - Ленофаг
+        play sound sfx_scary_sting
         scene uv_photo_city with dissolve
         $ renpy.pause(2, hard=True)
         scene bg int_catacombs_living with dissolve
