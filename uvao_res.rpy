@@ -100,6 +100,7 @@ init:
 #cg
 #    image pioner_lib_hiding = "scenario_uvao/images/pioner_lib_hiding.jpg"
     image uv_photo_city = "scenario_uvao/images/uv_photo_city.jpg"
+    image uv_photo_galaxy = "scenario_uvao/images/uv_photo_galaxy.jpg"
     image uv_bunker_hentai = "scenario_uvao/images/uv_bunker_hentai.jpg"
     # Кошочка авторства Орики
     image uv_new_hentai1 = "images/1080/cg/epilogue_uv_hentai_1.jpg"
