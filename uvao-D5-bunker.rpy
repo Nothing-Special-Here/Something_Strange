@@ -365,9 +365,10 @@ label alt_day5_uvao_hentai_sleep:
     show int_sleep_hentai_office2 behind prologue_dream with fade3
     hide int_sleep_hentai_office
     "Покончив с формальностями и проводив кошечек до лимузина, я вернулся в кабинет. Неплохой куш нам сегодня обломился! "
-    scene int_sleep_hentai_office2 behind prologue_dream:
-        xalign 0.6 yalign 0.5 zoom 1.0
-        linear 3.0 xalign 0.75 yalign 0.3 zoom 3.0  
+    #Ваши топ эффекты не работают, prologue dream исчезает. Убираю, пардон. - Ravsii
+    # behind prologue_dream:
+        # xalign 0.6 yalign 0.5 zoom 1.0
+        # linear 3.0 xalign 0.75 yalign 0.3 zoom 3.0  
     extend "Я подмигнул Юрию Куклачёву, грозящему мне пальцем из фоторамки на столе, вытянулся в удобном кресле и прикрыл глаза."
     show blink
     $ renpy.pause(1)
@@ -453,8 +454,6 @@ label alt_day5_uvao_hentai_sleep:
 label alt_day5_uvao_hentai_thinking:
 #Д5 - Задумался, разговор с Шизой после хентая.
 #
-    #TODO: СМ 357 строку. До неё нужно что-то придумать, как отвлечься что-бы юля уснула. Был вариант чуть прикрыть глаза и задремать, но Юля ж конфеты пожирает
-    # лучше разделить на два текста - для хентайной и целомудренной ветки. 
     "Судя по монотонному сопению девушки, та явно уснула. Все-таки есть в ней что-то человеческое…"
     "Ко мне же сон идти не хотел. Мысли ураганом носились в моей голове."
     th "Чёрт, нехорошо как-то получилось. Развёл девушку…"
@@ -634,18 +633,9 @@ label alt_day5_uvao_mines_begin:
         "Взяв из кармана заветный коробок, я достал из него спичку и зажёг её." 
     window hide
     play sound match_lights
-    scene bg int_mine_crossroad: # Имя должно совпадать с указанным ниже
-        contains: # это - фон, который надо показать
-            'bg int_mine_crossroad' with fade 
-        contains: # это - оранжевенькая тонировка
-            'scenario_uvao/images/matches_tone.png' 
-            additive 1.0
-        contains: # это - дрожание пламени
-            'scenario_uvao/images/matches_lightmask.png'
-            xalign 0.5 yalign 1.0 
-            function random_zoom
-            repeat
-    show uv normal at center
+    scene bg int_mine_crossroad
+    show match_lights
+    show uv normal at center behind match_lights
     with dissolve
     window show
     th "Какой-то перекрёсток?"
@@ -670,18 +660,9 @@ label alt_day5_uvao_mines_begin:
     "Я зажёг ещё одну спичку."
     window hide
     play sound match_lights
-    scene bg int_mine_crossroad: 
-        contains:
-            'bg int_mine_crossroad' with fade 
-        contains:
-            'scenario_uvao/images/matches_tone.png' 
-            additive 1.0
-        contains:
-            'scenario_uvao/images/matches_lightmask.png'
-            xalign 0.5 yalign 1.0 
-            function random_zoom
-            repeat
-    show uv normal at center
+    scene bg int_mine_crossroad
+    show match_lights
+    show uv normal at center behind match_lights
     with dissolve
     window show
     th "Ещё один перекрёсток? Как она вообще тут ориентируется? Ещё и в кромешной темноте."
@@ -696,6 +677,7 @@ label alt_day5_uvao_mines_begin:
     dreamgirl "Не льсти себе."
     "Очередной подкол Шизы я решил проигнорировать."
     if alt_uvao_D5_sh_mines:
+        stop sound
         scene bg black with fade2
         uv "Стой!"
         "Вдруг резко сказала Юля."
@@ -703,18 +685,9 @@ label alt_day5_uvao_mines_begin:
         uv "Там опять кто-то есть."
         play sound match_lights
         window hide
-        scene bg int_mine_crossroad: 
-            contains:
-                'bg int_mine_crossroad' with fade 
-            contains:
-                'scenario_uvao/images/matches_tone.png' 
-                additive 1.0
-            contains:
-                'scenario_uvao/images/matches_lightmask.png'
-                xalign 0.5 yalign 1.0 
-                function random_zoom
-                repeat
-        show uv normal at center
+        scene bg int_mine_crossroad
+        show match_lights
+        show uv normal at center behind match_lights
         with dissolve
         window show
         th "Я догадываюсь, кто это может быть."
@@ -734,6 +707,7 @@ label alt_day5_uvao_mines_begin:
         uv "Направо."
         "Я покорно проследовал за моим всевидящим спутником. Да и что мне оставалось, в темноте я всё-равно ничего не вижу, а тратить спички мне уже давно надоело."
         "Кроме своих указаний, в какую сторону идти, она ничего не говорила. Да и мне не очень-то и хотелось начинать разговор, так что я просто плёлся, держась за её руку."
+        stop sound
         jump alt_day5_uvao_from_mines_to_dinner
 
 label alt_day5_uvao_from_mines_to_dinner:

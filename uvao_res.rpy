@@ -70,13 +70,23 @@ init:
     image int_mine_black:
         contains: 
             'bg int_mine'
-        # contains: 
-            # 'bg black'
-            # alpha 0.9
-        # contains: 
-            # 'scenario_uvao/images/matches_lightmask.png'
-            # alpha 0.8 rotate 180 xalign 0.5 yalign 0.5
-    # анимация перекрестка с зажиганием спичек
+        contains: 
+            'bg black'
+            alpha 0.7
+        contains: 
+            'scenario_uvao/images/matches_lightmask.png'
+            alpha 0.6 rotate 180 xalign 0.5 yalign 0.5
+    #Анимка спичек
+    image match_lights: 
+        contains: 
+            'scenario_uvao/images/matches_tone.png' 
+            additive 1.0
+        contains: 
+            'scenario_uvao/images/matches_lightmask.png'
+            xalign 0.5 yalign 1.0 
+            function random_zoom
+            repeat
+    # Анимка бесконечных спичек
     image int_mine_crossroad_matches: 
         "bg black" with fade2
         0.5
