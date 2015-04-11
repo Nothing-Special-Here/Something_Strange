@@ -116,6 +116,12 @@ label scenario_uvao_root_D4_debug:
                 "Совместная охота на дикого Шурика uvao_true":
                     $ alt_uvao_true = True
                     jump alt_day5_capture_sh_together_debug
+                "Ужин после палева на стоянке not-uvao_true":
+                    $ alt_uvao_true = False
+                    jump alt_day5_uvao_spoled_supper
+                "Ужин после палева на стоянке uvao_true":
+                    $ alt_uvao_true = True
+                    jump alt_day5_uvao_spoled_supper
                 "Вечер not-uvao_true":
                     $ alt_uvao_true = False
                     jump alt_day5_uvao_evening_debug
