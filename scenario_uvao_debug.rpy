@@ -118,10 +118,10 @@ label scenario_uvao_root_D4_debug:
                     jump alt_day5_capture_sh_together_debug
                 "Ужин после палева на стоянке not-uvao_true":
                     $ alt_uvao_true = False
-                    jump alt_day5_uvao_spoled_supper
+                    jump alt_day5_uvao_spoiled_supper
                 "Ужин после палева на стоянке uvao_true":
                     $ alt_uvao_true = True
-                    jump alt_day5_uvao_spoled_supper
+                    jump alt_day5_uvao_spoiled_supper
                 "Вечер not-uvao_true":
                     $ alt_uvao_true = False
                     jump alt_day5_uvao_evening_debug
