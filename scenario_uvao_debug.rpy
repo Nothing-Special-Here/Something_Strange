@@ -116,12 +116,8 @@ label scenario_uvao_root_D4_debug:
                 "Совместная охота на дикого Шурика uvao_true":
                     $ alt_uvao_true = True
                     jump alt_day5_capture_sh_together_debug
-                "Ужин после палева на стоянке not-uvao_true":
-                    $ alt_uvao_true = False
-                    jump alt_day5_uvao_spoiled_supper
-                "Ужин после палева на стоянке uvao_true":
-                    $ alt_uvao_true = True
-                    jump alt_day5_uvao_spoiled_supper
+                "Ужин после палева на стоянке":
+                    jump alt_day5_uvao_spoiled_supper_debug
                 "Вечер not-uvao_true":
                     $ alt_uvao_true = False
                     jump alt_day5_uvao_evening_debug
@@ -211,7 +207,20 @@ label alt_day5_parking_back_debug:
         "Хентая не было":
             $ alt_uvao_D5_hentai = False
     jump alt_day5_parking_back
-
+#
+label alt_day5_uvao_spoiled_supper_debug:
+    menu:
+        "Ходили к Виоле утром Д4":
+            $ alt_uvao_D4_viola_morning = True
+        "Бесславно обруганы ОД утром Д4":
+            $ alt_uvao_D4_viola_morning = False
+    menu:
+        "Хентай был":
+            $ alt_uvao_D5_hentai = True
+        "Хентая не было":
+            $ alt_uvao_D5_hentai = False
+    jump alt_day5_uvao_spoiled_supper
+#
 label scenario_uvao_sprites:
     menu:
         # "Спрайты veryfar":
