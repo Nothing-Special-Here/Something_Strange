@@ -100,7 +100,7 @@ label alt_day5_uvao_evening:
             show cs badgirl2 close with dissolve:
 #                xalign 0.5 yalign 0.4 zoom 1.3
                 xalign 0.5 yalign 0.5 zoom 1.0
-                linear 2.0 xalign 0.5 yalign 0.4 zoom 1.3
+                linear 2.0 xalign 0.5 yalign 0.1 zoom 1.3
             cs "В столовой толком не поговоришь - только и ждёшь, что подслушает кто-нибудь.{w} Да и реноме надо поддерживать."
             show cs badgirl2 close with dissolve:
 #                xalign 0.5 yalign 0.4 zoom 1.3
@@ -125,6 +125,7 @@ label alt_day5_uvao_evening:
             "…Вздохнув, я смущённо пожал плечами и, ссутулившись, поплёлся относить грязную посуду."
             hide dv with dissolve
             stop ambience fadeout 1
+label alt_day5_uvao_evening_dining_hall_exit:
     stop ambience fadeout 3
     window hide
     $ renpy.pause(1)
@@ -145,7 +146,7 @@ label alt_day5_uvao_evening:
     $ set_zone('sport_area', 'alt_day5_uvao_evening_map_strange')
     $ set_zone('library', 'alt_day5_uvao_evening_map_strange')
     $ set_zone('medic_house', 'alt_day5_uvao_evening_map_strange')
-    $ set_zone('square', 'alt_day5_uvao_evening_map_strange')
+    $ set_zone('square', 'alt_day5_uvao_evening_dv_un')
     $ set_zone('beach', 'alt_day5_uvao_evening_map_peaceful')
     $ set_zone('boat_station', 'alt_day5_uvao_evening_map_peaceful')
     $ set_zone('me_mt_house', 'alt_day5_uvao_evening_go_house')
@@ -177,15 +178,16 @@ label alt_day5_uvao_evening_miss:
     dreamgirl "Можно подумать, ты всё ещё помнишь, куда собирался идти.{w} Неужели за день не набегался? Если уж тело столь бесцеремонно берёт инициативу в свои руки - самое время к нему прислушаться."
     "Немного подумав, я решительно махнул на всё рукой."
     th "В конце концов, здесь ничем не хуже, чем в любом другом месте.{w} Спокойно, никто не шляется туда-сюда."
-    jump alt_day5_uvao_evening_headlong
+    jump alt_day5_uvao_evening_headlong_already_here
 label alt_day5_uvao_evening_go_house:
     scene bg ext_dining_hall_away_sunset with fade
     th "Действительно, что тут думать? Как будто я за день недостаточно набегался.{w} Пойду-ка я домой, посижу там спокойно до отбоя."
+label alt_day5_uvao_evening_headlong:
     window hide
     $ renpy.pause(1)
     scene bg ext_house_of_mt_sunset with dissolve2
     window show
-label alt_day5_uvao_evening_headlong:
+label alt_day5_uvao_evening_headlong_already_here:
     stop sound_loop fadeout 7
     stop music fadeout 5
     "Впрочем, особого желания сидеть в прогревшемся за день домике у меня не было."
@@ -235,6 +237,7 @@ label alt_day5_uvao_evening_headlong:
         me "Я понимаю, Ольга Дмитриевна."
         show mt normal pioneer with dissolve
         mt "Вот и славно. Взаимопонимание - прекрасная вещь."
+        hide mt with dissolve
         "С этими словами она повернулась и скрылась в домике."
         dreamgirl "Кажется, сегодняшние полежалки с Санычем отменяются."
         th "Кажется, да. Впрочем, ну её, пусть себе злится на здоровье. Мне с ней детей не крестить."
@@ -244,14 +247,18 @@ label alt_day5_uvao_evening_headlong:
         "Кажется, эмоции ясно отразились на моём лице, потому что она вдруг усмехнулась:"
         show mt smile pioneer with dissolve
         mt "Ладно, горе ты моё луковое, ты почему в дом-то не идёшь спать? Под звёздами приятнее, что ли?"
+        hide mt with dissolve
         "Пока я растерянно хлопал глазами, вожатая скрылась внутри домика."
-    hide mt with dissolve
     th "В самом деле, с чего это я здесь разлёгся? В постели-то оно и вправду спать приятнее."
     "Не успел я выбраться из шезлонга, как Ольга уже выбежала наружу."
     show mt normal pioneer far at cleft with dissolve
     mt "Спокойной ночи!"
     "Бросила она, деловито проносясь мимо меня."
-    dreamgirl "Ну да, очередной сеанс самоотверженной работы на благо общества.{w} Надеюсь, хоть перегаром она завтра на нас дышать не будет."
+    dreamgirl "Ну да, очередной сеанс самоотверженной работы на благо общества."
+    if alt_uvao_D5_sh_mines:
+        extend " По крайней мере, хоть перегаром она завтра на нас дышать точно не будет."
+    else:
+        extend " Надеюсь, хоть перегаром она завтра на нас дышать не будет."
     show mt normal pioneer far at left with ease
     me "Ольга Дмитриевна, а Вы куда на ночь-то глядя?"
     show mt rage pioneer far at left with dspr
@@ -271,7 +278,7 @@ label alt_day5_uvao_evening_headlong:
     "Растерянно ответил я, совершенно сбитый с толку таким неожиданным поворотом."
     mt "Вот и я знаю, что нет. Поэтому учебник, который у тебя на тумбочке лежал, я сегодня отнесла обратно в библиотеку."
     show mt smile pioneer far with dspr
-    mt "Нет у тебя читательского билета - нету и книжек!"
+    mt "Нет у тебя читательского билета - нет и книжек!"
     show mt laugh pioneer far with dspr
     "Тут она самым легкомысленным образом показала мне язык и скрылась в темноте."
     hide mt with easeoutleft
