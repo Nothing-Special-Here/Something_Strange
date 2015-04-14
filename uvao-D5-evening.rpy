@@ -6,6 +6,7 @@
 # Используется флаг alt_uvao_D5_hentai (крыли кошочку)
 #
 label alt_day5_uvao_evening:
+    $ alt_uvao_D5_evening_dv_un = False
     $ routetag = "uv"
     $ alt_chapter(5, u"Юля. Вечер")
     $ persistent.sprite_time = "sunset"
@@ -214,6 +215,8 @@ label alt_day5_uvao_evening_headlong_already_here:
         "Блуждание вслепую по тёмным шахтам и беготня за спятившим Шуриком."
     else:
         "Чудом не приключившаяся со мной трепанация черепа… И странное поведение Лены, кстати говоря."
+    if alt_uvao_D5_evening_dv_un:
+        "Вообще, сцена на площади сегодня вечером тоже не давала мне покоя."
     "За всеми этими мыслями я и не заметил, как роскошный закатный пожар в небе подёрнулся пеплом, и вечер по-южному быстро уступил место ночи."
     stop ambience fadeout 2
     window hide
