@@ -141,19 +141,39 @@ label alt_day5_uvao_evening_dining_hall_exit:
 #
     $ disable_all_zones()
     $ disable_all_chibi()
-    $ set_zone('music_club', 'alt_day5_uvao_evening_map_strange')
-    $ set_zone('clubs', 'alt_day5_uvao_evening_map_strange')
-    $ set_zone('camp_entrance', 'alt_day5_uvao_evening_map_strange')
+    $ set_zone('music_club', 'alt_day5_uvao_evening_map_music_club')
+    $ set_zone('clubs', 'alt_day5_uvao_evening_dv_un_transit')
+    $ set_zone('camp_entrance', 'alt_day5_uvao_evening_dv_un_transit')
     $ set_zone('sport_area', 'alt_day5_uvao_evening_map_strange')
     $ set_zone('library', 'alt_day5_uvao_evening_map_strange')
-    $ set_zone('medic_house', 'alt_day5_uvao_evening_map_strange')
+    $ set_zone('medic_house', 'alt_day5_uvao_evening_medic_house')
     $ set_zone('square', 'alt_day5_uvao_evening_dv_un')
     $ set_zone('beach', 'alt_day5_uvao_evening_map_peaceful')
     $ set_zone('boat_station', 'alt_day5_uvao_evening_map_peaceful')
     $ set_zone('me_mt_house', 'alt_day5_uvao_evening_go_house')
+label alt_day5_uvao_evening_map_show
     play sound sfx_paper_bag
     $ show_map()
     window show
+
+label alt_day5_uvao_evening_map_music_club:
+    scene bg ext_dining_hall_away_sunset with fade
+    th "Зачем я туда пойду? Вряд ли меня там кто-то ждёт."
+    $ disable_current_zone()
+    jump alt_day5_uvao_evening_map_show
+    
+label alt_day5_uvao_evening_medic_house:
+    scene bg ext_dining_hall_away_sunset with fade
+    th "Э-э, нет! Там мне сейчас делать нечего. С Виолой я на сегодня пообщался вполне достаточно."
+    $ disable_current_zone()
+    jump alt_day5_uvao_evening_map_show
+    
+label alt_day5_uvao_evening_dv_un_transit:
+# идём мимо площади и нарываемся
+    scene bg ext_dining_hall_away_sunset with fade
+    "Идея странная, но почему бы и нет? Тоже способ убить время…"
+    "По пути я решил зайти на площадь, проведать Генду - мало ли, вдруг его украли, пока я ужинал?"
+    jump alt_day5_uvao_evening_dv_un_square
     
 label alt_day5_uvao_evening_map_strange:
     scene bg ext_dining_hall_away_sunset with fade
