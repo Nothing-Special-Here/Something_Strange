@@ -151,7 +151,7 @@ label alt_day5_uvao_evening_dining_hall_exit:
     $ set_zone('beach', 'alt_day5_uvao_evening_map_peaceful')
     $ set_zone('boat_station', 'alt_day5_uvao_evening_map_peaceful')
     $ set_zone('me_mt_house', 'alt_day5_uvao_evening_go_house')
-label alt_day5_uvao_evening_map_show
+label alt_day5_uvao_evening_map_show:
     play sound sfx_paper_bag
     $ show_map()
     window show
