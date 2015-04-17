@@ -243,7 +243,7 @@ label alt_day5_uvao_mines_sh:
     "Не тратя времени на разговоры, он размахнулся своим рубилом и бросился на замерших в испуге спасателей."
     th "Он сейчас точно кому-нибудь голову проломит!"
     "Я уже собрался было выскочить на подмогу, но… Непонятно как спасатели повалили нашего Рэмбо и старательно закрутили ему руки."
-    show sh pioneer rage veryfar behind mt:
+    show sh pioneer angry veryfar behind mt:
         xalign 0.9 yalign 0.85
     show un pioneer serious veryfar behind mt:
         xalign 0.8 yalign 0.85

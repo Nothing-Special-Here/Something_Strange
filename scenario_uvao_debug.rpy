@@ -124,6 +124,8 @@ label scenario_uvao_root_D4_debug:
                 "Вечер uvao_true":
                     $ alt_uvao_true = True
                     jump alt_day5_uvao_evening_debug
+                "Славя на пляже":
+                    jump alt_day5_uvao_ev_beach_event
                 "Назад":
                     jump scenario_uvao_root_D4_debug
         "Картинки при смене глав":
