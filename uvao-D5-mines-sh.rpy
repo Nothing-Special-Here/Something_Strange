@@ -19,17 +19,8 @@ label alt_day5_uvao_mines_sh:
     "Первым делом я решил осмотреться, куда же этот Шурик притащил нас."
     window hide
     play sound match_lights
-    scene bg int_mine_halt: # поворот с поваленой вагонеткой
-        contains: 
-            'bg int_mine_halt' with fade 
-        contains: 
-            'scenario_uvao/images/matches_tone.png' 
-            additive 1.0
-        contains: 
-            'scenario_uvao/images/matches_lightmask.png'
-            xalign 0.5 yalign 1.0 
-            function random_zoom
-            repeat    
+    scene bg int_mine_halt
+    show match_lights   
     show uv dontlike at center
     with dissolve
     window show
