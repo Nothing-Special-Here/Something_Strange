@@ -148,8 +148,8 @@ label alt_day5_uvao_evening_dining_hall_exit:
     $ set_zone('library', 'alt_day5_uvao_evening_map_strange')
     $ set_zone('medic_house', 'alt_day5_uvao_evening_medic_house')
     $ set_zone('square', 'alt_day5_uvao_evening_dv_un')
-    $ set_zone('beach', 'alt_day5_uvao_evening_map_peaceful')
-    $ set_zone('boat_station', 'alt_day5_uvao_evening_map_peaceful')
+    $ set_zone('beach', 'alt_day5_uvao_ev_beach_event')
+    $ set_zone('boat_station', 'alt_day5_uvao_evening_boat_station')
     $ set_zone('me_mt_house', 'alt_day5_uvao_evening_go_house')
 label alt_day5_uvao_evening_map_show:
     play sound sfx_paper_bag
@@ -168,6 +168,16 @@ label alt_day5_uvao_evening_medic_house:
     $ disable_current_zone()
     jump alt_day5_uvao_evening_map_show
     
+label alt_day5_uvao_evening_boat_station:
+# идём на пристань, но сваливаем на пляж.
+    hide window
+    scene bg ext_boathouse_sunset with fade
+    play ambience ambience_boat_station_day fadein 1
+    window show
+    "Выйдя на пристань, я уже собирался разуться и пристроиться где-нибудь с краю, свесив ноги в воду, но тут в голову пришла мысль получше."
+    th "А стоит ли после такого напряжённого дня ограничиваться только болтанием ногами в воде? Я ведь за всё это время так и не искупался ни разу - вот и совмещу приятное с полезным."
+    jump alt_day5_uvao_ev_beach_event_direct
+
 label alt_day5_uvao_evening_dv_un_transit:
 # идём мимо площади и нарываемся
     scene bg ext_dining_hall_away_sunset with fade
