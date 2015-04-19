@@ -13,16 +13,18 @@ label alt_day5_uvao_bunker_debug:
     $ persistent.sprite_time = "day"
     show blink
     scene bg int_catacombs_living with fade
-    play music music_list["waltz_of_doubts"] fadein 5
+#    play music music_list["waltz_of_doubts"] fadein 5
 # <---строки выше удалить при сборке!>
 label alt_day5_uvao_bunker:
     window show
     "Проснулся я от ощущения какой-то тяжести на груди."
+    play sound sfx_scary_sting
     "\"Завалило!\" - была первая паническая мысль."
     show uv smile close at center
     hide blink
     show unblink
     "Но нет, это была всего лишь Юля."
+    play music music_list["reflection_on_water"] fadein 3
     "Она лежала, опираясь локтями мне на грудь, и пристально изучала меня. Какое-то время мы молча смотрели друг на друга." # Локтями на грудь - это до фига больно! Просто опираясь на грудь? "Пристально изучала" не меня, а "моё лицо", либо "пристально смотрела мне в лицо" и т.п.
     uv "Я вчера двоих ваших видела, старших. У речки. Большой, тяжёлый такой, и та, с которой ты живёшь."
     "Внезапно сообщила мне Юля."
@@ -181,7 +183,8 @@ label alt_day5_uvao_evade_hentai_scene:
         scene white with flash
         $ renpy.pause(2, hard=True)
         scene bg int_catacombs_living
-        show uv surprise2 at center with dspr
+        show uv surprise2 at center
+        with dissolve
         window show
         "Вспышка, Юля подскочила от неожиданности, а я скорее полез в телефон посмотреть снимок."
         window hide

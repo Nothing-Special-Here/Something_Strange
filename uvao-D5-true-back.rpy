@@ -35,16 +35,16 @@ label alt_day5_uvao_true_back:
     uv "Хорошо! Ты первый, а я потом, если никого нет!"
     "Я пожал плечами и начал восхождение, очень скоро стукнувшись макушкой о закрытый люк."
     "Держась за лестницу одной рукой и уперевшись спиной в стенку шахты, я навалился на крышку и осторожно приподнял её, стараясь не скрипеть петлями."
+    stop music fadeout 5
     window hide
-    stop ambience
+    stop ambience fadeout 1
     $ day_time()
     $ persistent.sprite_time = "day"
     scene int_old_building_day_uvao with flash
     window show
+    play ambience ambience_forest_day fadein 3
     "После темноты подземелий свет ножом резал глаза.{w} Проморгавшись, я огляделся и, стараясь не поднимать лишнего шума, откинул крышку люка."
     "Выбравшись наверх, я прислушался и выглянул в коридор.{w} Ни Шурика, ни кого-либо ещё видно не было."
-# Вообще, про не хватившихся - лишнее, ИМХО
-#    "Не было видно и кого-то еще, значит в лагере нас с ним пока что не хватились."
     me "Вроде никого."
     uv "Ага. Я никого не чую."
     show uv normal at cright with dissolve
@@ -164,8 +164,10 @@ label alt_day5_uvao_true_back:
     hide uv with dissolve2
     "Я оглянулся. Лес отсюда казался густым и темным. Юли уже не было видно."
     dreamgirl "Какое душевное прощание. Может вам стоило обняться, поцеловаться или…"
+    stop ambience fadeout 3
     th "Вот тебя только не хватало!"
     window hide
+    play ambience ambience_camp_center_day fadein 1
     scene bg ext_houses_day with fade
     $ renpy.pause(1)
     scene bg ext_square_day with fade
@@ -174,10 +176,12 @@ label alt_day5_uvao_true_back:
     window show
     "Пейзаж сменялся быстро, я был поглощен раздумьями и в уме прикидывал примерный план отчета перед Виолеттой. Вскоре показался уже привычный мне треугольный домик."
     scene bg int_house_of_mt_day with dissolve
+    play ambience ambience_int_cabin_day fadein 1
     play sound sfx_close_door_campus_1
     "Ольги Дмитриевны не было видно, и я вошел, закрыв за собой дверь."
     play sound eat_horn fadein 2
     "В этот же момент раздался горн, призывавший пионеров всех возрастов трапезничать."
     stop sound fadeout 2
     "Особо не церемонясь, я бросил рюкзак возле своей тумбочки и, выйдя из домика, направился к столовой."
-    return
+    stop ambience fadeout 1
+    jump alt_day5_uvao_lunch

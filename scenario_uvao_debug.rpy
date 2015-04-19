@@ -28,6 +28,11 @@ label scenario_uvao_debug:
     $ alt_uvao_D5_sh_mines = False
 # Флаг выхода на тру-энд alt_uvao_true
     $ alt_uvao_true = False
+# Флаг встречи со Славей вечером Д5 alt_uvao_D5_evening_sl
+    $ alt_uvao_D5_evening_sl = False
+# Флаг встречи с ДваЧе и Унылкой alt_uvao_D5_evening_dv_un
+    $ alt_uvao_D5_evening_dv_un = False
+
 #
 # приходит из Д1
     $ keys_keep = True

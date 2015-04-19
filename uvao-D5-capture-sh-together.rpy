@@ -6,7 +6,7 @@
 label alt_day5_capture_sh_together:
     $ routetag = "uv"
 # очень хочется назвать главу "{i}Иск{/i}педиция", но боюсь, что не все оценят...
-    $ alt_chapter(5, u"Юля. Поиски")
+    $ alt_chapter(5, u"Юля. Поиски Шурика")
     $ persistent.sprite_time = "day"
     $ day_time()
     play ambience ambience_camp_center_day fadein 3
@@ -62,7 +62,7 @@ label alt_day5_capture_sh_together:
     "Мимо вальяжно прошествовали к своим домикам несколько пионеров из младших - переваривать обед."
     "Так мы и сидели молча посреди сонного лагеря - Лена с едва заметной улыбкой на губах, спокойно разглядывающая облака, и я, растерянно переводящий взгляд с девочки на небо и обратно."
     "Насмешливо взирающий на нас Генда явно понимал в происходящем больше моего, но делиться секретами не спешил."
-    stop music fadeout 7
+    stop music fadeout 3
     show mt normal panama pioneer far with dissolve
     mt "Ага, вы уже здесь, это хорошо!"
     show mt angry panama pioneer
@@ -100,7 +100,7 @@ label alt_day5_capture_sh_together:
     mt "Тогда пошли!"
     "Развернувшись, она уверенно пошла в сторону дорожки мимо домиков, в конце которой пряталась калитка в заборе."
     hide mt with dissolve
-    th "Минуточку! Предполагалось, что единственный, кто знает дорогу к старому корпусу - это Эл!{w} Ну и фрукт же эта вожатая!"
+#    th "Минуточку! Предполагалось, что единственный, кто знает дорогу к старому корпусу - это Эл!{w} Ну и фрукт же эта вожатая!"
     "Переглянувшись, мы поплелись следом за ней."
     stop sound_loop fadeout 3
     stop ambience fadeout 3
@@ -176,9 +176,10 @@ label alt_day5_capture_sh_together:
     show un surprise pioneer at fleft
     show mt surprise panama pioneer at center
     with dissolve
-    "Её прервал треск веток позади нас, и из кустов выбрался наш драгоценный Шурик."
     play music music_list["doomed_to_be_defeated"] fadein 3
+    "Её прервал треск веток позади нас, и из кустов выбрался наш драгоценный Шурик."
     "Видок у него был тот ещё. Его словно таскали волоком по земле - весь в какой-то грязи, одежда местами порвана, на руках и ногах свежие ссадины, волосы растрёпаны."
+    show sh angry bar far at fright
     show el scared pioneer at left
     show un scared pioneer at fleft
     show mt scared3 panama pioneer at center #| Бегун, предполагалось, что указательный палец вожатой чуть-чуть закрывает рот. Видишь, он чуть-чуть снизу не дорисован? - Ленофаг
@@ -442,7 +443,7 @@ label alt_day5_capture_sh_together:
     show mt sad panama pioneer far at left
     show el sad pioneer at fright
     show sh upset pioneer at cright
-    show cs normal far at cleft
+    show cs normal glasses far at cleft
     with dissolve
     window show
     "Не обращая внимания на изумлённую Виолетту, я скомандовал:"
@@ -483,10 +484,12 @@ label alt_day5_capture_sh_together:
     "Она кивнула на Шурика который уже вовсю спал, вытянувшись на кушетке.{w} Похоже, что-то она ему уже успела вколоть для расслабления духа."
     show cs smile glasses with dspr
     cs "Конечно, если вы тоже хотите стать моими {i}пациентами{/i}, то можете задержаться."
+    show cs badgirl2 glasses with dspr
     cs "В конце концов, надо бы провести тщательный {i}осмотр{/i}, мало ли какие травмы вы могли получить…"
     show el scared pioneer with dspr
     "Голос медсестры, ставший медовым, произвёл на Электроника прямо-таки волшебное действие - вскочив, словно и не сидел только что на полу без сил, он залепетал что-то и устремился к двери."
     hide el with easeoutright
+    show cs smile glasses with dspr
     show mt laugh panama pioneer far with dspr
     "Ольга Дмитриевна тихонько хихикнула по-девчоночьи, но ничего не сказала."
     "Кое-как подобрав свои руки-ноги, я поднялся и тоже направился на выход."
@@ -516,6 +519,7 @@ label alt_day5_capture_sh_together:
     th "Да по мне - хоть от Шурика! Уймись!{w} Вон, кажется, она сказать что-то хочет."
     mt "Виолетта говорит, что Шурик отлежится немного и всё с ним будет нормально.{w} Наверняка будет ясно завтра, когда он проснётся - она ввела ему снотворное."
     "Тут Ольга приосанилась и произнесла торжественным тоном:"
+    play music music_list["always_ready"] fadein 3
     show mt normal panama pioneer with dspr
     mt "Я рада, что все вы показали себя сегодня надёжными товарищами и не посрамили высокое звание пионера!"
     mt "Вы, ребята, продемонстрировали настоящее мужество и достойную подражания выдержку, оказывая помощь пострадавшему."
@@ -532,6 +536,7 @@ label alt_day5_capture_sh_together:
     show mt angry panama pioneer with dspr
     mt "И приведите себя в порядок! Подвиги подвигами, но в таком виде в столовую я вас не пущу."
     dreamgirl "Полагаю, этого человека не спасти. Занудство уже поработило его мозг."
+    stop music fadeout 3
     "Ольга сошла с крыльца и неспешно направилась в сторону площади."
     hide mt with dissolve
     "Куда исчезла Лена я не мог с уверенностью сказать, но через секунду в пределах видимости её уже не было."
@@ -556,10 +561,9 @@ label alt_day5_capture_sh_together:
     play sound_loop sfx_water_sink_stream
     "Поэтому я ограничился тем, что дойдя до умывальников, кое-как умылся привычно уже ледяной водой и почистил вымазанную землёй и травой одежду, как смог."
     "Закончив прихорашиваться, я прикинул, что ходить туда-сюда по лагерю мне не с руки и побрёл сразу в сторону столовой."
-    window hide
-    stop sound_loop
     play sound sfx_close_water_sink
-    pause(1)
+    stop sound_loop
+    window hide
     stop music fadeout 5
     play sound_loop ambience_medium_crowd_outdoors fadein 2
     scene bg ext_dining_hall_away_sunset with dissolve2
@@ -571,4 +575,4 @@ label alt_day5_capture_sh_together:
     "Вздохнув, я поднялся и повёл свой организм питаться."
     stop ambience fadeout 3
     stop sound_loop fadeout 3
-    window hide
+    jump alt_day5_uvao_evening

@@ -166,4 +166,5 @@ label alt_day5_uvao_road_to_old_camp:
     stop ambience fadeout 2
     play sound sfx_carousel_squeak
     "Осмотревшись напоследок, я закрыл за собой скрипучий люк и стал спускаться вниз."
-    window hide
+#    window hide
+    jump alt_day5_uvao_tunnel

@@ -4,6 +4,8 @@
 # Используется флаг alt_uvao_D5_sh_mines (Видели Шурика в шахтах/не обедали/спалились на стоянке)
 # Используется флаг alt_uvao_D4_concert (Попали на концерт в Д4. Инверсия используется как признак обеда в одиночестве)
 # Используется флаг alt_uvao_D5_hentai (крыли кошочку)
+# Используется флаг встречи со Славей alt_uvao_D5_evening_sl
+# Используется флаг встречи с ДваЧе и Унылкой alt_uvao_D5_evening_dv_un
 #
 label alt_day5_uvao_evening:
     $ alt_uvao_D5_evening_dv_un = False
@@ -144,7 +146,7 @@ label alt_day5_uvao_evening_dining_hall_exit:
     $ set_zone('music_club', 'alt_day5_uvao_evening_map_music_club')
     $ set_zone('clubs', 'alt_day5_uvao_evening_dv_un_transit')
     $ set_zone('camp_entrance', 'alt_day5_uvao_evening_dv_un_transit')
-    $ set_zone('sport_area', 'alt_day5_uvao_evening_map_strange')
+    $ set_zone('sport_area', 'alt_day5_uvao_evening_map_sport_area')
     $ set_zone('library', 'alt_day5_uvao_evening_map_strange')
     $ set_zone('medic_house', 'alt_day5_uvao_evening_medic_house')
     $ set_zone('square', 'alt_day5_uvao_evening_dv_un')
@@ -168,6 +170,15 @@ label alt_day5_uvao_evening_medic_house:
     $ disable_current_zone()
     jump alt_day5_uvao_evening_map_show
     
+label alt_day5_uvao_evening_map_sport_area:
+    if alt_uvao_D5_sh_mines:
+        scene bg ext_dining_hall_away_sunset with fade
+        dreamgirl "Да ты что, с ума сошёл?! Вдруг Саныч уже в курсе сегодняшних разборок в столовой?{w} Чего доброго, уронит на нас штангу нечаянно…"
+        $ disable_current_zone()
+        jump alt_day5_uvao_evening_map_show
+    else:
+        jump alt_day5_uvao_evening_map_strange    
+
 label alt_day5_uvao_evening_boat_station:
 # идём на пристань, но сваливаем на пляж.
     hide window
@@ -175,13 +186,14 @@ label alt_day5_uvao_evening_boat_station:
     play ambience ambience_boat_station_day fadein 1
     window show
     "Выйдя на пристань, я уже собирался разуться и пристроиться где-нибудь с краю, свесив ноги в воду, но тут в голову пришла мысль получше."
+    stop music fadeout 3
     th "А стоит ли после такого напряжённого дня ограничиваться только болтанием ногами в воде? Я ведь за всё это время так и не искупался ни разу - вот и совмещу приятное с полезным."
     jump alt_day5_uvao_ev_beach_event_direct
 
 label alt_day5_uvao_evening_dv_un_transit:
 # идём мимо площади и нарываемся
     scene bg ext_dining_hall_away_sunset with fade
-    "Идея странная, но почему бы и нет? Тоже способ убить время…"
+    th "Идея странная, но почему бы и нет? Тоже способ убить время…"
     "По пути я решил зайти на площадь, проведать Генду - мало ли, вдруг его украли, пока я ужинал?"
     jump alt_day5_uvao_evening_dv_un_square
     
@@ -189,9 +201,10 @@ label alt_day5_uvao_evening_map_strange:
     scene bg ext_dining_hall_away_sunset with fade
     "Мягко говоря, идея странная, но почему бы и нет? Тоже способ убить время…"
     jump alt_day5_uvao_evening_miss
-label alt_day5_uvao_evening_map_peaceful:
-    scene bg ext_dining_hall_away_sunset with fade
-    th "Что же, неплохая идея. Посижу там спокойно - глядишь, и вечер пройдёт."
+    
+# label alt_day5_uvao_evening_map_peaceful:
+    # scene bg ext_dining_hall_away_sunset with fade
+    # th "Что же, неплохая идея. Посижу там спокойно - глядишь, и вечер пройдёт."
 label alt_day5_uvao_evening_miss:
 # Ошибаемся и внезапно приходим к димику. Обалдеваем и остаёмся там.
     "Я побрёл нога за ногу к намеченной цели, наслаждаясь тем, что вместе с уходящим солнцем дневная жара понемногу начала сдавать свои позиции."
@@ -234,19 +247,22 @@ label alt_day5_uvao_evening_headlong_already_here:
     "Разницы особой и в самом деле не было, так что я просто добавил ещё один пункт к длинному списку местных странностей."
     "Впечатлений за день и так набралось предостаточно."
     "Утренний поход к старому корпусу и попытка открыть дверь в конце тоннеля…{w} Я осторожно ощупал колено и удовлетворённо отметил, что дела явно идут на поправку."
-    "Короткий отдых в бункере"
     if alt_uvao_D5_hentai:
-        extend " и последовавшая за ним сцена, от воспоминания о которой я мечтательно улыбнулся."
+        extend "Короткий отдых в бункере и последовавшая за ним сцена, от воспоминания о которой я мечтательно улыбнулся."
     elif alt_uvao_true:
-        extend " и ошеломившая меня фотография на экране смартфона."
+        extend "Короткий отдых в бункере и ошеломившая меня фотография на экране смартфона."
     else:
-        extend "…"
+        extend "Короткий отдых в бункере…"
+#
     if alt_uvao_D5_sh_mines:
         "Блуждание вслепую по тёмным шахтам и беготня за спятившим Шуриком."
     else:
-        "Чудом не приключившаяся со мной трепанация черепа… И странное поведение Лены, кстати говоря."
+        "Чудом не приключившаяся со мной трепанация черепа… И странное поведение Лены, кстати говоря.{w} Ещё и сама на поиски напросилась, оказывается."
+#
     if alt_uvao_D5_evening_dv_un:
-        "Вообще, сцена на площади сегодня вечером тоже не давала мне покоя."
+        "Вообще, сцена на площади сегодня вечером тоже не давала мне покоя. Почему девочки так переполошились? Про меня говорили, что ли?"
+    elif alt_uvao_D5_evening_sl:
+        "Вообще, странный разговор со Славей тоже не давал мне покоя.{w} {i}Очень{/i} странный разговор, если уж на то пошло."
     "За всеми этими мыслями я и не заметил, как роскошный закатный пожар в небе подёрнулся пеплом, и вечер по-южному быстро уступил место ночи."
     stop ambience fadeout 2
     window hide
@@ -258,7 +274,7 @@ label alt_day5_uvao_evening_headlong_already_here:
     "Глаза уже безнадёжно слипались, когда рядом хрустнул гравий."
     show mt angry pioneer at cleft with dissolve
     play music music_list["always_ready"] fadein 3
-    "Я приподнял голову. Рядом с сердитым видом стояла вожатая."
+    "Я приподнял голову. Надо мной с сердитым видом стояла вожатая."
     mt "Скажите пожалуйста! Все люди как люди, один ты опять бездельничаешь и отрываешься от коллектива!"
     "Я аж задохнулся от возмущения:"
     if alt_uvao_D5_sh_mines:
