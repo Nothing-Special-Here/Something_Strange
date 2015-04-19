@@ -3,6 +3,7 @@
 # используется флаг выхода на тру-энд alt_uvao_true
 #
 label alt_day5_uvao_getting_up:
+    window hide
     $ routetag = "uv"
     $ alt_chapter(5, u"Юля. Утро")
     $ persistent.sprite_time = "sunset"

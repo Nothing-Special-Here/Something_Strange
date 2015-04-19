@@ -9,11 +9,11 @@
 #
 label alt_day5_uvao_evening:
     $ alt_uvao_D5_evening_dv_un = False
+    window hide
     $ routetag = "uv"
     $ alt_chapter(5, u"Юля. Вечер")
     $ persistent.sprite_time = "sunset"
     $ sunset_time()
-    window hide
     scene bg int_dining_hall_people_sunset
     with dissolve
     play ambience ambience_dining_hall_full fadein 3

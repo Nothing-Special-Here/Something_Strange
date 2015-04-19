@@ -4,6 +4,7 @@
 # используется флаг обеда в Д4 с Леной alt_uvao_D4_lunch_un
 #
 label alt_day5_capture_sh_together:
+    window hide
     $ routetag = "uv"
 # очень хочется назвать главу "{i}Иск{/i}педиция", но боюсь, что не все оценят...
     $ alt_chapter(5, u"Юля. Поиски Шурика")

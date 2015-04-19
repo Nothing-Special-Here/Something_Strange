@@ -3,12 +3,12 @@ label alt_day5_uvao_tunnel:
 # Д5 - Спуск в бункер.
 #
 
+    window hide
     $ routetag = "uv"
     $ alt_chapter(5, u"Юля. Под землёй")
     $ night_time()
     $ persistent.sprite_time = "night"
    
-    window hide
 # ТЕМНО!
     scene black with fade
     play ambience ambience_catacombs fadein 3

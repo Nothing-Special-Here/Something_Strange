@@ -6,9 +6,9 @@
 label alt_day5_uvao_spoiled_supper:
     #засоня/болтун с кошочками - ни разу не охотник
     #Семёна воспитывают, огрызаемся, намекнув, что вожатые в лагере тоже не сильно моральны. Получаем немножко инфы от Виолы, ОД в смущении
+    window hide
     $ persistent.sprite_time = "sunset"
     $ sunset_time()
-    window hide
     scene bg int_dining_hall_people_sunset
     with dissolve
     play ambience ambience_dining_hall_full fadein 3

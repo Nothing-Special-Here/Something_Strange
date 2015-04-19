@@ -488,6 +488,7 @@ label alt_day4_uvao_library:
 #Д4 посещение библиотеки
 #
 #
+    window hide
     $ alt_chapter_uv(4, u"Повелитель книг")
     $ persistent.sprite_time = "day"
     play ambience ambience_camp_center_day fadein 1
@@ -677,6 +678,7 @@ label alt_day4_uvao_lunch:
     $ alt_uvao_D4_lunch_un = False
     $ alt_uvao_D4_lunch_sl = False
 #
+    window hide
     $ alt_chapter_uv(4, u"Обед")
     $ persistent.sprite_time = "day"
     $ day_time()
@@ -936,6 +938,7 @@ label alt_day4_uvao_meet_Yulia_after_lunch:
 #
 # используется флаг рассказа Слави про Генду за обедом alt_uvao_D4_lunch_sl
 #
+    window hide
     $ alt_chapter_uv(4, u"Идентификация")
     $ persistent.sprite_time = "day"
     scene black with dissolve
@@ -1188,6 +1191,7 @@ label alt_day4_uvao_supper:
 #
 
     $ alt_uvao_D4_supper_cs = False
+    window hide
     $ alt_chapter(4, u"Юля. Ужин")
     $ persistent.sprite_time = "sunset"
     $ sunset_time()
@@ -1330,6 +1334,7 @@ label uvao_D4_supper_end:
 #День4 встречаем Юлю после ужина за воротами
 #
 label alt_day4_uvao_meet_Yulia_at_evening:
+    window hide
     $ alt_chapter(4, u"Юля. Вечерние встречи")
     $ persistent.sprite_time = "sunset"
     scene bg ext_dining_hall_away_sunset with fade
