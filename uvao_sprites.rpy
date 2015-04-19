@@ -189,7 +189,10 @@ init:
     # image cs shy2 close    = _cs_shy2['close']
     # image cs shy2          = _cs_shy2['normal']
     # image cs shy2 far      = _cs_shy2['far']
-    $ _cs_badgirl2 = ComposeSpriteSet('close', 'cs/cs_2_body.png', 'cs/cs_2_badgirl.png')
+    $ _cs_badgirl2 = ComposeSpriteSet(('close', 'normal'), 'cs/cs_2_body.png', 'cs/cs_2_badgirl.png')
     image cs badgirl2 close    = _cs_badgirl2['close']
-    # image cs badgirl2          = _cs_badgirl2['normal']
+    image cs badgirl2          = _cs_badgirl2['normal']
     # image cs badgirl2 far      = _cs_badgirl2['far']
+    $ _cs_badgirl2_glasses = ComposeSpriteSet('normal', 'cs/cs_1_body.png', 'cs/cs_1_glasses.png', 'cs/cs_2_badgirl.png')
+    image cs badgirl2 glasses    = _cs_badgirl2_glasses['normal']
+    
