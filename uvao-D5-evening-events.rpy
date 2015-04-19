@@ -6,9 +6,9 @@
     scene bg ext_dining_hall_away_sunset with fade
     "После такого напряжённого дня мысль искупаться казалась весьма здравой."
 label alt_day5_uvao_ev_beach_event_direct:
-    $ night_time()
-    $ persistent.sprite_time = "night"
-    scene bg ext_beach_night with dissolve
+    $ sunset_time()
+    $ persistent.sprite_time = "sunset"
+    scene bg ext_beach_sunset with dissolve
     play music music_list["trapped_in_dreams"] fadein 5
     "Я не спеша дошёл до вотчины Ольги Дмитриевны - хвала рандому, сейчас её тут не было, и некому было устроить мне внеочередную выволочку за… да за что угодно!"
     "Я нашёл подходящий пятачок земли и уже начал развязывать осточертевший галстук, как вдруг заметил кого-то в дальнем углу пляжа.{w} Знакомый силуэт… Славя?"
