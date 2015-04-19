@@ -52,6 +52,7 @@ label alt_day5_parking_back:
     uv "Ну пошли тогда."
     "К некоторому моему удивлению, Юля направилась не к люку в туннель, а к выходу из здания. Заметив мой недоумённый взгляд, она пояснила:"
     uv "Пойдём здесь, так ближе!"
+    hide uv with dissolve
     play sound sfx_open_metal_hatch
     "Я прикрыл на всякий случай крышку люка и поспешил за ней."
     window hide
@@ -105,9 +106,9 @@ label alt_day5_parking_back:
     window show
     "Решив не дожидаться, пока я напорюсь на какую-нибудь железяку, я достал трофейный фонарь."
     window hide
-    scene bg int_catacombs_entrance with fade
+    scene bg int_catacombs_entrance
     show uv upset
-    with dissolve
+    with fade
     window show
     uv "Не свети в глаза."
     "Юля недовольно сощурилась, и я поспешил отвести фонарь в сторону."
@@ -171,7 +172,7 @@ label alt_day5_parking_back:
     window show
     show uv smile with dissolve
     "К моей радости, инсинуации Шизы оказались беспочвенными - у консервов даже не кончился срок годности."
-    "Я кое-как открыл перочинным ножом сардины в масле для Юли, и вступил в схватку с банкой, таящей в своих недрах, если верить этикетке, тушёную говядину."
+    "Я кое-как открыл перочинным ножом сардины в масле для Юли, и вступил в схватку с банкой, таящей в своих недрах тушёную говядину, если верить этикетке."
     show uv normal with dspr
     "Юля с опаской принюхалась к содержимому банки."
     uv "А это точно можно есть? Ты уверен?"
@@ -304,15 +305,17 @@ label alt_day5_parking_back:
     scene white with flash
     $ renpy.pause(2, hard=True)
     scene bg ext_camp_entrance_sunset
-    show uv surprise2 at center with dspr
+    show uv surprise2 at center
+    with dissolve
     window show
     "Вспышка, Юля подскочила от неожиданности, а я скорее полез в телефон посмотреть снимок."
     window hide
     play sound sfx_scary_sting
     scene uv_photo_galaxy with dissolve
     $ renpy.pause(2, hard=True)
-    scene bg ext_camp_entrance_sunset with dissolve
-    show uv surprise2 at center with dissolve
+    scene bg ext_camp_entrance_sunset
+    show uv surprise2 at center
+    with dissolve
     window show
     "…"
     dreamgirl "…"
@@ -368,10 +371,10 @@ label alt_day5_parking_back:
     "Тяжело дыша от злости, я гордо задрал голову и прошествовал мимо разярённой вожатой в ворота.{w} Та пошла следом за мной, намереваясь, судя по всему, конвоировать до самой столовой."
     stop music fadeout 5
     window hide
-    scene bg ext_square_sunset
+    scene bg ext_square_sunset with fade
     show mt angry panama pioneer at fleft
-    play ambience ambience_camp_center_evening fadein 1
     with dissolve
+    play ambience ambience_camp_center_evening fadein 1
     window show
     play sound eat_horn fadein 2
     "Сигнал к ужину настиг нас на площади. К этому времени я уже немного поостыл."
@@ -385,7 +388,8 @@ label alt_day5_parking_back:
     th "Мда-а… Надо думать, лицо у меня примерно такое же чистое. Так не только отряд, так весь лагерь распугать можно."
     dreamgirl "Не понимаешь ты своего счастья! Вся столовая была бы в твоём распоряжении!"
     th "Кто-то только что мне про карцер втирал, кажется? Сгинь!"
-    scene bg ext_washstand_day
+    window hide
+    scene bg ext_washstand_day with fade
     show mt angry panama pioneer at fleft
     with dissolve
     play sound sfx_open_water_sink
@@ -399,12 +403,13 @@ label alt_day5_parking_back:
     "Вообще, после сегодняшней беготни я с удовольствием ополоснулся бы до пояса, пусть и ледяной водой, но устраивать для вожатой сеанс стриптиза не собирался. Просто из принципа.{w} Не заслужила."
     "Отыскав в кармане носовой платок, я кое-как вытерся им и вопросительно посмотрел на Ольгу.{w} Та критически оглядела меня и поморщилась, но ничего не сказала, лишь кивнула в направлении столовой."
     window hide
-    scene bg ext_dining_hall_near_sunset
+    scene bg ext_dining_hall_near_sunset with fade
     show mt angry panama pioneer at fleft
     with dissolve
     window show
     "Уже подойдя к столовой, я подумал, что помимо умывания можно было бы и рюкзак отнести домой, но связываться с  вожатой не хотелось."
     "Под любопытные взгляды пионеров я вошёл в столовую."
+    jump alt_day5_uvao_spoiled_supper
 
 # Неиспользуемый фрагмент спуска через люк и бункер
 #

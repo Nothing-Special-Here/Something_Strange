@@ -48,6 +48,8 @@ label scenario_uvao_root_D4_debug:
             call alt_day3_meet_uvao
         "Прохождение Д4 по порядку":
             jump alt_day4_uvao_start
+        "Прохождение Д5 по порядку":
+            jump alt_day5_uvao_start_debug
         "Отладка Д4":
             menu:
                 "Уборка гирлянд":
@@ -169,6 +171,33 @@ label scenario_uvao_root_D4_debug:
 
     $ renpy.pause (1)
     jump scenario_uvao_root_D4_debug
+
+label alt_day5_uvao_start_debug:
+    menu:
+        "Ходили к Виоле утром Д4":
+            $ alt_uvao_D4_viola_morning = True
+        "Бесславно обруганы ОД утром Д4":
+            $ alt_uvao_D4_viola_morning = False
+    menu:
+        "Обедали в Д4 с Леной":
+            $ alt_uvao_D4_lunch_un = True
+            $ alt_uvao_D4_concert = True
+        "Обедали в Д4 со Славей":
+            $ alt_uvao_D4_lunch_sl = True
+            $ alt_uvao_D4_concert = True
+        "Обедали в Д4 в одиночестве":
+            $ alt_uvao_D4_concert = False
+            $ alt_uvao_D4_lunch_un = False
+            $ alt_uvao_D4_lunch_sl = False
+    if alt_uvao_D4_viola_morning:
+        menu:
+            "Ужинали с Виолой в Д4 (True)":
+                $ alt_uvao_true = True
+            "Не ужинали с Виолой в Д4 (non-True)":
+                $ alt_uvao_true = False
+    else:
+        $ alt_uvao_true = False
+    jump alt_day5_uvao_getting_up
 
 label alt_day5_capture_sh_together_debug:
     menu:

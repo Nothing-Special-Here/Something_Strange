@@ -160,6 +160,9 @@ label alt_day5_uvao_mines_sh:
     with dissolve
     window show
     "Кажется, мы его нагоняли - мне иногда чудился какой-то свет впереди. Все-таки у него нашёлся запасной фонарь."
+    scene bg int_mine
+    show uv normal at cright
+    with dissolve
     "За очередным поворотом распахнулся длинный прямой штрек, в потолке которого зияла осыпавшаяся дыра."
     me "Это мы здесь спускались?"
     "Спросил я, пытаясь не сбиться с дыхания."
@@ -168,12 +171,13 @@ label alt_day5_uvao_mines_sh:
     uv "Он наверх вылез."
     me "Значит и мы за ним!"
     "Нас обоих разбирал азарт погони. Я с трудом представлял, что я буду делать, когда догоню его, но это все казалось неважным - впереди добыча! И она уходит!"
+    hide uv with dissolve
+    "Юля с лёгкостью забралась наверх. Впрочем, тут же выяснилось, что самостоятельно последовать за ней я не могу, так что ей пришлось помогать мне забраться наверх. Не похоже, что её это очень уж обрарадовало, но деваться ей было некуда."
     window hide
     scene bg int_catacombs_entrance
-    show uv upset close
     with dissolve
     window show
-    "Юля с лёгкостью забралась наверх. Впрочем, тут же выяснилось, что самостоятельно последовать за ней я не могу, так что ей пришлось помогать мне забраться наверх. Не похоже, что её это очень уж обрарадовало, но деваться ей было некуда."
+    show uv upset close
     "Наверху оказался тоннель - может быть, тот самый, который вёл из старого корпуса, а может и нет - мне они все казались слишком похожими."
     # show uv dontlike close at cright with dissolve
     me "Это тот, первый тоннель, в который мы через люк спустились?"
@@ -207,6 +211,7 @@ label alt_day5_uvao_mines_sh:
     $ day_time()
     $ persistent.sprite_time = "day"
     scene int_old_building_day_uvao with flash
+    play ambience ambience_forest_day fadein 3
     window show
     show uv shocked with dissolve
     "Судя по всему, свет ослепил не меня одного. Хоть тут с ней никаких сюрпризов."
@@ -268,6 +273,7 @@ label alt_day5_uvao_mines_sh:
         xalign 0.999 yalign 0.85
     with dspr
     "Вожатая наклонилась над ним{w} и отвесила несколько смачных оплеух!"
+    stop music fadeout 5
     play sound sfx_face_slap
     $ renpy.pause(0.8)
     play sound sfx_face_slap
