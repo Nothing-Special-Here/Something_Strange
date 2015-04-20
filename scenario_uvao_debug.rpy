@@ -49,7 +49,7 @@ label scenario_uvao_root_D4_debug:
         "Прохождение Д4 по порядку":
             jump alt_day4_uvao_start
         "Прохождение Д5 по порядку":
-            jump alt_day5_uvao_start_debug
+            jump alt_day5_uvao_getting_up
         "Отладка Д4":
             menu:
                 "Уборка гирлянд":
@@ -102,15 +102,15 @@ label scenario_uvao_root_D4_debug:
                     jump alt_day5_uvao_tunnel
                 "В бункере с докладом Виоле в Д4":
                     $ alt_uvao_true = True
-                    jump alt_day5_uvao_bunker_debug                
+                    jump alt_day5_uvao_bunker               
                 "В бункере без доклада Виоле в Д4":
-                    jump alt_day5_uvao_bunker_debug
+                    jump alt_day5_uvao_bunker
                 "Поход наверх. Тру рут":
                     jump alt_day5_uvao_true_back
                 "Охота на Шурика в шахтах":
                     jump alt_day5_uvao_mines_sh
                 "Поход назад через стоянку.":
-                    jump alt_day5_parking_back_debug
+                    jump alt_day5_parking_back
                 "Обед без доклада Виоле в Д4":
                     $ alt_uvao_true = False
                     jump alt_day5_uvao_lunch
@@ -119,18 +119,18 @@ label scenario_uvao_root_D4_debug:
                     jump alt_day5_uvao_lunch
                 "Совместная охота на дикого Шурика not-uvao_true":
                     $ alt_uvao_true = False
-                    jump alt_day5_capture_sh_together_debug
+                    jump alt_day5_capture_sh_together
                 "Совместная охота на дикого Шурика uvao_true":
                     $ alt_uvao_true = True
-                    jump alt_day5_capture_sh_together_debug
+                    jump alt_day5_capture_sh_together
                 "Ужин после палева на стоянке":
-                    jump alt_day5_uvao_spoiled_supper_debug
+                    jump alt_day5_uvao_spoiled_supper
                 "Вечер not-uvao_true":
                     $ alt_uvao_true = False
-                    jump alt_day5_uvao_evening_debug
+                    jump alt_day5_uvao_evening
                 "Вечер uvao_true":
                     $ alt_uvao_true = True
-                    jump alt_day5_uvao_evening_debug
+                    jump alt_day5_uvao_evening
                 "Славя на пляже":
                     jump alt_day5_uvao_ev_beach_event
                 "Назад":
