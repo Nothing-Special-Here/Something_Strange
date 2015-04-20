@@ -118,7 +118,7 @@ label alt_day5_uvao_getting_up:
 # Используется флаг alt_uvao_true
 label alt_day5_uvao_road_to_old_camp:
     window hide
-    $ alt_chapter(5, u"Юля. Дорога в старый лагерь")
+    $ alt_chapter(5, u"Юля. Старый лагерь")
     scene bg ext_path_sunset with fade
     play ambience ambience_forest_day fadein 3
     window show
@@ -326,7 +326,7 @@ label alt_day5_uvao_tunnel:
     stop music fadeout 2
     "Через несколько минут впереди показался наконец тусклый блеск металла."
     window hide
-    scene bg int_catacombs_door with dissolve
+    scene bg int_catacombs_door_light2 with dissolve
     play music music_list["orchid"] fadein 5
     with dissolve
     window show
@@ -1678,7 +1678,11 @@ label alt_day5_uvao_mines_sh:
 # Используется флаг alt_uvao_D4_viola_morning.
 # Используется флаг alt_uvao_D5_hentai.
 label alt_day5_parking_back:
-    show uv grin with dissolve
+    window hide
+    scene int_old_building_day_uvao
+    show uv grin
+    with dissolve
+    window show
     "Я с облегчением перевёл дыхание и покосился на Юлю. Та стояла донельзя довольная, разве что не подпрыгивая на месте."
     th "Ну да, она же говорила, что за нами, людьми, интересно наблюдать. А тут целый спектакль разыграли, как по заказу!"
     play sound sfx_stomach_growl
@@ -1717,9 +1721,10 @@ label alt_day5_parking_back:
     play sound sfx_open_metal_hatch
     "Я прикрыл на всякий случай крышку люка и поспешил за ней."
     window hide
-    scene bg ext_old_building_day with dissolve
+    scene bg ext_old_building_day
+    show uv normal
+    with dissolve
     window show
-    show uv normal with dissolve
     "Выйдя на поляну, Юля уверенно двинулась по направлению к тропинке, ведущей к лагерю."
     th "Надеюсь, она знает, что делает. Не хватало ещё столкнуться со всей этой компанией."
     dreamgirl "Правильно, совершенно это незачем! Мало того, что с расспросами привяжутся, так ещё и, как пить дать, заставят Шурика носить!"
@@ -2134,7 +2139,7 @@ label alt_day5_uvao_spoiled_supper:
     cs "Ешь и одновременно рассказывай. Я понимаю, что разговаривать с набитым ртом - это вредно для здоровья, но сейчас, как ты сам понимаешь, случай исключительный."
     me "А про что, собственно, рассказывать?"
     "Принимаясь за котлету я покосился на Ольгу. Та сидела молча, но сдерживала себя с явным трудом.{w} Виола, напротив, оставалась совершенно спокойной."
-    cs "Как про что? Про нашу легенду лагерную. Тебя же видели вместе с ней. И у меня есть определённые основания полагать, что ты с ней не за пять минут до этого познакомился."
+    cs "Как про что? Про нашу местную легенду. Тебя же видели вместе с ней. И у меня есть определённые основания полагать, что ты с ней не за пять минут до этого познакомился."
     if alt_uvao_D4_viola_morning:
         cs "Кстати, очень жаль, что ты не зашёл ко мне поделиться информацией. Самостоятельные исследования - это прекрасно, но уверяю тебя, у меня нашлось бы, что рассказать тебе взамен."
     cs "А исходя из того, что тебя никто нигде не мог найти…"
@@ -2316,7 +2321,7 @@ label alt_day5_uvao_lunch:
         "Не успела Ольга Дмитриевна открыть рот, как Электроник воскликнул:"
         el "Шурик пропал!"
         me "Как пропал? Куда?"
-        mt "Вот мы и решили поинтересоваться у тебя. Видел ли ты его сегодня?"
+        mt "Вот мы и решили поинтересоваться у тебя. Ты его видел сегодня?"
         me "Кстати, видел."
         show el surprise pioneer at fleft
         show mt surprise pioneer at cright
@@ -2435,6 +2440,7 @@ label alt_day5_capture_sh_together:
     play sound_loop ambience_medium_crowd_outdoors fadein 2
     scene bg ext_dining_hall_away_day with fade
     window show
+    # TODO: Рюкзак
     "Выйдя из столовой, я машинально направился было к своему домику за рюкзаком, но быстро спохватился."
     th "Зачем он мне? Идём мы ненадолго, вряд ли что-то из него может понадобиться.{w} Только таскать зря."
     "Так что я развернулся и зашагал в сторону площади."
