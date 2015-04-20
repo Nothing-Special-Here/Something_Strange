@@ -303,6 +303,8 @@ label scenario_uvao_sprites:
                     "sh angry bar close"
                     show sh angry bar2 close
                     "sh angry bar2 close"
+                    show sh mad bar2 close
+                    "sh mad bar2 close"
                     jump scenario_uvao_sprites_sh_bar
                 "normal":
                     show sh rage pioneer # ванильный спрайт
