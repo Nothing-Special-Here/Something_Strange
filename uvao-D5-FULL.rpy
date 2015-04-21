@@ -1696,6 +1696,7 @@ label alt_day5_uvao_mines_sh_capture_debug: #Хомутаем Шурика и о
         yanchor 1.0 xanchor 1.0 xalign 0.6 yalign 0.999 zoom 0.7 transform_anchor True
         easeout 0.5 yanchor 1.0 xanchor 1.0 rotate -90.0
     "Очкарик по инерции пролетел вперёд и мешком рухнул в траву лицом вниз."
+    hide sh
     dreamgirl "Круто! Как по учебнику провернула!"
     show un pioneer shocked veryfar:
         xalign 0.5 yalign 0.999 zoom 0.7
