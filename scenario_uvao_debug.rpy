@@ -102,15 +102,15 @@ label scenario_uvao_root_D4_debug:
                     jump alt_day5_uvao_tunnel
                 "В бункере с докладом Виоле в Д4":
                     $ alt_uvao_true = True
-                    jump alt_day5_uvao_bunker               
+                    jump alt_day5_uvao_bunker_debug                
                 "В бункере без доклада Виоле в Д4":
-                    jump alt_day5_uvao_bunker
+                    jump alt_day5_uvao_bunker_debug
                 "Поход наверх. Тру рут":
                     jump alt_day5_uvao_true_back
                 "Охота на Шурика в шахтах":
                     jump alt_day5_uvao_mines_sh
                 "Поход назад через стоянку.":
-                    jump alt_day5_parking_back
+                    jump alt_day5_parking_back_debug
                 "Обед без доклада Виоле в Д4":
                     $ alt_uvao_true = False
                     jump alt_day5_uvao_lunch
@@ -119,18 +119,18 @@ label scenario_uvao_root_D4_debug:
                     jump alt_day5_uvao_lunch
                 "Совместная охота на дикого Шурика not-uvao_true":
                     $ alt_uvao_true = False
-                    jump alt_day5_capture_sh_together
+                    jump alt_day5_capture_sh_together_debug
                 "Совместная охота на дикого Шурика uvao_true":
                     $ alt_uvao_true = True
-                    jump alt_day5_capture_sh_together
+                    jump alt_day5_capture_sh_together_debug
                 "Ужин после палева на стоянке":
-                    jump alt_day5_uvao_spoiled_supper
+                    jump alt_day5_uvao_spoiled_supper_debug
                 "Вечер not-uvao_true":
                     $ alt_uvao_true = False
-                    jump alt_day5_uvao_evening
+                    jump alt_day5_uvao_evening_debug
                 "Вечер uvao_true":
                     $ alt_uvao_true = True
-                    jump alt_day5_uvao_evening
+                    jump alt_day5_uvao_evening_debug
                 "Славя на пляже":
                     jump alt_day5_uvao_ev_beach_event
                 "Назад":
@@ -303,8 +303,6 @@ label scenario_uvao_sprites:
                     "sh angry bar close"
                     show sh angry bar2 close
                     "sh angry bar2 close"
-                    show sh mad bar2 close
-                    "sh mad bar2 close"
                     jump scenario_uvao_sprites_sh_bar
                 "normal":
                     show sh rage pioneer # ванильный спрайт
