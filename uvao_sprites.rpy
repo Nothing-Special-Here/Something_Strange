@@ -64,6 +64,7 @@ init:
     image un pioneer scared veryfar = ComposeSpriteSet('veryfar', 'un/un_2_body.png', 'un/un_2_pioneer.png', 'un/un_2_scared.png')['veryfar']
     image un pioneer shocked veryfar = ComposeSpriteSet('veryfar', 'un/un_2_body.png', 'un/un_2_pioneer.png', 'un/un_2_shocked.png')['veryfar']    
     image un pioneer serious veryfar = ComposeSpriteSet('veryfar', 'un/un_3_body.png', 'un/un_3_pioneer.png', 'un/un_3_serious.png')['veryfar']
+    image un pioneer evilsmile veryfar = ComposeSpriteSet('veryfar', 'un/un_1_body.png', 'un/un_1_pioneer.png', 'un/un_1_evil_smile.png')['veryfar']
 
     # el
     image el pioneer slap = ComposeSpriteSet('normal', 'el/el_2_body.png', 'el/el_2_pioneer.png',  'el/el_slap.png')['normal']
@@ -72,10 +73,11 @@ init:
     #sh
     image sh pioneer rage veryfar = ComposeSpriteSet('veryfar', 'sh/sh_2_body.png', 'sh/sh_2_rage.png')['veryfar']
     
-    $ _sh_angry_bar = ComposeSpriteSet(('far','normal','close'), 'sh/sh_angry_bar.png')
+    $ _sh_angry_bar = ComposeSpriteSet(('veryfar', 'far','normal','close'), 'sh/sh_angry_bar.png')
     image sh angry bar close        = _sh_angry_bar['close']
     image sh angry bar              = _sh_angry_bar['normal']
     image sh angry bar far          = _sh_angry_bar['far']
+    image sh angry bar veryfar      = _sh_angry_bar['veryfar']
     $ _sh_angry_bar2 = ComposeSpriteSet( 'close',  'sh/sh_angry_bar2.png')
     image sh angry bar2 close    = _sh_angry_bar2['close']
     # image sh angry bar2          = _sh_angry_bar2['normal']
