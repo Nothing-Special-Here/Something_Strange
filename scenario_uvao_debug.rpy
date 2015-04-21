@@ -49,7 +49,7 @@ label scenario_uvao_root_D4_debug:
         "Прохождение Д4 по порядку":
             jump alt_day4_uvao_start
         "Прохождение Д5 по порядку":
-            jump alt_day5_uvao_getting_up
+            jump alt_day5_uvao_start_debug
         "Отладка Д4":
             menu:
                 "Уборка гирлянд":
