@@ -119,6 +119,8 @@ label alt_day5_uvao_getting_up:
 # Используется флаг alt_uvao_true
 label alt_day5_uvao_road_to_old_camp:
     window hide
+    $ persistent.sprite_time = "day"
+    $ day_time()
     $ alt_chapter(5, u"Юля. Старый лагерь")
     scene bg ext_path_sunset with fade
     play ambience ambience_forest_day fadein 3
@@ -1627,13 +1629,13 @@ label alt_day5_uvao_mines_sh_capture_debug: #Хомутаем Шурика и о
     $ meet('mt','Ольга Дмитриевна')
     scene bg ext_old_building_day
     show mt pioneer normal veryfar:
-        xalign 0.001 yalign 0.9
-    show sl pioneer serious veryfar:
-        xalign 0.1 yalign 0.9
-    show un pioneer serious veryfar:
-        xalign 0.2 yalign 0.9
+        xalign 0.2 yalign 0.999 zoom 0.7
+    show sl pioneer normal veryfar:
+        xalign 0.3 yalign 0.999 zoom 0.7
     show el pioneer normal veryfar:
-        xalign 0.3 yalign 0.9
+        xalign 0.4 yalign 0.999 zoom 0.7
+    show un pioneer normal veryfar:
+        xalign 0.5 yalign 0.999 zoom 0.7
     with dissolve
     window show
     "Спасательная команда в составе Ольги Дмитриевны, Слави, Лены и Электроника стояла посреди заросшего бурьяном двора и озиралась."
@@ -1647,15 +1649,55 @@ label alt_day5_uvao_mines_sh_capture_debug: #Хомутаем Шурика и о
     el "Эге-ге-е-ей, Шу-у-ури-и-ик!"
     th "Что-то я сомневаюсь, что он сам добровольно выйдет…"
     show sh angry bar3 veryfar behind mt with dissolve:
-        xalign 0.9 yalign 0.85
+        xalign 0.99 yalign 0.999 zoom 0.6
+    show mt pioneer surprise veryfar:
+        xalign 0.2 yalign 0.999 zoom 0.7
+    show sl pioneer surprise veryfar:
+        xalign 0.3 yalign 0.999 zoom 0.7
+    show el pioneer surprise veryfar:
+        xalign 0.4 yalign 0.999 zoom 0.7
+    show un pioneer surprise veryfar:
+        xalign 0.5 yalign 0.999 zoom 0.7
+    with dissolve
     # TODO: Испуганных маленьких пионеров сюда.
     "И в этот момент из зарослей появился сам виновник торжества. Чумазый, ободранный, и все с той же приснопамятной железякой в руке."
+    show sh angry bar veryfar behind mt with dissolve:
+        xalign 0.8 yalign 0.999 zoom 0.7
+    show mt pioneer scared veryfar:
+        xalign 0.2 yalign 0.999 zoom 0.7
+    show sl pioneer scared veryfar:
+        xalign 0.3 yalign 0.999 zoom 0.7
+    show el pioneer scared veryfar:
+        xalign 0.4 yalign 0.999 zoom 0.7
+    show un pioneer scared veryfar:
+        xalign 0.5 yalign 0.999 zoom 0.7
+    with dissolve
     "Не тратя времени на разговоры, он размахнулся своим рубилом и кинулся на замерших в испуге спасателей."
     th "Он сейчас точно кому-нибудь голову проломит!"
+    hide sl
+    hide mt
+    hide el
+    with moveoutleft
     "Отряд тем временем бросился врассыпную, кто куда - все, кроме Лены. Та в каком-то ступоре замерла неподвижно на месте."
+    show sh angry bar veryfar behind un with dspr:
+        xalign 0.7 yalign 0.999 zoom 0.7
     "Я уже собрался было выскочить на подмогу, отлично понимая уже, что не успею…{w} Но в последний момент Лена пришла в себя и отскочила в сторону."
-    "Дальше время для меня словно бы замедлилось. Рука девочки легла на плечо Шурика, следом резкий удар по ногам… Очкарик по инерции пролетел вперёд и мешком рухнул в траву лицом вниз."
+    show un pioneer evilsmile veryfar:
+        xalign 0.5 yalign 0.999 zoom 0.7
+    show sh angry bar veryfar behind un:
+        xalign 0.6 yalign 0.999 zoom 0.7
+    with dspr
+    "Дальше время для меня словно бы замедлилось. Рука девочки легла на плечо Шурика, следом резкий удар по ногам…"
+    hide sh with moveoutbottom
+    "Очкарик по инерции пролетел вперёд и мешком рухнул в траву лицом вниз."
     dreamgirl "Круто! Как по учебнику провернула!"
+    show un pioneer shocked veryfar:
+        xalign 0.5 yalign 0.999 zoom 0.7
+    show sh angry bar3 veryfar:
+        xalign 0.7 yalign 0.999 zoom 0.7
+    show sl pioneer normal veryfar behind sh:
+        xalign 0.8 yalign 0.999 zoom 0.7
+    with dspr
     "Шурик попытался было подняться, но подскочившая Славя вцепилась в его правое запястье, с неожиданной силой выкручивая за спину руку, всё ещё сжимающую импровизированное мачете."
     "Наконец-то подоспевший на поле битвы Эл пришёл к ней на помощь. Вдвоём они обезоружили Арматур-Батыра и снова повалили его на траву лицом вниз."
     "Я перевёл взгляд обратно на Лену. Она столбом стояла всё на том же месте, сама, кажется, пребывая в полном шоке от содеянного."
@@ -3474,7 +3516,7 @@ label alt_day5_uvao_evening_headlong_already_here:
     mt "Нет у тебя читательского билета - нет и книжек!"
     if alt_uvao_D5_sh_mines:
         "Тут она ехидно усмехнулась и скрылась в темноте."
-    else
+    else:
         show mt laugh pioneer far with dspr
         "Тут она самым легкомысленным образом показала мне язык и скрылась в темноте."
     hide mt with easeoutleft
