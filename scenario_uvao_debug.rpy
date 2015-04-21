@@ -109,6 +109,8 @@ label scenario_uvao_root_D4_debug:
                     jump alt_day5_uvao_true_back
                 "Охота на Шурика в шахтах":
                     jump alt_day5_uvao_mines_sh
+                "Охота на Шурика в шахтах - сцена пленения":
+                    jump alt_day5_uvao_mines_sh_capture_debug
                 "Поход назад через стоянку.":
                     jump alt_day5_parking_back_debug
                 "Обед без доклада Виоле в Д4":

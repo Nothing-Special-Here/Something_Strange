@@ -1643,7 +1643,7 @@ label alt_day4_uvao_sleep_time:
     scene bg black with fade2
     stop music fadeout 2
     $ renpy.pause (2)
-
+    jump alt_day5_start_uvao
     
 ## THE END    
-    return
+    # return
