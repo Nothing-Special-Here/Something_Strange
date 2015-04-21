@@ -322,6 +322,16 @@ label scenario_uvao_sprites:
                     show sh angry bar3 far
                     "sh angry bar3 far"
                     jump scenario_uvao_sprites_sh_bar
+                "veryfar":
+                    show sh angry bar veryfar:
+                        xalign 0.6 yalign 0.999 zoom 0.7
+                    "Падай!"
+                    show sh angry bar veryfar:
+                        yanchor 1.0 xanchor 1.0 xalign 0.6 yalign 0.999 zoom 0.7 transform_anchor True
+                        easeout 0.5 yanchor 1.0 xanchor 1.0 rotate -90.0
+                    "..."
+                    hide sh
+                    jump scenario_uvao_sprites_sh_bar
                 "Назад":
                     hide sh
             jump scenario_uvao_sprites

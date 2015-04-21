@@ -1682,14 +1682,17 @@ label alt_day5_uvao_mines_sh_capture_debug: #Хомутаем Шурика и о
     show sh angry bar veryfar behind un with dspr:
         xalign 0.7 yalign 0.999 zoom 0.7
     "Я уже собрался было выскочить на подмогу, отлично понимая уже, что не успею…{w} Но в последний момент Лена пришла в себя и отскочила в сторону."
-    show un pioneer evilsmile veryfar:
+    show un pioneer evilsmile veryfar behind sh:
         xalign 0.5 yalign 0.999 zoom 0.7
-    show sh angry bar veryfar behind un:
+    show sh angry bar veryfar:
         xalign 0.6 yalign 0.999 zoom 0.7
     with dspr
     "Дальше время для меня словно бы замедлилось. Рука девочки легла на плечо Шурика, следом резкий удар по ногам…"
-    hide sh with moveoutbottom
+    show sh angry bar veryfar:
+        yanchor 1.0 xanchor 1.0 xalign 0.6 yalign 0.999 zoom 0.7 transform_anchor True
+        easeout 0.5 yanchor 1.0 xanchor 1.0 rotate -90.0
     "Очкарик по инерции пролетел вперёд и мешком рухнул в траву лицом вниз."
+    hide sh
     dreamgirl "Круто! Как по учебнику провернула!"
     show un pioneer shocked veryfar:
         xalign 0.5 yalign 0.999 zoom 0.7
