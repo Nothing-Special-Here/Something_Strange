@@ -47,7 +47,7 @@ label scenario_uvao_root_D4_debug:
         "Отладка: Встреча Юли в д3":
             call alt_day3_meet_uvao
         "Прохождение Д4 по порядку":
-            jump alt_day4_uvao_start
+            jump alt_day4_start_uvao
         "Прохождение Д5 по порядку":
             jump alt_day5_uvao_start_debug
         "Отладка Д4":
