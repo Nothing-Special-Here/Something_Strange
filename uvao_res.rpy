@@ -57,6 +57,7 @@ init:
 #    image ext_dining_hall_away_night_uvao2 = "scenario_uvao/images/ext_dining_hall_away_night_uvao2.jpg"
     #ext's
     image ext_old_building_day = "scenario_uvao/images/ext_old_building_day.jpg"
+    image ext_washstand_sunset = "scenario_uvao/images/ext_washstand_sunset.png" #TODO: В JPG!
     
     #int's
     image int_old_building_day_uvao = "scenario_uvao/images/int_old_building_day_uvao.jpg"
@@ -123,3 +124,4 @@ init:
     $ phone_vibro = "scenario_uvao/sounds/vibration-smartphone.ogg"
     $ match_lights ="scenario_uvao/sounds/lighting-a-match.ogg"
     $ silence = "scenario_uvao/sounds/silence_4sec.ogg"
+    $ my_chrysalis_highwayman = "scenario_uvao/sounds/my_chrysalis_highwayman.ogg"
