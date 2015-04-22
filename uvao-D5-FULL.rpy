@@ -2592,9 +2592,15 @@ label alt_day5_capture_sh_together:
     play sound sfx_face_slap
     show sh upset pioneer close with dspr
     sh "Ай!"
-    play sound_loop sfx_face_slap
+#    play sound_loop sfx_face_slap
+    play sound sfx_face_slap
     "Последовала целая серия деловитых пощёчин, у бедняги только голова моталась туда-сюда."
-    stop sound_loop fadeout 1
+    play sound sfx_face_slap
+    $ renpy.pause(0.8)
+    play sound sfx_face_slap
+    $ renpy.pause(0.8)
+    play sound sfx_face_slap
+#    stop sound_loop fadeout 1
     dreamgirl "Браво! Брависсимо!"
     if alt_uvao_true:
         extend " Вот это я понимаю, настоящий специалист по адаптации! Прирождённый психолух!"
