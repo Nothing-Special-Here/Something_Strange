@@ -1633,13 +1633,13 @@ label alt_day5_uvao_mines_sh_capture_debug: #Хомутаем Шурика и о
     $ meet('mt','Ольга Дмитриевна')
     scene bg ext_old_building_day
     show mt pioneer normal veryfar:
-        xalign 0.2 yalign 0.999 zoom 0.7
-    show sl pioneer normal veryfar:
         xalign 0.3 yalign 0.999 zoom 0.7
-    show el pioneer normal veryfar:
+    show sl pioneer normal veryfar:
         xalign 0.4 yalign 0.999 zoom 0.7
-    show un pioneer normal veryfar:
+    show el pioneer normal veryfar:
         xalign 0.5 yalign 0.999 zoom 0.7
+    show un pioneer normal veryfar:
+        xalign 0.6 yalign 0.999 zoom 0.7
     with dissolve
     window show
     "Спасательная команда в составе Ольги Дмитриевны, Слави, Лены и Электроника стояла посреди заросшего бурьяном двора и озиралась."
@@ -1655,27 +1655,29 @@ label alt_day5_uvao_mines_sh_capture_debug: #Хомутаем Шурика и о
     show sh angry bar3 veryfar behind mt with dissolve:
         xalign 0.99 yalign 0.999 zoom 0.55
     show mt pioneer surprise veryfar:
-        xalign 0.2 yalign 0.999 zoom 0.7
-    show sl pioneer surprise veryfar:
         xalign 0.3 yalign 0.999 zoom 0.7
-    show el pioneer surprise veryfar:
+    show sl pioneer surprise veryfar behind mt:
         xalign 0.4 yalign 0.999 zoom 0.7
-    show un pioneer surprise veryfar:
+    show el pioneer surprise veryfar:
         xalign 0.5 yalign 0.999 zoom 0.7
+    show un pioneer surprise veryfar:
+        xalign 0.6 yalign 0.999 zoom 0.7
     with dissolve
     "И в этот момент из зарослей появился сам виновник торжества. Чумазый, ободранный, и все с той же приснопамятной железякой в руке."
     show sh angry bar veryfar with dissolve:
-        xalign 0.8 yalign 0.999 zoom 0.7
+        xalign 0.9 yalign 0.999 zoom 0.7
     show mt pioneer scared3 veryfar:
-        xalign 0.2 yalign 0.999 zoom 0.7
-    show sl pioneer scared veryfar:
         xalign 0.3 yalign 0.999 zoom 0.7
-    show el pioneer scared veryfar:
+    show sl pioneer scared veryfar:
         xalign 0.4 yalign 0.999 zoom 0.7
-    show un pioneer scared veryfar:
+    show el pioneer scared veryfar:
         xalign 0.5 yalign 0.999 zoom 0.7
+    show un pioneer scared veryfar:
+        xalign 0.6 yalign 0.999 zoom 0.7
     with dissolve
     "Не тратя времени на разговоры, он размахнулся своим рубилом и кинулся на замерших в испуге спасателей."
+    show sh angry bar veryfar with dissolve:
+        xalign 0.85 yalign 0.999 zoom 0.7
     th "Он сейчас точно кому-нибудь голову проломит!"
     hide sl
     hide mt
@@ -1683,47 +1685,46 @@ label alt_day5_uvao_mines_sh_capture_debug: #Хомутаем Шурика и о
     with moveoutleft
     "Отряд тем временем бросился врассыпную, кто куда - все, кроме Лены. Та в каком-то ступоре замерла неподвижно на месте."
     show sh angry bar veryfar:
-        xalign 0.7 yalign 0.999 zoom 0.7
+        xalign 0.8 yalign 0.999 zoom 0.7
     with dspr
     "Я уже собрался было выскочить на подмогу, отлично понимая уже, что не успею…{w} Но в последний момент Лена пришла в себя и отскочила в сторону."
     show sh angry bar veryfar:
-        xalign 0.58 yalign 0.999 zoom 0.7
+        xalign 0.68 yalign 0.999 zoom 0.7
     show un pioneer serious veryfar behind sh:
-        xalign 0.5 yalign 0.999 zoom 0.7
+        xalign 0.6 yalign 0.999 zoom 0.7
     with dspr
     "Дальше время для меня словно бы замедлилось. Рука девочки легла на плечо Шурика, следом резкий удар по ногам…"
     show sh angry bar veryfar:
-        yanchor 1.0 xanchor 1.0 xalign 0.58 yalign 0.999 zoom 0.7 transform_anchor True
+        yanchor 1.0 xanchor 1.0 xalign 0.68 yalign 0.999 zoom 0.7 transform_anchor True
         easeout 0.5 yanchor 1.0 xanchor 1.0 rotate -90.0
     show un pioneer surprise veryfar:
-        xalign 0.5 yalign 0.999 zoom 0.7
-    with dspr
+        xalign 0.6 yalign 0.999 zoom 0.7
+    with dissolve
     "Очкарик по инерции пролетел вперёд и мешком рухнул в траву лицом вниз."
     hide sh
     dreamgirl "Круто! Как по учебнику провернула!"
     show sh angry bar3 veryfar:
-        xalign 0.7 yalign 0.999 zoom 0.7
+        xalign 0.4 yalign 0.999 zoom 0.7
     show sl pioneer serious veryfar behind sh:
-        xalign 0.77 yalign 0.999 zoom 0.7
-    with dspr
+        xalign 0.47 yalign 0.999 zoom 0.7
+    with dissolve
     "Шурик попытался было подняться, но подскочившая Славя вцепилась в его правое запястье, с неожиданной силой выкручивая за спину руку, всё ещё сжимающую импровизированное мачете."
-    show sh rage veryfar:
-        xalign 0.7 yalign 0.999 zoom 0.7
+    show sh pioneer rage veryfar:
+        xalign 0.4 yalign 0.999 zoom 0.7
     show el pioneer sad veryfar behind sh:
-        xalign 0.63 yalign 0.999 zoom 0.7
-    with dspr
+        xalign 0.33 yalign 0.999 zoom 0.7
+    with dissolve
     "Наконец-то подоспевший на поле битвы Эл пришёл к ней на помощь. Вдвоём они обезоружили Арматур-Батыра и снова повалили его на траву лицом вниз."
     show un pioneer shy veryfar:
-        xalign 0.5 yalign 0.999 zoom 0.7
-    with dspr
+        xalign 0.6 yalign 0.999 zoom 0.7
+    with dissolve
     "Я перевёл взгляд обратно на Лену. Она столбом стояла всё на том же месте, сама, кажется, пребывая в полном шоке от содеянного."
     show mt pioneer angry veryfar behind sh:
-        xalign 0.85 yalign 0.999 zoom 0.7
-    with dspr
+        xalign 0.2 yalign 0.999 zoom 0.7
+    with dissolve
     mt "Ну-ка, переверните его!"
     "Выполняя отданное командным голосом распоряжение Ольги, Эл со Славей совместными усилиями перевернули брыкающегося и что-то неразборчиво хрипящего Шурика на спину."
     "Вожатая наклонилась над ним{w}… и отвесила несколько смачных оплеух!"
-    with dspr
     stop music fadeout 5
     play sound sfx_face_slap
     $ renpy.pause(0.8)
@@ -1731,12 +1732,12 @@ label alt_day5_uvao_mines_sh_capture_debug: #Хомутаем Шурика и о
     $ renpy.pause(0.8)
     play sound sfx_face_slap
     show sh pioneer scared veryfar:
-        xalign 0.63 yalign 0.999 zoom 0.7
+        xalign 0.4 yalign 0.999 zoom 0.7
     show sl pioneer normal veryfar behind sh:
-        xalign 0.77 yalign 0.999 zoom 0.7
+        xalign 0.47 yalign 0.999 zoom 0.7
     show el pioneer normal veryfar behind sh:
-        xalign 0.63 yalign 0.999 zoom 0.7
-    with dspr
+        xalign 0.33 yalign 0.999 zoom 0.7
+    with dissolve
     "Кажется, это подействовало - Шурик внезапно обмяк и перестал вырываться."
     dreamgirl "Вот что значит советская педагогика! А если б ногами - вообще был бы как шёлковый!"
     "Вожатая о чем-то спрашивала у Шурика, но тот явно не мог ничего объяснить, только растерянно озирался по сторонам."
@@ -1746,10 +1747,10 @@ label alt_day5_uvao_mines_sh_capture_debug: #Хомутаем Шурика и о
     hide sh
     hide el
     show mt pioneer normal veryfar:
-        xalign 0.85 yalign 0.999 zoom 0.7
-    with dspr
+        xalign 0.2 yalign 0.999 zoom 0.7
+    with dissolve
     "Напоследок Ольга обернулась и пристально обвела взглядом поляну. По-видимому, не найдя ничего подозрительного, она повернулась и скрылась за деревьями вслед за остальными."
-    hide mt with dspr
+    hide mt with dissolve
     jump alt_day5_parking_back
 
 # Д5 - Возвращение в лагерь через стоянку с палевом.
