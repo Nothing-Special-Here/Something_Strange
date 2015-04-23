@@ -482,6 +482,7 @@ label alt_day5_uvao_hentai_scene:
     uv "А потом уже вот так!"
     "Она вскочила и ловким, по-кошачьи гибким движением избавилась от платья, под которым не было больше ничего лишнего."
     scene uv_bunker_hentai with dissolve    
+    play music music_list["into_the_unknown"] fadein 3
     "Потом встала на четвереньки и повернулась ко мне, при этом хитро поглядывая через плечо, на манер избушки, так сказать. К стене передом, к Семёну задом."
     dreamgirl "Ну, убедился?"
     "Юлин хвост изогнулся эдаким приглашающим знаком вопроса. Не дождавшись от меня какой-нибудь реакции, она потопталась коленями и вопросительно наклонила голову."
@@ -742,6 +743,7 @@ label alt_day5_uvao_hentai_sleep:
     "…"
     window hide
     show blink
+    play music music_list["sunny_day"] fadein 4
     $ renpy.pause(2, hard=True)
     scene black with fade2
     show prologue_dream
@@ -783,6 +785,7 @@ label alt_day5_uvao_hentai_sleep:
     show int_sleep_hentai_office2 behind prologue_dream with fade3
     hide int_sleep_hentai_office
     "Покончив с формальностями и проводив кошечек до лимузина, я вернулся в кабинет. Неплохой куш нам сегодня обломился!{w} Я подмигнул Юрию Куклачёву, грозящему мне пальцем из фоторамки на столе, вытянулся в удобном кресле и прикрыл глаза."
+    stop music fadeout 3
     show blink
     $ renpy.pause(1)
     window hide
@@ -1707,6 +1710,8 @@ label alt_day5_uvao_mines_sh_capture_debug: #Хомутаем Шурика и о
     with dissolve
     "Очкарик по инерции пролетел вперёд и мешком рухнул в траву лицом вниз."
     hide sh
+    show un pioneer surprise veryfar:
+        xalign 0.75 yalign 0.999 zoom 0.7    
     dreamgirl "Круто! Как по учебнику провернула!"
     show sh angry bar3 veryfar:
         xalign 0.4 yalign 0.999 zoom 0.7
@@ -1722,7 +1727,7 @@ label alt_day5_uvao_mines_sh_capture_debug: #Хомутаем Шурика и о
     with dissolve
     "Наконец-то подоспевший на поле битвы Эл пришёл к ней на помощь. Вдвоём они обезоружили Арматур-Батыра и снова повалили его на траву лицом вниз."
     show un pioneer shy veryfar:
-        xalign 0.6 yalign 0.999 zoom 0.7
+        xalign 0.75 yalign 0.999 zoom 0.7
     with dissolve
     "Я перевёл взгляд обратно на Лену. Она столбом стояла всё на том же месте, сама, кажется, пребывая в полном шоке от содеянного."
     show mt pioneer angry veryfar behind sh:
