@@ -222,16 +222,6 @@
     image int_catacombs_door_light2 = "scenario_alt/Pics/bg/int_catacombs_door_light2.jpg"
     image int_sleep_hentai_office = "scenario_alt/Pics/bg/int_sleep_hentai_office.jpg"
     image int_sleep_hentai_office2 = "scenario_alt/Pics/bg/int_sleep_hentai_office2.jpg"
-    # Затемнялка
-    image int_mine_black:
-        contains: 
-            'bg int_mine'
-        contains: 
-            'bg black'
-            alpha 0.7
-        contains: 
-            'scenario_alt/Pics/matches_lightmask.png'
-            alpha 0.6 rotate 180 xalign 0.5 yalign 0.5
     #Анимка спичек
     image match_lights: 
         contains: 
