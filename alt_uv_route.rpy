@@ -1654,6 +1654,7 @@ label alt_day5_start_uvao:
 # Д5-подъём
 label alt_day5_uvao_getting_up:
     window hide
+    $ persistent.sprite_time = "day"
     $ routetag = "uv"
     $ alt_chapter(5, u"Юля. Утро")
     $ persistent.sprite_time = "sunset"
