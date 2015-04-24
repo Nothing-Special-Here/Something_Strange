@@ -15,7 +15,7 @@ init:
 label alt_day4_start_uvao:
     window hide
     $ routetag = "uv_unknown"
-    $ alt_chapter_uv(4, u"Утро")
+    $ alt_chapter(4, u"Утро")
     $ persistent.sprite_time = "sunset"
     $ sunset_time()
     scene bg int_house_of_mt_sunset
@@ -298,7 +298,7 @@ label alt_day4_uvao_garlands_removal:
     dreamgirl "Ну что, работай, нигер! Солнце еще высоко!"
     "Что же, уборку без стремянки не начать. Я направился в сторону кружка кибернетиков."
     window hide
-    $ alt_chapter_uv(4, u"Всегда готов!")
+    $ alt_chapter(4, u"Всегда готов!")
     play music music_list["my_daily_life"] fadein 3
     scene bg ext_clubs_day with dissolve
     window show
@@ -500,7 +500,7 @@ label alt_day4_uvao_library:
 #
 #
     window hide
-    $ alt_chapter_uv(4, u"Повелитель книг")
+    $ alt_chapter(4, u"Повелитель книг")
     $ persistent.sprite_time = "day"
     play ambience ambience_camp_center_day fadein 1
     scene bg ext_library_day with fade
@@ -686,7 +686,7 @@ label alt_day4_uvao_lunch:
 # устанавливает флаг обеда со Славей alt_uvao_D4_lunch_sl
 #
     window hide
-    $ alt_chapter_uv(4, u"Обед")
+    $ alt_chapter(4, u"Обед")
     $ persistent.sprite_time = "day"
     $ day_time()
     play ambience ambience_dining_hall_full fadein 3
@@ -946,7 +946,7 @@ label alt_day4_uvao_meet_Yulia_after_lunch:
 # используется флаг рассказа Слави про Генду за обедом alt_uvao_D4_lunch_sl
 #
     window hide
-    $ alt_chapter_uv(4, u"Идентификация")
+    $ alt_chapter(4, u"Идентификация")
     $ persistent.sprite_time = "day"
     scene black with dissolve
     $ renpy.pause(2)
