@@ -1340,7 +1340,7 @@ label uvao_D4_supper_end:
 #
 label alt_day4_uvao_meet_Yulia_at_evening:
     window hide
-    $ alt_chapter(4, u"Юля. Вечерние встречи")
+    $ alt_chapter(4, u"Юля. Вечерние\nвстречи")
     $ persistent.sprite_time = "sunset"
     scene bg ext_dining_hall_away_sunset with fade
     play ambience ambience_camp_center_evening fadein 1
