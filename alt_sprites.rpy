@@ -115,7 +115,7 @@
     image mt pioneer scared3 veryfar = ComposeSpriteSet('veryfar', 'mt/mt_3_body.png',  'mt/mt_3_pioneer.png', 'mt/mt_3_scared3.png')['veryfar']
     image mt pioneer surprise veryfar = ComposeSpriteSet('veryfar', 'mt/mt_1_body.png',  'mt/mt_1_pioneer.png', 'mt/mt_1_surprise.png')['veryfar']
     image mt scared3 panama pioneer = ComposeSpriteSet('normal', 'mt/mt_3_body.png',  'mt/mt_3_pioneer.png', 'mt/mt_3_scared3.png', 'mt/mt_3_panama.png')['normal']
-    image mt surprise panama pioneer = ComposeSpriteSet('normal', 'mt/mt_3_body.png',  'mt/mt_3_pioneer.png', 'mt/mt_1_surprise.png', 'mt/mt_3_panama.png')['normal']
+    #image mt surprise panama pioneer = ComposeSpriteSet('normal', 'mt/mt_3_body.png',  'mt/mt_3_pioneer.png', 'mt/mt_1_surprise.png', 'mt/mt_3_panama.png')['normal']
 
     # cs 
     $ _cs_normal2 = ComposeSpriteSet(('normal', 'close', 'far'), 'cs/cs_2_body.png', 'cs/cs_1_normal.png')
