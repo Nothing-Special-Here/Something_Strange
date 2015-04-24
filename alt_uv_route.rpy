@@ -1654,11 +1654,10 @@ label alt_day5_start_uvao:
 # Д5-подъём
 label alt_day5_uvao_getting_up:
     window hide
-    $ persistent.sprite_time = "day"
-    $ routetag = "uv"
-    $ alt_chapter(5, u"Юля. Утро")
     $ persistent.sprite_time = "sunset"
     $ sunset_time()
+    $ routetag = "uv"
+    $ alt_chapter(5, u"Юля. Утро")
     scene bg int_house_of_mt_sunset
     play ambience ambience_int_cabin_day fadein 4
     window show
