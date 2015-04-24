@@ -1,5 +1,16 @@
 init:
+    $ alt_uvao_true = False
+
     $ alt_uvao_D4_viola_morning = False
+    $ alt_uvao_D4_concert = False
+    $ alt_uvao_D4_lunch_un = False
+    $ alt_uvao_D4_lunch_sl = False
+    $ alt_uvao_D4_supper_cs = False
+
+    $ alt_uvao_D5_hentai = False
+    $ alt_uvao_D5_sh_mines = False
+    $ alt_uvao_D5_evening_sl = False
+    $ alt_uvao_D5_evening_dv_un = False
     
 label alt_day4_start_uvao:
     window hide
@@ -674,10 +685,6 @@ label alt_day4_uvao_lunch:
 # устанавливает флаг обеда с  Леной  alt_uvao_D4_lunch_un
 # устанавливает флаг обеда со Славей alt_uvao_D4_lunch_sl
 #
-    $ alt_uvao_D4_concert = False
-    $ alt_uvao_D4_lunch_un = False
-    $ alt_uvao_D4_lunch_sl = False
-#
     window hide
     $ alt_chapter_uv(4, u"Обед")
     $ persistent.sprite_time = "day"
@@ -1189,8 +1196,6 @@ label alt_day4_uvao_supper:
 # используется флаг посещения медпункта alt_uvao_D4_viola_morning
 # устанавливает флаг ужина с Виолой alt_alt_uvao_D4_supper_cs
 #
-
-    $ alt_uvao_D4_supper_cs = False
     window hide
     $ alt_chapter(4, u"Юля. Ужин")
     $ persistent.sprite_time = "sunset"
@@ -1426,7 +1431,6 @@ label alt_day4_uvao_evening_business:
 #
 # устанавливает флаг вечернего визита к Виоле в медпункт и выхода на тру-энд alt_uvao_true
 #
-    $ alt_uvao_true = False
     $ persistent.sprite_time = "sunset"
     scene bg ext_square_sunset with fade
     play ambience ambience_camp_center_evening fadein 1
@@ -1649,10 +1653,6 @@ label alt_day4_uvao_sleep_time:
 label alt_day5_start_uvao:
 # Д5-подъём
 label alt_day5_uvao_getting_up:
-    $ alt_uvao_D5_hentai = False
-    $ alt_uvao_D5_sh_mines = False
-    $ alt_uvao_D5_evening_sl = False
-    $ alt_uvao_D5_evening_dv_un = False
     window hide
     $ routetag = "uv"
     $ alt_chapter(5, u"Юля. Утро")
@@ -4589,7 +4589,6 @@ label alt_day5_capture_sh_together:
 # Используется флаг alt_uvao_D5_evening_sl.
 # Используется флаг alt_uvao_D5_evening_dv_un.
 label alt_day5_uvao_evening:
-    $ alt_uvao_D5_evening_dv_un = False
     window hide
     $ routetag = "uv"
     $ alt_chapter(5, u"Юля. Вечер")
