@@ -211,8 +211,8 @@
     #ext's
     image ext_dining_hall_away_night_uvao1 = "scenario_alt/Pics/bg/ext_dining_hall_away_night_uvao1.jpg"
     image ext_dining_hall_away_night_uvao2 = "scenario_alt/Pics/bg/ext_dining_hall_away_night_uvao2.jpg"
-    image ext_old_building_day = "scenario_uvao/images/ext_old_building_day.jpg"
-    image ext_washstand_sunset = "scenario_uvao/images/ext_washstand_sunset.jpg"
+    image ext_old_building_day = "scenario_alt/Pics/bg/ext_old_building_day.jpg"
+    image ext_washstand_sunset = "scenario_alt/Pics/bg/ext_washstand_sunset.jpg"
     
     #int's
     image int_old_building_day_uvao = "scenario_alt/Pics/bg/int_old_building_day_uvao.jpg"
