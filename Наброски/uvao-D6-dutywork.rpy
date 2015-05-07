@@ -235,6 +235,6 @@ label alt_day6_uvao_duty:
                 #TODO: Jump
                 "Идём в шахты к нашей кошочке"
             "Поверить Ульяне":
-                jump alt_day6_uvao_house
+                jump alt_day6_uvao_isolator_house
     else:
         jump alt_day6_uvao_isolator_house
