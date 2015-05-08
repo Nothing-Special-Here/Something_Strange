@@ -138,7 +138,21 @@ label scenario_uvao_root_D4_debug:
         "Отладка Д6":
             menu:
                 "Утро":
-                    jump alt_day6_getting_up_debug
+                    menu:
+                        "Тру Ветка":
+                            $ alt_uvao_true = True
+                        "Палевная Ветка":
+                            $ alt_uvao_D5_sh_mines = True
+                        "Беспалевная Ветка":
+                            pass
+                        #Тут должны быть ещё пару условий про хентай и прочее, но это потом.
+                    jump alt_day6_uvao_getting_up
+                "Хозработы":
+                    menu:
+                        "Палевная ветка (Ещё не готово)":
+                            pass
+                        "Беспалевная ветка":
+                            jump alt_day6_uvao_duty
         "Картинки при смене глав":
             label scenario_uvao_chapters:
                 menu:
@@ -260,17 +274,6 @@ label alt_day5_uvao_spoiled_supper_debug:
         "Хентая не было":
             $ alt_uvao_D5_hentai = False
     jump alt_day5_uvao_spoiled_supper
-#
-label alt_day6_getting_up_debug:
-    menu:
-        "Тру Ветка":
-            $ alt_uvao_true = True
-        "Палевная Ветка":
-            $ alt_uvao_D5_sh_mines = True
-        "Беспалевная Ветка":
-            pass
-        #Тут должны быть ещё пару условий про хентай и прочее, но это потом.
-    jump alt_day6_uvao_getting_up
 #
 label scenario_uvao_sprites:
     menu:

@@ -10,6 +10,7 @@ label alt_day6_uvao_getting_up:
     $ persistent.sprite_time = "sunset"
     $ sunset_time()
     scene bg int_house_of_mt_sunset
+    play music music_list["my_daily_life"] fadein 4
     play ambience ambience_int_cabin_day fadein 4
     window show
     if alt_uvao_true:
@@ -176,7 +177,6 @@ label alt_day6_uvao_getting_up:
             "Пойти в медпункт":
                 jump alt_day6_uvao_morning_aidpost
     else:
-        #TODO: Музыка до самого конца ветки.
         "Спал я как убитый. А проснулся с ощущением, что мои руки отделили от тела и оставили где-то в другом месте. Наверное вчерашняя переноска Шурика (будь он неладен) виновата. Вставать не хотелось. Я с наслаждением потянулся."
         "Наши рученьки устали, мы таскали, мы таскали…"
         th "Интересно, как он будет отмазываться сегодня?"
@@ -228,7 +228,7 @@ label alt_day6_uvao_getting_up:
         show mt normal pioneer far with dspr
         mt "Семён." 
         "Теперь она обращалась ко мне."
-        #TODO: Музычка неприятностей, алисочкина тема вроде.
+        play music music_list["eat_some_trouble"] fadein 4
         mt "Выйди-ка сюда."
         show mt normal pioneer with dissolve
         "Мне ничего не оставалось, как выйти в центр площади на подгибающихся ногах. Ненавижу толпу. А если ещё ты знаешь, что тебя сейчас ожидает публичная порка перед этой самой толпой, то дело вообще труба."
@@ -260,6 +260,7 @@ label alt_day6_uvao_getting_up:
         me "Да, да, конечно, Ольга Дмитриевна."
         "Соврал я."
         me "Оправдаю и исправлюсь, больше не повторится."
+        stop music fadeout 4
         play sound eat_horn fadein 2
         mt "Прекрасно. А теперь все могут идти завтракать."
         hide mt with dissolve
@@ -274,6 +275,7 @@ label alt_day6_uvao_getting_up:
 label alt_day6_uvao_morning_aidpost:
     window hide
     scene bg ext_aidpost_sunset with dissolve
+    play music music_list["eternal_longing"] fadein 4
     play ambience ambience_camp_center_day fadein 4
     window show
     "Голова беспокоила меня всё больше и больше, а звон в ушах всё усиливался. Что ж, придётся видимо и правда навестить доктора Виолу. Столовая подождёт – голова важнее."

@@ -3,6 +3,7 @@ label alt_day6_uvao_isolator_house:
     window hide
     scene bg int_house_of_mt_sunset
     play ambience ambience_int_cabin_day fadein 4
+    play music music_list["what_do_you_think_of_me"] fadein 4
     window show
     "Я зашёл в наш с вожатой домик."
     me "Вы меня искали, Ольга Дмитриевна?"
