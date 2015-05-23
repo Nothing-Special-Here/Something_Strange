@@ -149,8 +149,8 @@ label scenario_uvao_root_D4_debug:
                     jump alt_day6_uvao_getting_up
                 "Хозработы":
                     menu:
-                        "Палевная ветка (Ещё не готово)":
-                            pass
+                        "Палевная ветка":
+                            jump alt_day6_uvao_duty_sl
                         "Беспалевная ветка":
                             jump alt_day6_uvao_duty
         "Картинки при смене глав":

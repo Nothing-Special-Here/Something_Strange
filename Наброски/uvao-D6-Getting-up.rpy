@@ -275,8 +275,9 @@ label alt_day6_uvao_getting_up:
 label alt_day6_uvao_morning_aidpost:
     window hide
     scene bg ext_aidpost_sunset with dissolve
-    play music music_list["eternal_longing"] fadein 4
     play ambience ambience_camp_center_day fadein 4
+    $ persistent.sprite_time = "day"
+    $ day_time()
     window show
     "Голова беспокоила меня всё больше и больше, а звон в ушах всё усиливался. Что ж, придётся видимо и правда навестить доктора Виолу. Столовая подождёт – голова важнее."
     "Дорога до медпункта, обычно недолгая, сегодня заняла у меня раза в три больше времени. Я шел медленно, пытаясь собрать мысли в кучу. Да и как иначе, когда твоё мироздание кто-то пытается препарировать и выпотрошить!"
@@ -305,6 +306,7 @@ label alt_day6_uvao_morning_aidpost:
     scene bg int_aidpost_day
     show cs normal glasses far
     with dissolve
+    play music music_list["eternal_longing"] fadein 4
     play sound sfx_open_door_1
     play ambience ambience_int_cabin_day fadein 4
     window show

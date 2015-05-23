@@ -3,6 +3,7 @@ label alt_day6_uvao_breakfast_with_sh:
     #TODO Music
     window hide
     scene bg int_dining_hall_people_day with dissolve
+    play music music_list["so_good_to_be_careless"] fadein 4
     play ambience ambience_dining_hall_full fadein 4
     window show
     "Как и ожидалось, в столовой было битком. Ну ещё бы – с моей-то нерасторопностью. Ну хотя бы очередь на раздаче не такая большая, как обычно. Взяв себе неизменные бутерброды и кофе, я обернулся, выбирая куда сесть."
@@ -11,9 +12,12 @@ label alt_day6_uvao_breakfast_with_sh:
     show sh normal_smile pioneer far at right with dissolve
     sh "Эй, Семён! Иди сюда. Я тебе место занял."
     "Что?! Шурик занял место мне? Никогда не замечал за ним подобных приступов альтруизма. Что более вероятно, ему от меня что-то нужно. Но спорить я не стал и направился к свободному стулу."
-    show un smile pioneer far at fleft behind sl
-    show sl smile pioneer far at left
-    show mi smile pioneer far at cleft behind sl
+    show un smile pioneer far behind sl:
+        xalign 0
+    show sl smile pioneer far:
+        xalign 0.2
+    show mi smile pioneer far behind sl:
+        xalign 0.4
     with dissolve
     "За соседним столом завтракала Славя в компании Лены и Мику. Девочки что-то горячо обсуждали. Заметив меня, они смолкли и дружно кивнули – мол, с добрым утром, Сенечка. И вам, милые, и вам, подумал я кивая в ответ. Славя и Мику улыбнулись, Лена, как всегда засмущалась, но тоже смогла изобразить что-то, похожее на робкую улыбку."
     hide un
@@ -84,14 +88,14 @@ label alt_day6_uvao_breakfast_with_sh:
     hide sh with dissolve
     th "Ну а что он интересно ожидал от меня услышать? Может ему ещё и фото Юли показать? Обойдётся."
     "Я принялся за второй бутерброд. За время этой увлекательной беседы, кофе совсем остыл."
-    show sl smile pioneer close with dissolve
+    show sl smile pioneer close at center with dissolve
     "И тут ко мне за стол подсела Славя и широко улыбнулась – будто в столовой солнышко включили."
     "Её улыбка осветила все ближайшие столы, лица пионеров и поварих. Мне показалось, что даже безликий одинокий пионер слегка улыбнулся за своим столиком. Возможно только показалось – не могу сказать наверняка."
     sl "Привет, Семён!"
     "Весело сказала девочка."
     me "Привет."
     "Не особо жизнерадостно ответил я."
-    show sl surprise pioneer close with dspr
+    show sl surprise pioneer close at center with dspr
     sl "Что с тобой, Сёма?"
     "Заботливо поинтересовалась Славя."
     th "Ого! Что это ещё за Сёма?"
@@ -99,7 +103,7 @@ label alt_day6_uvao_breakfast_with_sh:
     th "Я? Нравлюсь?"
     dreamgirl "Ну а что? Парень ты видный. Пользуйся моментом."
     me "Да что-то голова разболелась. Спасибо, что поинтересовалась."
-    show sl happy pioneer close with dspr
+    show sl happy pioneer close at center with dspr
     sl "Да не за что, Сёма."
     "И снова эта улыбка… Славя, Славя… Эх, не было бы у меня Юли."
     dreamgirl "Гусар, ты девками-то не разбрасывайся. Никого у тебя пока нет. Забыл про предупреждение милого доктора?"
@@ -111,37 +115,44 @@ label alt_day6_uvao_breakfast_with_sh:
     sl "Мероприятие коллективное, пропускать нельзя."
     "Да, по мне видимо очень заметно, что я не любитель подобных массовых сборищ с увеселительным уклоном."
     "Так, с этим разобрались. Но Славя явно хотела сказать мне не только это."
-    show sl shy pioneer close with dspr
+    show sl shy pioneer close at center with dspr
     sl "А ещё я хотела бы попросить тебя о помощи."
     me "Какого рода помощь требуется?"
     "Спросил я, примерно догадываясь."
-    show sl laugh pioneer close with dspr
+    show sl laugh pioneer close at center with dspr
     sl "Помощь с организацией мероприятия, естественно."
     "Весело ответила активистка."
     me "Понятно. А почему именно я? И я, что, буду делать всё один?"
     sl "Ну… Во первых ты будешь не один. Электроник тоже поможет. А во вторых…"
+    show sl tender pioneer close at center with dspr:
+        linear 1 zoom 1.1
     "Тут она наклонилась к моему уху, накрыла мою руку своей и прошептала:"
-    show sl tender pioneer close with dspr:
-        zoom 1.1
     me "Ты ведь такой сильный и не откажешься помочь девушке?"
     "Руку я не спешил убирать. Было приятно, не скрою."
     show un shy pioneer far at fleft with dissolve
     "За соседним столом, где Славя завтракала с девочками, осталась только Лена. Мику видимо уже закончила есть и ушла. Лена не слышала, о чём мы говорим, но когда она заметила руку Слави на моей, то вздрогнула и уткнулась в свою чашку."
-    hide un with dissolve
+    hide un
+    show sl shy pioneer close at center with dspr:
+        zoom 1.1
+    with dissolve
     me "Ну…"
     sl "А взамен я буду танцевать с тобой{w} весь{w} вечер."
     "Промурлыкала Славя и, видимо решив дожать меня, продолжила:"
     sl "А после танцев мы можем вместе погулять."
     "Я усмехнулся."
     me "Ну кто я такой, чтобы отказываться от такого предложения?"
-    show sl happy pioneer close with dspr
+    show sl happy pioneer close at center with dspr
     sl "Вот и отлично! Значит договорились."
     "Обрадовалась Славя."
     sl "Тогда через десять минут на площади."
     hide sl with dissolve
     "Я допил кофе, отнёс поднос с посудой на кухню и пошёл к выходу."
-    #TODO Текст
-    #Прыгаем на другие хоз. работы по палевной ветке.
+    window hide
+    stop music fadeout 4
+    scene bg ext_dining_hall_near_day with dissolve
+    window show
+    "И спустя каких-то пару мгновений я оказался на площади."
+    jump alt_day6_uvao_duty_sl
 
 # Завтрак, слушаем Шурика со стороны.
 #
