@@ -153,6 +153,22 @@ label scenario_uvao_root_D4_debug:
                             jump alt_day6_uvao_duty_sl
                         "Беспалевная ветка":
                             jump alt_day6_uvao_duty
+                "Тру: Утро с Виолой":
+                    menu:
+                        "Проспал утром":
+                            jump alt_day6_true_CS_talk
+                        "Был паинькой и поднялся сразу":
+                            jump alt_day6_true_CS_talk_short
+                "Тру: Завтрак со Славей":
+                    menu:
+                        "Был пляж в Д5":
+                            $ alt_uvao_D5_evening_sl = True
+                            jump alt_day6_true_sl_morning
+                        "Не было пляжа в Д5":
+                            $ alt_uvao_D5_evening_sl = False
+                            jump alt_day6_true_sl_morning
+                "Тру: Пляж":
+                    jump alt_day6_true_beach_debug
         "Картинки при смене глав":
             label scenario_uvao_chapters:
                 menu:
@@ -275,6 +291,29 @@ label alt_day5_uvao_spoiled_supper_debug:
             $ alt_uvao_D5_hentai = False
     jump alt_day5_uvao_spoiled_supper
 #
+label alt_day6_true_beach_debug:
+    menu:
+        "в Д1 Славя отвела от ворот до домика ОД":
+            $ alt_day1_sl_conv = True
+        "в Д1 Славя шли от ворот сами и вышли на пристань":
+            $ alt_day1_sl_conv = False
+    menu:
+        "в Д2 видели, как купается Славя":
+            $ alt_day2_date = 2
+        "в Д2 нудизм не одобрен":
+            $ alt_day2_date = 0
+    menu:
+        "Был пляж в Д5":
+            $ alt_uvao_D5_evening_sl = True
+        "Не было пляжа в Д5":
+            $ alt_uvao_D5_evening_sl = False
+    menu:
+        "В Д6 проспал утром":
+            $ alt_uvao_D6_CS_vetrov = False
+        "В Д6 был паинькой и поднялся сразу":
+            $ alt_uvao_D6_CS_vetrov = True
+    jump alt_day6_true_beach
+
 label scenario_uvao_sprites:
     menu:
         # "Спрайты veryfar":
