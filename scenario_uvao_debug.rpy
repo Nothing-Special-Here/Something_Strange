@@ -169,6 +169,8 @@ label scenario_uvao_root_D4_debug:
                             jump alt_day6_true_sl_morning
                 "Тру: Пляж":
                     jump alt_day6_true_beach_debug
+                "Изолятор (С домика ОД)":
+                    jump alt_day6_uvao_isolator_house
         "Картинки при смене глав":
             label scenario_uvao_chapters:
                 menu:
