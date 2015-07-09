@@ -110,4 +110,4 @@ label alt_day6_uvao_mt_house:
     "Ну что же, пора приобщаться к местной самодеятельности. Пусть грянут мне что-нибудь этакое."
     stop music fadeout 4
     stop ambience
-    jump alt_day6_uvao_concert
+    jump alt_day6_uvao_concert_with_sl
