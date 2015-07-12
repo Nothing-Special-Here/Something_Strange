@@ -4,6 +4,7 @@
 init:
     $ tl_7dl = Character(name=u"Толик", color="#A1752F", what_color="E2C778", drop_shadow = [ (-1, -1), (1, -1), (-1, 1), (1, 1) ], drop_shadow_color = "#000")
 # TODO: Перекинуть толика куда-нибудь
+# Перед релизом последний alt_script возьмём туда и всунем. -R
 label alt_day6_uvao_concert_with_sl:
     window hide
     $ alt_chapter(6, u"Юля. Концерт")
@@ -442,8 +443,10 @@ label alt_day6_uvao_concert_with_sl:
     menu:
         "К вожатой" if not alt_uvao_true:
             # TODO: текст и jump
+            pass
         "К Виоле" if alt_uvao_true:
             # TODO: текст и jump
+            pass
         "Поймать Юлю!":
             pass
     "Славя крепко взяла меня за руку и в который раз уже за сегодня заглянула прямо в глаза. В её взгляде читалось: «я буду с тобой, чтобы ни случилось, просто дай мне шанс». И вдруг внезапно я ощутил решимость и поддержку, подобной которой не ощущал уже много лет."
