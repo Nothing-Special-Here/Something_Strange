@@ -170,6 +170,11 @@ label scenario_uvao_root_D4_debug:
                 "Тру: Пляж":
                     jump alt_day6_true_beach_debug
                 "Изолятор (С домика ОД)":
+                    menu:
+                        "Хентай был":
+                            $ alt_uvao_D5_hentai = True
+                        "Хентая не было":
+                            $ alt_uvao_D5_hentai = False
                     jump alt_day6_uvao_isolator_house
         "Картинки при смене глав":
             label scenario_uvao_chapters:
