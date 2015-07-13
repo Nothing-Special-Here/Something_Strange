@@ -149,10 +149,12 @@ label scenario_uvao_root_D4_debug:
                     jump alt_day6_uvao_getting_up
                 "Хозработы":
                     menu:
-                        "Палевная ветка":
+                        "Палевная ветка(Со Славей)":
                             jump alt_day6_uvao_duty_sl
                         "Беспалевная ветка":
                             jump alt_day6_uvao_duty
+                "Концерт со Славей":
+                    jump alt_day6_uvao_concert_with_sl
                 "Тру: Утро с Виолой":
                     menu:
                         "Проспал утром":
