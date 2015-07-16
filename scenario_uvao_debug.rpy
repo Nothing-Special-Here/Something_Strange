@@ -340,12 +340,6 @@ label scenario_uvao_sprites:
         "Коллайдер-сама":
             label scenario_uvao_sprites_cs:
             menu:
-                "normal":
-                    show cs smile #ванильный спрайт
-                    "cs smile"
-                    show cs smile2
-                    "cs smile2"
-                    jump scenario_uvao_sprites_cs
                 "close":
                     show cs normal close #ванильный спрайт. Почему-то упрыгивает влево
                     "cs normal close"
@@ -355,6 +349,30 @@ label scenario_uvao_sprites:
                     "cs smile2 close"
                     show cs badgirl2 close
                     "cs badgirl2 close"
+                    show cs normal glasses_thru close
+                    "cs normal glasses_thru close"
+                    show cs fear glasses_thru close
+                    "cs fear glasses_thru close"
+                    show cs fear close
+                    "cs fear close"
+                    jump scenario_uvao_sprites_cs
+                "normal":
+                    show cs smile #ванильный спрайт
+                    "cs smile"
+                    show cs smile2
+                    "cs smile2"
+                    show cs normal glasses_thru
+                    "cs normal glasses_thru"
+                    show cs fear glasses_thru
+                    "cs fear glasses_thru"
+                    show cs normal glasses
+                    "cs normal glasses"
+                    show cs fear
+                    "cs fear"
+                    jump scenario_uvao_sprites_cs
+                "far":
+                    show cs fear far
+                    "cs fear far"
                     jump scenario_uvao_sprites_cs
                 "Назад":
                     hide cs
@@ -406,6 +424,21 @@ label scenario_uvao_sprites:
             show mt scared3 panama pioneer
             "mt scared3 panama pioneer"
             hide mt
+            jump scenario_uvao_sprites
+        "Мокрая Леночка":
+            show un cry wet_dress
+            "un cry wet_dress"
+            show un cry_smile wet_dress
+            "un cry_smile wet_dress"
+            show un sad wet_dress
+            "un sad wet_dress"
+            show un scared wet_dress
+            "un scared wet_dress"
+            show un shocked wet_dress
+            "un shocked wet_dress"
+            show un surprise wet_dress
+            "un surprise wet_dress"
+            hide un
             jump scenario_uvao_sprites
         "Назад":
             jump scenario_uvao_root_D4_debug
