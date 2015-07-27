@@ -1,14 +1,14 @@
 #Спрайты залить с гита в scenario_alt/pics/sprites
 init 19:
-    $ _cs_normal_glasses_thru = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_2_body.png', 'cs/cs_1_normal.png', 'cs/cs_1_glasses_through.png')
+    $ _cs_normal_glasses_thru = ComposeSpriteSet(('close', 'normal'), 'cs/cs_2_body.png', 'cs/cs_1_normal.png', 'cs/cs_1_glasses_through.png')
     image cs normal glasses_thru close = _cs_normal_glasses_thru['close']
     image cs normal glasses_thru = _cs_normal_glasses_thru['normal']
     
-    $ _cs_fear_glasses_thru = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_2_body.png', 'cs/cs_2_fear.png', 'cs/cs_1_glasses_through.png')
+    $ _cs_fear_glasses_thru = ComposeSpriteSet(('close', 'normal'), 'cs/cs_2_body.png', 'cs/cs_2_fear.png', 'cs/cs_1_glasses_through.png')
     image cs fear glasses_thru close = _cs_fear_glasses_thru['close']
     image cs fear glasses_thru = _cs_fear_glasses_thru['normal']
     
-    image cs normal glasses = ComposeSpriteSet(('normal', 'far'), 'cs/cs_1_body.png', 'cs/cs_1_normal.png', 'cs/cs_1_glasses.png')['normal']
+    image cs normal glasses = ComposeSpriteSet('normal', 'cs/cs_1_body.png', 'cs/cs_1_normal.png', 'cs/cs_1_glasses.png')['normal']
     
     $ _cs_fear = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_2_body.png', 'cs/cs_2_fear.png')
     image cs fear close = _cs_fear['close']
