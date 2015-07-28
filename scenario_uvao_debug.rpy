@@ -349,10 +349,10 @@ label scenario_uvao_sprites:
                     "cs smile2 close"
                     show cs badgirl2 close
                     "cs badgirl2 close"
-                    show cs normal glasses_thru close
-                    "cs normal glasses_thru close"
-                    show cs fear glasses_thru close
-                    "cs fear glasses_thru close"
+                    show cs normal glasses_thr close
+                    "cs normal glasses_thr close"
+                    show cs fear glasses_thr close
+                    "cs fear glasses_thr close"
                     show cs fear close
                     "cs fear close"
                     jump scenario_uvao_sprites_cs
@@ -361,10 +361,16 @@ label scenario_uvao_sprites:
                     "cs smile"
                     show cs smile2
                     "cs smile2"
-                    show cs normal glasses_thru
-                    "cs normal glasses_thru"
-                    show cs fear glasses_thru
-                    "cs fear glasses_thru"
+                    show cs normal glasses_thr
+                    "cs normal glasses_thr"
+                    show cs smile glasses_thr
+                    "cs smile glasses_thr"
+                    show cs fear glasses_thr
+                    "cs fear glasses_thr"
+                    show cs normal glasses_over
+                    "cs normal glasses_over"
+                    show cs smile glasses_over
+                    "cs smile glasses_over"
                     show cs normal glasses
                     "cs normal glasses"
                     show cs fear
