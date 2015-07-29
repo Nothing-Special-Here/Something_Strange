@@ -156,11 +156,7 @@ label scenario_uvao_root_D4_debug:
                 "Концерт со Славей":
                     jump alt_day6_uvao_concert_with_sl
                 "Тру: Утро с Виолой":
-                    menu:
-                        "Проспал утром":
-                            jump alt_day6_true_CS_talk_short
-                        "Был паинькой и поднялся сразу":
-                            jump alt_day6_true_CS_talk
+                    jump alt_day6_true_CS_talk_debug
                 "Тру: Завтрак со Славей":
                     menu:
                         "Был пляж в Д5":
@@ -299,6 +295,33 @@ label alt_day5_uvao_spoiled_supper_debug:
         "Хентая не было":
             $ alt_uvao_D5_hentai = False
     jump alt_day5_uvao_spoiled_supper
+#
+label alt_day6_true_CS_talk_debug:
+    menu:
+        "В Д5 вечером видел Славю на пляже":
+            $ alt_uvao_D5_evening_sl = True
+        "В Д5 вечером шлялся где-то ещё":
+            $ alt_uvao_D5_evening_sl = False
+    menu:
+        "В Д2 поддались обаянию Ули и совершили Великий Побег!":
+            $ alt_day2_us_escape = True
+        "Что я, псих - с мелкой бегать?":
+            $ alt_day2_us_escape = False
+    menu:
+        "Стыдно, но в Д1 запсиховали, проснувшись посреди лета":
+            $ semen_panique = True
+        "Сэм - нитакой!":
+            $ semen_panique = False
+    menu:
+        "Проспал утром":
+            jump alt_day6_true_CS_talk_short
+        "Был паинькой и поднялся сразу":
+            menu:
+                "В Д2 вступил в клуб кибернетиков":
+                    $ alt_day2_club_join_cyb = True
+                "НЕТ! Кибернетики - опасные психи!":
+                    $ alt_day2_club_join_cyb = False
+            jump alt_day6_true_CS_talk
 #
 label alt_day6_true_beach_debug:
     menu:
