@@ -158,9 +158,9 @@ label scenario_uvao_root_D4_debug:
                 "Тру: Утро с Виолой":
                     menu:
                         "Проспал утром":
-                            jump alt_day6_true_CS_talk
-                        "Был паинькой и поднялся сразу":
                             jump alt_day6_true_CS_talk_short
+                        "Был паинькой и поднялся сразу":
+                            jump alt_day6_true_CS_talk
                 "Тру: Завтрак со Славей":
                     menu:
                         "Был пляж в Д5":
