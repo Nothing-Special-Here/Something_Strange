@@ -570,6 +570,9 @@ label alt_day6_uvao_isolator_house:
     uv "Он не сможет."
     sl "Тебя не спросили! Брысь под лавку, кисонька! А то хвост оторву!"
     show uv dontlike far at cright behind sl
+    show cs fear at fleft
+    show mt angry at left behind sl
+    with dissolve
     # все пугаются - Юлю обидели!
     # TODO: ОД и Виолу тоже в шоке
     cs "Славяна!"
@@ -586,6 +589,9 @@ label alt_day6_uvao_isolator_house:
             pass
     play music music_list["just_think"] fadein 4
     show uv upset far at cright behind sl
+    show cs normal at fleft
+    show mt surprise at left behind sl
+    with dissolve
     th "Хватит…{w} Пожалуйста, хватит…{w} Хватит!"
     me "ХВАТИТ!" with hpunch
     # TODO: звук БАМЦ - есть у нас?
