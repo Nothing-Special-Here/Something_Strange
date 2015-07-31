@@ -382,22 +382,36 @@ label scenario_uvao_sprites:
                 "normal":
                     show cs smile #ванильный спрайт
                     "cs smile"
+                    show cs important
+                    "cs important"
                     show cs smile2
                     "cs smile2"
-                    show cs normal glasses_thr
-                    "cs normal glasses_thr"
-                    show cs smile glasses_thr
-                    "cs smile glasses_thr"
-                    show cs fear glasses_thr
-                    "cs fear glasses_thr"
-                    show cs normal glasses_over
-                    "cs normal glasses_over"
-                    show cs smile glasses_over
-                    "cs smile glasses_over"
+                    show cs laugh
+                    "cs laugh"
+                    show cs laugh2
+                    "cs laugh2"
+                    show cs laugh3
+                    "cs laugh3"
+                    show cs doubt2
+                    "cs doubt2"
+                    show cs fear2
+                    "cs fear2"
                     show cs normal glasses
                     "cs normal glasses"
-                    show cs fear
-                    "cs fear"
+                    show cs normal2 glasses_thr
+                    "cs normal2 glasses_thr"
+                    show cs smile2 glasses_thr
+                    "cs smile2 glasses_thr"
+                    show cs laugh2 glasses_thr
+                    "cs laugh2 glasses_thr"
+                    show cs fear2 glasses_thr
+                    "cs fear2 glasses_thr"
+                    show cs normal2 glasses_over
+                    "cs normal2 glasses_over"
+                    show cs smile2 glasses_over
+                    "cs smile2 glasses_over"
+                    show cs laugh2 glasses_over
+                    "cs laugh2 glasses_over"
                     jump scenario_uvao_sprites_cs
                 "far":
                     show cs fear far
