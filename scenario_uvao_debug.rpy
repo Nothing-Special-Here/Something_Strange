@@ -167,6 +167,8 @@ label scenario_uvao_root_D4_debug:
                             jump alt_day6_true_sl_morning
                 "Тру: Пляж":
                     jump alt_day6_true_beach_debug
+                "Тру: Обед":
+                    jump alt_day6_lunch_dv_sl_debug
                 "Изолятор (С домика ОД)":
                     menu:
                         "Хентай был":
@@ -346,6 +348,68 @@ label alt_day6_true_beach_debug:
             $ alt_uvao_D6_CS_vetrov = True
     jump alt_day6_true_beach
 
+label alt_day6_lunch_dv_sl_debug:
+    $ alt_uvao_D5_hentai = False
+    menu:
+        "Быстрый переход к отладке полной беседы с Алисой":
+            $ alt_uvao_true = True
+            $ alt_uvao_D5_sh_mines = False
+            $ alt_day1_random_val = 1
+            $ alt_day1_sl_conv = False
+            $ alt_uvao_D4_lunch_un = True
+            $ alt_uvao_D4_lunch_sl = False
+            $ alt_uvao_D5_evening_sl = False
+            $ alt_uvao_D5_evening_dv_un = True
+            $ alt_uvao_D6_CS_vetrov = True
+        "Не-е-ет, я хочу помучиться с установкой флагов!":
+            menu:
+                "Оригинальный Д1":
+                    $ alt_day1_random_val = 0
+                "Альтернативный Д1":
+                    $ alt_day1_random_val = 1
+            menu:
+                "в Д1 Славя отвела от ворот до домика ОД":
+                    $ alt_day1_sl_conv = True
+                "в Д1 Славя шли от ворот сами и вышли на пристань":
+                    $ alt_day1_sl_conv = False
+            menu:
+                "Идём по тру-ветке":
+                    $ alt_uvao_true = True
+                "В Д4 соскочили с Виолы":
+                    $ alt_uvao_true = False
+            if (not alt_uvao_true):
+                menu:
+                    "В Д5 обедали в столовой":
+                        $ alt_uvao_D5_sh_mines = False
+                    "В Д5 шарились по шахтам":
+                        $ alt_uvao_D5_sh_mines = True
+            menu:
+                "Обедали в Д4 с Леной":
+                    $ alt_uvao_D4_lunch_un = True
+                    $ alt_uvao_D4_lunch_sl = False
+                "Обедали в Д4 со Славей":
+                    $ alt_uvao_D4_lunch_un = False
+                    $ alt_uvao_D4_lunch_sl = True
+                "Обедали в Д4 в одиночестве":
+                    $ alt_uvao_D4_lunch_un = False
+                    $ alt_uvao_D4_lunch_sl = False
+            menu:
+                "Вечером Д5 ходили на пляж":
+                    $ alt_uvao_D5_evening_sl = True
+                    $ alt_uvao_D5_evening_dv_un = False
+                "Вечером Д5 ходили на площадь":
+                    $ alt_uvao_D5_evening_sl = False
+                    $ alt_uvao_D5_evening_dv_un = True
+                "Вечером Д5 шлялись где-то ещё":
+                    $ alt_uvao_D5_evening_sl = False
+                    $ alt_uvao_D5_evening_dv_un = False
+            menu:
+                "В Д6 проспал утром":
+                    $ alt_uvao_D6_CS_vetrov = False
+                "В Д6 был паинькой и поднялся сразу":
+                    $ alt_uvao_D6_CS_vetrov = True
+    jump alt_day6_lunch_dv_sl
+    
 label scenario_uvao_sprites:
     menu:
         # "Спрайты veryfar":
