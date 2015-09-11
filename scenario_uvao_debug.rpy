@@ -547,6 +547,25 @@ label scenario_uvao_sprites:
             "un surprise wet_dress"
             hide un
             jump scenario_uvao_sprites
+        "Славя в 25":
+            show sl 25 normal
+            "sl 25 normal"
+            show sl 25 normal far
+            "sl 25 normal far"
+            show sl 25 fear_1
+            "sl 25 fear_1"
+            show sl 25 fear_1 far
+            "sl 25 fear_1 far"
+            show sl 25 fear_2
+            "sl 25 fear_2"
+            show sl 25 fear_2 far
+            "sl 25 fear_2 far"
+            show sl 25 displeased
+            "sl 25 displeased"
+            show sl 25 displeased far
+            "sl 25 displeased far"
+            hide sl
+            jump scenario_uvao_sprites
         "Назад":
             jump scenario_uvao_root_D4_debug
 

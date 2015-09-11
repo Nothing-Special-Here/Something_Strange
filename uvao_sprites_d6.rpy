@@ -119,9 +119,27 @@ init 19:
     image cs doubt2 = _cs_doubt2['normal']
     image cs doubt2 far = _cs_doubt2['far']
 
+    # Унылка
     image un cry wet_dress = ComposeSpriteSet('normal', 'un/un_2_wet_body.png', 'un/un_2_cry.png')['normal']
     image un cry_smile wet_dress = ComposeSpriteSet('normal', 'un/un_2_wet_body.png', 'un/un_2_cry_smile.png')['normal']
     image un sad wet_dress = ComposeSpriteSet('normal', 'un/un_2_wet_body.png', 'un/un_2_sad.png')['normal']
     image un scared wet_dress = ComposeSpriteSet('normal', 'un/un_2_wet_body.png', 'un/un_2_scared.png')['normal']
     image un shocked wet_dress = ComposeSpriteSet('normal', 'un/un_2_wet_body.png', 'un/un_2_shocked.png')['normal']
     image un surprise wet_dress = ComposeSpriteSet('normal', 'un/un_2_wet_body.png', 'un/un_2_surprise.png')['normal']
+    
+    #25ти-летняя Славя
+    $ _sl_25_normal = ComposeSpriteSet(('normal', 'far'), 'sl/sl_25_body.png', 'sl/sl_25_neutral.png')
+    image sl 25 normal = _sl_25_normal['normal']
+    image sl 25 normal far = _sl_25_normal['far']
+    
+    $ _sl_25_fear_1 = ComposeSpriteSet(('normal', 'far'), 'sl/sl_25_body.png', 'sl/sl_25_fear_1.png')
+    image sl 25 fear_1 = _sl_25_fear_1['normal']
+    image sl 25 fear_1 far = _sl_25_fear_1['far']
+    
+    $ _sl_25_fear_2 = ComposeSpriteSet(('normal', 'far'), 'sl/sl_25_body.png', 'sl/sl_25_fear_2.png')
+    image sl 25 fear_2 = _sl_25_fear_2['normal']
+    image sl 25 fear_2 far = _sl_25_fear_2['far']
+    
+    $ _sl_25_displeased = ComposeSpriteSet(('normal', 'far'), 'sl/sl_25_body.png', 'sl/sl_25_displeased.png')
+    image sl 25 displeased = _sl_25_displeased['normal']
+    image sl 25 displeased far = _sl_25_displeased['far']
