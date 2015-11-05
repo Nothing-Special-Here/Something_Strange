@@ -119,6 +119,11 @@ init 19:
     image cs doubt2 = _cs_doubt2['normal']
     image cs doubt2 far = _cs_doubt2['far']
 
+    $ _cs_doubt3 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_3_body.png', 'cs/cs_1_doubt.png')
+    image cs doubt3 close = _cs_doubt3['close']
+    image cs doubt3 = _cs_doubt3['normal']
+    image cs doubt3 far = _cs_doubt3['far']
+
     # Унылка
     image un cry wet_dress = ComposeSpriteSet('normal', 'un/un_2_wet_body.png', 'un/un_2_cry.png')['normal']
     image un cry_smile wet_dress = ComposeSpriteSet('normal', 'un/un_2_wet_body.png', 'un/un_2_cry_smile.png')['normal']
