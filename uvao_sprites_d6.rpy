@@ -31,6 +31,11 @@ init 19:
     image cs laugh2 glasses_thr = _cs_laugh2_glasses_thr['normal']
     image cs laugh2 glasses_thr far = _cs_laugh2_glasses_thr['far']
     
+    $ _cs_doubt2_glasses_thr = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_2_body.png', 'cs/cs_1_doubt.png', 'cs/cs_1_glasses_through.png')
+    image cs doubt2 glasses_thr close = _cs_doubt2_glasses_thr['close']
+    image cs doubt2 glasses_thr = _cs_doubt2_glasses_thr['normal']
+    image cs doubt2 glasses_thr far = _cs_doubt2_glasses_thr['far']
+
     $ _cs_normal_glasses_over = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_1_body.png', 'cs/cs_1_normal.png', 'cs/cs_1_glasses_over.png')
     image cs normal glasses_over close = _cs_normal_glasses_over['close']
     image cs normal glasses_over = _cs_normal_glasses_over['normal']
@@ -51,6 +56,11 @@ init 19:
     image cs laugh2 glasses_over = _cs_laugh2_glasses_over['normal']
     image cs laugh2 glasses_over far = _cs_laugh2_glasses_over['far']
     
+    $ _cs_doubt2_glasses_over = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_2_body.png', 'cs/cs_1_doubt.png', 'cs/cs_1_glasses_over.png')
+    image cs doubt2 glasses_over close = _cs_doubt2_glasses_over['close']
+    image cs doubt2 glasses_over = _cs_doubt2_glasses_over['normal']
+    image cs doubt2 glasses_over far = _cs_doubt2_glasses_over['far']
+
     $ _cs_badgirl3_glasses_over = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_3_body.png', 'cs/cs_2_badgirl.png', 'cs/cs_1_glasses_over.png')
     image cs badgirl3 glasses_over close = _cs_badgirl3_glasses_over['close']
     image cs badgirl3 glasses_over = _cs_badgirl3_glasses_over['normal']
@@ -83,10 +93,9 @@ init 19:
     image cs fear2 = _cs_fear2['normal']
     image cs fear2 far = _cs_fear2['far']
     
-    $ _cs_important = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_zhi.png', 'cs/cs_1_normal.png')
+    $ _cs_important = ComposeSpriteSet(('close', 'normal'), 'cs/cs_zhi.png', 'cs/cs_1_normal.png')
     image cs important close = _cs_important['close']
     image cs important = _cs_important['normal']
-    image cs important far = _cs_important['far']
     
     $ _cs_smile3 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_3_body.png', 'cs/cs_1_smile.png')
     image cs smile3 close = _cs_smile3['close']
@@ -131,6 +140,13 @@ init 19:
     image un scared wet_dress = ComposeSpriteSet('normal', 'un/un_2_wet_body.png', 'un/un_2_scared.png')['normal']
     image un shocked wet_dress = ComposeSpriteSet('normal', 'un/un_2_wet_body.png', 'un/un_2_shocked.png')['normal']
     image un surprise wet_dress = ComposeSpriteSet('normal', 'un/un_2_wet_body.png', 'un/un_2_surprise.png')['normal']
+
+    # image un sorrow pioneer = ConditionSwitch("persistent.sprite_time=='sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), get_sprite_ori('normal/un/un_1_body.png'), (0, 0), get_sprite_ori('normal/un/un_1_pioneer.png'), (0, 0), get_sprite_7dl('normal/un/un_1_sorrow.png')), im.matrix.tint(0.94, 0.82, 1.0)), "persistent.sprite_time=='night'", im.MatrixColor(im.Composite((1050, 1080),  (0, 0), get_sprite_ori('normal/un/un_1_body.png'), (0, 0), get_sprite_ori('normal/un/un_1_pioneer.png'), (0, 0), get_sprite_7dl('normal/un/un_1_sorrow.png')), im.matrix.tint(0.63, 0.78, 0.82)), True, im.Composite((1050, 1080),  (0, 0), get_sprite_ori('normal/un/un_1_body.png'), (0, 0), get_sprite_ori('normal/un/un_1_pioneer.png'), (0, 0), get_sprite_7dl('normal/un/un_1_sorrow.png')))
+
+    # $ _un_sorrow_pioneer = ComposeSpriteSet(('close', 'normal', 'far'), 'un/un_1_body.png', 'un/un_1_pioneer.png', 'un/un_1_sorrow.png')
+    # image un sorrow pioneer close = _un_sorrow_pioneer['close']
+    # image un sorrow pioneer = _un_sorrow_pioneer['normal']
+    # image un sorrow pioneer far = _un_sorrow_pioneer['far']
     
     #25ти-летняя Славя
     $ _sl_25_normal = ComposeSpriteSet(('normal', 'far'), 'sl/sl_25_body.png', 'sl/sl_25_neutral.png')
@@ -148,3 +164,7 @@ init 19:
     $ _sl_25_displeased = ComposeSpriteSet(('normal', 'far'), 'sl/sl_25_body.png', 'sl/sl_25_displeased.png')
     image sl 25 displeased = _sl_25_displeased['normal']
     image sl 25 displeased far = _sl_25_displeased['far']
+
+    # feared ОД в панаме (close и far спрайтов нет)
+    $ _mt_feared_panama_pioneer = ComposeSpriteSet(('normal'), 'mt/mt_3_body.png', 'mt/mt_3_pioneer.png', 'mt/mt_3_feared.png', 'mt/mt_3_panama.png')
+    image mt feared panama pioneer = _mt_feared_panama_pioneer['normal']
