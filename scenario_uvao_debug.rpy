@@ -171,8 +171,10 @@ label scenario_uvao_root_D4_debug:
                     jump alt_day6_lunch_dv_sl_debug
                 "Левая: (после Мику) Начало концерта и посылаем Алису за Леной":
                     jump alt_day6_uvao_left_concert_time_debug
-                "Левая: Разборки в медпункте":
+                "Левая: Разборки в медпункте (привели ОД, прибегает Лена)":
                     jump alt_day6_uvao_left_aidpost_debug
+                "Левая: Разборки в медпункте (принесли ужин, является Юля)":
+                    jump alt_day6_uvao_left_aidpost_battle
                 "Изолятор (С домика ОД)":
                     menu:
                         "Хентай был":
@@ -410,25 +412,29 @@ label alt_day6_lunch_dv_sl_debug:
     jump alt_day6_lunch_dv_sl
 
 label alt_day6_uvao_left_concert_time_debug:
-    $ alt_uvao_D6_left_MI_talk = True
     menu:
-        "В Д2 поддались обаянию Ули и совершили Великий Побег!":
-            $ alt_day2_us_escape = True
-        "Что я, псих - с мелкой бегать?":
-            $ alt_day2_us_escape = False
-    menu:
-        "В Д6 проспал утром":
-            $ alt_uvao_D6_CS_vetrov = False
-        "В Д6 был паинькой и поднялся сразу":
-            $ alt_uvao_D6_CS_vetrov = True
+        "В Д6 говорили с Мику про Лену":
+            $ alt_uvao_D6_left_MI_talk = True
+        "В Д6 к Мику не попали":
+            $ alt_uvao_D6_left_MI_talk = False
+    # menu:
+        # "В Д2 поддались обаянию Ули и совершили Великий Побег!":
+            # $ alt_day3_duty = True
+        # "Что я, псих - с мелкой бегать?":
+            # $ alt_day3_duty = False
+    # menu:
+        # "В Д6 проспал утром":
+            # $ alt_uvao_D6_CS_vetrov = False
+        # "В Д6 был паинькой и поднялся сразу":
+            # $ alt_uvao_D6_CS_vetrov = True
     jump alt_day6_uvao_left_concert_time
 
 label alt_day6_uvao_left_aidpost_debug:
     menu:
         "В Д2 поддались обаянию Ули и совершили Великий Побег!":
-            $ alt_day2_us_escape = True
+            $ alt_day3_duty = True
         "Что я, псих - с мелкой бегать?":
-            $ alt_day2_us_escape = False
+            $ alt_day3_duty = False
     menu:
         "В Д6 проспал утром":
             $ alt_uvao_D6_CS_vetrov = False
