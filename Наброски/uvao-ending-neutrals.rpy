@@ -3,7 +3,7 @@
 init:
     $ alt_uvao_replay_prologue=0
     
-label alt_uvao_enving_neutral_bad:
+label alt_uvao_ending_neutral_bad:
 
     $ alt_uvao_replay_prologue=1
     # В пролог в зависимости от флага делаем ветвление.
@@ -137,7 +137,7 @@ label alt_uvao_enving_neutral_bad:
     Она улыбнулась своим мыслям и растворилась в вечерней декабрьской мгле.
     Ачивка «Рекомендовано усыпление»    
     
-label alt_uvao_enving_neutral:
+label alt_uvao_ending_neutral:
 
     $ alt_uvao_replay_prologue=2
     # для 2 - нейтрал-ветка. Вместо реплик Шизы - смутные воспоминания о Совенке
