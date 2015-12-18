@@ -382,8 +382,7 @@ label alt_day6_uvao_duty:
     if not alt_uvao_D5_sh_mines:
         menu:
             "Забить на всё и пойти к Юле":
-                #TODO: Jump
-                "Идём в шахты к нашей кошочке"
+                jump alt_day6_uvao_fuckoff_mt
             "Поверить Ульяне":
                 jump alt_day6_uvao_isolator_house
     else:
