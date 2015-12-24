@@ -10,6 +10,7 @@
 # Используется флаг alt_day2_us_escape
 # Используется флаг alt_uvao_D6_trust_uv
 # Используется флаг alt_uvao_D6_ask_uv_keys
+# Устанавливает флаг alt_uvao_D6_prisoner
 # Устанавливает флаг alt_uvao_D6_trust_uv
 # Устанавливает флаг alt_uvao_D6_ask_uv_keys
 #
@@ -152,6 +153,7 @@ label alt_day6_uvao_isolator_house:
     with fade
     play music music_list["trapped_in_dreams"] fadein 4
     window show
+    $ alt_uvao_D6_prisoner = True
     "Дверь захлопнулась, щелчок замка утвердил мой новый статус арестанта. Из-за двери донеслось - "
     mt "Виола, дай чего-нибудь, а то меня аж трясёт. А мне ещё с концертом этим…"
     cs "Валерьянки? Сейчас…"
