@@ -32,12 +32,15 @@ label scenario_uvao_debug:
     $ alt_uvao_D5_evening_sl = False
 # Флаг встречи с ДваЧе и Унылкой alt_uvao_D5_evening_dv_un
     $ alt_uvao_D5_evening_dv_un = False
-
+# Флаг полной информированности от Виолы
+    $ alt_uvao_D6_CS_vetrov = False
 #
 # приходит из Д1
     $ keys_keep = True
     $ keys_take = 1
     $ dv_help = 1
+# из Д3
+    $ alt_day3_duty = False
 #
     jump scenario_uvao_root_D4_debug
    
@@ -50,6 +53,8 @@ label scenario_uvao_root_D4_debug:
             jump alt_day4_start_uvao
         "Прохождение Д5 по порядку":
             jump alt_day5_uvao_start_debug
+        "Прохождение Д6 по порядку":
+            jump alt_day6_uvao_start_debug
         "Отладка Д4":
             menu:
                 "Уборка гирлянд":
@@ -246,6 +251,39 @@ label alt_day5_uvao_start_debug:
         $ alt_uvao_true = False
     jump alt_day5_uvao_getting_up
 
+label alt_day6_uvao_start_debug:
+    # Глобальный выбор
+    menu:
+        "Тру-ветка":
+            $ alt_uvao_true = True
+        "Палевная ветка":
+            $ alt_uvao_D5_sh_mines = True
+        "Беспалевная ветка":
+            pass
+    # Всякие флаги предыдущего прохождения
+    menu:
+        "Обед Д4 - с Леной":
+            $ alt_uvao_D4_lunch_un = True
+        "Обед Д4 - со Славей":
+            $ alt_uvao_D4_lunch_sl = True
+        "Обед Д4 - в одиночестве":
+            pass
+    if not alt_uvao_true:
+        menu:
+            "Д5 - хентай был":
+                $ alt_uvao_D5_hentai = True
+            "Д5 - хентая не было":
+                pass
+    menu:
+        "Вечер Д5 - встретили Славю на пляже":
+            $ alt_uvao_D5_evening_sl = True
+        "Вечер Д5 - встретили Лену и Алису на площади":
+            $ alt_uvao_D5_evening_dv_un = True
+        "Вечер Д5 - сразу спать":
+            pass
+            
+    jump alt_day6_uvao_getting_up:
+    
 label alt_day5_capture_sh_together_debug:
     menu:
         "Обедали в Д4 с Леной":
