@@ -282,7 +282,7 @@ label alt_day6_uvao_start_debug:
         "Вечер Д5 - сразу спать":
             pass
             
-    jump alt_day6_uvao_getting_up:
+    jump alt_day6_uvao_getting_up
     
 label alt_day5_capture_sh_together_debug:
     menu:

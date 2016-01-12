@@ -1,9 +1,9 @@
 label alt_day4_start_uvao:
     window hide
-    $ routetag = "uv_unknown"
-    $ alt_chapter(4, u"Утро")
     $ persistent.sprite_time = "sunset"
     $ sunset_time()
+    $ routetag = "uv_unknown"
+    $ alt_chapter(4, u"Утро")
     scene bg int_house_of_mt_sunset
     play ambience ambience_int_cabin_day fadein 4
     window show
@@ -278,6 +278,8 @@ label alt_day4_uvao_garlands_removal:
     dreamgirl "Ну что, работай, нигер! Солнце ещё высоко!"
     "Что же, уборку без стремянки не начать. Я направился в сторону кружка кибернетиков."
     window hide
+    $ persistent.sprite_time = "day"
+    $ day_time()
     $ alt_chapter(4, u"Всегда готов!")
     play music music_list["my_daily_life"] fadein 3
     scene bg ext_clubs_day with dissolve
@@ -408,7 +410,7 @@ label alt_day4_uvao_garlands_removal:
     $ renpy.pause(1)
     "Нести моток было неудобно, и провода то и дело попадались под ноги. С горем пополам мы дошли-таки до склада."
     window hide
-    scene bg ext_shed_day
+    scene bg ext_warehouse_day
     with dissolve
     play ambience ambience_camp_entrance_day fadein 3
     $ renpy.pause(3)
@@ -427,7 +429,7 @@ label alt_day4_uvao_garlands_removal:
     "Я поволок гирлянды внутрь."
     stop ambience fadeout 0
     window hide
-    scene int_shed_day with dissolve
+    scene bg int_shed_day with dissolve
     $ persistent.sprite_time = "sunset"
     $ renpy.pause(2)
     show sl normal pioneer far at left with dissolve
@@ -450,7 +452,7 @@ label alt_day4_uvao_garlands_removal:
     "Эл кивнул, а Славя улыбнулась."
     sl "Обращайтесь."
     window hide
-    scene bg ext_shed_day
+    scene bg ext_warehouse_day
     play ambience ambience_camp_entrance_day fadein 3
     with dissolve
     $ persistent.sprite_time = "day"
@@ -472,6 +474,8 @@ label alt_day4_uvao_garlands_removal:
 
 label alt_day4_uvao_library:
     window hide
+    $ persistent.sprite_time = "day"
+    $ day_time()
     $ alt_chapter(4, u"Повелитель книг")
     $ persistent.sprite_time = "day"
     play ambience ambience_camp_center_day fadein 1
@@ -528,7 +532,7 @@ label alt_day4_uvao_library:
     dreamgirl "Какой подпол? Кто тебе будет в библиотеке делать подпол?! Давай лучше запрыгивай наверх и зависни между полками, как трёхглазый ублюдок!"
     th "…"
     window hide
-    scene pioner_lib_hiding
+    scene cg d4_uv_pioner_lib_hiding
     play sound sfx_head_heartbeat fadein 2
     "Вместо этого я пригнулся и на трех конечностях - четвертая была занята книгой - шустро забежал за стеллаж."
     play music music_list["you_won_t_let_me_down"] fadein 6
@@ -648,17 +652,12 @@ label alt_day4_uvao_library:
     
     jump alt_day4_uvao_lunch
 
-# Д4-обед
-#
-# Используется флаг alt_uvao_D4_viola_morning
-# Устанавливает флаг alt_uvao_D4_concert
-# Устанавливает флаг alt_uvao_D4_lunch_un
-# Устанавливает флаг alt_uvao_D4_lunch_sl
+
 label alt_day4_uvao_lunch:
     window hide
-    $ alt_chapter(4, u"Обед")
     $ persistent.sprite_time = "day"
     $ day_time()
+    $ alt_chapter(4, u"Обед")
     play ambience ambience_dining_hall_full fadein 3
     scene bg int_dining_hall_people_day with fade
     window show
@@ -705,7 +704,10 @@ label alt_day4_uvao_lunch:
             "Она снова кивнула и, не поднимая глаз, беззвучно шевельнула губами."
             "Слегка обескураженный таким приёмом, я принялся за еду, периодически поглядывая на Лену."
             stop ambience fadeout 15
-            play music music_list["lets_be_friends"] fadein 10
+            if alt_day1_random_val != 1: # нафига? С альт-дня сюда не попадаем
+                play music music_list["lets_be_friends"] fadein 5
+            else:
+                play music take_my_hand fadein 4
             "Та сидела, гоняя вилкой по тарелке несколько оставшихся макаронин, и упорно не глядя на меня."
             th "Странно, до этого она вела себя вполне нормально.{w} Насколько это возможно для такой стесняши, разумеется."
             th "Неужели я так сильно смутил её тогда расспросами про Генду?"
@@ -902,8 +904,9 @@ label alt_day4_uvao_lunch:
 # Используется флаг alt_uvao_D4_lunch_sl
 label alt_day4_uvao_meet_Yulia_after_lunch:
     window hide
-    $ alt_chapter(4, u"Идентификация")
     $ persistent.sprite_time = "day"
+    $ day_time()
+    $ alt_chapter(4, u"Идентификация")
     scene black with dissolve
     $ renpy.pause(2)
     play sound sfx_open_door_2
@@ -1143,16 +1146,16 @@ label alt_day4_uvao_meet_Yulia_after_lunch:
 # Устанавливает флаг alt_alt_uvao_D4_supper_cs
 label alt_day4_uvao_supper:
     window hide
-    $ alt_chapter(4, u"Юля. Ужин")
     $ persistent.sprite_time = "sunset"
     $ sunset_time()
+    $ alt_chapter(4, u"Юля. Ужин")
     window hide
     scene bg int_dining_hall_people_sunset
     with dissolve
     play ambience ambience_dining_hall_full fadein 3
     window show
     "Войдя в столовую я огляделся."
-    if alt_uvao_D4_viola_morning and alt_day0_prologue:
+    if alt_uvao_D4_viola_morning:
         "Свободных мест практически не было. Впрочем, за одним из столиков их было сразу три."
         "Четвёртое занимала Виолетта."
         th "Похоже, не меня одного её общество смущает…"
@@ -1281,8 +1284,9 @@ label uvao_D4_supper_end:
 # Д4 - Встречаем Юлю после ужина за воротами
 label alt_day4_uvao_meet_Yulia_at_evening:
     window hide
-    $ alt_chapter(4, u"Юля. Вечерние встречи")
     $ persistent.sprite_time = "sunset"
+    $ sunset_time()
+    $ alt_chapter(4, u"Юля. Вечерние встречи")
     scene bg ext_dining_hall_away_sunset with fade
     play ambience ambience_camp_center_evening fadein 1
     window show
@@ -1500,13 +1504,13 @@ label alt_day4_uvao_evening_business:
         me "Да ладно, помогу, не кипятись."
         show dv normal pioneer at center   with dspr
         "Тем более что и мне для завтрашнего похода не помешает запастись."
-        if (alt_day2_sl_keys_kept or alt_day1_sl_keys_took == 1):
-            if alt_day1_dv_feed == 1:
-                dv "Ты те ключи ещё не потерял? Открывай давай."
-            else:
-                "Алиса уже собралась снова ковырять замок булавкой, но я вытащил из кармана ключи и демонстративно позвенел ими."
-                show dv grin pioneer at center   with dspr
-                dv "Фига себе! Запасливый. Ну открывай тогда."
+        if alt_day1_sl_keys_took == 1:
+            #if alt_day1_dv_feed == 1: ушло из 1 дня
+            #    dv "Ты те ключи ещё не потерял? Открывай давай."
+            #else:
+            "Алиса уже собралась снова ковырять замок булавкой, но я вытащил из кармана ключи и демонстративно позвенел ими."
+            show dv grin pioneer at center   with dspr
+            dv "Фига себе! Запасливый. Ну открывай тогда."
             th "С ключами любое дело становится намного проще."
             "Я открыл двери и мы проникли в пустую столовую."
         else:
@@ -1519,6 +1523,7 @@ label alt_day4_uvao_evening_business:
         window hide
         scene bg int_dining_hall_night with dissolve
         window show
+		# TODO: "Алиса, это булки! Булки, это Алиса!" с последующим разговором в стиле "Каждый второй блеать спрашивает, как пройти в страну чудес и про миелофон". Как дань классику
         "Пяток булочек на брата - неплохой результат набега на столовую."
         "Алиса еще прихватила пару пирамидок с кефиром, а я решил обойтись сухпайком."
         window hide
@@ -1586,9 +1591,9 @@ label alt_day5_start_uvao:
 label alt_day5_uvao_getting_up:
     window hide
     $ routetag = "uv"
-    $ alt_chapter(5, u"Юля. Утро")
     $ persistent.sprite_time = "sunset"
     $ sunset_time()
+    $ alt_chapter(5, u"Юля. Утро")
     scene bg int_house_of_mt_sunset
     play ambience ambience_int_cabin_day fadein 4
     window show
@@ -1740,7 +1745,7 @@ label alt_day5_uvao_road_to_old_camp:
     dreamgirl "Штанишки не намочил?"
     th "Что, я трус какой? Нас такой ерундой не запугаешь!"
     window hide
-    scene int_old_building_day_uvao with fade
+    scene bg int_old_building_day_uvao with fade
     window show
     "Внутри оказалось не так темно, как я ожидал. Солнечные лучи нет-нет, да и пробирались через дыры в потолке и разбитые окна."
     "Здание выглядело необитаемым, но осмотреть его на предмет признаков жизни стоило."
@@ -1856,9 +1861,9 @@ label alt_day5_uvao_road_to_old_camp:
 label alt_day5_uvao_tunnel:
     window hide
     $ routetag = "uv"
+    $ persistent.sprite_time = "sunset"
+    $ sunset_time()
     $ alt_chapter(5, u"Юля. Под землёй")
-    $ night_time()
-    $ persistent.sprite_time = "night"
     scene black with fade
     play ambience ambience_catacombs fadein 3
     window show
@@ -1906,7 +1911,7 @@ label alt_day5_uvao_tunnel:
     stop music fadeout 2
     "Через несколько минут впереди показался наконец тусклый блеск металла."
     window hide
-    scene int_catacombs_door_light2 with dissolve
+    scene bg int_catacombs_door_light2 with dissolve
     play music music_list["orchid"] fadein 5
     with dissolve
     window show
@@ -2057,7 +2062,7 @@ label alt_day5_uvao_hentai_scene:
     stop music fadeout 4
     uv "А потом уже вот так!"
     "Она вскочила и ловким, по-кошачьи гибким движением избавилась от платья, под которым не было больше ничего лишнего."
-    scene uv_bunker_hentai with dissolve    
+    scene cg d4_uv_bunker_hentai with dissolve    
     play music music_list["into_the_unknown"] fadein 3
     "Потом встала на четвереньки и повернулась ко мне, при этом хитро поглядывая через плечо, на манер избушки, так сказать. К стене передом, к Семёну задом."
     dreamgirl "Ну, убедился?"
@@ -2094,8 +2099,8 @@ label alt_day5_uvao_hentai_scene:
     "Я не преминул воспользоваться новым знанием эрогенных зон кошкодевочек - обхватил ладонью хвост у основания и несильно, но властно потянул к себе. Кошечка прогнулась совершенно невероятным образом и натурально взвыла, продолжая насаживаться на меня."
     uv "А-а-а-а-х."
     "Это стало первым камешком лавины, и я совершенно потерял самоконтроль. Несколько секунд - или минут? - безумных телодвижений под дикие животные вопли, и мы оба, тяжело дыша, мокрые от пота и прочих жидкостей, повалились обратно на кровать."
-    scene bg int_catacombs_living with fade2
-    show uv smile close at center with dissolve
+    scene bg int_catacombs_living with fade2 
+    show uv smile close at center with dissolve #TODO: naked
     uv "Мррррр… Да, примерно вот так и они тоже."
     "Тяжело дыша сказала она, устраиваясь головой на моём плече."
     me "Они? Кто?"
@@ -2174,7 +2179,7 @@ label alt_day5_uvao_evade_hentai_scene:
         "Вспышка, Юля подскочила от неожиданности, а я скорее полез в телефон посмотреть снимок."
         window hide
         play sound sfx_scary_sting
-        scene uv_photo_city with dissolve
+        scene cg d5_uv_photo_city with dissolve
         $ renpy.pause(2, hard=True)
         scene bg int_catacombs_living with dissolve
         show uv surprise2 at center with dissolve
@@ -2318,14 +2323,14 @@ label alt_day5_uvao_hentai_sleep:
     $ renpy.pause(2, hard=True)
     scene black with fade2
     show prologue_dream
-    show int_sleep_hentai_office2 behind prologue_dream with fade3
+    show bg int_sleep_hentai_office2 behind prologue_dream with fade3
     window show
     "На офисном столе мурлыкнул селектор."
     uv "Семён Семёнович, приехали от заказчика на сегодняшнее мероприятие. Примете?"
     me "Да, Юля, проводи их в шоу-рум, и позови девочек."
     th "Крупный заказчик, высшее общество, мать его. Падкое на всяческую экзотику, которую я им, собственно, и поставляю. И с того мы все имеем кусок хлеба с маслом и икрой. Так что собираемся и идём работать."
     window hide
-    show int_sleep_hentai_office behind prologue_dream with fade3
+    show bg int_sleep_hentai_office behind prologue_dream with fade3
     hide int_sleep_hentai_office2
     window show
     me "Добрый вечер, господа! Сейчас, буквально через минуту, подойдут наши девочки, которых мы выбрали для вашей вечеринки. А я пока расскажу о правилах и условиях."
@@ -2353,7 +2358,7 @@ label alt_day5_uvao_hentai_sleep:
     hide un with dissolve
     hide dv with dissolve
     hide mi with dissolve
-    show int_sleep_hentai_office2 behind prologue_dream with fade3
+    show bg int_sleep_hentai_office2 behind prologue_dream with fade3
     hide int_sleep_hentai_office
     "Покончив с формальностями и проводив кошечек до лимузина, я вернулся в кабинет. Неплохой куш нам сегодня обломился!{w} Я подмигнул Юрию Куклачёву, грозящему мне пальцем из фоторамки на столе, вытянулся в удобном кресле и прикрыл глаза."
     stop music fadeout 3
@@ -2378,10 +2383,10 @@ label alt_day5_uvao_hentai_sleep:
     "Полюбовавшись своей кошечкой ещё минут пять, я решил, что пора вставать."
     "Правой рукой я потормошил макушку Юле и немножко почесал за ушками."
     "Результат не заставил себя долго ждать, и она тотчас же проснулась."
-    show uv smile close at center with dissolve
+    show uv smile close at center with dissolve #TODO: naked
     uv "Приве-е-т."
     "Приподнявшись, она было собралась сладко потянуться, однако…"
-    show uv guilty close with dspr
+    show uv guilty close with dspr #TODO: naked
     uv "Ай. {w}Больно."
     "…вместо этого произошла неожиданная для кошечки встреча с верхним ярусом кровати!"
     "Состроив недовольную мордашку, она потёрла ушибленное место."
@@ -2393,7 +2398,7 @@ label alt_day5_uvao_hentai_sleep:
     "Юля продолжала смотреть на меня, как на больного."
     "На секунду в голове пронеслось, что если я не угомонюсь, то рискую сильно её обидеть."
     "Однако, в следующую секунду этим сомнениям суждено было развеяться."
-    show uv smile close with dspr
+    show uv smile close with dspr #TODO: naked
     "На её лице появилась лёгкая улыбка, а потом она звонко прыснула, не выдержав - похоже, я смеялся слишком заразительно."
     "С трудом преодолевая хохот, я сбивчивым голосом кое-как из себя выдавил:"
     me "Че… чего смеёшься, бо… больно же!"
@@ -2449,13 +2454,13 @@ label alt_day5_uvao_hentai_thinking:
     play music music_list["no_tresspassing"] fadein 3
     extend " Но затем в дверь ударили!"
     "Кошачье ушко дёрнулось и повернулось в сторону шума, у меня же в висках застучала кровь с такой силой, что мне даже показалось, будто кто-то продолжает барабанить в дверь бункера."
-    show uv surprise close at center with dissolve
+    show uv surprise close at center with dissolve #TODO: naked
     "Юля открыла один глаз, обвела взглядом комнату, взглянула на меня, потом на железную дверь, откуда секунду назад доносились шорохи. Она открыла второй глаз и потянулась, заскрипев кроватью."
     "Мне показалось, что за дверью нас прекрасно могут услышать, и я тут же замахал Юле, призывая её к тишине, но она, потупив взгляд, лишь зевнула, обнажив слегка заострённые клыки."
     "Из-за двери снова донёсся тот же равномерный шорох. Юлины зрачки сузились, а хвост тут же вытянулся по струнке."
     "Шаги удалялись.{w} Я выдохнул с облегчением."
     uv "Человек. Ушёл…"
-    show uv normal close with dspr
+    show uv normal close with dspr #TODO: naked
     "Она тут же упала на кровать, сладко потягиваясь. Кровать вновь протяжно заскрипела, и я испуганно вздрогнул, однако за дверью больше ничего слышно не было, так что я понемногу успокоился."
     "Наконец шорты были застёгнуты, и я потянулся к рубашке, на которой устроилась Юля."
     jump alt_day5_uvao_hentai_dress_up
@@ -2469,11 +2474,11 @@ label alt_day5_uvao_hentai_dress_up:
     dreamgirl "Хэй, гусар-зоофил, не зависай."
     "Я только сейчас понял, что я пытаюсь почти вслепую завязать себе галстук, ибо мой взгляд не отрывался от её груди ни на секунду."
     "Выдав себе мысленного леща, я всё же отвернулся и попытался завязать наконец этот грёбаный красный лоскут."
-    show uv laugh close with dspr
+    show uv laugh close with dspr #TODO: naked
     "Юля хихикнула, наблюдая, как я в третий раз повязываю галстук, и снова неудачно."
     uv "Не понимаю, зачем вам эта красная повязка? Ужасно неудобно."
     me "Сам не понимаю. Такой у нас строгий дресс-код."
-    show uv smile close with dspr
+    show uv smile close with dspr #TODO: naked
     uv "Без одежды значительно удобней."
     uv "Только ветки больно царапаются, и зимой холодно."
     show uv normal close with dspr
@@ -2553,7 +2558,7 @@ label alt_day5_uvao_true_back:
     "Замок щелкнул, я завертел колесо, и бронированная дверь повернулась на исполинских петлях."
     play sound sfx_open_door_mines_metal
     window hide
-    scene int_catacombs_door_light2 with fade
+    scene bg int_catacombs_door_light2 with fade
     $ night_time()
     $ persistent.sprite_time = "night"    
     show uv normal at cright with dissolve
@@ -2578,7 +2583,7 @@ label alt_day5_uvao_true_back:
     stop ambience fadeout 1
     $ day_time()
     $ persistent.sprite_time = "day"
-    scene int_old_building_day_uvao with flash
+    scene bg int_old_building_day_uvao with flash
     window show
     play ambience ambience_forest_day fadein 3
     "После темноты подземелий свет ножом резал глаза.{w} Проморгавшись, я огляделся и, стараясь не поднимать лишнего шума, откинул крышку люка."
@@ -2588,7 +2593,7 @@ label alt_day5_uvao_true_back:
     show uv normal at cright with dissolve
     "Юля ловко вылезла следом за мной."
     window hide
-    scene ext_old_building_day with dissolve
+    scene bg ext_old_building_day with dissolve
     show uv normal at cright with dissolve
     window show    
     "Мы вышли на крыльцо и некоторое время просто жмурились от солнца. Сколько же времени я там проторчал, под землей?{w} Ох ёлки, уже обед скоро!"
@@ -2851,7 +2856,7 @@ label alt_day5_uvao_mines_begin:
     "К сожалению, эта спичка сгорела так же быстро, как и предыдущая."
     scene bg black with fade2
     "Затушив её, я нащупал в темноте тёплую руку своей проводницы, и мы пошли дальше."
-    scene int_mine_crossroad_matches
+    scene bg int_mine_crossroad_matches
     $ renpy.music.play( (match_lights, silence), 'sound', True)
     "Так мы и ходили. То направо, то налево. Несколько раз я зажигал спички, но все перекрёстки были похожи, словно близнецы."
     "Скоро я целиком и полностью положился на свою странную провожатую - она каждый раз зачем-то озвучивала, в какую сторону мы поворачиваем."
@@ -2995,6 +3000,8 @@ label alt_day5_uvao_from_mines_to_dinner:
 
 # Д5 - Охота на Шурика в шахтах.    
 label alt_day5_uvao_mines_sh:
+    $ persistent.sprite_time = "night"
+    $ night_time()
     "Юля ускорила шаг, сжав мою ладонь чуть сильнее."
     "Вдруг она остановилась так резко, что я чуть не врезался в неё."
     play music music_list["doomed_to_be_defeated"] fadein 3
@@ -3016,14 +3023,14 @@ label alt_day5_uvao_mines_sh:
     th "Наверно, слетела с рельсов на вираже. Катались они на ней, что ли?"
     "Я бросил спичку, чтобы не обжечь пальцы, и всё погрузилось во тьму…"
     window hide
-    scene int_mines_halt_spotlight with fade2
+    scene bg int_mines_halt_spotlight with fade2
     show uv black silhouette at cleft
     with dissolve
     window show
     "…но не полностью! Я заметил какой-то тусклый свет из-за поворота."
     window hide
     hide uv
-    scene int_mines_halt_spotlight:
+    scene bg int_mines_halt_spotlight:
         zoom 1.0 xalign 0.5 yalign 0.4
         linear 2.5 zoom 1.7 xalign 0.8 yalign 0.4
     with dissolve
@@ -3170,7 +3177,7 @@ label alt_day5_uvao_mines_sh:
     uv "Да. Лестница там, а он побежал туда. Там тоже выход есть."
     "Она махнула вперёд, где брезжил какой-то свет."
     window hide
-    scene int_catacombs_entrance_light with fade
+    scene bg int_catacombs_entrance_light with fade
     "Мы продолжили преследование, и через пару минут увидели тот самый выход - обвалившийся потолок туннеля, выводящий на поверхность где-то в лесу, судя по виднеющимся наверху веткам деревьев. Я прикинул высоту - до поверхности где-то метра три."
     show uv dontlike at cright
     with dissolve
@@ -3195,7 +3202,7 @@ label alt_day5_uvao_mines_sh:
     $ meet('mt', 'Голос')
     $ day_time()
     $ persistent.sprite_time = "day"
-    scene int_old_building_day_uvao with flash
+    scene bg int_old_building_day_uvao with flash
     play ambience ambience_forest_day fadein 3
     window show
     show uv shocked with dissolve
@@ -3341,9 +3348,11 @@ label alt_day5_uvao_mines_sh:
 # Используется флаг alt_uvao_D5_hentai.
 label alt_day5_parking_back:
     window hide
+    $ persistent.sprite_time = "day"
+    $ day_time()
     $ routetag = "uv"
     $ alt_chapter(5, u"Юля. Пикник")
-    scene int_old_building_day_uvao
+    scene bg int_old_building_day_uvao
     show uv grin
     with dissolve
     window show
@@ -3418,7 +3427,7 @@ label alt_day5_parking_back:
     stop music fadeout 2
     stop ambience fadeout 3
     window hide
-    scene int_catacombs_entrance_light with dissolve
+    scene bg int_catacombs_entrance_light with dissolve
     with vpunch
     play ambience ambience_catacombs fadein 3
     $ night_time()
@@ -3502,7 +3511,7 @@ label alt_day5_parking_back:
     dreamgirl "А потом окажется, что консервы эти времён войны. Какие там первые симптомы ботулизма?"
     th "Тьфу на тебя! Не смей портить настроение!"
     window hide
-    scene int_catacombs_entrance_light with fade
+    scene bg int_catacombs_entrance_light with fade
     window show
     show uv smile with dissolve
     "К моей радости, инсинуации Шизы оказались беспочвенными - у консервов даже не кончился срок годности."
@@ -3546,7 +3555,7 @@ label alt_day5_parking_back:
     th "Кажется, Юля свято уверовала в мою способность открывать всё железное… Забавно."
     me "Давай я попробую."
     window hide
-    scene int_mine_exit_day with dissolve
+    scene bg int_mine_exit_day with dissolve
     window show
     "Поднявшись по узкой шахте, я оказался перед металлической решёткой с вваренным в неё замком."
     "Как ни странно, но ключ подошёл, хотя провернуть его до конца мне долго не удавалось."
@@ -3638,7 +3647,7 @@ label alt_day5_parking_back:
     "Вспышка, Юля подскочила от неожиданности, а я скорее полез в телефон посмотреть снимок."
     window hide
     play sound sfx_scary_sting
-    scene uv_photo_galaxy with dissolve
+    scene cg d5_uv_photo_galaxy with dissolve
     $ renpy.pause(2, hard=True)
     scene bg ext_camp_entrance_sunset
     show uv surprise2 at center
@@ -3712,7 +3721,7 @@ label alt_day5_parking_back:
     dreamgirl "Не понимаешь ты своего счастья! Вся столовая была бы в твоём распоряжении!"
     th "Кто-то только что мне про карцер втирал, кажется? Сгинь!"
     window hide
-    scene ext_washstand_sunset with fade
+    scene bg ext_washstand_sunset with fade
     show mt angry panama pioneer at fleft
     with dissolve
     play sound sfx_open_water_sink
@@ -3739,6 +3748,8 @@ label alt_day5_parking_back:
 # Используется флаг выхода на тру-энд alt_uvao_true.
 label alt_day5_uvao_lunch:
     window hide
+    $ persistent.sprite_time = "day"
+    $ day_time()
     $ alt_chapter(5, u"Юля. Обед")
     play ambience ambience_dining_hall_full fadein 3
     scene bg int_dining_hall_people_day with fade
@@ -3937,10 +3948,10 @@ label alt_day5_uvao_lunch:
 # Используется флаг alt_uvao_D4_lunch_un.
 label alt_day5_capture_sh_together:
     window hide
-    $ routetag = "uv"
-    $ alt_chapter(5, u"Юля. Поиски Шурика")
     $ persistent.sprite_time = "day"
     $ day_time()
+    $ routetag = "uv"
+    $ alt_chapter(5, u"Юля. Поиски Шурика")
     play ambience ambience_camp_center_day fadein 3
     play sound_loop ambience_medium_crowd_outdoors fadein 2
     scene bg ext_dining_hall_away_day with fade
@@ -4495,20 +4506,12 @@ label alt_day5_capture_sh_together:
     stop sound_loop fadeout 3
     jump alt_day5_uvao_evening
 
-# Д5-вечер
-#
-# Используется флаг alt_uvao_true
-# Используется флаг alt_uvao_D5_sh_mines.
-# Используется флаг alt_uvao_D4_concert.
-# Используется флаг alt_uvao_D5_hentai.
-# Используется флаг alt_uvao_D5_evening_sl.
-# Используется флаг alt_uvao_D5_evening_dv_un.
 label alt_day5_uvao_evening:
     window hide
-    $ routetag = "uv"
-    $ alt_chapter(5, u"Юля. Вечер")
     $ persistent.sprite_time = "sunset"
     $ sunset_time()
+    $ routetag = "uv"
+    $ alt_chapter(5, u"Юля. Вечер")
     scene bg int_dining_hall_people_sunset
     with dissolve
     play ambience ambience_dining_hall_full fadein 3
@@ -4783,45 +4786,45 @@ label alt_day5_uvao_evening_dining_hall_exit:
 #
 # Безнадёжная карта 
 #
-    $ disable_all_zones()
-    $ disable_all_chibi()
-    $ set_zone('music_club', 'alt_day5_uvao_evening_map_music_club')
-    $ set_zone('clubs', 'alt_day5_uvao_evening_dv_un_transit')
-    $ set_zone('camp_entrance', 'alt_day5_uvao_evening_dv_un_transit')
-    $ set_zone('sport_area', 'alt_day5_uvao_evening_map_sport_area')
-    $ set_zone('library', 'alt_day5_uvao_evening_map_strange')
-    $ set_zone('medic_house', 'alt_day5_uvao_evening_medic_house')
-    $ set_zone('square', 'alt_day5_uvao_evening_dv_un')
-    $ set_zone('beach', 'alt_day5_uvao_ev_beach_event')
-    $ set_zone('boat_station', 'alt_day5_uvao_evening_boat_station')
-    $ set_zone('me_mt_house', 'alt_day5_uvao_evening_go_house')
+    $ disable_all_zones_alt1()
+    $ disable_all_chibi_alt1()
+    $ set_zone_alt1('music_club_alt1', 'alt_day5_uvao_evening_map_music_club')
+    $ set_zone_alt1('clubs_alt1', 'alt_day5_uvao_evening_dv_un_transit')
+    $ set_zone_alt1('camp_entrance_alt1', 'alt_day5_uvao_evening_dv_un_transit')
+    $ set_zone_alt1('sport_area_alt1', 'alt_day5_uvao_evening_map_sport_area')
+    $ set_zone_alt1('library_alt1', 'alt_day5_uvao_evening_map_strange')
+    $ set_zone_alt1('medic_house_alt1', 'alt_day5_uvao_evening_medic_house')
+    $ set_zone_alt1('square_alt1', 'alt_day5_uvao_evening_dv_un')
+    $ set_zone_alt1('beach_alt1', 'alt_day5_uvao_ev_beach_event')
+    $ set_zone_alt1('boat_station_alt1', 'alt_day5_uvao_evening_boat_station')
+    $ set_zone_alt1('me_mt_house_alt1', 'alt_day5_uvao_evening_go_house')
 label alt_day5_uvao_evening_map_show:
     play sound sfx_paper_bag
-    $ show_map()
+    $ show_map_alt1()
     window show
 
 label alt_day5_uvao_evening_map_music_club:
     scene bg ext_dining_hall_away_sunset with fade
     th "Зачем я туда пойду? Вряд ли меня там кто-то ждёт."
-    $ disable_current_zone()
+    $ disable_current_zone_alt1()
     jump alt_day5_uvao_evening_map_show
     
 label alt_day5_uvao_evening_medic_house:
     scene bg ext_dining_hall_away_sunset with fade
     th "Э-э, нет! Там мне сейчас делать нечего. С Виолой я на сегодня пообщался вполне достаточно."
-    $ disable_current_zone()
+    $ disable_current_zone_alt1()
     jump alt_day5_uvao_evening_map_show
     
 label alt_day5_uvao_evening_map_sport_area:
     if alt_uvao_D5_sh_mines:
         scene bg ext_dining_hall_away_sunset with fade
         dreamgirl "Да ты что, с ума сошёл?! Вдруг Саныч уже в курсе сегодняшних разборок в столовой?{w} Чего доброго, уронит на нас штангу нечаянно…"
-        $ disable_current_zone()
+        $ disable_current_zone_alt1()
         jump alt_day5_uvao_evening_map_show
     else:
         jump alt_day5_uvao_evening_map_strange    
 
-# Д5 - Идём на пристань, но сваливаем на пляж.
+# Идём на пристань, но сваливаем на пляж.
 label alt_day5_uvao_evening_boat_station:
     window hide
     scene bg ext_boathouse_sunset with fade
@@ -4832,19 +4835,13 @@ label alt_day5_uvao_evening_boat_station:
     th "А стоит ли после такого напряжённого дня ограничиваться только болтанием ногами в воде? Я ведь за всё это время так и не искупался ни разу - вот и совмещу приятное с полезным."
     jump alt_day5_uvao_ev_beach_event_direct
 
-# Д5 - Идём мимо площади и нарываемся
+# Идём мимо площади и нарываемся
 label alt_day5_uvao_evening_dv_un_transit:
     scene bg ext_dining_hall_away_sunset with fade
     th "Идея странная, но почему бы и нет? Тоже способ убить время…"
     "По пути я решил зайти на площадь, проведать Генду - мало ли, вдруг его украли, пока я ужинал?"
     jump alt_day5_uvao_evening_dv_un_square
 
-# Д5-вечер - наблюдаем на площади ДваЧе и Унылку
-#
-# Используется флаг alt_uvao_true
-# Используется флаг alt_uvao_D5_sh_mines
-# Используется флаг Д4 с Леной alt_uvao_D4_lunch_un
-# Устанавливает флаг alt_uvao_D5_evening_dv_un
 label alt_day5_uvao_evening_dv_un:
     scene bg ext_dining_hall_away_sunset with fade
     th "Не думаю, что на площади за это время появилось что-то интересное, но почему бы и нет? Убить время можно и там."
@@ -4956,6 +4953,7 @@ label alt_day5_uvao_ev_beach_event_direct:
     "Да, так и есть. Наверное, сейчас стоит встать и уйти… Да, вот сейчас… Сейчас встану, извинюсь и пойду… "
     sl "Помнишь день, когда ты приехал, Семён?"
     "Славя произнесла это, по-прежнему не поднимая головы."
+	# TODO: убрать про год
     sl "Ты ещё спрашивал, какой сейчас год."
     me "Да, а ты так и не ответила."
     sl "Тысяча девятьсот восемьдесят девятый. Сегодня двадцать второе июля."

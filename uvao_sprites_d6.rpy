@@ -148,6 +148,13 @@ init 19:
     # image un sorrow pioneer = _un_sorrow_pioneer['normal']
     # image un sorrow pioneer far = _un_sorrow_pioneer['far']
     
+    # Юля неглиже
+    # image uv smile naked close = ComposeSpriteSet('close', 'uv/uv_2_body_naked.png', '###uv_smile###')['close'] - нужен PNG эмоции
+    # image uv normal close
+    # image uv guilty naked close
+    # image uv surprise naked close
+    # image uv laugh close 
+    
     #25ти-летняя Славя
     $ _sl_25_normal = ComposeSpriteSet(('normal', 'far'), 'sl/sl_25_body.png', 'sl/sl_25_neutral.png')
     image sl 25 normal = _sl_25_normal['normal']
@@ -166,5 +173,6 @@ init 19:
     image sl 25 displeased far = _sl_25_displeased['far']
 
     # feared ОД в панаме (close и far спрайтов нет)
-    $ _mt_feared_panama_pioneer = ComposeSpriteSet(('normal'), 'mt/mt_3_body.png', 'mt/mt_3_pioneer.png', 'mt/mt_3_feared.png', 'mt/mt_3_panama.png')
-    image mt feared panama pioneer = _mt_feared_panama_pioneer['normal']
+    image mt feared panama pioneer = ComposeSpriteSet('normal', 'mt/mt_3_body.png', 'mt/mt_3_pioneer.png', 'mt/mt_3_feared.png', 'mt/mt_3_panama.png')['normal']
+
+    
