@@ -650,10 +650,10 @@ label scenario_uvao_bg:
                 contains: # это - фон, который надо показать
                     'bg int_mine_crossroad' with fade 
                 contains: # это - оранжевенькая тонировка
-                    'scenario_uvao/images/matches_tone.png' 
+                    'scenario_alt/Pics/matches_tone.png' 
                     additive 1.0
                 contains: # это - дрожание пламени
-                    'scenario_uvao/images/matches_lightmask.png'
+                    'scenario_alt/Pics/matches_lightmask.png'
                     xalign 0.5 yalign 1.0 
                     function random_zoom
                     repeat
@@ -665,10 +665,10 @@ label scenario_uvao_bg:
                 contains: 
                     'bg int_mine' with fade 
                 contains: 
-                    'scenario_uvao/images/matches_tone.png' 
+                    'scenario_alt/Pics/matches_tone.png' 
                     additive 1.0
                 contains: 
-                    'scenario_uvao/images/matches_lightmask.png'
+                    'scenario_alt/Pics/matches_lightmask.png'
                     xalign 0.5 yalign 1.0 
                     function random_zoom
                     repeat   
@@ -679,10 +679,10 @@ label scenario_uvao_bg:
                 contains: 
                     'bg int_mine_halt' with fade 
                 contains: 
-                    'scenario_uvao/images/matches_tone.png' 
+                    'scenario_alt/Pics/matches_tone.png' 
                     additive 1.0
                 contains: 
-                    'scenario_uvao/images/matches_lightmask.png'
+                    'scenario_alt/Pics/matches_lightmask.png'
                     xalign 0.5 yalign 1.0 
                     function random_zoom
                     repeat
@@ -693,10 +693,10 @@ label scenario_uvao_bg:
                 contains: 
                     'bg int_mine_door' with fade 
                 contains: 
-                    'scenario_uvao/images/matches_tone.png' 
+                    'scenario_alt/Pics/matches_tone.png' 
                     additive 1.0
                 contains: 
-                    'scenario_uvao/images/matches_lightmask.png'
+                    'scenario_alt/Pics/matches_lightmask.png'
                     xalign 0.5 yalign 1.0 
                     function random_zoom
                     repeat
