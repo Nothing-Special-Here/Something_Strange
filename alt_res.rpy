@@ -134,16 +134,16 @@
     image wet1 = "scenario_alt/Pics/gui/wet1.png"
 #Спрайты
     
-    image d6_miku_cries = "scenario_alt/Pics/sprites/d6_miku_cries.png"
-    image mi_ru = "scenario_alt/Pics/sprites/mi_ru.png"
+    image d6_miku_cries = "scenario_alt/Pics/sprites/misc/d6_miku_cries.png"
+    image mi_ru = "scenario_alt/Pics/sprites/misc/mi_ru.png"
     image mz_shade = "scenario_alt/Pics/sprites/mz_shade.png"
     image sl_shade = "scenario_alt/Pics/sprites/sl_shade.png" 
     image pi_scar = "scenario_alt/Pics/sprites/pi_scar.png"
     image un_shade = "scenario_alt/Pics/sprites/un_shade.png"
     image us_bear = "scenario_alt/Pics/sprites/us_bear.png"
     image us_bear_sad = "scenario_alt/Pics/sprites/us_bear_sad.png"
-    image uvao_d1 = "scenario_alt/Pics/sprites/uvao_d1.png"
-    image dv_mt = "scenario_alt/Pics/sprites/dv_mt.png"
+    image uvao_d1 = "scenario_alt/Pics/sprites/misc/uvao_d1.png"
+    image dv_mt = "scenario_alt/Pics/sprites/misc/dv_mt.png"
     
 #Звучок
     $ alice_theme = "scenario_alt/Sound/alice_theme.ogg"
@@ -263,8 +263,8 @@
     image uv_new_hentai2 = "images/1080/cg/epilogue_uv_hentai_2.jpg"
 
 #sprite alt_chapter
-    image uv black silhouette = "scenario_alt/Pics/sprites/uv_black.png"
-    
+# Автор снёс наш чёрный спрайт и использует вот такое колдунство для перекрашивания обычного спрайта
+    image uv black silhouette = im.MatrixColor(im.Composite((900, 1080), (0, 0), get_sprite_ori('normal/uv/uv_1_body.png'), (0, 0), get_sprite_ori('normal/uv/uv_1_pioneer.png')), im.matrix.tint(0.01, 0.01, 0.01) )
 #sounds
     $ phone_vibro = "scenario_alt/Sound/vibration-smartphone.ogg"
     $ match_lights ="scenario_alt/Sound/lighting-a-match.ogg"
