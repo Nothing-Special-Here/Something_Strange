@@ -266,8 +266,9 @@
 # Автор снёс наш чёрный спрайт и использует вот такое колдунство для перекрашивания обычного спрайта
     image uv black silhouette = im.MatrixColor(im.Composite((900, 1080), (0, 0), get_sprite_ori('normal/uv/uv_1_body.png'), (0, 0), get_sprite_ori('normal/uv/uv_1_pioneer.png')), im.matrix.tint(0.01, 0.01, 0.01) )
 #sounds
-    $ phone_vibro = "scenario_alt/Sound/vibration-smartphone.ogg"
-    $ match_lights ="scenario_alt/Sound/lighting-a-match.ogg"
-    $ silence = "scenario_alt/Sound/silence_4sec.ogg"
-    $ my_chrysalis_highwayman = "scenario_alt/Sound/my_chrysalis_highwayman.ogg"
+    $ phone_vibro = "scenario_alt/Sound/sfx/vibration-smartphone.ogg"
+    $ match_lights ="scenario_alt/Sound/sfx/lighting-a-match.ogg"
+    # 4 секунды тишины, шта?
+    $ silence = "scenario_alt/Sound/sfx/silence_4sec.ogg" 
+    $ my_chrysalis_highwayman = "scenario_alt/Sound/music/my_chrysalis_highwayman.ogg"
     
