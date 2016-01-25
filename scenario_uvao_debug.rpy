@@ -16,6 +16,7 @@
         dumpfile = open('images.lst', 'w')
         for id in sorted(id for id in renpy.display.image.images):
             try:
+                # dump id
                 for c in id:
                     dumpfile.write(c)
                     dumpfile.write(' ')
