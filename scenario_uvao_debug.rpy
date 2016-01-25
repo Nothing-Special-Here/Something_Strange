@@ -11,6 +11,18 @@
         set_name('kids',u"Дети")
         set_name('dy',u"Динамики")
         set_name('icq',u"Собеседник")
+        
+    def export_images():
+        dumpfile = open('images.lst', 'w')
+        for id in sorted(id for id in renpy.display.image.images):
+            try:
+                for c in id:
+                    dumpfile.write(c)
+                    dumpfile.write(' ')
+                dumpfile.write('\n')
+            except:
+                dumpfile.write('error\n')
+                continue    
 init:
     $ mods["scenario_uvao_debug"] = u"ЮВАО рут - отладка"
     $ config.developer = True
@@ -233,6 +245,8 @@ label scenario_uvao_root_D4_debug:
             jump scenario_uvao_sprites
         "Отладка фонов":
             jump scenario_uvao_bg
+        "Экспорт спрайтов":
+            $ export_images()
 
     $ renpy.pause (1)
     jump scenario_uvao_root_D4_debug
