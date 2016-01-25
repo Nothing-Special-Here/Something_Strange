@@ -283,7 +283,7 @@ label alt_day6_uvao_duty:
     show el surprise pioneer with dspr
     el "Нет, никогда. А почему ты спрашиваешь?"
     "Удивился кибернетик."
-    show sl serious pioneer at left with dissolve
+    show sl serious pioneer at left behind el with dissolve
     sl "Семён, что ты такое говоришь?"
     "Строго спросила подошедшая Славя."
     sl "Какие ещё несчастные случаи?"

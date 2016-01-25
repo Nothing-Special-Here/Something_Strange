@@ -10,7 +10,7 @@ label alt_day6_uvao_getting_up:
     $ persistent.sprite_time = "sunset"
     $ sunset_time()
     scene bg int_house_of_mt_sunset
-    show prologue_dream
+    # show prologue_dream # оно нужно?
     play music music_list["my_daily_life"] fadein 4
     play ambience ambience_int_cabin_day fadein 4
     window show

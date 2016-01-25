@@ -86,7 +86,7 @@ label alt_day6_uvao_isolator_house:
     play music music_list["eternal_longing"] fadein 5
     play sound sfx_open_door_1
     scene bg int_aidpost_day
-    show cs normal glasses_thru at cleft #очки на глазах
+    show cs normal2 glasses_thr at cleft #очки на глазах
     show mt normal pioneer at cright #без панамы, ибо неслась от домика. Может заодно shocked?
     show el surprise pioneer far at fleft behind cs
     with dissolve
@@ -313,7 +313,7 @@ label alt_day6_uvao_isolator_house:
     window hide
     hide bg ext_no_bus_sunset
     hide uv
-    show int_old_building_day_uvao behind prologue_dream
+    show bg int_old_building_day_uvao behind prologue_dream
     show uv normal at center behind prologue_dream
     with dissolve
     window show
@@ -582,8 +582,8 @@ label alt_day6_uvao_isolator_house:
     uv "Он не сможет."
     sl "Тебя не спросили! Брысь под лавку, кисонька! А то хвост оторву!"
     show uv dontlike far at cright behind sl
-    show cs fear at fleft
-    show mt angry at left behind sl
+    show cs fear2 at fleft
+    show mt feared panama pioneer at left behind sl
     with dissolve
     # все пугаются - Юлю обидели!
     # TODO: ОД и Виолу тоже в шоке
@@ -602,7 +602,7 @@ label alt_day6_uvao_isolator_house:
     play music music_list["just_think"] fadein 4
     show uv upset far at cright behind sl
     show cs normal at fleft
-    show mt surprise at left behind sl
+    show mt surprise panama pioneer at left behind sl
     with dissolve
     th "Хватит…{w} Пожалуйста, хватит…{w} Хватит!"
     me "ХВАТИТ!" with hpunch
