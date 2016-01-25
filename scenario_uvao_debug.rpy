@@ -1,4 +1,16 @@
-﻿
+﻿init python:
+    def make_names_known_7dl():
+        make_names_known()
+        global store
+        set_name('ba',u"Саныч")
+        set_name('ase',u"Алиса")
+        set_name('we',u"Толпа")
+        set_name('ml',u"Мальчик")
+        set_name('ml2',u"Мальчик")
+        set_name('voice1',u"Продавщица")
+        set_name('kids',u"Дети")
+        set_name('dy',u"Динамики")
+        set_name('icq',u"Собеседник")
 init:
     $ mods["scenario_uvao_debug"] = u"ЮВАО рут - отладка"
     $ config.developer = True
@@ -11,7 +23,7 @@ init:
     $ mod_tags["scenario_uvao_debug"] = ["length:days","gameplay:vn","protagonist:male","special:TODO","character:Виола","character:Алиса","character:Электроник","character:Семён","character:Мику","character:Ольга Дмитриевна","character:Женя","character:Пионер","character:Шурик","character:Славя","character:Лена","character:Ульяна","character:Юля"]
     $ routetag = "uvao"
 label scenario_uvao_debug:
-    $ make_names_known()
+    $ make_names_known_7dl()
     $ set_mode_adv()
 #
 # Флаг посещения медпункта

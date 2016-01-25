@@ -287,8 +287,8 @@ label alt_day6_uvao_duty:
     sl "Семён, что ты такое говоришь?"
     "Строго спросила подошедшая Славя."
     sl "Какие ещё несчастные случаи?"
-    show sl normal pioneer at left
     show el normal pioneer
+    show sl normal pioneer at left behind el
     with dspr
     sl "Пойдёмте мальчики, у нас работы полно. Из клуба много чего перенести надо."
     "И мы втроём отправились в музыкальный клуб."
