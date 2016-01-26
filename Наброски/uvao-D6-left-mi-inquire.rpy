@@ -328,7 +328,5 @@ label alt_day6_uvao_left_ask_MI_about_UN:
     $ alt_uvao_D6_left_MI_talk = True
     stop sound_loop fadeout 1
 
-    jump scenario_uvao_debug # заглушка - выход в меню отладки
-    #
     jump alt_day6_uvao_left_ask_UV_about_UN
 

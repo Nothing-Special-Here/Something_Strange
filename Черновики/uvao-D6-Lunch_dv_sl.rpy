@@ -281,10 +281,8 @@ label alt_day6_lunch_dv_sl:
                 menu:
                     "Поговорить с Мику" if alt_uvao_D6_CS_vetrov:
                         jump alt_day6_uvao_left_ask_MI_about_UN
-                        pass
                     "Искать Юлю":
                         jump alt_day6_uvao_left_ask_UV_about_UN
-                        pass
                     "Не надо суеты!":
                         # Валим из столовой без конкретных намерений - "там видно будет", нас ловит Славя
                         "Прислонившись к перилам, я сыто вздохнул."

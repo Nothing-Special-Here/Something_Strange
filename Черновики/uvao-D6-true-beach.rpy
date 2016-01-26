@@ -357,7 +357,4 @@ label alt_day6_true_beach:
     "Итог этой поучительно беседе подвёл горн."
     stop sound fadeout 2
     "Я поднялся, не спеша обулся и вразвалочку пошёл к столовой."    
-    #
-    jump scenario_uvao_debug # заглушка - выход в меню отладки
-    #
-    # jump alt_day6_lunch_dv_sl
+    jump alt_day6_lunch_dv_sl
