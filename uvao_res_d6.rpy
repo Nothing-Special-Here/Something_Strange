@@ -8,6 +8,7 @@
     
 #cg
     image cg d6_uv_angry_dv = get_image_7dl("cg/d6_uv_angry_dv.jpg")
+    image cg d6_uv_behind_view = get_image_7dl("cg/d6_uv_behind_view.jpg")
 #Элементы интерфейса
 
 #Кусты
