@@ -20,7 +20,9 @@
     image bush_right_bottom = get_image_7dl("gui/Bush/bush_right_bottom.png")
     image bush_right_central = get_image_7dl("gui/Bush/bush_right_central.png")
     image bush_right_top = get_image_7dl("gui/Bush/bush_right_top.png")
-    
+# заборы:
+    image fence bricks = get_image_7dl("gui/fence_bricks.png")
+    image fence bricks hole = get_image_7dl("gui/fence_bricks_hole.png")
 #sounds
     $ May_There_Always_Be_Sunshine = "scenario_alt/Sound/music/May_There_Always_Be_Sunshine_minus.mp3" 
     
