@@ -381,11 +381,11 @@ label alt_day6_true_CS_talk_debug:
             $ alt_day2_us_escape = True
         "Что я, псих - с мелкой бегать?":
             $ alt_day2_us_escape = False
-    menu:
-        "Стыдно, но в Д1 запсиховали, проснувшись посреди лета":
-            $ semen_panique = True
-        "Сэм - нитакой!":
-            $ semen_panique = False
+    # menu:
+        # "Стыдно, но в Д1 запсиховали, проснувшись посреди лета":
+            # $ semen_panique = True
+        # "Сэм - нитакой!":
+            # $ semen_panique = False
     menu:
         "Проспал утром":
             jump alt_day6_true_CS_talk_short
@@ -542,6 +542,12 @@ label scenario_uvao_sprites:
                     "cs fear glasses_thr close"
                     show cs fear close
                     "cs fear close"
+                    show cs sad close
+                    "cs sad close"
+                    show cs upset close
+                    "cs upset close"
+                    show cs stressed close
+                    "cs stressed close"
                     jump scenario_uvao_sprites_cs
                 "normal":
                     show cs smile #ванильный спрайт
@@ -576,10 +582,18 @@ label scenario_uvao_sprites:
                     "cs smile2 glasses_over"
                     show cs laugh2 glasses_over
                     "cs laugh2 glasses_over"
+                    show cs sad
+                    "cs sad"
+                    show cs upset
+                    "cs upset"
+                    show cs stressed
+                    "cs stressed"
                     jump scenario_uvao_sprites_cs
                 "far":
                     show cs fear far
                     "cs fear far"
+                    show cs fear2 far
+                    "cs fear2 far"
                     jump scenario_uvao_sprites_cs
                 "Назад":
                     hide cs

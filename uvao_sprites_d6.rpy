@@ -133,6 +133,55 @@ init 19:
     image cs doubt3 = _cs_doubt3['normal']
     image cs doubt3 far = _cs_doubt3['far']
 
+    # CS sad
+    $ _cs_sad1 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_1_body.png', 'cs/cs_sad.png')
+    image cs sad close = _cs_sad1['close']
+    image cs sad = _cs_sad1['normal']
+    image cs sad far = _cs_sad1['far']
+
+    $ _cs_sad2 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_2_body.png', 'cs/cs_sad.png')
+    image cs sad2 close = _cs_sad2['close']
+    image cs sad2 = _cs_sad2['normal']
+    image cs sad2 far = _cs_sad2['far']
+
+    $ _cs_sad3 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_3_body.png', 'cs/cs_sad.png')
+    image cs sad3 close = _cs_sad3['close']
+    image cs sad3 = _cs_sad3['normal']
+    image cs sad3 far = _cs_sad3['far']
+
+    # CS stressed
+    $ _cs_stressed1 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_1_body.png', 'cs/cs_stressed.png')
+    image cs stressed close = _cs_stressed1['close']
+    image cs stressed = _cs_stressed1['normal']
+    image cs stressed far = _cs_stressed1['far']
+
+    $ _cs_stressed2 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_2_body.png', 'cs/cs_stressed.png')
+    image cs stressed2 close = _cs_stressed2['close']
+    image cs stressed2 = _cs_stressed2['normal']
+    image cs stressed2 far = _cs_stressed2['far']
+
+    $ _cs_stressed3 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_3_body.png', 'cs/cs_stressed.png')
+    image cs stressed3 close = _cs_stressed3['close']
+    image cs stressed3 = _cs_stressed3['normal']
+    image cs stressed3 far = _cs_stressed3['far']
+
+    # CS upset
+    $ _cs_upset1 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_1_body.png', 'cs/cs_upset.png')
+    image cs upset close = _cs_upset1['close']
+    image cs upset = _cs_upset1['normal']
+    image cs upset far = _cs_upset1['far']
+
+    $ _cs_upset2 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_2_body.png', 'cs/cs_upset.png')
+    image cs upset2 close = _cs_upset2['close']
+    image cs upset2 = _cs_upset2['normal']
+    image cs upset2 far = _cs_upset2['far']
+
+    $ _cs_upset3 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_3_body.png', 'cs/cs_upset.png')
+    image cs upset3 close = _cs_upset3['close']
+    image cs upset3 = _cs_upset3['normal']
+    image cs upset3 far = _cs_upset3['far']
+
+
     # Унылка
     image un cry wet_dress = ComposeSpriteSet('normal', 'un/un_2_wet_body.png', 'un/un_2_cry.png')['normal']
     image un cry_smile wet_dress = ComposeSpriteSet('normal', 'un/un_2_wet_body.png', 'un/un_2_cry_smile.png')['normal']
