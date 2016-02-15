@@ -165,21 +165,37 @@ init 19:
     image cs stressed3 = _cs_stressed3['normal']
     image cs stressed3 far = _cs_stressed3['far']
 
-    # CS upset
-    $ _cs_upset1 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_1_body.png', 'cs/cs_upset.png')
-    image cs upset close = _cs_upset1['close']
-    image cs upset = _cs_upset1['normal']
-    image cs upset far = _cs_upset1['far']
+    # CS cry
+    $ _cs_cry1 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_1_body.png', 'cs/cs_cry.png')
+    image cs cry close = _cs_cry1['close']
+    image cs cry = _cs_cry1['normal']
+    image cs cry far = _cs_cry1['far']
 
-    $ _cs_upset2 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_2_body.png', 'cs/cs_upset.png')
-    image cs upset2 close = _cs_upset2['close']
-    image cs upset2 = _cs_upset2['normal']
-    image cs upset2 far = _cs_upset2['far']
+    $ _cs_cry2 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_2_body.png', 'cs/cs_cry.png')
+    image cs cry2 close = _cs_cry2['close']
+    image cs cry2 = _cs_cry2['normal']
+    image cs cry2 far = _cs_cry2['far']
 
-    $ _cs_upset3 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_3_body.png', 'cs/cs_upset.png')
-    image cs upset3 close = _cs_upset3['close']
-    image cs upset3 = _cs_upset3['normal']
-    image cs upset3 far = _cs_upset3['far']
+    $ _cs_cry3 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_3_body.png', 'cs/cs_cry.png')
+    image cs cry3 close = _cs_cry3['close']
+    image cs cry3 = _cs_cry3['normal']
+    image cs cry3 far = _cs_cry3['far']
+
+    # CS cry
+    $ _cs_cry1 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_1_body.png', 'cs/cs_cry.png')
+    image cs cry close = _cs_cry1['close']
+    image cs cry = _cs_cry1['normal']
+    image cs cry far = _cs_cry1['far']
+
+    $ _cs_cry2 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_2_body.png', 'cs/cs_cry.png')
+    image cs cry2 close = _cs_cry2['close']
+    image cs cry2 = _cs_cry2['normal']
+    image cs cry2 far = _cs_cry2['far']
+
+    $ _cs_cry3 = ComposeSpriteSet(('close', 'normal', 'far'), 'cs/cs_3_body.png', 'cs/cs_cry.png')
+    image cs cry3 close = _cs_cry3['close']
+    image cs cry3 = _cs_cry3['normal']
+    image cs cry3 far = _cs_cry3['far']
 
 
     # Унылка
