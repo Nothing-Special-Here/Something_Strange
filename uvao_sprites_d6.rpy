@@ -220,6 +220,9 @@ init 19:
     # image uv surprise naked close
     # image uv laugh close 
     
+    # Славя с дубиной
+    image sl club = ComposeSpriteSet('normal', 'sl/sl_club.png')['normal']
+    
     #25ти-летняя Славя
     $ _sl_25_normal = ComposeSpriteSet(('normal', 'far'), 'sl/sl_25_body.png', 'sl/sl_25_neutral.png')
     image sl 25 normal = _sl_25_normal['normal']
