@@ -243,4 +243,6 @@ init 19:
     # feared ОД в панаме (close и far спрайтов нет)
     image mt feared panama pioneer = ComposeSpriteSet('normal', 'mt/mt_3_body.png', 'mt/mt_3_pioneer.png', 'mt/mt_3_feared.png', 'mt/mt_3_panama.png')['normal']
 
+    # Юля, готовая к поцелую, тонированная в ночь. Потому что днем мы ее не целуем.
+    image uv kiss = im.MatrixColor(get_image_7dl("misc/uv_kiss.png"), tint_night)
     
