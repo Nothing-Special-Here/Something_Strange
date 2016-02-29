@@ -434,12 +434,42 @@ label alt_day6_lunch_dv_sl_debug:
             $ alt_uvao_D5_evening_sl = False
             $ alt_uvao_D5_evening_dv_un = True
             $ alt_uvao_D6_CS_vetrov = True
+            $ alt_day3_dancing = 0
+            $ alt_day2_sl_bf = False
+            $ alt_day2_sl_guilty = 0
+        "Быстрый переход к отладке полной беседы со Славей":
+            $ alt_uvao_true = True
+            $ alt_uvao_D5_sh_mines = False
+            $ alt_day1_sl_conv = False
+            $ alt_uvao_D4_lunch_un = False
+            $ alt_uvao_D4_lunch_sl = True
+            $ alt_uvao_D5_evening_sl = False
+            $ alt_uvao_D5_evening_dv_un = True
+            $ alt_uvao_D6_CS_vetrov = True
+            $ alt_day2_sl_guilty = 2
+            $ alt_day3_dancing = 2
+            $ alt_day2_sl_bf = False
         "Не-е-ет, я хочу помучиться с установкой флагов!":
             menu:
                 "в Д1 Славя отвела от ворот до домика ОД":
                     $ alt_day1_sl_conv = True
                 "в Д1 Славя шли от ворот сами и вышли на пристань":
                     $ alt_day1_sl_conv = False
+            menu:
+                "Танцевали со Славей":
+                    $ alt_day3_dancing = 2
+                "Сычевали на танцах":
+                    $ alt_day3_dancing = 0
+            menu:
+                "Завтракали со Славей в Д2":
+                    $ alt_day2_sl_bf = True
+                "Завтракали с Леной или сами в Д2":
+                    $ alt_day2_sl_bf = False
+            menu:
+                "Взяли вину на себя за пропавшие ключи Слави":
+                    $ alt_day2_sl_guilty = 2
+                "О чём это вообще?":
+                    $ alt_day2_sl_guilty = 0
             menu:
                 "Идём по тру-ветке":
                     $ alt_uvao_true = True
