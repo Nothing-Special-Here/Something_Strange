@@ -552,6 +552,6 @@ label alt_day6_uvao_dinner_with_sl:
     scene bg black with fade
     "Отчаянно крикнула Славя и мы одновременно бросились на Юлю. Но не успели даже коснуться – сверкнула ярчайшая вспышка света, нас отбросило в разные стороны и сознание померкло."
     if alt_uvao_D5_hentai:
-        jump alt_uvao_enving_neutral_bad
+        jump alt_uvao_ending_neutral_bad
     else:
-        jump alt_uvao_enving_neutral
+        jump alt_uvao_ending_neutral
