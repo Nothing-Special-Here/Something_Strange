@@ -6,8 +6,8 @@
     #int's
     image bg int_isolat_day = get_image_7dl("bg/int_isolat_day.jpg")
     image bg int_isolat_day_uv = get_image_7dl("bg/int_isolat_day_uv.jpg")
-    image bg ext_lake_day = get_image_7dl("bg/ext_lake_day.jpg") # У Автора уже есть озеро, с березой. Предлагаю оставить его.
-    image bg ext_lake_night = get_image_7dl("bg/ext_lake_night.jpg")
+    image bg ext_lake_day = im.Flip(get_image_7dl("bg/ext_lake_day.jpg"), horisontal = True) # Хитрый ход - флипнуть картинку. Заодно поцелуйная Юля нормально под освещение встанет
+    image bg ext_lake_night = im.Flip(get_image_7dl("bg/ext_lake_night.jpg"), horisontal = True)
     image bg ext_roof = get_image_7dl("bg/ext_roof.jpg")
 #cg
     image cg d6_uv_angry_dv = get_image_7dl("cg/d6_uv_angry_dv.jpg")
