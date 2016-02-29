@@ -9,7 +9,9 @@
 # используется флаг встречи со Славей на пляже в Д5 alt_uvao_D5_evening_sl
 # используется флаг встречи с Леной и Алисой на площади вечером Д5 alt_uvao_D5_evening_dv_un
 # используется флаг Полной Информированности alt_uvao_D6_CS_vetrov
-#
+# используется флаг танцев в д.№3 alt_day3_dancing
+# используется флаг защиты Слави от ОД в д.№2 alt_day2_sl_guilty
+# используется флаг завтрака со Славей в д.№2 alt_day2_sl_bf
 label alt_day6_lunch_dv_sl:
     play ambience ambience_dining_hall_full fadein 3
     scene bg int_dining_hall_people_day with fade
@@ -320,17 +322,7 @@ label alt_day6_lunch_dv_sl:
             hide dv
             show sl smile pioneer at center
             with dissolve
-            "Постаравшись сделать вид, что не заметил Алису, я подрулил со своим подносом к столику, за которым устроилась Славя."
-            "Пусть Славя и ведёт себя как-то странно, но садиться с рыжей - верное самоубийство."
-            #===== TODOtext
-            # Приглашение встретиться после танцев
-            if (alt_uvao_D4_lunch_sl and alt_uvao_D5_evening_sl):
-            #===== TODOtext
-                # Как-то Славя внезапно переменилась. Другой человек прямо-таки!
-                #jump "Обсудить подозрительное поведение Слави с ОД"
-                pass
-            else:
-                pass
+            jump alt_day6_lunch_dv_sl_1
     #===== TODOtext
     # Посчитать, что беседа будет о делах амурных (Можно помечтать на веранде столовой)
     # Топаем в домик
