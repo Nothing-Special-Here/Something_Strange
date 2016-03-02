@@ -1,3 +1,4 @@
+#Устанавливается флаг амурного Славя-пути alt_uvao_D6_sl_pickup
 label alt_day6_lunch_dv_sl_1:
     #Поставил label для теста. Потом интегрировать нужно будет в alt_day6_lunch_dv_sl.
        "Постаравшись сделать вид, что не заметил Алису, я подрулил со своим подносом к столику, за которым устроилась Славя."
@@ -51,13 +52,12 @@ label alt_day6_lunch_dv_sl_1:
        me "И… и что с того?"
        show sl shy pioneer at center with dissolve
        sl "Это ведь последний шанс потанцевать {i}вместе{/i}."
-       if alt_uvao_D4_lunch_un or alt_uvao_D5_evening_dv_un:
-           show un shy pioneer far at right with dspr
-           $ renpy.pause(.4)
-           show un scared pioneer far with dissolve
-           "Сидевшая за соседним столом Лена, искоса наблюдавшая за нами, вдруг побледнела и неожиданно выбежала из столовой, так и не закончив обед."
-           hide un with easeoutright
-           th "Кругом что, все с ума посходили?"
+       show un shy pioneer far at right with dspr
+       $ renpy.pause(.4)
+       show un scared pioneer far with dissolve
+       "Сидевшая за соседним столом Лена, искоса наблюдавшая за нами, вдруг побледнела и неожиданно выбежала из столовой, так и не закончив обед."
+       hide un with easeoutright
+       th "Кругом что, все с ума посходили?"
        show sl smile2 pioneer with dspr
        if alt_day3_dancing == 2:
            me "Что? Прошлый танец понравился?"
