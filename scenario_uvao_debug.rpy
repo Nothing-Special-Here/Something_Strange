@@ -710,6 +710,20 @@ label scenario_uvao_sprites:
             "sl 25 displeased far"
             hide sl
             jump scenario_uvao_sprites
+        "Юля на заборе":
+            scene bg ext_path2_day 
+            show fence bricks
+            show uv smile: 
+                rotate -90 rotate_pad False
+                xanchor 0.0 xpos 0.65 yanchor 0.0 ypos -0.2
+            "Потолочный кот наблюдает за вами."
+            scene bg ext_path2_day
+            show fence bricks hole
+            show uv smile:
+                rotate -90 rotate_pad False
+                xanchor 0.0 xpos 0.65 yanchor 0.0 ypos -0.2
+            "..."
+            jump scenario_uvao_sprites
         "Назад":
             jump scenario_uvao_root_D4_debug
 
