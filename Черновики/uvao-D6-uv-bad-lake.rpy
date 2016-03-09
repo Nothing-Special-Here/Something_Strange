@@ -46,7 +46,7 @@ label alt_day6_uvao_fuckoff_mt:
     "Путь до домика вожатой не занял много времени. Заняв наблюдательную позицию в ближайших кустах, я подал Ульянке знак о начале операции."
     "Она постучала в дверь и заскочила внутрь."
     show us smile sport at cleft
-    show mt angry pioneer at center with dissolve behind us
+    show mt angry pioneer at center behind us with dissolve 
     "И буквально спустя полминуты выскочила обратно, хитро подмигнув мне. Следом за ней, мрачнее тучи, показалась вожатая."
     mt "Ну, Семён! Погоди у меня!"
     play sound sfx_open_door_kick
@@ -557,8 +557,9 @@ label alt_day6_uvao_lake1:
     scene bg ext_path2_day 
     show fence bricks
     "Буквально через пару минут осторожного движения по кустам мы вышли к кирпичному забору."
-    show uv normal: # перевернутая Юля, прилепленная к верхнему краю
-        xzoom -1.0 yzoom -1.0 yalign 0.0 xalign 0.75
+    show uv smile: 
+        rotate -90 rotate_pad False
+        xanchor 0.0 xpos 0.65 yanchor 0.0 ypos -0.2
     "Юля, недолго думая, легко запрыгнула на стену и присела там наверху, выжидательно глядя на меня."
     me "А попроще способа нет? Я же не кот, чтоб через заборы перепрыгивать!"
     "Юля озадаченно почесала за ухом, а потом обрадовано кивнула."
@@ -570,8 +571,9 @@ label alt_day6_uvao_lake1:
     extend "Эй, не споткнись только!" with vpunch
     scene bg ext_path2_day
     show fence bricks hole 
-    show uv normal: #TODO: лучше сбоку выглядывать.
-        xzoom -1.0 yzoom -1.0 yalign 0.0 xalign 0.75
+    show uv smile: 
+        rotate -90 rotate_pad False
+        xanchor 0.0 xpos 0.65 yanchor 0.0 ypos -0.2
     uv "Вот, тут дыра."
     "И впрямь, дыра. Часть забора повалилась, и пролом прикрыли сеткой-рабицей, уже, кстати, слегка отогнутой с одной стороны."
     uv "Я там не люблю пролезать. Хвост можно прищемить."
