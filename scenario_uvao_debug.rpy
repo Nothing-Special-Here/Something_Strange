@@ -70,7 +70,8 @@ label scenario_uvao_debug:
     jump scenario_uvao_root_D4_debug
    
 label scenario_uvao_root_D4_debug:
-
+    $ init_map_zones_alt1()
+    $ init_map_zones_alt2()
     menu:
         "Отладка: Встреча Юли в д3":
             call alt_day3_meet_uvao
