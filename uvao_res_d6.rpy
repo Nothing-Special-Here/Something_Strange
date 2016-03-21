@@ -1,4 +1,21 @@
-﻿init:
+﻿init python:
+    # функция мерцания кота
+    # случайно делаем прозрачным (есл random < down) или непрозрачным - если random > up. Если между up и down - тогда делаем частичную прозрачность в зависимости от r
+    blink_threshold_up = 0.5 # верхний порог прозрачности
+    blink_threshold_down = 0.5 # нижний порог
+    def random_blink(trans, st, at):
+        r = renpy.random.random()
+        if r < blink_threshold_down:
+            trans.alpha = 0.0
+        elif r > blink_threshold_up:
+            trans.alpha = 1.0
+        else:
+            trans.alpha = (r - blink_threshold_down) / (blink_threshold_up - blink_threshold_down)
+        # return renpy.random.random() * 0.5
+        return 0.05
+init:
+
+init:
     
 #Ресы для кошочки
 #bg:
@@ -14,7 +31,14 @@
     image cg d6_uv_behind_view = get_image_7dl("cg/d6_uv_behind_view.jpg")
     image cg d6_sl_campfire = get_image_7dl("cg/d6_sl_campfire.jpg")
     image cg d6_uv_roofdance = get_image_7dl("cg/d6_uv_roof_dance.jpg")
-
+    image cg d7_uv_loonybin = get_image_7dl("cg/d7_uv_loonybin_nocat.jpg")
+    image cg d7_uv_loonybin_blinkcat: #мигающий кот
+        contains:
+            get_image_7dl("cg/d7_uv_loonybin_nocat.jpg")
+        contains:
+            get_image_7dl("cg/d7_uv_mystic_cat.png")
+            function random_blink
+            repeat
 #Кусты
     image bush_frame = get_image_7dl("gui/Bush/bush_frame.png")
     image bush_bottom_central = get_image_7dl("gui/Bush/bush_bottom_central.png")

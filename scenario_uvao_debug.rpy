@@ -807,6 +807,27 @@ label scenario_uvao_bg:
             scene black
             stop sound
             jump scenario_uvao_bg
+        "Гладим мистического кота":
+            scene cg d7_uv_loonybin
+            "Нет кота?"
+            scene cg d7_uv_loonybin_blinkcat
+            "Кот с дефолтным мерцанием 0.5"
+            $ blink_threshold_down = 0.1
+            $ blink_threshold_up = 0.9
+            "Мерцание 0.1-0.9"
+            $ blink_threshold_down = 0.5
+            $ blink_threshold_up = 0.9
+            "Мерцание 0.5-0.9"
+            $ blink_threshold_down = 0.1
+            $ blink_threshold_up = 0.5
+            "Мерцание 0.1-0.5"   
+            $ blink_threshold_down = 0.1
+            $ blink_threshold_up = 0.2
+            "Мерцание 0.1-0.2"    
+            $ blink_threshold_down = -0.1
+            $ blink_threshold_up = 0.2
+            "Мерцание -0.1-0.2"             
+            jump scenario_uvao_bg
         "Назад":
             jump scenario_uvao_root_D4_debug            
 #    scene black with fade2
