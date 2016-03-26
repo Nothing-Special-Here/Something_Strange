@@ -725,6 +725,47 @@ label scenario_uvao_sprites:
                 xanchor 0.0 xpos 0.65 yanchor 0.0 ypos -0.2
             "..."
             jump scenario_uvao_sprites
+        "Заплаканная Славя":
+            scene bg int_catacombs_living
+            me "Парад Славян объявляется открытым!"
+            show sl catat2 pioneer far at right
+            "."
+            show sl out2 pioneer far at right
+            ".."
+            show sl stanger2 pioneer far at right
+            "..."
+            show sl catat3 pioneer far at right
+            "."
+            show sl out3 pioneer far at right
+            ".."
+            show sl stanger3 pioneer far at right
+            "..."
+            show sl catat2 pioneer at cright
+            "."
+            show sl out2 pioneer at cright
+            ".."
+            show sl stanger2 pioneer at cright
+            "..."
+            show sl catat3 pioneer at cright
+            "."
+            show sl out3 pioneer at cright
+            ".."
+            show sl stanger3 pioneer at cright
+            "..."
+            show sl catat2 pioneer close at center
+            "."
+            show sl out2 pioneer close at center
+            ".."
+            show sl stanger2 pioneer close at center
+            "..."
+            show sl catat3 pioneer close at center
+            "."
+            show sl out3 pioneer close at center
+            ".."
+            show sl stanger3 pioneer close at center
+            "..."            
+            
+            jump scenario_uvao_sprites
         "Назад":
             jump scenario_uvao_root_D4_debug
 

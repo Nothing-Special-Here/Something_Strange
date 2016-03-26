@@ -337,3 +337,28 @@ init 19:
     image sl hysteria2 body far = ConditionSwitch("persistent.sprite_time=='sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), get_sprite_ori('far/sl/sl_2_body.png'), (0, 0), get_sprite_7dl('far/sl/sl_2_stanger.png')), im.matrix.tint(0.94, 0.82, 1.0)), "persistent.sprite_time=='night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), get_sprite_ori('far/sl/sl_2_body.png'), (0, 0), get_sprite_7dl('far/sl/sl_2_stanger.png')), im.matrix.tint(0.63, 0.78, 0.82)), True, im.Composite((1050, 1080), (0, 0), get_sprite_ori('far/sl/sl_2_body.png'), (0, 0), get_sprite_7dl('far/sl/sl_2_stanger.png')))
     image sl hysteria2 pioneer far = ConditionSwitch("persistent.sprite_time=='sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), get_sprite_ori('far/sl/sl_2_body.png'), (0, 0), get_sprite_ori('far/sl/sl_2_pioneer.png'), (0, 0), get_sprite_7dl('far/sl/sl_2_stanger.png')), im.matrix.tint(0.94, 0.82, 1.0)), "persistent.sprite_time=='night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), get_sprite_ori('far/sl/sl_2_body.png'), (0, 0), get_sprite_ori('far/sl/sl_2_pioneer.png'), (0, 0), get_sprite_7dl('far/sl/sl_2_stanger.png')), im.matrix.tint(0.63, 0.78, 0.82)), True, im.Composite((1050, 1080), (0, 0), get_sprite_ori('far/sl/sl_2_body.png'), (0, 0), get_sprite_ori('far/sl/sl_2_pioneer.png'), (0, 0), get_sprite_7dl('far/sl/sl_2_stanger.png')))    
     
+    # заплаканная 
+    $ _sl_2_catat_pioneer = ComposeSpriteSet(('close', 'normal', 'far'), (get_sprite_ori, 'sl/sl_2_body.png'), 'sl/sl_2_catat.png', (get_sprite_ori, 'sl/sl_2_pioneer.png'))
+    $ _sl_2_out_pioneer = ComposeSpriteSet(('close', 'normal', 'far'), (get_sprite_ori, 'sl/sl_2_body.png'), 'sl/sl_2_out.png', (get_sprite_ori, 'sl/sl_2_pioneer.png'))
+    $ _sl_2_stanger_pioneer = ComposeSpriteSet(('close', 'normal', 'far'), (get_sprite_ori, 'sl/sl_2_body.png'), 'sl/sl_2_stanger.png', (get_sprite_ori, 'sl/sl_2_pioneer.png'))    
+    $ _sl_3_catat_pioneer = ComposeSpriteSet(('close', 'normal', 'far'), (get_sprite_ori, 'sl/sl_3_body.png'), 'sl/sl_3_catat.png', (get_sprite_ori, 'sl/sl_3_pioneer.png'))
+    $ _sl_3_out_pioneer = ComposeSpriteSet(('close', 'normal', 'far'), (get_sprite_ori, 'sl/sl_3_body.png'), 'sl/sl_3_out.png', (get_sprite_ori, 'sl/sl_3_pioneer.png'))
+    $ _sl_3_stanger_pioneer = ComposeSpriteSet(('close', 'normal', 'far'), (get_sprite_ori, 'sl/sl_3_body.png'), 'sl/sl_3_stanger.png', (get_sprite_ori, 'sl/sl_3_pioneer.png'))    
+    image sl catat2 pioneer = _sl_2_catat_pioneer['normal']
+    image sl catat2 pioneer close = _sl_2_catat_pioneer['close']
+    image sl catat2 pioneer far = _sl_2_catat_pioneer['far']
+    image sl out2 pioneer = _sl_2_out_pioneer['normal']
+    image sl out2 pioneer close = _sl_2_out_pioneer['close']
+    image sl out2 pioneer far = _sl_2_out_pioneer['far']
+    image sl stanger2 pioneer = _sl_2_stanger_pioneer['normal']
+    image sl stanger2 pioneer close = _sl_2_stanger_pioneer['close']
+    image sl stanger2 pioneer far = _sl_2_stanger_pioneer['far']
+    image sl catat3 pioneer = _sl_3_catat_pioneer['normal']
+    image sl catat3 pioneer close = _sl_3_catat_pioneer['close']
+    image sl catat3 pioneer far = _sl_3_catat_pioneer['far']
+    image sl out3 pioneer = _sl_3_out_pioneer['normal']
+    image sl out3 pioneer close = _sl_3_out_pioneer['close']
+    image sl out3 pioneer far = _sl_3_out_pioneer['far']
+    image sl stanger3 pioneer = _sl_3_stanger_pioneer['normal']
+    image sl stanger3 pioneer close = _sl_3_stanger_pioneer['close']
+    image sl stanger3 pioneer far = _sl_3_stanger_pioneer['far']
