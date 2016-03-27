@@ -1,8 +1,11 @@
 #Установлен флаг посещения старого лагеря alt_uvao_D6_oldcamp = True
-#Установлен флаг осведомлённости в историю Эла и Жужи alt_uvao_D6_el_mz_story = True
+#Установлен флаг осведомлённости в историю Эла и Жужи alt_uvao_D6_el_mz_story = 0
+#Установлен километражеметр uv_km == 0 
 #Используется флаг alt_uvao_D5_sh_mines
 #Используется флаг alt_uvao_D5_hentai
 #Используется флаг танцев в день №3 alt_day3_dancing == 0
+#Используется флаг миниджека alt_day2_loki_minijack
+#Используется флаг записи в кружок кибернетиков alt_day2_club_join_cyb
 label alt_day6_uvao_seek_uv:
     $ persistent.sprite_time = "day"
     $ day_time()
@@ -11,20 +14,45 @@ label alt_day6_uvao_seek_uv:
     play music music_list["silhouette_in_sunset"] fadein 3
     $ disable_all_zones_alt2()
     $ disable_all_chibi_alt2()
-    $ set_zone_alt2('me_mt_house_alt2', 'alt_day6_uvao_map_me_mt_house') #Родной дом
-    $ set_chibi_alt2('me_mt_house_alt2', '?')
     $ set_zone_alt2('sandpit_alt2', 'alt_day6_uvao_map_sandpit') #Леночка
     $ set_chibi_alt2('sandpit_alt2', '?') 
     $ set_zone_alt2('old_house_alt2', 'alt_day6_uvao_map_old_house') #Старый лагерь
     $ set_chibi_alt2('old_house_alt2', '?')
     $ set_zone_alt2('forest_alt2', 'alt_day6_uvao_map_forest') #Не моем трубочиста
     $ set_chibi_alt2('forest_alt2', '?')
+    $ set_zone_alt2('wash_house_alt2', 'alt_day6_uvao_map_wash_house') #Баня
+    $ set_chibi_alt2('wash_house_alt2', '?')
+    $ set_zone_alt2('clubs_alt2', 'alt_day6_uvao_map_clubs') #Клубы
+    $ set_chibi_alt2('clubs_alt2', '?')
+    $ set_zone_alt2('boat_station_alt2', 'alt_day6_uvao_map_boat_station') #Пристань
+    $ set_chibi_alt2('boat_station_alt2', '?')
 label alt_day6_uvao_mapseek:
     scene black with fade
+    if uv_km >= 22:
+        jump alt_day6_uvao_map_dining_hall
+    if (uv_km >= 10) and not alt_uvao_D6_oldcamp:
+        if alt_uvao_D6_el_mz_story == 0:
+            $ set_zone_alt2('court_alt2', 'alt_day6_uvao_map_court') #Эл, Женя и Алисхен - начало
+            $ set_chibi_alt2('court_alt2', '?')
+    elif (uv_km >= 10) and alt_uvao_D6_oldcamp:
+        if alt_uvao_D6_el_mz_story == 0:
+            $ set_zone_alt2('me_mt_house_alt2', 'alt_day6_uvao_map_me_mt_house') #Родной дом
+            $ set_chibi_alt2('me_mt_house_alt2', '?')
+    if (alt_uvao_D6_el_mz_story != 0) and (alt_uvao_D6_el_mz_story != 3):
+        $ set_zone_alt2('sl_mz_house_alt2', 'alt_day6_uvao_map_sl_mz_house') #Эл и Женя - разборки
+        $ set_chibi_alt2('sl_mz_house_alt2', '?')
+    if (uv_km > 12) and alt_uvao_D6_oldcamp:
+        $ reset_zone_alt2('sandpit_alt2')
+        $ reset_chibi_alt2('sandpit_alt2')
+        $ reset_zone_alt2('wash_house_alt2')
+        $ reset_chibi_alt2('wash_house_alt2')
+    elif uv_km > 12 and not alt_uvao_D6_oldcamp:
+        $ reset_zone_alt2('old_house_alt2')
+        $ reset_chibi_alt2('old_house_alt2')
     $ show_map_alt2() #вызываем альтернативный widget map    
     
-label alt_day6_uvao_map_me_mt_house:
-    if alt_uvao_D6_oldcamp:
+label alt_day6_uvao_map_me_mt_house: #Дома с Оленькой
+    if uv_km > 10:
         $ persistent.sprite_time = "sunset"
         $ sunset_time()
         scene bg ext_house_of_mt_sunset
@@ -36,7 +64,8 @@ label alt_day6_uvao_map_me_mt_house:
         play ambience ambience_forest_day fadein 3
     $ disable_current_zone_alt2()
     "На всякий случай я решил заглянуть к себе"
-    if not alt_uvao_D6_oldcamp:
+    $ alt_uvao_D6_el_mz_story = 1
+    if not uv_km >= 10:
         extend ", перед таким дальним походом стоило прихватить свой любимый рюкзак."
         dreamgirl "Вчера он тебе не особо помог. Или ты с ночевкой решил свалить из лагеря?"
         th "Вдруг поиски затянутся? Так хоть что-то полезное под рукой будет."
@@ -65,28 +94,192 @@ label alt_day6_uvao_map_me_mt_house:
     stop music fadeout 6
     th "Кажется, пронесло."
     "Решив, что лимит везения на сегодня скорее всего исчерпан, я решил поскорее свалить отсюда."
-    $ set_zone_alt2('sl_mz_house_alt2', 'alt_day6_uvao_map_sl_mz_house') #Эл и Женя - разборки
-    $ set_chibi_alt2('sl_mz_house_alt2', '?')
-    $ reset_zone_alt2('sandpit_alt2')
-    $ reset_chibi_alt2('sandpit_alt2') 
+    if alt_uvao_D6_oldcamp and uv_km == 12:
+        $ uv_km += 5
+    else:
+        $ uv_km += 1
     jump alt_day6_uvao_mapseek
     
-label alt_day6_uvao_map_sl_mz_house:
+label alt_day6_uvao_map_boat_station: #Пристань
+    if uv_km > 10:
+        $ persistent.sprite_time = "sunset"
+        $ sunset_time()
+        scene bg ext_boathouse_sunset
+        play ambience ambience_lake_shore_night fadein 3
+    else:
+        $ persistent.sprite_time = "day"
+        $ day_time()
+        scene bg ext_boathouse_day
+        play ambience ambience_lake_shore_day fadein 3
+    $ disable_current_zone_alt2()
+    "Непонятно зачем я вышел к берегу озера."
+    "Очевидно, что Юли тут нет и быть не могло: не стала же она из кошкодевочки русалкой?"
+    "Вариант показался весьма занятным, но впадать в очередной раз в ступор в планы мои не входило."
+    if alt_uvao_D6_oldcamp and uv_km == 12:
+        $ uv_km += 4
+    else:
+        $ uv_km += 2
+    jump alt_day6_uvao_mapseek
+    
+label alt_day6_uvao_map_clubs: #Клубы
+    if uv_km > 10:
+        $ persistent.sprite_time = "sunset"
+        $ sunset_time()
+        scene bg ext_clubs_sunset
+        play ambience ambience_camp_center_evening fadein 3
+    else:
+        $ persistent.sprite_time = "day"
+        $ day_time()
+        scene bg ext_clubs_day
+        play ambience ambience_camp_center_day fadein 3
+    $ disable_current_zone_alt2()
+    "Проходя мимо логова кибернетиков, меня привлёк какой-то шум доносившийся из здания."
+    if not uv_km >= 10:
+        th "Сейчас же концерт - значит, никого из этих деятелей тут быть не должно."
+    else:
+        th "Концерт уже должен был закончиться. А поскольку другой дармовой мужской силы нет, то к переноске тяжестей этих деятелей явно признают годными."
+    if alt_uvao_D6_el_mz_story > 1:
+        th "Не пришёл же этот Гриб работать с горя, в конце концов?"
+    "Дверь оказалась слегка приоткрытой."
+    play sound sfx_open_door_clubs
+    $ renpy.pause(1.0)
+    if uv_km >= 10:
+        scene bg int_clubs_male_sunset
+    else:
+        scene bg int_clubs_male_day
+    with dissolve
+    play ambience ambience_clubs_inside_day fadein 3
+    show sh surprise pioneer at right with dissolve
+    sh "А! Кто здесь?"
+    "Шурик. Без присмотра. Копошится в каком-то приборчике." 
+    th "Надеюсь, он не станет бросаться на меня с каким-нибудь паяльником."
+    me "А ты чего тут делаешь?"
+    show sh normal pioneer at right with dissolve
+    sh "Это ты..."
+    "Кажется, он успокоился."
+    sh "Умножитель для нашего проекта сам себя не сделает."
+    sh "Завтра же отъезд: не хочу время терять на этих припевочках у японки."
+    sh "А Максимычу лишь бы народ нагнать да промариновать почём зря." 
+    sh "Что бы они делали без успехов нашей науки, певуны эти!"
+    th "А он тот ещё технофашист. Надеюсь, до опытов по евгенике ещё не додумался."
+    show sh serious pioneer at right with dissolve
+    if alt_day2_club_join_cyb:
+        sh "Ты помочь мне пришёл?"
+        me "Эм, я..."
+        th "Время терять на тебя я точно не хочу."
+        sh "Сам к нам записался - так что время не ждёт."
+        me "Я тут вообще-то за другим..."
+        "Нужно было что-то срочно ляпнуть, как хорошую отмазку."
+        me "Меня Ольга прислала. На сцене что-то с аппаратурой случилось."
+        show sh normal pioneer at right with dissolve
+        sh "И чего? Мне туда идти теперь?"
+        "Понимать нужды других Шурику было не дано."
+        me "Да нет. Я и сам справлюсь. Нам всего-то нужен какой-то разъём для динамика."
+        show sh serious pioneer at right with dissolve
+        if alt_day2_loki_minijack:
+            "Он подошёл к уговому ящику с какими-то деталями и спросил:"
+            sh "А тот что я тебе давал не годится?"
+            me "Нет, там другой нужен."
+            "Он слегка усмехнулся."
+            sh "Логично. Это же училитель."
+        $ renpy.pause(1.5)
+        "Спустя пару минут он вручил мне странный кабель с пятью контактами и моток изоленты."
+        sh "Серёга вроде там где-то ошивается. Он знает как подсоединить."
+        me "Да, спасибо. Ты очень выручил."
+    else:
+        sh "Может, ты мне поможешь раз пришёл?"
+        th "Так и знал, что вляпаюсь."
+        me "Да нет, знаешь."
+        me "Я вообще в электронике не силён."
+        show sh upset pioneer at right with dissolve
+        "Шурик тяжело и расстроено вздохнул."
+        sh "А чего заходил тогда?"
+        me "Да так. Мимо проходил.{w} Удачи тебе."
+    $ renpy.pause(1.0)
     if alt_uvao_D6_oldcamp:
+        scene bg ext_clubs_sunset with dissolve
+        play ambience ambience_camp_center_evening fadein 3
+    else:
+        scene bg ext_clubs_day with dissolve
+        play ambience ambience_camp_center_day fadein 3
+    "Я кивнул и быстро вышел из здания клубов."
+    "Лучше тут не задерживаться."
+    if alt_uvao_D6_oldcamp and uv_km == 12:
+        $ uv_km += 4
+    else:
+        $ uv_km += 2
+    jump alt_day6_uvao_mapseek
+    
+label alt_day6_uvao_map_wash_house: #Баня
+    if uv_km >= 10:
+        $ persistent.sprite_time = "sunset"
+        $ sunset_time()
+        play ambience ambience_forest_evening fadein 3
+    else:
+        $ persistent.sprite_time = "day"
+        $ day_time()
+        play ambience ambience_forest_day fadein 3
+    scene bg ext_bathhouse_day 
+    $ disable_current_zone_alt2()
+    "Ещё около эстрады я заметил небольшую тропинку уходящую куда-то в ближайший лес."
+    "Стараясь не привлекать к себе внимание и пробравшись среди кустов, я вышел к странной избушке."
+    "Она существенно отличалась от всех мест, где мне удалось побывать за эти шесть дней, и скорее походила на домик лесника, чем на что-то связанное с пионерским лагерем."
+    "На двери висел здоровенный амбарный замок. Делать тут было нечего."
+    $ uv_km += 1
+    jump alt_day6_uvao_mapseek
+    
+label alt_day6_uvao_map_campfire: #Костровая
+    if uv_km >= 10:
+        $ persistent.sprite_time = "sunset"
+        $ sunset_time()
+        scene bg ext_polyana_sunset
+        play ambience ambience_forest_evening fadein 3
+    else:
+        $ persistent.sprite_time = "day"
+        $ day_time()
+        scene bg ext_polyana_day
+        play ambience ambience_forest_day fadein 3
+    $ disable_current_zone_alt2()
+    "Что-то определённо тянуло меня в лес - то ли какие-то воспоминания, то ли подспудные ощущения чего-то упущенного."
+    "Так что, решив послоняться ещё немного, ноги сами вывели на какую-то поляну."
+    "Несколько костровищ с булыжником, брёвна, разбросанный мусор - это что костровая?"
+    "В воздухе ощутимо пахло дымом - похоже, тут ещё вчера были какие-то посиделки, иначе дождь бы ни оставил и следа этого запаха."
+    th "Неужели был лагерный поход?"
+    dreamgirl "Если бы ты чаще смотрел в распорядок, то помнил бы это."
+    dreamgirl "Как раз после вчерашнего ужина и отправились все."
+    "Наблюдательность как всегда подвела меня."
+    th "Странно, что Ольга не подняла шум из-за моего отсутствия."
+    if not alt_uvao_D5_sh_mines:
+        "Даже с учётом всех моих заслуг по переноске Шурика, с трудом верилось, что она так просто позволила мне прогулять."
+    else:
+        "Весь день пропадал неизвестно где, а потом ещё нахамил ей - должно же последовать хоть какое-то наказание?"
+    dreamgirl "Думаю, ты уже понял, что без предварительной подготовки сюда не устроиться вожатой?"
+    dreamgirl "К тому же, тащить тебя в лес, где поджидает хвостатое нечто, об опасности которого тебе сегодня с самого утра твердят, означало бы поставить под удар всех кто был бы в походе."
+    dreamgirl "А ты ещё так удачно вздремнуть вчера на шезлонге решил. Неудивительно, что на тебя рукой махнули."
+    $ renpy.pause(1.5)
+    "Юли тут тоже не оказалось."
+    th "Только зря тащился в такую даль."
+    $ uv_km += 4
+    jump alt_day6_uvao_mapseek
+    
+label alt_day6_uvao_map_sl_mz_house: #Домик Слави
+    if uv_km >= 10:
         $ persistent.sprite_time = "sunset"
         $ sunset_time()
         scene bg ext_houses_sunset
+        play ambience ambience_camp_center_evening fadein 3
     else:
         $ persistent.sprite_time = "day"
         $ day_time()
         scene bg ext_houses_day
+        play ambience ambience_camp_center_day fadein 3
     $ disable_current_zone_alt2()
-    $ alt_uvao_D6_el_mz_story = True #Новый флажок2
-    if not alt_uvao_D6_oldcamp:
-        "Ольга окончательно скрылась из виду - можно было выбираться из своего укрытия."
+    $ alt_uvao_D6_el_mz_story = 3 #Новый флажок2
+    if alt_uvao_D6_el_mz_story == 1:
+        "Ольга окончательно скрылась из виду - можно было ещё раз хорошенько осмотреться у собственного жилища."
         "Как оказалось, расслабился я преждевременно."
-        "Осторожно вырулив на соседнюю улочку, в глаза тут же бросились двое спещащих сюда пионеров."
-        th "Твою ж дивизию. Чего им на концерте не сидится-то всем!"
+        "Осторожно вырулив на соседнюю от своего дома улочку, в глаза тут же бросились двое спещащих сюда пионеров."
+        th "Твою ж дивизию. Чего им на эстраде не сидится-то всем!"
         "На план спасения времени совершенно не было, и я от безысходности шмыгнул за старую чугунную скамейку."
     else:
         "Я и сам не понял, что привело меня сюда: то ли отчаянное желание найти Юлю хоть где-то, то ли захотелось убедиться всё ли в порядке со Славей."
@@ -97,7 +290,7 @@ label alt_day6_uvao_map_sl_mz_house:
     dreamgirl "Не забывай: Ольга тебя зачем-то искала - а значит, если уж ты решился найти Юлю, то не стоит показываться всем на глаза."
     "Место, конечно, я выбрал не самое удачное - от жары металл хорошо разогрелся, и прислоняться к нему сейчас было даже горячо."
     "Кое-как выбрав удобное положение, я наконец взглянул в строну откуда доносился шум."
-    if alt_uvao_D6_oldcamp:
+    if uv_km >= 10:
         scene bg ext_house_of_sl_sunset
     else:
         scene bg ext_house_of_sl_day
@@ -172,13 +365,14 @@ label alt_day6_uvao_map_sl_mz_house:
     dreamgirl "Представь - Женя в обтягивающем кожаном костюме с плёткой{w=.2}, а рядом Эл, выполняющий приказы госпожи."
     dreamgirl "Море страсти и полного доминирования.{w=.2} Завидуй."
     th "Свят-свят. И вообще я Юлю ищу."
-    if alt_uvao_D6_oldcamp:
-        $ set_zone_alt2('dining_hall_alt2', 'alt_day6_uvao_map_dining_hall') #Столовая
-        $ set_chibi_alt2('dining_hall_alt2', '?')
+    if alt_uvao_D6_el_mz_story == 1:
+        $ uv_km += 1
+    else:
+        $ uv_km += 2
     jump alt_day6_uvao_mapseek
     
-label alt_day6_uvao_map_court:
-    if alt_uvao_D6_oldcamp:
+label alt_day6_uvao_map_court: #Корт с Алисхен
+    if uv_km > 10:
         $ persistent.sprite_time = "sunset"
         $ sunset_time()
         scene bg ext_playground_sunset
@@ -187,24 +381,25 @@ label alt_day6_uvao_map_court:
         $ day_time()
         scene bg ext_playground_day
     $ disable_current_zone_alt2()
-    #Фиг знает до чего мы в итоге сговоримся - пишу нейтральный вариант.
-    "Я изрядно взмок за время прогулки до карьера, и поскольку желание переться до самых умывальников отсутствовало напрочь, я решил умыться в ближайших душевых."
+    "Я изрядно взмок за время прогулки до карьера, а поскольку желание переться до самых умывальников отсутствовало напрочь, мне ничего не оставалось как умыться в ближайших душевых."
     "Ещё на подходе к спортплощадке я заметил парочку пионеров, украдкой пробиравшихся за корты."
     "Концерт по идее должен был давно закончиться, а после него никаких мероприятий в распорядке до самой дискотеки на сегодня не значилось."
     "Любопытство взяло верх и, отложив свои гигиенические процедуры, я последовал за ними."
     "От увиденного я тут же выпал в осадок - здесь были"
     show dv shy pioneer2 at left with dissolve
     extend " Алиса"
-    show el smile pioneer with dissolve
+    show el normal pioneer with dissolve
     extend " и Электроник."
     "То что они были {i}вместе{/i} и {i}наедине{/i} уже казалось по меньшей мере странным."
     dv "Серёг, ну ты можешь быть не таким тормознутым, а?"
     el "Я стараюсь. Понимаешь..."
     "Он замялся."
+    show el sad pioneer with dissolve
     el "Я никогда раньше девочку даже... не держал."
     dv "Пффф. Ты только ей этого не говори, Ромео."
-    dv "Повторяю для ущербных. Нужно быть решительным или опять по лагерю с оплеухой бегать будешь."
-    th "Это она про вчерашнее что ли?"
+    if not alt_uvao_D5_sh_mines:
+        dv "Повторяю для ущербных. Нужно быть решительным или опять по лагерю с оплеухой бегать будешь."
+        th "Это она про вчерашнее что ли?"
     dv "Ты конечно хорош: нашёл кого выбрать в помощники. Меня от всех этих сюсюканий с танцульками просто тошнит."
     dv "Если бы я тебя не первый год знала, прописала сразу бы в бубен за всё это и не морочилась тут."
     "Такой Алису я ещё не видел никогда - оказывается, даже она может быть отзывчивой."
@@ -220,6 +415,7 @@ label alt_day6_uvao_map_court:
     "Как оказалось ненадолго."
     #движ спрайтов
     "Алиса тут же вырвалась из его объятий."
+    show el surprise pioneer with dissolve
     dv "Ты б ещё меня за задницу приобнял. Выше надо."
     el "Алис, я..."
     dv "Зачем я вообще согласилась..."
@@ -228,6 +424,7 @@ label alt_day6_uvao_map_court:
     dreamgirl "Что «и»?"
     th "Проехали."
     dv "Попытка номер два. Пошёл."
+    show el normal pioneer with dissolve
     "Судя по всему, кибениматик сделал всё так как и было нужно, потому что Алиса продолжила:"
     dv "Вооот. Можешь же когда хочешь."
     dv "А теперь начинаешь медленно делать шаги в одну сторону и считай «раз-два-три»."
@@ -235,23 +432,28 @@ label alt_day6_uvao_map_court:
     th "Так это он для Жужелицы что ли старается?!"
     "Краем глаза я заметел приближающуюся со стороны столовой фигуру."
     th "Жужелица. Легка на помине."
-    show mz bukal glasses far with dissolve
+    show mz bukal glasses pioneer far at fleft with dissolve
     dreamgirl "Сейчас начнётся."
     "Женя спокойно поправила очки и невозмутимым тоном сказала:"
     mz "Молодец, наконец-то от меня отстанешь."
-    #спрайтус Илихтроника
+    show el sad pioneer with dissolve
     #спрайтус Алисхен
     "Электроник и Алиса как два бильярдных шара отлетели друг от друга и синхронно покраснели - похоже подобная ситуация была в новинку для обоих."
     el "Женя. Всё не так, как ты думаешь. Мы это..."
     mz "Да, вы {i}это{/i}.{w} Совет да любовь."
     mz "Горько!"
     "На её лице библиотекарши по-прежнему не дрогнул ни один мускул, чего было нельзя сказать об Алисе - спрятала взгляд, смутилась и заливалась всё дальше краской."
+    show mz laugh glasses pioneer far at fleft with dissolve
     mz "Ну чего ж вы. Го{w=.2}-рько!{w=.2} Го{w=.2}-рько!"
+    show mz bukal glasses pioneer far at fleft with dissolve
     "Чуть вздрагивавший и сгоравший от глупости всего происходящго Эл неожиданно решил уцепиться за последнюю соломинку."
+    show el upset pioneer with dissolve
     el "Прекрати. Алиса ну скажи ей!"
     "Двачевская тоже как-то пришла в себя и тут же выпалила:"
     dv "Разбирайтесь сами. Меня только не впутывайте."
+    hide dv with moveoutleft
     "И оттолкнув от себя несчастного кибениматика, на котором и лица не было, быстро отправилась куда-то в сторону столовой."
+    show el sad pioneer with dissolve
     el "Алиса, но как же..."
     mz "Беги-беги, не упусти своё счастье."
     "Противно проскрипело библиотечное насекомое."
@@ -260,8 +462,10 @@ label alt_day6_uvao_map_court:
     mz "А я тоже пойду. Финита ля комедия, Сыроежкин."
     "Эл что было сил кинулся к Жене, но та как заправский вахтёр лишь рявкнула на него:"
     mz "Не лезь ко мне. Я всё сказала."
+    hide mz
     "И развернувшись, грузными и размашистыми шагами с раздражённым видом ушла."
     "Сказать по правде, я не ожидал другого исхода этого фарса - Сыроежкин бросился за ней вдогонку."
+    hide el
     th "Даже жалко его как-то. Стараться ради этой грымзы..."
     dreamgirl "Ты вообще ни для кого не старался, умник."
     th "Да лучше бы с Алисой что-то попробовал - они вроде даже как друзья."
@@ -269,14 +473,15 @@ label alt_day6_uvao_map_court:
     dreamgirl "А другим тут и не пахнет. Рыжей другой типаж нужен, который её тараканов придушить сможет."
     dreamgirl "Тебе кстати не пора? Цигель цигель, дружок - Юля сама себя не найдёт."
     th "Да, пойду-ка я."
-    $ alt_uvao_D6_el_mz_story = True #Новый флажок2
+    $ alt_uvao_D6_el_mz_story = 2 #Новый флажок2
+    $ uv_km += 4
     if alt_uvao_D6_oldcamp:
         $ set_zone_alt2('dining_hall_alt2', 'alt_day6_uvao_map_dining_hall') #Столовая
         $ set_chibi_alt2('dining_hall_alt2', '?')
     jump alt_day6_uvao_mapseek
     
-label alt_day6_uvao_map_forest:
-    if alt_uvao_D6_el_mz_story or alt_uvao_D6_oldcamp:
+label alt_day6_uvao_map_forest: #Умывальники
+    if uv_km >= 10:
         $ persistent.sprite_time = "sunset"
         $ sunset_time()
         scene bg ext_washstand_sunset
@@ -296,14 +501,14 @@ label alt_day6_uvao_map_forest:
     "Я проверил на всякий случай все соседние кусты, но не нашёл ничего кроме нескольких окурков и одной разбитой бутылки."
     th "Похоже, и тут пионеры не блещут порядочностью."
     th "Впрочем, с подходом нашей вожатой - ничего удивительного."
-    if alt_uvao_D6_el_mz_story or alt_uvao_D6_oldcamp:
+    if uv_km >= 10:
         scene bg ext_path_sunset
         play ambience ambience_forest_evening fadein 3
     else:
         scene bg ext_path_day
         play ambience ambience_forest_day fadein 3
-    "Вглубь леса уходила исхоженная тропа, и я решил пройтись по ней."
-    if alt_uvao_D6_el_mz_story or alt_uvao_D6_oldcamp:
+    "Вглубь леса уходила исхоженная тропа, и я решил пройтись по ней"
+    if uv_km >= 10:
         scene bg ext_path2_sunset with dissolve
     else:
         scene bg ext_path2_day with dissolve
@@ -315,11 +520,15 @@ label alt_day6_uvao_map_forest:
     "Ответом здесь была лишь тишина."
     th "Этого и следовало ожидать."
     $ disable_current_zone_alt2()
+    if alt_uvao_D6_oldcamp and uv_km == 12:
+        $ uv_km += 5
+    else:
+        $ uv_km += 2
     jump alt_day6_uvao_mapseek
     
-label alt_day6_uvao_map_sandpit:
+label alt_day6_uvao_map_sandpit: #Карьер и Леночка
     $ disable_current_zone_alt2()
-    if alt_uvao_D6_oldcamp:
+    if uv_km >= 10:
         $ persistent.sprite_time = "sunset"
         $ sunset_time()
         scene bg ext_path2_sunset2
@@ -358,7 +567,7 @@ label alt_day6_uvao_map_sandpit:
     with vpunch
     th "Мне ведь не послышалось?"
     "Не став медлить, я тут же сунулся в кусты, откуда, как показалось, донёсся звук."
-    if alt_uvao_D6_oldcamp:
+    if uv_km >= 10:
         scene bg ext_path2_sunset2
     else:
         scene bg ext_path2_day
@@ -379,16 +588,15 @@ label alt_day6_uvao_map_sandpit:
     dreamgirl "Когда-нибудь узнаешь, кто тут такой любвеобильный."
     "Удивительно, но внутренний голос тут же умолк, так и не дав никаких более существенных объяснений."
     "Находиться в этой рощице памяти стало почему-то тягостно, и я отправился искать Юлю дальше."
-    $ reset_zone_alt2('me_mt_house_alt2')
-    $ reset_chibi_alt2('me_mt_house_alt2') 
-    $ set_zone_alt2('court_alt2', 'alt_day6_uvao_map_court') #Эл, Женя и Алисхен - начало
-    $ set_chibi_alt2('court_alt2', '?')
+    $ set_zone_alt2('campfire_alt2', 'alt_day6_uvao_map_campfire') #Костровая
+    $ set_chibi_alt2('campfire_alt2', '?')
+    $ uv_km += 10
     stop music fadeout 2
     jump alt_day6_uvao_mapseek
     
-label alt_day6_uvao_map_old_house:
+label alt_day6_uvao_map_old_house: #Старый лагерь
     $ disable_current_zone_alt2()
-    if alt_uvao_D6_el_mz_story:
+    if uv_km >= 10:
         $ persistent.sprite_time = "sunset"
         $ sunset_time()
         scene bg ext_old_building_sunset_red
@@ -399,8 +607,6 @@ label alt_day6_uvao_map_old_house:
         scene bg ext_old_building_day
         play ambience ambience_forest_day fadein 3
     $ alt_uvao_D6_oldcamp = True #Новый флажок1
-    $ set_zone_alt2('camp_entrance_alt2', 'alt_day6_uvao_map_camp_entrance') #Стоянка
-    $ set_chibi_alt2('camp_entrance_alt2', '?')
     "Где как ни здесь после вчерашнего похода логичнее всего было встретить Юлю."
     "Дорога опять оказалось не самой приятной, но уже почти по наитию я с первого раза отыскал и нужную тропу, и даже засохшие после дождя следы Шурика, отпечатавшиеся в глине."
     th "Похоже, я проскочил вчера прямо перед тем, как разверзлись хляби небесные."
@@ -410,7 +616,7 @@ label alt_day6_uvao_map_old_house:
     "Получается, пионеров селили в палатках? Выглядело это крайне сомнительно, но другого правдоподобного объяснения мне так и не удалось придумать."
     "Всё познаётся в сравнении. Из неудобств моего нынешнего положения можно было сразу вспомнить лишь ледяную воду в умывальниках."
     "Представлять каково это - жить почти в лесу, где любой гад может ночью заползти тебе в ухо, а во время дождя лучше всего оказаться в палатке подальше от низины - упорно не хотелось."
-    "Послонявшись вокруг да около ещё минут пятнадцать никаких следов присутствия Юли найти так не получилось."
+    "Послонявшись вокруг да около ещё минут пятнадцать никаких следов присутствия Юли найти так и не получилось."
     th "И чего я тут брожу? Она же наверняка в бункере или в самом корпусе."
     scene bg int_old_building_day_uvao with dissolve
     "Внутри также никого не оказалось. На всякий случай, я даже слазал на чердак, но и там не было ничего кроме давно отсыревшей мебели."
@@ -420,7 +626,7 @@ label alt_day6_uvao_map_old_house:
     scene expression Noon("cg d4_hatch_night_open")
     with dissolve
     "Вчерашний люк так и остался открытым." 
-    "Даже хорошо, что вчерашняя поисковая группа не успела заглянуть сюда - чего доброго решили бы искать Шурика и там тоже."
+    "Даже хорошо, что поисковая группа не успела заглянуть сюда - чего доброго решили бы искать Шурика и там тоже."
     "Впредь стоило быть более осторожным."
     dreamgirl "Какое впредь? Завтра конец смены. Или ты корни решил пустить тут?"
     th "Это я образно. Осторожность нигде не помешает."
@@ -449,17 +655,17 @@ label alt_day6_uvao_map_old_house:
     dreamgirl "Сим-сим, открой дверь!"
     pause(1)
     #blink
-    th "Угораздило же меня заполучить такую шизофрению. Наркоман чёртов."
+    th "Угораздило же меня заполучить такую шизофрению..."
     "В отчаянии я сняв сандалию несколько раз постучал по двери, но расслышать что-то за гермозатвором было попросту невозможно."
     "Нужно было идти обратно."
     th "И где её искать теперь?.."
-    if alt_uvao_D6_el_mz_story:
-        $ set_zone_alt2('dining_hall_alt2', 'alt_day6_uvao_map_dining_hall') #Столовая
-        $ set_chibi_alt2('dining_hall_alt2', '?')
+    $ set_zone_alt2('camp_entrance_alt2', 'alt_day6_uvao_map_camp_entrance') #Стоянка
+    $ set_chibi_alt2('camp_entrance_alt2', '?')
+    $ uv_km += 12
     jump alt_day6_uvao_mapseek
     
-label alt_day6_uvao_map_camp_entrance:
-    if alt_uvao_D6_el_mz_story:
+label alt_day6_uvao_map_camp_entrance: #Остановка
+    if uv_km >= 10:
         $ persistent.sprite_time = "sunset"
         $ sunset_time()
         scene bg ext_camp_entrance_sunset 
@@ -491,13 +697,17 @@ label alt_day6_uvao_map_camp_entrance:
         "Присев, я потряс прутья решётки, пару раз даже стукнул по ним кулаком, но они и не думали поддаваться."
         "Я даже покричал в глубину шахты, но так и не смог рассышать ничего кроме собственного эха, бродящего по подземному лабиринту."
     th "И где её черти носят..."
+    if alt_uvao_D6_oldcamp and uv_km == 12:
+        $ uv_km += 4
+    else:
+        $ uv_km += 2
     $ disable_current_zone_alt2()
     jump alt_day6_uvao_mapseek
     
-label alt_day6_uvao_map_dining_hall:
+label alt_day6_uvao_map_dining_hall: #Столовая - выход
     $ disable_current_zone_alt2()
     $ persistent.sprite_time = "night"
-    $ nigth_time()
+    $ night_time()
     play ambience ambience_camp_center_night fadein 3
     scene bg ext_dining_hall_away_night
     th "Хватит с меня этих идиотских поисков. Ещё полчаса и я от голодухи еле ноги волочить буду."
