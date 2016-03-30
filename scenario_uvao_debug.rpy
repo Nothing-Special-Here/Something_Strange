@@ -213,6 +213,13 @@ label scenario_uvao_root_D4_debug:
                         "Хентая не было":
                             $ alt_uvao_D5_hentai = False
                     jump alt_day6_uvao_isolator_house
+                "Посылаем ОД и уходим к Юле":
+                    menu:
+                        "Хентай был":
+                            $ alt_uvao_D5_hentai = True
+                        "Хентая не было":
+                            $ alt_uvao_D5_hentai = False      
+                    jump alt_day6_uvao_fuckoff_mt
         "Картинки при смене глав":
         # Крашит игру, грит NameError: name 'alt_chapter_uv' is not defined
             label scenario_uvao_chapters:

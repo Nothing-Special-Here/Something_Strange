@@ -13,8 +13,29 @@
             trans.alpha = (r - blink_threshold_down) / (blink_threshold_up - blink_threshold_down)
         # return renpy.random.random() * 0.5
         return 0.05
-init:
-
+        
+    # Функция, собирающая спрайты из запчастей v2
+    # types - набор калибров спрайтов. Любой набор из ('far', 'close', 'normal', 'veryfar'). По пути, где лежат спрайты, должны быть соотвествующие директории, иначе не найдет
+    # argv - файлы-запчасти. передаются в формате (func, 'file') - (get_sprite_7dl,'dv/dv_1_coat.png') или ('path', 'file') - ('images/1080/sprites/','dv/dv_1_coat.png'), или просто 'file' - тогда используется _default_sprites_path
+    # на выходе - dict спрайтов, по одному для каждого из types
+    def ComposeSpriteSet(distance, *argv):
+        if isinstance(distance, str): #если types содержит только один параметр.
+            distances = (distance,) # 1-tuple. Иначе for будет перебирать символы в строке.
+        else:
+            distances = distance
+        ret = dict()    
+        for dst in distances:
+            #строим аргументы для ComposeSprite
+            subargs = list()
+            for arg in argv:
+                if isinstance(arg, str): #просто file
+                    subargs.append(_default_sprites_path + '/' + dst +'/' + arg)    # 'scenario_alt/Pics/sprites/normal/dv/dv_1_coat.png'
+                elif isinstance(arg[0], str): # (path, file)
+                    subargs.append( arg[0] + '/' + dst +'/' + arg[1] ) 
+                else:                           # (get_sprite_func, file)
+                    subargs.append( arg[0](arg[1]) )
+            ret[dst] = ComposeSprite(*subargs)
+        return ret
 init:
     
 #Ресы для кошочки
