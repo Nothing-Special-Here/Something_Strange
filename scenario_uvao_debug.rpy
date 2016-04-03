@@ -66,6 +66,7 @@ label scenario_uvao_debug:
     $ dv_help = 1
 # из Д3
     $ alt_day3_duty = False
+    $ alt_day3_dancing = 0
 #
     jump scenario_uvao_root_D4_debug
    
@@ -412,12 +413,10 @@ label alt_day6_true_beach_debug:
         "в Д1 Славя шли от ворот сами и вышли на пристань":
             $ alt_day1_sl_conv = False
     menu:
-        "в Д2 видели, как купается Славя":
-            $ alt_day2_date = 2
-        "В Д2 замутили было с Алисой (флаг свидания и плавки в придачу)":
-            $ alt_day2_date = 3
+        "в Д3 танцевали с Мику":
+            $ alt_day3_dancing = 4
         "Тян не нужны.":
-            $ alt_day2_date = 0
+            $ alt_day3_dancing = 0
     menu:
         "Был пляж в Д5":
             $ alt_uvao_D5_evening_sl = True
