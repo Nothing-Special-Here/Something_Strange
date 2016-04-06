@@ -908,13 +908,13 @@ label alt_day6_uvao_prufung_uv:
     ba "Стоишь мне тут лапшу на уши вешаешь, а Олька из-за тебя переживает."
     th "И чего ей из-за меня переживать - у неё ты, амбал старый, есть."
     mt "Бориска, ты чего тут?"
-    show mt smile dress far with dissolve at left
+    show mt smile dress far at left with dissolve
     "Легка на помине."
     ba "Охламона твоего встретил. Курит, небось, как всегда."
-    show mt surprise dress with dissolve at left
+    show mt surprise dress at left with dissolve
     mt "Семён?! Нашёлся, наконец-то."
     "Она подошла ближе и немного нервно осмотрела меня."
-    show mt serious dress with dissolve at left
+    show mt serious dress at left with dissolve
     mt "Ты где пропадал с самого концерта?"
     th "Хоть сейчас меня в пляс не потащит, как на прошлой дискотеке."
     dreamgirl "Тебя ещё одно не вполне понятное нечто в кустах дожидается, или ты забыл?"
@@ -927,7 +927,7 @@ label alt_day6_uvao_prufung_uv:
     "Я подозревал, что Юля где-то рядом и, осмотревшись боковым зрением, увидел всю ту же знакомую пару флуоресцирующих глаз у левого края «Волги»."
     th "Нужно хотя бы попытаться намекнуть ей. Всё равно здоровяк ничего кроме своих железяк и мячей не понимает."
     me "Тут кошка орала. Я её искал - думал, куда-то попала..."
-    show mt angry dress with dissolve at left
+    show mt angry dress at left with dissolve
     show ba normal uniform with dissolve
     "Вожатая нахмурилась и упёрла руки в боки."
     mt "Какая ещё кошка?"
@@ -937,7 +937,7 @@ label alt_day6_uvao_prufung_uv:
     "Она глубоко вздохнула."
     mt "Сколько можно уже, Семён. Ты сегодня у Виолы был?"
     me "Конечно, был. Там интересно было - мы про всякое разговаривали. И про кошку эту тоже."
-    show mt surprise dress with dissolve at left
+    show mt surprise dress at left with dissolve
     "А вот теперь вожатая поняла всё как надо."
     "Её глаза нервно забегали по всем окрестным кустам, а потом удивлённо остановились на мне."
     if alt_uvao_true:
