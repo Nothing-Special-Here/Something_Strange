@@ -201,7 +201,7 @@ label alt_day6_uvao_prufung_sl:
             show prologue_dream
             with fade
             "... обморок в домике вожатой..."
-             window hide
+            window hide
             scene bg ext_dining_hall_away_night_uvao1
             show prologue_dream
             with fade
