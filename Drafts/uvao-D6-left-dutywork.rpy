@@ -4,7 +4,7 @@
 # Используется флаг alt_day3_duty дежурства по столовой в Д3
 #
 #
-label alt_mytest:
+label alt_day6_uvao_left_dutywork:
     scene bg ext_warehouse_day with fade
     "Целью недолгой пробежки оказался бельевой склад."
     sl "Надо грязное постельное бельё отвезти в прачечную."
