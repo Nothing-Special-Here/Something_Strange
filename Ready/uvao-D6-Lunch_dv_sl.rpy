@@ -1,7 +1,7 @@
 # Д6-Обед с Алисой или Славей (свободный выбор)
 #
 # Используется флаг alt_uvao_true
-# Используется флаг alt_uvao_D5_sh_mines
+# Используется флаг alt_uvao_D5_sh_mines (спалились накануне)
 # Используется флаг alt_uvao_D5_hentai
 # используется флаг сопровождения в Д1 Славей от ворот до домика ОД alt_day1_sl_conv
 # используется флаг обеда с Леной в 4Д alt_uvao_D4_lunch_un
@@ -323,10 +323,7 @@ label alt_day6_lunch_dv_sl:
             hide dv
             show sl smile pioneer at center
             with dissolve
-            jump alt_day6_lunch_dv_sl_1
-    #===== TODOtext
-    # Посчитать, что беседа будет о делах амурных (Можно помечтать на веранде столовой)
-    # Топаем в домик
+            jump alt_day6_lunch_sl
     window hide
     scene bg black with fade
     stop ambience
