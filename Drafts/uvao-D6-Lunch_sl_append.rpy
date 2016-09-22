@@ -128,7 +128,7 @@ label alt_day6_lunch_sl:
         elseif alt_uvao_D5_sh_mines:
             dreamgirl "Она тебе что, мало намёков сегодня делала? Начиная с метания в тебя предметов своего нижнего белья, якобы нечаянно?"
         th "Ты хочешь сказать, что она специально..."
-        dreamgirl "Ну что ты как маленький, Сём Сёмыч!"
+        dreamgirl "Ну что ты как маленький, Семён Семёныч!"
         hide sl with dissolve
         stop music fadeout 3
         show mt normal pioneer at left with dissolve
