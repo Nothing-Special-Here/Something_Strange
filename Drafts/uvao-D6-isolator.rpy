@@ -42,7 +42,8 @@ label alt_day6_uvao_isolator_house:
     me "Мы с Юлей булочками перекусили…"
     #https://yadi.sk/d/v_YNFQzdsuNa8  #Ленофаг: Потому что почему бы и нет, лол
     #play sound stahp #Или так
-    #TODO: звуковой эффект палева?
+    #Звук палева
+    play sound sfx_scary_sting
     show mt surprise pioneer with dspr
     "И тут же зажал себе рот рукой. Блин! Что же я наделал?!"
     mt "Это кто такая?"
