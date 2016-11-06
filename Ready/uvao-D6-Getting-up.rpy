@@ -3,8 +3,18 @@
 # Используется флаг alt_uvao_D4_viola_morning
 # Используется флаг alt_uvao_true
 # Используется флаг alt_uvao_D5_sh_mines
+# Устанавливается индикатор степени настойчивости Слави alt_uvao_D6_sl_assert (1-3)
 #
 label alt_day6_uvao_getting_up:
+    #Выясняем степень настойчивости Слави alt_uvao_D6_sl_assert (1, 2, 3)
+    #отчего-то в RenPy нет XOR...
+    if (alt_uvao_D5_evening_sl and alt_uvao_D4_lunch_sl): #оба ивента
+        $ alt_uvao_D6_sl_assert = 3
+    elif (not alt_uvao_D5_evening_sl) and (not alt_uvao_D4_lunch_sl): #ни одного ивента
+        $ alt_uvao_D6_sl_assert = 1
+    else:
+        $ alt_uvao_D6_sl_assert = 2 #только один из ивентов
+    #
     window hide
     $ routetag = "uv"
     $ alt_chapter(6, u"Юля. Утро")

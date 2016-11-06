@@ -2,16 +2,9 @@
 #
 # Используется флаг встречи со Славей на пляже в Д5 alt_uvao_D5_evening_sl
 # Используется флаг обеда со Славей в Д4 alt_uvao_D4_lunch_sl
+# Используется индикатор степени настойчивости Слави alt_uvao_D6_sl_assert
 #
 label alt_day6_true_sl_morning:
-    #Выясняем степень настойчивости Слави alt_uvao_D6_sl_assert (1, 2, 3)
-    #отчего-то в RenPy нет XOR...
-    if (alt_uvao_D5_evening_sl and alt_uvao_D4_lunch_sl): #оба ивента
-        $ alt_uvao_D6_sl_assert = 3
-    elif (not alt_uvao_D5_evening_sl) and (not alt_uvao_D4_lunch_sl): #ни одного ивента
-        $ alt_uvao_D6_sl_assert = 1
-    else:
-        $ alt_uvao_D6_sl_assert = 2 #только один из ивентов
     window hide
     play music music_list["get_to_know_me_better"] fadein 3
     scene bg ext_washstand2_day with fade
