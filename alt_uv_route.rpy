@@ -410,7 +410,7 @@ label alt_day4_uvao_garlands_removal:
     $ renpy.pause(1)
     "Нести моток было неудобно, и провода то и дело попадались под ноги. С горем пополам мы дошли-таки до склада."
     window hide
-    scene bg ext_warehouse_day
+    scene bg ext_warehouse_day_7dl
     with dissolve
     play ambience ambience_camp_entrance_day fadein 3
     $ renpy.pause(3)
@@ -429,7 +429,7 @@ label alt_day4_uvao_garlands_removal:
     "Я поволок гирлянды внутрь."
     stop ambience fadeout 0
     window hide
-    scene bg int_shed_day with dissolve
+    scene bg int_shed_day_7dl with dissolve
     $ persistent.sprite_time = "sunset"
     $ renpy.pause(2)
     show sl normal pioneer far at left with dissolve
@@ -452,7 +452,7 @@ label alt_day4_uvao_garlands_removal:
     "Эл кивнул, а Славя улыбнулась."
     sl "Обращайтесь."
     window hide
-    scene bg ext_warehouse_day
+    scene bg ext_warehouse_day_7dl
     play ambience ambience_camp_entrance_day fadein 3
     with dissolve
     $ persistent.sprite_time = "day"
@@ -532,7 +532,7 @@ label alt_day4_uvao_library:
     dreamgirl "Какой подпол? Кто тебе будет в библиотеке делать подпол?! Давай лучше запрыгивай наверх и зависни между полками, как трёхглазый ублюдок!"
     th "…"
     window hide
-    scene cg d4_uv_pioner_lib_hiding
+    scene cg d4_uv_pioner_lib_hiding_7dl
     play sound sfx_head_heartbeat fadein 2
     "Вместо этого я пригнулся и на трех конечностях - четвертая была занята книгой - шустро забежал за стеллаж."
     play music music_list["you_won_t_let_me_down"] fadein 6
@@ -1389,7 +1389,7 @@ label alt_day4_uvao_evening_business:
         th "И то верно."
         "Я поднялся, пересек площадь и свернул на дорожку к медпункту. Алиса, сидевшая с гитарой на отдаленной скамейке, проводила меня странным взглядом. "
         window hide
-        scene bg ext_aidpost_sunset with fade
+        scene bg ext_aidpost_sunset_7dl with fade
         window show
         th "Что это она так смотрит? Как на психа."
         dreamgirl "А ты и есть он. Добровольно идешь в логово сексуальной маньячки, затерроризировавшей все мужское население лагеря. Тебе только букета и бутылки вина не хватает для полной картины."
@@ -1731,7 +1731,7 @@ label alt_day5_uvao_road_to_old_camp:
     "Однако отметину в следующие несколько минут пути я больше не увидел, а там и лес начал редеть."
     "Вскоре показалась небольшая опушка, на которой стояло…"
     window hide
-    scene bg ext_old_building_day with dissolve
+    scene bg ext_old_building_day_7dl with dissolve
     play music music_list["door_to_nightmare"] fadein 3
     window show
     dreamgirl "Избушка, избушка, повернись к лесу передом, а к Ивану задом!"
@@ -1745,7 +1745,7 @@ label alt_day5_uvao_road_to_old_camp:
     dreamgirl "Штанишки не намочил?"
     th "Что, я трус какой? Нас такой ерундой не запугаешь!"
     window hide
-    scene bg int_old_building_day_uvao with fade
+    scene bg int_old_building_day_uvao_7dl with fade
     window show
     "Внутри оказалось не так темно, как я ожидал. Солнечные лучи нет-нет, да и пробирались через дыры в потолке и разбитые окна."
     "Здание выглядело необитаемым, но осмотреть его на предмет признаков жизни стоило."
@@ -1911,7 +1911,7 @@ label alt_day5_uvao_tunnel:
     stop music fadeout 2
     "Через несколько минут впереди показался наконец тусклый блеск металла."
     window hide
-    scene bg int_catacombs_door_light2 with dissolve
+    scene bg int_catacombs_door_light2_7dl with dissolve
     play music music_list["orchid"] fadein 5
     with dissolve
     window show
@@ -2062,7 +2062,7 @@ label alt_day5_uvao_hentai_scene:
     stop music fadeout 4
     uv "А потом уже вот так!"
     "Она вскочила и ловким, по-кошачьи гибким движением избавилась от платья, под которым не было больше ничего лишнего."
-    scene cg d4_uv_bunker_hentai with dissolve    
+    scene cg d4_uv_bunker_hentai_7dl with dissolve    
     play music music_list["into_the_unknown"] fadein 3
     "Потом встала на четвереньки и повернулась ко мне, при этом хитро поглядывая через плечо, на манер избушки, так сказать. К стене передом, к Семёну задом."
     dreamgirl "Ну, убедился?"
@@ -2078,7 +2078,7 @@ label alt_day5_uvao_hentai_scene:
     "Руки сами собой легли на её талию, притянули к себе."
     uv "Мрррррра-а-у-у-у!"
     "Одобрительно протянула она и соблазнительно прогнулась."
-    scene uv_new_hentai1 with dissolve
+    scene uv_new_hentai1_7dl with dissolve
     th "Будь я котом, я бы просто взял её зубами за шкирку и хардкорно отымел…"
     dreamgirl "Как будто что-то плохое. Да и она вряд ли будет против."
     th "Цыц. Я пытаюсь не посрамить гордое звание Гомо Сапиенса в первом контакте с иной расой!"
@@ -2089,7 +2089,7 @@ label alt_day5_uvao_hentai_scene:
     dreamgirl "Это означает: «Ну не тяни уже!». Ваш К.О."
     "Желание девочки - закон. А уж кошкодевочки… Я в единый миг освободился от всего, что мешало мне ниже пояса, и, прицелившись…"
     dreamgirl "На ладонь ниже хвоста. Не промахнись, Ястребиный Глаз."
-    scene uv_new_hentai2 with dissolve
+    scene uv_new_hentai2_7dl with dissolve
     uv "Мааааауууу…"
     "…единым махом скользнул внутрь."
     "Она со вздохом качнулась сначала от меня, потом обратно… И снова… И снова, вовлекая меня во всё ускоряющийся ритм движения."
@@ -2179,7 +2179,7 @@ label alt_day5_uvao_evade_hentai_scene:
         "Вспышка, Юля подскочила от неожиданности, а я скорее полез в телефон посмотреть снимок."
         window hide
         play sound sfx_scary_sting
-        scene cg d5_uv_photo_city with dissolve
+        scene cg d5_uv_photo_city_7dl with dissolve
         $ renpy.pause(2, hard=True)
         scene bg int_catacombs_living with dissolve
         show uv surprise2 at center with dissolve
@@ -2323,15 +2323,15 @@ label alt_day5_uvao_hentai_sleep:
     $ renpy.pause(2, hard=True)
     scene black with fade2
     show prologue_dream
-    show bg int_sleep_hentai_office2 behind prologue_dream with fade3
+    show bg int_sleep_hentai_office2_7dl behind prologue_dream with fade3
     window show
     "На офисном столе мурлыкнул селектор."
     uv "Семён Семёнович, приехали от заказчика на сегодняшнее мероприятие. Примете?"
     me "Да, Юля, проводи их в шоу-рум, и позови девочек."
     th "Крупный заказчик, высшее общество, мать его. Падкое на всяческую экзотику, которую я им, собственно, и поставляю. И с того мы все имеем кусок хлеба с маслом и икрой. Так что собираемся и идём работать."
     window hide
-    show bg int_sleep_hentai_office behind prologue_dream with fade3
-    hide bg int_sleep_hentai_office2
+    show bg int_sleep_hentai_office_7dl behind prologue_dream with fade3
+    hide bg int_sleep_hentai_office2_7dl
     window show
     me "Добрый вечер, господа! Сейчас, буквально через минуту, подойдут наши девочки, которых мы выбрали для вашей вечеринки. А я пока расскажу о правилах и условиях."
     voice "Короче, Склифосовский!"
@@ -2358,8 +2358,8 @@ label alt_day5_uvao_hentai_sleep:
     hide un with dissolve
     hide dv with dissolve
     hide mi with dissolve
-    show bg int_sleep_hentai_office2 behind prologue_dream with fade3
-    hide bg int_sleep_hentai_office
+    show bg int_sleep_hentai_office2_7dl behind prologue_dream with fade3
+    hide bg int_sleep_hentai_office_7dl
     "Покончив с формальностями и проводив кошечек до лимузина, я вернулся в кабинет. Неплохой куш нам сегодня обломился!{w} Я подмигнул Юрию Куклачёву, грозящему мне пальцем из фоторамки на столе, вытянулся в удобном кресле и прикрыл глаза."
     stop music fadeout 3
     window hide
@@ -2558,7 +2558,7 @@ label alt_day5_uvao_true_back:
     "Замок щелкнул, я завертел колесо, и бронированная дверь повернулась на исполинских петлях."
     play sound sfx_open_door_mines_metal
     window hide
-    scene bg int_catacombs_door_light2 with fade
+    scene bg int_catacombs_door_light2_7dl with fade
     $ night_time()
     $ persistent.sprite_time = "night"    
     show uv normal at cright with dissolve
@@ -2583,7 +2583,7 @@ label alt_day5_uvao_true_back:
     stop ambience fadeout 1
     $ day_time()
     $ persistent.sprite_time = "day"
-    scene bg int_old_building_day_uvao with flash
+    scene bg int_old_building_day_uvao_7dl with flash
     window show
     play ambience ambience_forest_day fadein 3
     "После темноты подземелий свет ножом резал глаза.{w} Проморгавшись, я огляделся и, стараясь не поднимать лишнего шума, откинул крышку люка."
@@ -2593,7 +2593,7 @@ label alt_day5_uvao_true_back:
     show uv normal at cright with dissolve
     "Юля ловко вылезла следом за мной."
     window hide
-    scene bg ext_old_building_day with dissolve
+    scene bg ext_old_building_day_7dl with dissolve
     show uv normal at cright with dissolve
     window show    
     "Мы вышли на крыльцо и некоторое время просто жмурились от солнца. Сколько же времени я там проторчал, под землей?{w} Ох ёлки, уже обед скоро!"
@@ -3023,7 +3023,7 @@ label alt_day5_uvao_mines_sh:
     th "Наверно, слетела с рельсов на вираже. Катались они на ней, что ли?"
     "Я бросил спичку, чтобы не обжечь пальцы, и всё погрузилось во тьму…"
     window hide
-    scene bg int_mines_halt_spotlight with fade2
+    scene bg int_mines_halt_spotlight_7dl with fade2
     show uv black silhouette at cleft
     with dissolve
     window show
@@ -3177,7 +3177,7 @@ label alt_day5_uvao_mines_sh:
     uv "Да. Лестница там, а он побежал туда. Там тоже выход есть."
     "Она махнула вперёд, где брезжил какой-то свет."
     window hide
-    scene bg int_catacombs_entrance_light with fade
+    scene bg int_catacombs_entrance_light_7dl with fade
     "Мы продолжили преследование, и через пару минут увидели тот самый выход - обвалившийся потолок туннеля, выводящий на поверхность где-то в лесу, судя по виднеющимся наверху веткам деревьев. Я прикинул высоту - до поверхности где-то метра три."
     show uv dontlike at cright
     with dissolve
@@ -3202,7 +3202,7 @@ label alt_day5_uvao_mines_sh:
     $ meet('mt', 'Голос')
     $ day_time()
     $ persistent.sprite_time = "day"
-    scene bg int_old_building_day_uvao with flash
+    scene bg int_old_building_day_uvao_7dl with flash
     play ambience ambience_forest_day fadein 3
     window show
     show uv shocked with dissolve
@@ -3215,7 +3215,7 @@ label alt_day5_uvao_mines_sh:
     "Мы с Юлей подобрались к окну и одновременно выглянули в щель между досками."
     window hide
     $ meet('mt','Ольга Дмитриевна')
-    scene bg ext_old_building_day
+    scene bg ext_old_building_day_7dl
     show mt pioneer normal veryfar:
         xalign 0.3 yalign 0.999 zoom 0.7
     show sl pioneer normal veryfar:
@@ -3352,7 +3352,7 @@ label alt_day5_parking_back:
     $ day_time()
     $ routetag = "uv"
     $ alt_chapter(5, u"Юля. Пикник")
-    scene bg int_old_building_day_uvao
+    scene bg int_old_building_day_uvao_7dl
     show uv grin
     with dissolve
     window show
@@ -3395,7 +3395,7 @@ label alt_day5_parking_back:
     play sound sfx_open_metal_hatch
     "Я прикрыл на всякий случай крышку люка и поспешил за ней."
     window hide
-    scene bg ext_old_building_day
+    scene bg ext_old_building_day_7dl
     show uv normal
     with dissolve
     window show
@@ -3427,7 +3427,7 @@ label alt_day5_parking_back:
     stop music fadeout 2
     stop ambience fadeout 3
     window hide
-    scene bg int_catacombs_entrance_light with dissolve
+    scene bg int_catacombs_entrance_light_7dl with dissolve
     with vpunch
     play ambience ambience_catacombs fadein 3
     $ night_time()
@@ -3511,7 +3511,7 @@ label alt_day5_parking_back:
     dreamgirl "А потом окажется, что консервы эти времён войны. Какие там первые симптомы ботулизма?"
     th "Тьфу на тебя! Не смей портить настроение!"
     window hide
-    scene bg int_catacombs_entrance_light with fade
+    scene bg int_catacombs_entrance_light_7dl with fade
     window show
     show uv smile with dissolve
     "К моей радости, все инсинуации оказались беспочвенными - у консервов даже не кончился срок годности."
@@ -3555,7 +3555,7 @@ label alt_day5_parking_back:
     th "Кажется, Юля свято уверовала в мою способность открывать всё железное… Забавно."
     me "Давай я попробую."
     window hide
-    scene bg int_mine_exit_day with dissolve
+    scene bg int_mine_exit_day_7dl with dissolve
     window show
     "Поднявшись по узкой шахте, я оказался перед металлической решёткой с вваренным в неё замком."
     "Как ни странно, но ключ подошёл, хотя провернуть его до конца мне долго не удавалось."
@@ -3647,7 +3647,7 @@ label alt_day5_parking_back:
     "Вспышка, Юля подскочила от неожиданности, а я скорее полез в телефон посмотреть снимок."
     window hide
     play sound sfx_scary_sting
-    scene cg d5_uv_photo_galaxy with dissolve
+    scene cg d5_uv_photo_galaxy_7dl with dissolve
     $ renpy.pause(2, hard=True)
     scene bg ext_camp_entrance_sunset
     show uv surprise2 at center
@@ -3721,7 +3721,7 @@ label alt_day5_parking_back:
     dreamgirl "Не понимаешь ты своего счастья! Вся столовая была бы в твоём распоряжении!"
     th "Кто-то только что мне про карцер втирал, кажется? Сгинь!"
     window hide
-    scene bg ext_washstand_sunset with fade
+    scene bg ext_washstand_sunset_7dl with fade
     show mt angry panama pioneer at fleft
     with dissolve
     play sound sfx_open_water_sink
@@ -4097,7 +4097,7 @@ label alt_day5_capture_sh_together:
     dreamgirl "А ты не боишься, что у Шурик тоже услышал вопли вашей предводительницы, и у него тоже хватит смекалки не попадаться вам на глаза?"
     "Преодолев последние метры между редеющими кустами, мы вышли на поляну перед знакомым уже мне зданием старого корпуса."
     window hide
-    scene bg ext_old_building_day with dissolve
+    scene bg ext_old_building_day_7dl with dissolve
     window show
     show el sad pioneer at left
     show un normal pioneer at fleft
@@ -4160,7 +4160,7 @@ label alt_day5_capture_sh_together:
     with hpunch
     "В последний момент я сумел каким-то чудом увернуться от удара, но потерял равновесие и чуть не упал на спину."
     window hide
-    scene bg ext_old_building_day
+    scene bg ext_old_building_day_7dl
     show sh angry bar3 far at left
     with dissolve
     window show
@@ -4430,7 +4430,7 @@ label alt_day5_capture_sh_together:
         "Кивнув Виолетте, я вышел на крыльцо вслед за Сыроежкиным."
     window hide
     stop ambience fadeout 2
-    scene bg ext_aidpost_sunset with dissolve
+    scene bg ext_aidpost_sunset_7dl with dissolve
     $ persistent.sprite_time = "sunset"
     $ sunset_time()
     play ambience ambience_camp_center_evening fadein 3
@@ -4831,7 +4831,7 @@ label alt_day5_uvao_evening_map_sport_area:
 # Идём на пристань, но сваливаем на пляж.
 label alt_day5_uvao_evening_boat_station:
     window hide
-    scene bg ext_boathouse_sunset with fade
+    scene bg ext_boathouse_sunset_7dl with fade
     play ambience ambience_boat_station_day fadein 1
     window show
     "Выйдя на пристань, я уже собирался разуться и пристроиться где-нибудь с краю, свесив ноги в воду, но тут в голову пришла мысль получше."
@@ -5161,4 +5161,3 @@ label alt_day5_uvao_evening_headlong_already_here:
     $ renpy.pause (2)
 return
 #D5 End!
-    
