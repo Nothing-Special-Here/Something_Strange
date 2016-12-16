@@ -230,10 +230,7 @@ label alt_day6_uvao_isolator_sl_escape:
     "Напрягая не мышцы, но сознание, я тянул себя - нас! - прочь от этой проклятой дыры между мирами, и прочь из этого средства общественного транспорта маршрута \"безысходность-Ад\"."
     "Ещё немного, ещё чуть-чуть…"
     # Нейтралы. Просыпается дома
-    if alt_uvao_D5_hentai:
-        jump alt_uvao_ending_neutral_bad
-    else:
-        jump alt_uvao_ending_neutral
+	jump alt_uvao_ending_neutrals
 
 label alt_uvao_D6_beach_no_catapult:
     th "Подожди, зачем мне вообще возвращаться?"
