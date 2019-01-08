@@ -12,7 +12,10 @@
 # используется флаг танцев в д.№3 alt_day3_dancing   # ЛБ: alt_day3_dancing нуждается в согласовании с Автором, сейчас недоступен!
 # используется флаг защиты Слави от ОД в д.№2 alt_day2_sl_guilty
 # используется флаг завтрака со Славей в д.№2 alt_day2_sl_bf
+#
 # устанавливается флаг Зажигалки Алисы alt_uvao_D6_Zippo = 1 (видели после обеда с Алисой)
+# устанавливается флаг Амурного пути Слави alt_uvao_D6_sl_pickup
+
 label alt_day6_lunch_dv_sl:
     play ambience ambience_dining_hall_full fadein 3
     scene bg int_dining_hall_people_day with fade
