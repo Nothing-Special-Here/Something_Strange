@@ -6,3 +6,5 @@
     $ alt_uvao_D6_trust_uv = False
     $ alt_uvao_D6_ask_uv_keys = False
     $ alt_uvao_D6_left_MI_talk = False
+    $ alt_uvao_D6_VV = 0
+    $ alt_uvao_D6_Zippo = 0
